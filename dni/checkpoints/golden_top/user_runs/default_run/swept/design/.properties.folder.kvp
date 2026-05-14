@@ -1,0 +1,5 @@
+22 serialization::archive 20 0 1 0 0 4 0 0 0 17 dms:cdms:sub_type 0 0 1 0
+0 5 6 design 28 dms:cdms:implicit_partitions
+1 5 0  34 dms:cdms:sld_ipgenerated_sdc_files
+2 5 179 C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/dni/sandboxes/ENGG-ECE1174_19944_0/sld/ipgen/alt_sld_fab_0/altera_signaltap_agent_1920/synth/intel_signal_tap.sdc 19 dms:property:top_db
+3 5 14 root_partition

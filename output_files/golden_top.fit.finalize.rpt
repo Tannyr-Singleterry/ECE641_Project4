@@ -1,0 +1,137 @@
+Fitter Finalize Stage Report for golden_top
+Tue Apr 28 13:18:49 2026
+Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Top Non-routable Hold-failing Connections
+  3. Top Ignored Large Hold-failing Connections
+  4. Routing Usage Summary
+  5. Finalize Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++------------------------------------------------------------------------------------------------+
+; Top Non-routable Hold-failing Connections                                                      ;
++------------------+---------------------------+-----------+-------------------------+-----------+
+; Worst hold slack ; Oterm name                ; Oterm TLP ; To Node                 ; Iterm TLP ;
++------------------+---------------------------+-----------+-------------------------+-----------+
+; -5706            ; uart_manager|Select_67~21 ; ILLEGAL   ; uart_manager|tx_reg[9]  ; ILLEGAL   ;
+; -5669            ; uart_manager|Select_67~17 ; ILLEGAL   ; uart_manager|tx_reg[13] ; ILLEGAL   ;
+; -5652            ; uart_manager|Select_67~8  ; ILLEGAL   ; uart_manager|tx_reg[23] ; ILLEGAL   ;
+; -5639            ; uart_manager|Select_67~18 ; ILLEGAL   ; uart_manager|tx_reg[14] ; ILLEGAL   ;
+; -5634            ; uart_manager|Select_67~27 ; ILLEGAL   ; uart_manager|tx_reg[4]  ; ILLEGAL   ;
+; -5629            ; uart_manager|Select_67~9  ; ILLEGAL   ; uart_manager|tx_reg[21] ; ILLEGAL   ;
+; -5623            ; uart_manager|Select_67~23 ; ILLEGAL   ; uart_manager|tx_reg[8]  ; ILLEGAL   ;
+; -5613            ; uart_manager|Select_67~10 ; ILLEGAL   ; uart_manager|tx_reg[22] ; ILLEGAL   ;
+; -5609            ; uart_manager|Select_67~13 ; ILLEGAL   ; uart_manager|tx_reg[17] ; ILLEGAL   ;
+; -5607            ; uart_manager|Select_67~29 ; ILLEGAL   ; uart_manager|tx_reg[1]  ; ILLEGAL   ;
++------------------+---------------------------+-----------+-------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Top Ignored Large Hold-failing Connections                                                                                                                                                                            ;
++------------------+--------------------------------------------------------------------------------------------------------------------+-----------------------------+---------------------------+---------------------+
+; Worst hold slack ; Oterm name                                                                                                         ; Oterm TLP                   ; To Node                   ; Iterm TLP           ;
++------------------+--------------------------------------------------------------------------------------------------------------------+-----------------------------+---------------------------+---------------------+
+; -5706            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[9]  ; MEDIUM_EAB_RE:X116Y20Z0I92  ; uart_manager|Select_67~21 ; LAB_RE:X115Y22Z0I6  ;
+; -5669            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[13] ; MEDIUM_EAB_RE:X116Y20Z0I96  ; uart_manager|Select_67~17 ; LAB_RE:X115Y22Z0I39 ;
+; -5652            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[23] ; MEDIUM_EAB_RE:X116Y21Z0I86  ; uart_manager|Select_67~8  ; LAB_RE:X115Y23Z0I22 ;
+; -5639            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[14] ; MEDIUM_EAB_RE:X116Y20Z0I97  ; uart_manager|Select_67~18 ; LAB_RE:X115Y22Z0I40 ;
+; -5634            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[4]  ; MEDIUM_EAB_RE:X116Y20Z0I87  ; uart_manager|Select_67~27 ; LAB_RE:X115Y23Z0I57 ;
+; -5629            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[21] ; MEDIUM_EAB_RE:X116Y21Z0I84  ; uart_manager|Select_67~9  ; LAB_RE:X115Y22Z0I23 ;
+; -5623            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[8]  ; MEDIUM_EAB_RE:X116Y20Z0I91  ; uart_manager|Select_67~23 ; LAB_RE:X115Y23Z0I30 ;
+; -5613            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[22] ; MEDIUM_EAB_RE:X116Y21Z0I85  ; uart_manager|Select_67~10 ; LAB_RE:X115Y22Z0I30 ;
+; -5609            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[17] ; MEDIUM_EAB_RE:X116Y20Z0I100 ; uart_manager|Select_67~13 ; LAB_RE:X115Y22Z0I33 ;
+; -5607            ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|fifo_altera_syncram|altera_syncram_impl1|q_b[1]  ; MEDIUM_EAB_RE:X116Y20Z0I84  ; uart_manager|Select_67~29 ; LAB_RE:X115Y22Z0I54 ;
++------------------+--------------------------------------------------------------------------------------------------------------------+-----------------------------+---------------------------+---------------------+
+
+
++------------------------------------------------------------------+
+; Routing Usage Summary                                            ;
++--------------------------------------+---------------------------+
+; Routing Resource Type                ; Usage                     ;
++--------------------------------------+---------------------------+
+; Block Input Mux Wrapbacks            ; 14 / 43,616 ( < 1 % )     ;
+; Block Input Muxes                    ; 25,189 / 500,456 ( 5 % )  ;
+; Block interconnects                  ; 18,464 / 526,400 ( 4 % )  ;
+; C1 interconnects                     ; 6,722 / 234,240 ( 3 % )   ;
+; C4 interconnects                     ; 2,061 / 229,360 ( < 1 % ) ;
+; C8 interconnects                     ; 260 / 22,936 ( 1 % )      ;
+; DCM_muxes                            ; 8 / 216 ( 4 % )           ;
+; DELAY_CHAINs                         ; 0 / 1,262 ( 0 % )         ;
+; Direct links                         ; 4,671 / 526,400 ( < 1 % ) ;
+; HIO Buffers                          ; 52 / 10,528 ( < 1 % )     ;
+; IO75XDDRFMXCKTREE_CLKDRV_BIG_VCO_REs ; 0 / 8 ( 0 % )             ;
+; IO75XDDRFMXCKTREE_CLKDRV_GM0_REs     ; 0 / 8 ( 0 % )             ;
+; IO75XDDRFMXCKTREE_CLKDRV_VCO_INPUTs  ; 0 / 4 ( 0 % )             ;
+; IO75XDDRFMXCKTREE_CLKDRV_VCO_OUTPUTs ; 0 / 4 ( 0 % )             ;
+; IO75XDDRFMXCKTREE_FB_MUX31_REs       ; 2 / 24 ( 8 % )            ;
+; IOFBRADAPT_C2P_BUF_INPUTs            ; 0 / 66 ( 0 % )            ;
+; IOFBRADAPT_C2P_BUF_OUTPUTs           ; 0 / 66 ( 0 % )            ;
+; IOFBRADAPT_FRZ_BUFS_REs              ; 0 / 308 ( 0 % )           ;
+; IOFBRADAPT_P2C_BUF_INPUTs            ; 0 / 142 ( 0 % )           ;
+; IOFBRADAPT_P2C_BUF_OUTPUTs           ; 0 / 142 ( 0 % )           ;
+; Programmable Invert Buffers          ; 0 / 208 ( 0 % )           ;
+; Programmable Invert Inputs           ; 1,015 / 57,078 ( 2 % )    ;
+; Programmable Inverts                 ; 1,015 / 57,078 ( 2 % )    ;
+; R0 interconnects                     ; 8,836 / 401,380 ( 2 % )   ;
+; R1 interconnects                     ; 6,040 / 229,360 ( 3 % )   ;
+; R12 interconnects                    ; 407 / 34,404 ( 1 % )      ;
+; R2 interconnects                     ; 1,629 / 115,620 ( 1 % )   ;
+; R4 interconnects                     ; 1,061 / 117,500 ( < 1 % ) ;
+; R6 interconnects                     ; 874 / 118,440 ( < 1 % )   ;
+; Redundancy Muxes                     ; 206 / 20,728 ( < 1 % )    ;
+; Row Clock Tap-Offs                   ; 581 / 34,404 ( 2 % )      ;
+; Switchbox_clock_muxes                ; 32 / 1,920 ( 2 % )        ;
+; VIO Buffers                          ; 10 / 8,320 ( < 1 % )      ;
+; Vertical_seam_tap_muxes              ; 26 / 576 ( 5 % )          ;
++--------------------------------------+---------------------------+
+
+
++-------------------+
+; Finalize Messages ;
++-------------------+
+Info (20030): Parallel compilation is enabled and will use 24 of the 24 processors detected
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+    Info: Processing started: Tue Apr 28 13:15:34 2026
+    Info: System process ID: 23484
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off golden_top -c golden_top
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = golden_top
+Info: Revision = golden_top
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Warning (23166): During hold fix-up, 56 non-routable connections are found and ignored.
+Warning (23167): During hold fix-up, 163 connections with hold failures larger than 3000 ps are found and ignored. Large hold requirements may arise from various design issues, such as SDC problems or clock skew challenges.
+Info (18258): Fitter Physical Synthesis operations beginning
+Info (18259): Fitter Physical Synthesis operations ending: elapsed time is 00:00:00
+Info (24604): Global preservation of unused transceiver channels is enabled. All unused transceiver channels will be preserved.
+Info (16557): Fitter post-fit operations ending: elapsed time is 00:00:14
+
+

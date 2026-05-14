@@ -1,0 +1,96 @@
+
+State Machine - Summary
+
+State Machine - sdram_ctrl|state
+Name state.S_REFRESH_WAIT state.S_WRITE_WAIT_TWR state.S_WRITE_BURST_TERM state.S_WRITE_BURST state.S_PRECHARGE state.S_READ_BURST_TERM state.S_READ_BURST state.S_WAIT_tRCD state.S_ACTIVATE state.S_IDLE state.S_INIT_WAIT_MRD state.S_INIT_LOAD_MODE state.S_INIT_REF_WAIT2 state.S_INIT_REF2 state.S_INIT_REF_WAIT1 state.S_INIT_REF1 state.S_INIT_WAIT_tRP state.S_INIT_PRE_ALL state.S_INIT_WAIT_200US state.S_READ_CMD state.S_WRITE_CMD state.S_AUTO_REFRESH state.S_INIT 
+state.S_INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.S_AUTO_REFRESH 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.S_WRITE_CMD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.S_READ_CMD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.S_INIT_WAIT_200US 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.S_INIT_PRE_ALL 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.S_INIT_WAIT_tRP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.S_INIT_REF1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.S_INIT_REF_WAIT1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.S_INIT_REF2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.S_INIT_REF_WAIT2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.S_INIT_LOAD_MODE 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.S_INIT_WAIT_MRD 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_IDLE 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_ACTIVATE 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_WAIT_tRCD 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_READ_BURST 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_READ_BURST_TERM 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_PRECHARGE 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_WRITE_BURST 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_WRITE_BURST_TERM 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_WRITE_WAIT_TWR 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.S_REFRESH_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - sdram_manager|cs
+Name cs.Wait_Read cs.End_Write cs.Continue_Write cs.Wait_Write cs.Start_Read cs.Start_Write cs.Idle cs.Continue_Read 
+cs.Idle 0 0 0 0 0 0 0 0 
+cs.Start_Write 0 0 0 0 0 1 1 0 
+cs.Start_Read 0 0 0 0 1 0 1 0 
+cs.Wait_Write 0 0 0 1 0 0 1 0 
+cs.Continue_Write 0 0 1 0 0 0 1 0 
+cs.End_Write 0 1 0 0 0 0 1 0 
+cs.Wait_Read 1 0 0 0 0 0 1 0 
+cs.Continue_Read 0 0 0 0 0 0 1 1 
+
+State Machine - sdram_manager|cs_read
+Name cs_read.Read_Wait2 cs_read.Read_AddrWrite cs_read.Read_Wait cs_read.Read_Idle cs_read.Read_First 
+cs_read.Read_Idle 0 0 0 0 0 
+cs_read.Read_First 0 0 0 1 1 
+cs_read.Read_Wait 0 0 1 1 0 
+cs_read.Read_AddrWrite 0 1 0 1 0 
+cs_read.Read_Wait2 1 0 0 1 0 
+
+State Machine - uart_manager|cs
+Name cs.Wait_Tx_CR cs.Rx_CR_Byte cs.Tx_CR_Byte cs.CR_RorW cs.Reg_Num cs.Address_Write cs.End_WriteMem cs.Start_WriteDataMem cs.Write_Mem cs.Wait_TxMem cs.Tx_MemByte cs.Get_MemWord cs.Get_MemWord_Wait cs.Wait_Mem cs.Read_Mem cs.Control_Reg cs.Address_Mem cs.Command_Type cs.Idle 
+cs.Idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+cs.Command_Type 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+cs.Address_Mem 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+cs.Control_Reg 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+cs.Read_Mem 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+cs.Wait_Mem 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+cs.Get_MemWord_Wait 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+cs.Get_MemWord 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+cs.Tx_MemByte 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+cs.Wait_TxMem 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+cs.Write_Mem 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+cs.Start_WriteDataMem 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+cs.End_WriteMem 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+cs.Address_Write 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cs.Reg_Num 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cs.CR_RorW 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cs.Tx_CR_Byte 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cs.Rx_CR_Byte 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+cs.Wait_Tx_CR 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - transmitter|cs
+Name cs.Finish cs.Shift cs.Load_Sr cs.Idle 
+cs.Idle 0 0 0 0 
+cs.Load_Sr 0 0 1 1 
+cs.Shift 0 1 0 1 
+cs.Finish 1 0 0 1 
+
+State Machine - rcvr|cs
+Name cs.Parity cs.Stop cs.D6 cs.D5 cs.D4 cs.D3 cs.D2 cs.D1 cs.D0 cs.Start cs.Idle 
+cs.Idle 0 0 0 0 0 0 0 0 0 0 0 
+cs.Start 0 0 0 0 0 0 0 0 0 1 1 
+cs.D0 0 0 0 0 0 0 0 0 1 0 1 
+cs.D1 0 0 0 0 0 0 0 1 0 0 1 
+cs.D2 0 0 0 0 0 0 1 0 0 0 1 
+cs.D3 0 0 0 0 0 1 0 0 0 0 1 
+cs.D4 0 0 0 0 1 0 0 0 0 0 1 
+cs.D5 0 0 0 1 0 0 0 0 0 0 1 
+cs.D6 0 0 1 0 0 0 0 0 0 0 1 
+cs.Stop 0 1 0 0 0 0 0 0 0 0 1 
+cs.Parity 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - u_I2C_HDMI_Config|mSetup_ST
+Name mSetup_ST.0000 mSetup_ST.0010 mSetup_ST.0001 
+mSetup_ST.0000 0 0 0 
+mSetup_ST.0001 1 0 1 
+mSetup_ST.0010 1 1 0 

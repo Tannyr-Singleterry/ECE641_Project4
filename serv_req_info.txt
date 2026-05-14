@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<internal_error>
+	<sub_system>ERR</sub_system>
+	<callstack>	0x7fffc7e6598d: db_u2b2_hvio + 0x2598d (``anonymous namespace&amp;apos;::set_broken_muxes&amp;apos;::`23&amp;apos;::&amp;lt;lambda_3&amp;gt;::operator()&amp;lt;char const *,char const *,char const *&amp;gt; + 0x4d)
+	0x7fffc7e658d7: db_u2b2_hvio + 0x258d7 (`anonymous namespace&amp;apos;::set_broken_muxes + 0x977)
+	0x7fffc7e66b97: db_u2b2_hvio + 0x26b97 (?translate@U2B2_HVIO_HVIOWR_TRANSLATOR_MODULE@@UEAA_NPEAVU2B2_CONFIG@@PEAVDBCM_CHIP@@@Z + 0x1a7)
+	0x7fff17e49d75: db_u2b2_core + 0x79d75 (?translate@U2B2_MODULE@@QEAA_NPEAVU2B2_CONFIG@@PEAVDBCM_CHIP@@@Z + 0x85)
+	0x7fff17e2ce11: db_u2b2_core + 0x5ce11 (?translate_fn@U2B2_DIRECTOR@@AEBA_NPEAVU2B2_MODULE@@AEBUU2B2_CONTEXT@@PEAVU2B2_CONFIG@@@Z + 0x161)
+	0x7fff17e16534: db_u2b2_core + 0x46534 (`U2B2_DIRECTOR::translate&amp;apos;::`2&amp;apos;::&amp;lt;lambda_1&amp;gt;::operator() + 0x274)
+	0x7fff17e0ea80: db_u2b2_core + 0x3ea80 (tbb::detail::d1::dynamic_grainsize_mode&amp;lt;tbb::detail::d1::adaptive_mode&amp;lt;tbb::detail::d1::auto_partition_type&amp;gt; &amp;gt;::work_balance&amp;lt;tbb::detail::d1::start_for&amp;lt;tbb::detail::d1::blocked_range&amp;lt;unsigned __int64&amp;gt;,tbb::detail::d2::parallel_for_body_wrapper&amp;lt;std::_Vector_iterator&amp;lt;std::_Vector_val&amp;lt;std::_Simple_types&amp;lt;U2B2_CONFIG *&amp;gt; &amp;gt; &amp;gt;,`U2B2_DIRECTOR::translate&amp;apos;::`2&amp;apos;::&amp;lt;lambda_1&amp;gt;,U2B2_CONFIG *&amp;gt;,tbb::detail::d1::auto_partitioner const &amp;gt;,tbb::detail::d1::blocked_range&amp;lt;unsigned __int64&amp;gt; &amp;gt; + 0x300)
+	0x7fff17e1ff01: db_u2b2_core + 0x4ff01 (tbb::detail::d1::start_for&amp;lt;tbb::detail::d1::blocked_range&amp;lt;unsigned __int64&amp;gt;,tbb::detail::d2::parallel_for_body_wrapper&amp;lt;std::_Vector_iterator&amp;lt;std::_Vector_val&amp;lt;std::_Simple_types&amp;lt;U2B2_CONFIG *&amp;gt; &amp;gt; &amp;gt;,`U2B2_DIRECTOR::translate&amp;apos;::`2&amp;apos;::&amp;lt;lambda_1&amp;gt;,U2B2_CONFIG *&amp;gt;,tbb::detail::d1::auto_partitioner const &amp;gt;::execute + 0x201)
+	0x7fffd2576cdf: tbb12 + 0x6cdf (?isolate_within_arena@r1@detail@tbb@@YAXAEAVdelegate_base@d1@23@_J@Z + 0x17df)
+	0x7fffd257366d: tbb12 + 0x366d (?is_tbbmalloc_used@r1@detail@tbb@@YA_NXZ + 0x17bd)
+	0x7fffd25826bc: tbb12 + 0x126bc (?global_control_active_value@r1@detail@tbb@@YA_KH@Z + 0x7bfc)
+	0x7fffd2584794: tbb12 + 0x14794 (?set_end_of_input@r1@detail@tbb@@YAXAEAVbase_filter@d1@23@@Z + 0x594)
+	0x7fffd258472a: tbb12 + 0x1472a (?set_end_of_input@r1@detail@tbb@@YAXAEAVbase_filter@d1@23@@Z + 0x52a)
+	0x7ff8519337af: ucrtbase + 0x37af (wcsrchr + 0x14f)
+	0x7ff85316e8d6: KERNEL32 + 0x2e8d6 (BaseThreadInitThunk + 0x16)
+	0x7ff85478c53b: ntdll + 0x8c53b (RtlUserThreadStart + 0x2b)
+</callstack>
+	<error>*** Fatal Error: mux /xx20_u1/xx20_clkordat_din_1to2_demux_u9, with bcm value SEL_DATA0, is trying to reset to SEL_CLK</error>
+	<date>Tue Apr 28 11:46:08 2026
+</date>
+	<version>Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition</version>
+</internal_error>

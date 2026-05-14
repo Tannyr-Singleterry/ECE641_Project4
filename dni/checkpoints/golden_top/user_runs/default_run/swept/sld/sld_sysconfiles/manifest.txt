@@ -1,0 +1,9 @@
+22 serialization::archive 20 0 1 0 0 9 0 0 0 18 AUDIO_PLL.sopcinfo 0 0 10 text_model 0 0 0 1 1 
+ 21 ResetRelease.sopcinfo 10 text_model 0 1 1 
+ 18 VEDIO_PLL.sopcinfo 10 text_model 0 1 1 
+ 21 address_fifo.sopcinfo 10 text_model 0 1 1 
+ 22 alt_sld_fab_0.sopcinfo 10 text_model 0 1 1 
+ 18 data_fifo.sopcinfo 10 text_model 0 1 1 
+ 17 int_line.sopcinfo 10 text_model 0 1 1 
+ 17 pll_test.sopcinfo 10 text_model 0 1 1 
+ 18 sdram_pll.sopcinfo 10 text_model 0 1 1 

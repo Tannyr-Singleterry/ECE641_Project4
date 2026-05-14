@@ -1,0 +1,58 @@
+IP Generation Report
+Tue Apr 28 13:14:40 2026
+Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Settings
+  2. IP Summary
+  3. Generation Stages
+
+
+
++------------------------------------------------+
+; Settings                                       ;
++------------------------+-----------------------+
+; Option                 ; Setting               ;
++------------------------+-----------------------+
+; IP Regeneration Policy ; Always Regenerate IPs ;
+; Parallel Enabled       ; true                  ;
+; Processes Spawned      ; 6                     ;
++------------------------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; IP Summary                                                                                                      ;
++----------------------------------------------------------------------------------------------+------------------+
+; IP File                                                                                      ; Elapsed Time (s) ;
++----------------------------------------------------------------------------------------------+------------------+
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/HDMI_out_RTL/V/VEDIO_PLL.ip                      ; 1.544            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/HDMI_out_RTL/V/ResetRelease.ip                   ; 0.734            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/HDMI_out_RTL/V/AUDIO_PLL.ip                      ; 1.673            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/HDMI_SDRAM_DG/sdram_pll/sdram_pll.ip             ; 1.958            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/HDMI_SDRAM_DG/V/ResetRelease.ip                  ; 0.893            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/HDMI_SDRAM_DG/V/AUDIO_PLL.ip                     ; 2.178            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/HDMI_SDRAM_DG/V/VEDIO_PLL.ip                     ; 2.152            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/address_fifo.ip            ; 1.282            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/sdram_pll/sdram_pll.ip     ; 1.855            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/VEDIO_PLL.ip             ; 2.071            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/ResetRelease.ip          ; 1.09             ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/data_fifo/data_fifo.ip     ; 1.284            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/AUDIO_PLL.ip             ; 1.68             ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/int_line.ip          ; 0.486            ;
+; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/pll_test/pll_test.ip ; 0.909            ;
++----------------------------------------------------------------------------------------------+------------------+
+
+
++------------------------------------+
+; Generation Stages                  ;
++-----------------+------------------+
+; Stage           ; Elapsed Time (s) ;
++-----------------+------------------+
+; Qsys Validation ; 0.0              ;
+; Qsys Generation ; 38.132           ;
++-----------------+------------------+
+
+

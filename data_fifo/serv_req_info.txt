@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<internal_error>
+	<sub_system>ERR</sub_system>
+	<callstack>	0x7ffa4ec11880: dni_orch + 0x11880 (?is_vds_enabled@ORCH_UTIL@@YA_NXZ + 0x3330)
+	0x7ffa6b89bc74: ucrtbase + 0x4bc74 (bsearch_s + 0x254)
+	0x7ffa6b89b896: ucrtbase + 0x4b896 (_execute_onexit_table + 0x86)
+	0x7ffa6b89b84c: ucrtbase + 0x4b84c (_execute_onexit_table + 0x3c)
+	0x7ffa4ec0f5b0: dni_orch + 0xf5b0 (?is_vds_enabled@ORCH_UTIL@@YA_NXZ + 0x1060)
+	0x7ffa4ec0e69d: dni_orch + 0xe69d (?is_vds_enabled@ORCH_UTIL@@YA_NXZ + 0x14d)
+	0x7ffa4ec0e97d: dni_orch + 0xe97d (?is_vds_enabled@ORCH_UTIL@@YA_NXZ + 0x42d)
+	0x7ffa6e4df86d: ntdll + 0x15f86d (RtlEncodeRemotePointer + 0xcd)
+	0x7ffa6e38bcad: ntdll + 0xbcad (RtlRaiseException + 0x156d)
+	0x7ffa6e417a47: ntdll + 0x97a47 (LdrGetProcedureAddressForCaller + 0xe77)
+	0x7ffa6e41679d: ntdll + 0x9679d (LdrGetProcedureAddress + 0x6ad)
+	0x7ffa6e416941: ntdll + 0x96941 (LdrGetProcedureAddress + 0x851)
+	0x7ffa6e416941: ntdll + 0x96941 (LdrGetProcedureAddress + 0x851)
+	0x7ffa6e416941: ntdll + 0x96941 (LdrGetProcedureAddress + 0x851)
+	0x7ffa6e416941: ntdll + 0x96941 (LdrGetProcedureAddress + 0x851)
+	0x7ffa6e416941: ntdll + 0x96941 (LdrGetProcedureAddress + 0x851)
+	0x7ffa6e4165e3: ntdll + 0x965e3 (LdrGetProcedureAddress + 0x4f3)
+	0x7ffa6e39472f: ntdll + 0x1472f (LdrUnloadDll + 0x1ef)
+	0x7ffa6bb41118: KERNELBASE + 0x41118 (FreeLibrary + 0x18)
+	0x7ffa474c1fc8: mega_qsysipc_jni_stub + 0x1fc8 (Java_com_altera_qsys_ipc_QsysIPCNativeInterface_nativeShutDownJNIModule + 0x6c8)
+	0x7ffa474c1908: mega_qsysipc_jni_stub + 0x1908 (Java_com_altera_qsys_ipc_QsysIPCNativeInterface_nativeShutDownJNIModule + 0x8)
+	0x1128745d6e0:
+	0x112e7723f2f:
+	       0x5a:
+	0x1128745951f:
+</callstack>
+	<error>*** Fatal Error: Access Violation at 00007FFA4EC11881</error>
+	<date>Fri Apr 24 15:40:14 2026
+</date>
+	<version>Version 25.3.0 Build 109 09/24/2025 SC Pro Edition</version>
+</internal_error>

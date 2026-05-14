@@ -1,0 +1,1281 @@
+Design Assistant report for golden_top
+Tue Apr 28 13:19:04 2026
+Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Signoff) Results - 12 of 73 Rules Failed
+  3. TMC-20012 - Missing Output Delay Constraint
+  4. CDC-50001 - 1-Bit Asynchronous Transfer Not Synchronized
+  5. TMC-20011 - Missing Input Delay Constraint
+  6. CLK-30026 - Missing Clock Assignment
+  7. RES-50001 - Asynchronous Reset Is Not Synchronized
+  8. RES-50002 - Asynchronous Reset is Insufficiently Synchronized
+  9. RES-50003 - Asynchronous Reset with Insufficient Constraints
+ 10. CLK-30030 - PLL Setting Violation
+ 11. TMC-20025 - Ignored or Overridden Constraints
+ 12. CLK-30032 - Improper Clock Targets
+ 13. TMC-20201 - Paths Failing Setup Analysis with High Clock Skew
+ 14. LNT-30010 - Nets Driving both Reset and Clock Enable Signals
+ 15. CDC-50002 - 1-Bit Asynchronous Transfer with Insufficient Constraints
+ 16. CDC-50003 - CE-Type CDC Transfer with Insufficient Constraints
+ 17. CDC-50004 - MUX-type CDC Transfer with Insufficient Constraints
+ 18. CDC-50005 - CDC Bus Constructed with Multi-bit Synchronizer Chains of Different Lengths
+ 19. CDC-50006 - CDC Bus Constructed with Unsynchronized Registers
+ 20. CDC-50007 - CDC Bus Constructed with Multi-bit Synchronizer Chains with Insufficient Constraints
+ 21. CDC-50011 - Combinational Logic Before Synchronizer Chain
+ 22. CDC-50012 - Multiple Clock Domains Driving a Synchronizer Chain
+ 23. CLK-30027 - Multiple Clock Assignments Found
+ 24. CLK-30028 - Invalid Generated Clock
+ 25. CLK-30029 - Invalid Clock Assignments
+ 26. CLK-30033 - Invalid Clock Group Assignment
+ 27. CLK-30034 - Clock Pairs Missing Logically Exclusive Clock Group Assignment
+ 28. CLK-30035 - Clock Pairs Missing Physically Exclusive Clock Group Assignment
+ 29. CLK-30042 - Incorrect Clock Group Type
+ 30. RES-50004 - Multiple Asynchronous Resets within Reset Synchronizer Chain
+ 31. TMC-20013 - Partial Input Delay
+ 32. TMC-20014 - Partial Output Delay
+ 33. TMC-20015 - Inconsistent Min-Max Delay
+ 34. TMC-20016 - Invalid Reference Pin
+ 35. TMC-20017 - Loops Detected
+ 36. TMC-20019 - Partial Multicycle Assignment
+ 37. TMC-20022 - I/O Delay Assignment Missing Parameters
+ 38. TMC-20023 - Invalid Set Net Delay Assignment
+ 39. TMC-20027 - Collection Filter Matching Multiple Types
+ 40. TMC-30041 - Constraint with Invalid Clock Reference
+ 41. CDC-50103 - Unsynchronized Intra-Clock Forced Synchronizer
+ 42. CLK-30031 - Input Delay Assigned to Clock
+ 43. FLP-10000 - Physical RAM with Utilization Below Threshold
+ 44. FLP-10501 - Top-Level Ports Without Pin Location Assignment
+ 45. LNT-30023 - Reset Nets with Polarity Conflict
+ 46. RDC-50003 - Multiple Asynchronous Reset Synchronizers in the Same Clock Domain
+ 47. TMC-20018 - Unsupported Latches Detected
+ 48. TMC-20021 - Partial Min-Max Delay Assignment
+ 49. TMC-20024 - Synchronous Data Delay Assignment
+ 50. TMC-20026 - Empty Collection Due To Unmatched Filter
+ 51. TMC-20200 - Paths Failing Setup Analysis with Impossible Requirements
+ 52. TMC-20206 - DSP Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis
+ 53. TMC-20207 - DSP Blocks with Unregistered Inputs that are the Destination of Paths Failing Setup Analysis
+ 54. TMC-20208 - RAM Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis
+ 55. TMC-20209 - Paths Failing Setup Analysis with High Routing Delay due to Congestion
+ 56. TMC-20210 - Paths Failing Setup Analysis with High Routing Delay Added for Hold
+ 57. TMC-20212 - Paths Failing Setup Analysis with Global Routing in Data Path
+ 58. TMC-20213 - Paths Failing Setup Analysis with Locally Routed Clock
+ 59. TMC-20214 - Buses with Incoming Paths Failing Setup Analysis with Multiple Sequential Adder Chains
+ 60. TMC-20215 - Buses with Incoming Paths Failing Setup Analysis with Multipliers Implemented in Logic
+ 61. TMC-20216 - Paths Failing Setup Analysis with Inferred-RAM Shift Register Endpoints
+ 62. TMC-20217 - Paths Failing Setup Analysis with Clock-As-Data
+ 63. CDC-50008 - CDC Bus Constructed with Multi-bit Synchronizer Chains
+ 64. CDC-50101 - Intra-Clock False Path Synchronizer
+ 65. CDC-50102 - Synchronizer after CDC Topology with Control Signal
+ 66. RES-50010 - Reset Synchronizer Chains with Constant Output
+ 67. RES-50101 - Intra-Clock False Path Reset Synchronizer
+ 68. TMC-20020 - Invalid Multicycle Assignment
+ 69. TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint
+ 70. TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication
+ 71. TMC-20552 - User Selected Duplication Candidate was Rejected
+ 72. TMC-20601 - Registers with High Immediate Fan-Out Tension
+ 73. TMC-20602 - Registers with High Timing Path Endpoint Tension
+ 74. TMC-20603 - Registers with High Immediate Fan-Out Span
+ 75. TMC-20604 - Registers with High Timing Path Endpoint Span
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant (Signoff) Results - 12 of 73 Rules Failed                                                                                                                                 ;
++----------------------------------------------------------------------------------------------------------+----------+------------+--------+------------------------------------------------+
+; Rule                                                                                                     ; Severity ; Violations ; Waived ; Tags                                           ;
++----------------------------------------------------------------------------------------------------------+----------+------------+--------+------------------------------------------------+
+; TMC-20012 - Missing Output Delay Constraint                                                              ; High     ; 136        ; 0      ; sdc, system                                    ;
+; CDC-50001 - 1-Bit Asynchronous Transfer Not Synchronized                                                 ; High     ; 122        ; 0      ; synchronizer                                   ;
+; TMC-20011 - Missing Input Delay Constraint                                                               ; High     ; 42         ; 0      ; sdc, system                                    ;
+; CLK-30026 - Missing Clock Assignment                                                                     ; High     ; 14         ; 0      ; sdc                                            ;
+; RES-50001 - Asynchronous Reset Is Not Synchronized                                                       ; High     ; 5          ; 0      ; synchronizer                                   ;
+; RES-50002 - Asynchronous Reset is Insufficiently Synchronized                                            ; High     ; 5          ; 0      ; synchronizer                                   ;
+; RES-50003 - Asynchronous Reset with Insufficient Constraints                                             ; High     ; 5          ; 0      ; synchronizer                                   ;
+; CLK-30030 - PLL Setting Violation                                                                        ; High     ; 1          ; 0      ; sdc                                            ;
+; TMC-20025 - Ignored or Overridden Constraints                                                            ; Medium   ; 5          ; 0      ; sdc                                            ;
+; CLK-30032 - Improper Clock Targets                                                                       ; Medium   ; 1          ; 0      ; sdc                                            ;
+; TMC-20201 - Paths Failing Setup Analysis with High Clock Skew                                            ; Medium   ; 1          ; 0      ; intrinsic-margin                               ;
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                             ; Low      ; 4          ; 0      ; reset-usage                                    ;
+; CDC-50002 - 1-Bit Asynchronous Transfer with Insufficient Constraints                                    ; High     ; 0          ; 0      ; synchronizer                                   ;
+; CDC-50003 - CE-Type CDC Transfer with Insufficient Constraints                                           ; High     ; 0          ; 0      ; cdc-bus                                        ;
+; CDC-50004 - MUX-type CDC Transfer with Insufficient Constraints                                          ; High     ; 0          ; 0      ; cdc-bus                                        ;
+; CDC-50005 - CDC Bus Constructed with Multi-bit Synchronizer Chains of Different Lengths                  ; High     ; 0          ; 0      ; synchronizer, cdc-bus                          ;
+; CDC-50006 - CDC Bus Constructed with Unsynchronized Registers                                            ; High     ; 0          ; 0      ; synchronizer, cdc-bus                          ;
+; CDC-50007 - CDC Bus Constructed with Multi-bit Synchronizer Chains with Insufficient Constraints         ; High     ; 0          ; 0      ; synchronizer, cdc-bus                          ;
+; CDC-50011 - Combinational Logic Before Synchronizer Chain                                                ; High     ; 0          ; 0      ; synchronizer                                   ;
+; CDC-50012 - Multiple Clock Domains Driving a Synchronizer Chain                                          ; High     ; 0          ; 0      ; synchronizer                                   ;
+; CLK-30027 - Multiple Clock Assignments Found                                                             ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30028 - Invalid Generated Clock                                                                      ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30029 - Invalid Clock Assignments                                                                    ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30033 - Invalid Clock Group Assignment                                                               ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30034 - Clock Pairs Missing Logically Exclusive Clock Group Assignment                               ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30035 - Clock Pairs Missing Physically Exclusive Clock Group Assignment                              ; High     ; 0          ; 0      ; sdc                                            ;
+; CLK-30042 - Incorrect Clock Group Type                                                                   ; High     ; 0          ; 0      ; sdc                                            ;
+; RES-50004 - Multiple Asynchronous Resets within Reset Synchronizer Chain                                 ; High     ; 0          ; 0      ; synchronizer                                   ;
+; TMC-20013 - Partial Input Delay                                                                          ; High     ; 0          ; 0      ; sdc, system                                    ;
+; TMC-20014 - Partial Output Delay                                                                         ; High     ; 0          ; 0      ; sdc, system                                    ;
+; TMC-20015 - Inconsistent Min-Max Delay                                                                   ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-20016 - Invalid Reference Pin                                                                        ; High     ; 0          ; 0      ; sdc, system                                    ;
+; TMC-20017 - Loops Detected                                                                               ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-20019 - Partial Multicycle Assignment                                                                ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-20022 - I/O Delay Assignment Missing Parameters                                                      ; High     ; 0          ; 0      ; sdc, system                                    ;
+; TMC-20023 - Invalid Set Net Delay Assignment                                                             ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-20027 - Collection Filter Matching Multiple Types                                                    ; High     ; 0          ; 0      ; sdc                                            ;
+; TMC-30041 - Constraint with Invalid Clock Reference                                                      ; High     ; 0          ; 0      ; sdc                                            ;
+; CDC-50103 - Unsynchronized Intra-Clock Forced Synchronizer                                               ; Medium   ; 0          ; 0      ; synchronizer                                   ;
+; CLK-30031 - Input Delay Assigned to Clock                                                                ; Medium   ; 0          ; 0      ; sdc, system                                    ;
+; FLP-10000 - Physical RAM with Utilization Below Threshold                                                ; Medium   ; 0          ; 0      ; ram, resource-usage                            ;
+; FLP-10501 - Top-Level Ports Without Pin Location Assignment                                              ; Medium   ; 0          ; 0      ; system                                         ;
+; LNT-30023 - Reset Nets with Polarity Conflict                                                            ; Medium   ; 0          ; 0      ; reset-usage                                    ;
+; RDC-50003 - Multiple Asynchronous Reset Synchronizers in the Same Clock Domain                           ; Medium   ; 0          ; 0      ; reset-usage, reset-reachability                ;
+; TMC-20018 - Unsupported Latches Detected                                                                 ; Medium   ; 0          ; 0      ; latch                                          ;
+; TMC-20021 - Partial Min-Max Delay Assignment                                                             ; Medium   ; 0          ; 0      ; sdc                                            ;
+; TMC-20024 - Synchronous Data Delay Assignment                                                            ; Medium   ; 0          ; 0      ; sdc                                            ;
+; TMC-20026 - Empty Collection Due To Unmatched Filter                                                     ; Medium   ; 0          ; 0      ; sdc                                            ;
+; TMC-20200 - Paths Failing Setup Analysis with Impossible Requirements                                    ; Medium   ; 0          ; 0      ; intrinsic-margin, impossible-requirements, sdc ;
+; TMC-20206 - DSP Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis     ; Medium   ; 0          ; 0      ; dsp                                            ;
+; TMC-20207 - DSP Blocks with Unregistered Inputs that are the Destination of Paths Failing Setup Analysis ; Medium   ; 0          ; 0      ; dsp                                            ;
+; TMC-20208 - RAM Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis     ; Medium   ; 0          ; 0      ; ram                                            ;
+; TMC-20209 - Paths Failing Setup Analysis with High Routing Delay due to Congestion                       ; Medium   ; 0          ; 0      ; route                                          ;
+; TMC-20210 - Paths Failing Setup Analysis with High Routing Delay Added for Hold                          ; Medium   ; 0          ; 0      ; route                                          ;
+; TMC-20212 - Paths Failing Setup Analysis with Global Routing in Data Path                                ; Medium   ; 0          ; 0      ; global-signal, route                           ;
+; TMC-20213 - Paths Failing Setup Analysis with Locally Routed Clock                                       ; Medium   ; 0          ; 0      ; global-signal, clock-skew                      ;
+; TMC-20214 - Buses with Incoming Paths Failing Setup Analysis with Multiple Sequential Adder Chains       ; Medium   ; 0          ; 0      ; logic-levels                                   ;
+; TMC-20215 - Buses with Incoming Paths Failing Setup Analysis with Multipliers Implemented in Logic       ; Medium   ; 0          ; 0      ; logic-levels, dsp                              ;
+; TMC-20216 - Paths Failing Setup Analysis with Inferred-RAM Shift Register Endpoints                      ; Medium   ; 0          ; 0      ; ram                                            ;
+; TMC-20217 - Paths Failing Setup Analysis with Clock-As-Data                                              ; Medium   ; 0          ; 0      ; nonstandard-timing                             ;
+; CDC-50008 - CDC Bus Constructed with Multi-bit Synchronizer Chains                                       ; Low      ; 0          ; 0      ; synchronizer, cdc-bus                          ;
+; CDC-50101 - Intra-Clock False Path Synchronizer                                                          ; Low      ; 0          ; 0      ; synchronizer, false-positive-synchronizer      ;
+; CDC-50102 - Synchronizer after CDC Topology with Control Signal                                          ; Low      ; 0          ; 0      ; synchronizer, false-positive-synchronizer      ;
+; RES-50010 - Reset Synchronizer Chains with Constant Output                                               ; Low      ; 0          ; 0      ; synchronizer                                   ;
+; RES-50101 - Intra-Clock False Path Reset Synchronizer                                                    ; Low      ; 0          ; 0      ; synchronizer, false-positive-synchronizer      ;
+; TMC-20020 - Invalid Multicycle Assignment                                                                ; Low      ; 0          ; 0      ; sdc                                            ;
+; TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint               ; Low      ; 0          ; 0      ; register-duplication, place                    ;
+; TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication                ; Low      ; 0          ; 0      ; register-duplication, place                    ;
+; TMC-20552 - User Selected Duplication Candidate was Rejected                                             ; Low      ; 0          ; 0      ; register-duplication, place                    ;
+; TMC-20601 - Registers with High Immediate Fan-Out Tension                                                ; Low      ; 0          ; 0      ; register-duplication, register-spread, place   ;
+; TMC-20602 - Registers with High Timing Path Endpoint Tension                                             ; Low      ; 0          ; 0      ; register-duplication, register-spread, place   ;
+; TMC-20603 - Registers with High Immediate Fan-Out Span                                                   ; Low      ; 0          ; 0      ; register-duplication, register-spread, place   ;
+; TMC-20604 - Registers with High Timing Path Endpoint Span                                                ; Low      ; 0          ; 0      ; register-duplication, register-spread, place   ;
++----------------------------------------------------------------------------------------------------------+----------+------------+--------+------------------------------------------------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	136
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------------------------------+
+; TMC-20012 - Missing Output Delay Constraint                          ;
++---------------+---------------------------------------------+--------+
+; Port          ; Reason                                      ; Waived ;
++---------------+---------------------------------------------+--------+
+; LEDR[0]       ; No output delay was set on the output port. ;        ;
+; HEX0[4]       ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[4]    ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[5]    ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[6]    ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[7]    ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[8]    ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[9]    ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[10]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[11]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[12]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[13]   ; No output delay was set on the output port. ;        ;
+; HEX0[5]       ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[14]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[15]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[16]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[17]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[18]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[19]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[20]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[21]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[22]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[23]   ; No output delay was set on the output port. ;        ;
+; HEX0[6]       ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[24]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[25]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[26]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[27]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[28]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[29]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[30]   ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[31]   ; No output delay was set on the output port. ;        ;
+; HDMI_LRCLK    ; No output delay was set on the output port. ;        ;
+; HDMI_SCLK     ; No output delay was set on the output port. ;        ;
+; HEX1[0]       ; No output delay was set on the output port. ;        ;
+; FPGA_I2C_SCL  ; No output delay was set on the output port. ;        ;
+; FPGA_I2C_SDA  ; No output delay was set on the output port. ;        ;
+; GPIO_D[24]    ; No output delay was set on the output port. ;        ;
+; GPIO_D[26]    ; No output delay was set on the output port. ;        ;
+; GPIO_D[27]    ; No output delay was set on the output port. ;        ;
+; GPIO_D[30]    ; No output delay was set on the output port. ;        ;
+; GPIO_D[31]    ; No output delay was set on the output port. ;        ;
+; HEX1[1]       ; No output delay was set on the output port. ;        ;
+; HEX1[2]       ; No output delay was set on the output port. ;        ;
+; HEX1[3]       ; No output delay was set on the output port. ;        ;
+; HEX1[4]       ; No output delay was set on the output port. ;        ;
+; HEX1[5]       ; No output delay was set on the output port. ;        ;
+; HEX1[6]       ; No output delay was set on the output port. ;        ;
+; LEDR[1]       ; No output delay was set on the output port. ;        ;
+; HEX2[0]       ; No output delay was set on the output port. ;        ;
+; HEX2[1]       ; No output delay was set on the output port. ;        ;
+; HEX2[2]       ; No output delay was set on the output port. ;        ;
+; HEX2[3]       ; No output delay was set on the output port. ;        ;
+; HEX2[4]       ; No output delay was set on the output port. ;        ;
+; HEX2[5]       ; No output delay was set on the output port. ;        ;
+; HEX2[6]       ; No output delay was set on the output port. ;        ;
+; HEX3[0]       ; No output delay was set on the output port. ;        ;
+; HEX3[1]       ; No output delay was set on the output port. ;        ;
+; HEX3[2]       ; No output delay was set on the output port. ;        ;
+; LEDR[2]       ; No output delay was set on the output port. ;        ;
+; HEX3[3]       ; No output delay was set on the output port. ;        ;
+; HEX3[4]       ; No output delay was set on the output port. ;        ;
+; HEX3[5]       ; No output delay was set on the output port. ;        ;
+; HEX3[6]       ; No output delay was set on the output port. ;        ;
+; HEX4[0]       ; No output delay was set on the output port. ;        ;
+; HEX4[1]       ; No output delay was set on the output port. ;        ;
+; HEX4[2]       ; No output delay was set on the output port. ;        ;
+; HEX4[3]       ; No output delay was set on the output port. ;        ;
+; HEX4[4]       ; No output delay was set on the output port. ;        ;
+; HEX4[5]       ; No output delay was set on the output port. ;        ;
+; LEDR[3]       ; No output delay was set on the output port. ;        ;
+; HEX4[6]       ; No output delay was set on the output port. ;        ;
+; HEX5[0]       ; No output delay was set on the output port. ;        ;
+; HEX5[1]       ; No output delay was set on the output port. ;        ;
+; HEX5[2]       ; No output delay was set on the output port. ;        ;
+; HEX5[3]       ; No output delay was set on the output port. ;        ;
+; HEX5[4]       ; No output delay was set on the output port. ;        ;
+; HEX5[5]       ; No output delay was set on the output port. ;        ;
+; HEX5[6]       ; No output delay was set on the output port. ;        ;
+; DRAM_CKE      ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[0]  ; No output delay was set on the output port. ;        ;
+; LEDR[4]       ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[1]  ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[2]  ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[3]  ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[4]  ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[5]  ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[6]  ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[7]  ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[8]  ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[9]  ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[10] ; No output delay was set on the output port. ;        ;
+; HEX0[0]       ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[11] ; No output delay was set on the output port. ;        ;
+; DRAM_ADDR[12] ; No output delay was set on the output port. ;        ;
+; DRAM_BA[0]    ; No output delay was set on the output port. ;        ;
+; DRAM_BA[1]    ; No output delay was set on the output port. ;        ;
+; DRAM_CS_n     ; No output delay was set on the output port. ;        ;
+; DRAM_WE_n     ; No output delay was set on the output port. ;        ;
+; DRAM_CAS_n    ; No output delay was set on the output port. ;        ;
+; DRAM_RAS_n    ; No output delay was set on the output port. ;        ;
+; HDMI_TX_HS    ; No output delay was set on the output port. ;        ;
+; HDMI_TX_VS    ; No output delay was set on the output port. ;        ;
+; HEX0[1]       ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[0]  ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[1]  ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[2]  ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[3]  ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[4]  ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[5]  ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[6]  ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[7]  ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[8]  ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[9]  ; No output delay was set on the output port. ;        ;
+; HEX0[2]       ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[10] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[11] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[12] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[13] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[14] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[15] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[16] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[17] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[18] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[19] ; No output delay was set on the output port. ;        ;
+; HEX0[3]       ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[20] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[21] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[22] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_D[23] ; No output delay was set on the output port. ;        ;
+; HDMI_TX_DE    ; No output delay was set on the output port. ;        ;
+; FPGA_UART_TX  ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[0]    ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[1]    ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[2]    ; No output delay was set on the output port. ;        ;
+; DRAM_DQ[3]    ; No output delay was set on the output port. ;        ;
++---------------+---------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	122
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CDC-50001 - 1-Bit Asynchronous Transfer Not Synchronized                                                                                                                                                                                                                         ;
++-------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------------------+---------------------------------+-----------------------+--------+
+; From                                                                                                                                ; To                             ; From Clock                             ; To Clock                        ; Reason                ; Waived ;
++-------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------------------+---------------------------------+-----------------------+--------+
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_b[0] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_b[1] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_b[2] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_b[3] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_b[4] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_b[5] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_b[6] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_b[7] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_g[0] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_g[1] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_g[2] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_g[3] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_g[4] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_g[5] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_g[6] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_g[7] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_r[0] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_r[1] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_r[2] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_r[3] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_r[4] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_r[5] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_r[6] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg           ; u_vpg|u_vga_generator|vga_r[7] ; internal_clk   internal_clk (INVERTED) ; u_VEDIO_PLL|iopll_0_outclk0     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[22]   camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]                    ; camera|adl|pp|STEP_UP[7]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[25]   camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[26]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[25]   camera|adj|PULSE[27]   camera|adj|PULSE[29]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[22]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[25]   camera|adj|PULSE[27]   camera|adj|PULSE[29]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[4]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[25]   camera|adj|PULSE[27]   camera|adj|PULSE[29]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[5]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[25]   camera|adj|PULSE[27]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[11]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[25]   camera|adj|PULSE[31]   camera|adj|PULSE[15]   camera|adj|PULSE[16]~DUPLICATE                                 ; camera|adl|pp|peakSUM[1]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[26]   camera|adj|PULSE[21]   camera|adj|PULSE[23]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[17]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|STEP_UP[0]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|STEP_UP[1]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|STEP_UP[2]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|STEP_UP[3]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|STEP_UP[4]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|STEP_UP[6]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|STEP_UP[8]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|peakSUM[20]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|peakSUM[21]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[15]                    ; camera|adl|pp|peakSUM[8]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[29]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                    ; camera|adl|pp|STEP_UP[5]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[0]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[10]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[12]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[13]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[14]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[15]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[16]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[18]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[23]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[24]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[25]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[27]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[28]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[29]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[2]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[30]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[31]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[3]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[6]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[7]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[27]   camera|adj|PULSE[28]   camera|adj|PULSE[30]   camera|adj|PULSE[31]                                           ; camera|adl|pp|peakSUM[9]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[31]   camera|adj|PULSE[13]   camera|adj|PULSE[14]   camera|adj|PULSE[15]   camera|adj|PULSE[16]~DUPLICATE          ; camera|adl|pp|STEP_UP[9]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|adj|PULSE[31]   camera|adj|PULSE[13]   camera|adj|PULSE[14]   camera|adj|PULSE[15]   camera|adj|PULSE[16]~DUPLICATE          ; camera|adl|pp|peakSUM[19]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; camera|ccd|u3|X_Cont[15]   camera|ccd|u3|X_Cont[9]   camera|ccd|u3|X_Cont[8]   camera|ccd|u3|X_Cont[6]   camera|ccd|u3|X_Cont[13]   ; sdram_ctrl|refresh_req         ; GPIO_Din[1]                            ; pll_sdram|iopll_0_outclk0       ; Asynchronous transfer ;        ;
+; camera|ccd|u3|X_Cont[6]   camera|ccd|u3|X_Cont[11]   camera|ccd|u3|X_Cont[12]   camera|ccd|u3|X_Cont[13]   camera|ccd|u3|X_Cont[14] ; sdram_ctrl|start_refresh_prev  ; GPIO_Din[1]                            ; pll_sdram|iopll_0_outclk0       ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[4]   camera|ccd|u3|Y_Cont[1]   camera|ccd|u3|Y_Cont[0]   camera|ccd|u3|Y_Cont[2]   camera|ccd|u3|Y_Cont[13]    ; camera|uFps2|pre_vs            ; GPIO_Din[1]                            ; camera|mipi_rclk|iopll_0_refclk ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[4]   camera|ccd|u3|Y_Cont[1]   camera|ccd|u3|Y_Cont[0]   camera|ccd|u3|Y_Cont[2]   camera|ccd|u3|Y_Cont[13]    ; camera|uFps2|rfps_h[0]         ; GPIO_Din[1]                            ; camera|mipi_rclk|iopll_0_refclk ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[4]   camera|ccd|u3|Y_Cont[1]   camera|ccd|u3|Y_Cont[0]   camera|ccd|u3|Y_Cont[2]   camera|ccd|u3|Y_Cont[13]    ; camera|uFps2|rfps_h[1]         ; GPIO_Din[1]                            ; camera|mipi_rclk|iopll_0_refclk ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[4]   camera|ccd|u3|Y_Cont[1]   camera|ccd|u3|Y_Cont[0]   camera|ccd|u3|Y_Cont[2]   camera|ccd|u3|Y_Cont[13]    ; camera|uFps2|rfps_h[2]         ; GPIO_Din[1]                            ; camera|mipi_rclk|iopll_0_refclk ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[4]   camera|ccd|u3|Y_Cont[1]   camera|ccd|u3|Y_Cont[0]   camera|ccd|u3|Y_Cont[2]   camera|ccd|u3|Y_Cont[13]    ; camera|uFps2|rfps_h[3]         ; GPIO_Din[1]                            ; camera|mipi_rclk|iopll_0_refclk ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[4]   camera|ccd|u3|Y_Cont[1]   camera|ccd|u3|Y_Cont[0]   camera|ccd|u3|Y_Cont[2]   camera|ccd|u3|Y_Cont[13]    ; camera|uFps2|rfps_l[2]         ; GPIO_Din[1]                            ; camera|mipi_rclk|iopll_0_refclk ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[4]   camera|ccd|u3|Y_Cont[1]   camera|ccd|u3|Y_Cont[0]   camera|ccd|u3|Y_Cont[2]   camera|ccd|u3|Y_Cont[13]    ; camera|uFps2|rfps_l[3]         ; GPIO_Din[1]                            ; camera|mipi_rclk|iopll_0_refclk ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[4]   camera|ccd|u3|Y_Cont[1]   camera|ccd|u3|Y_Cont[0]   camera|ccd|u3|Y_Cont[2]   camera|ccd|u3|Y_Cont[13]    ; sdram_manager|vsynch_sr[0]     ; GPIO_Din[1]                            ; pll_sdram|iopll_0_outclk0       ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[5]   camera|ccd|u3|Y_Cont[9]   camera|ccd|u3|Y_Cont[6]   camera|ccd|u3|Y_Cont[8]   camera|ccd|u3|Y_Cont[7]     ; camera|uFps2|rfps_l[0]         ; GPIO_Din[1]                            ; camera|mipi_rclk|iopll_0_refclk ; Asynchronous transfer ;        ;
+; camera|ccd|u3|Y_Cont[5]   camera|ccd|u3|Y_Cont[9]   camera|ccd|u3|Y_Cont[6]   camera|ccd|u3|Y_Cont[8]   camera|ccd|u3|Y_Cont[7]     ; camera|uFps2|rfps_l[1]         ; GPIO_Din[1]                            ; camera|mipi_rclk|iopll_0_refclk ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[0]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[10]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[11]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[12]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[13]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[14]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[15]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[1]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[2]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[3]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[4]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[5]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[6]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[7]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[8]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_Cont[9]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[0]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[10]     ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[11]     ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[1]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[2]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[3]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[4]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[5]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[6]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[7]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[8]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|X_WR_CNT[9]      ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[0]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[10]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[11]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[12]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[13]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[14]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[15]       ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[1]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[2]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[3]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[4]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[5]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[6]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[7]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[8]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
+; u2|oREADY                                                                                                                           ; camera|ccd|u3|Y_Cont[9]        ; camera|mipi_rclk|iopll_0_refclk        ; GPIO_Din[1]                     ; Asynchronous transfer ;        ;
++-------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------------------+---------------------------------+-----------------------+--------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	42
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------------------+
+; TMC-20011 - Missing Input Delay Constraint                        ;
++--------------+-------------------------------------------+--------+
+; Port         ; Reason                                    ; Waived ;
++--------------+-------------------------------------------+--------+
+; DRAM_DQ[0]   ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[9]   ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[10]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[11]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[12]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[13]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[14]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[15]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[16]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[17]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[18]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[1]   ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[19]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[20]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[21]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[22]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[23]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[24]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[25]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[26]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[27]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[28]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[2]   ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[29]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[30]  ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[31]  ; No input delay was set on the input port. ;        ;
+; FPGA_I2C_SDA ; No input delay was set on the input port. ;        ;
+; GPIO_D[20]   ; No input delay was set on the input port. ;        ;
+; GPIO_D[27]   ; No input delay was set on the input port. ;        ;
+; GPIO_D[31]   ; No input delay was set on the input port. ;        ;
+; SW[7]        ; No input delay was set on the input port. ;        ;
+; FPGA_UART_RX ; No input delay was set on the input port. ;        ;
+; KEY[3]       ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[3]   ; No input delay was set on the input port. ;        ;
+; SW[3]        ; No input delay was set on the input port. ;        ;
+; HDMI_TX_INT  ; No input delay was set on the input port. ;        ;
+; KEY[2]       ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[4]   ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[5]   ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[6]   ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[7]   ; No input delay was set on the input port. ;        ;
+; DRAM_DQ[8]   ; No input delay was set on the input port. ;        ;
++--------------+-------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	14
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; CLK-30026 - Missing Clock Assignment                                                                                                      ;
++---------------------------------+------------------------------------------------------------------------------------------------+--------+
+; Clock                           ; Reason                                                                                         ; Waived ;
++---------------------------------+------------------------------------------------------------------------------------------------+--------+
+; u_I2C_HDMI_Config|mI2C_CTRL_CLK ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; u2|oREADY                       ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; camera|ccd|u3|Y_Cont[0]         ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; camera|adl|i2c|READY            ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; camera|adl|RE|vs|MS             ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; rx_div|clk_out                  ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; tx_div|clk_out                  ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; camera|adl|i2c2|c1|CK_1HZ       ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; camera|cfin|camiv|c1|CK_1HZ     ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; u_AUDIO_DAC|LRCK_1X             ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; altera_reserved_tck             ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; camera|cfin|mpiv|c1|CK_1HZ      ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; camera|adl|pp|f|V_C             ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
+; GPIO_D[22]                      ; Node was determined to feed a clock port but was found without an associated clock assignment. ;        ;
++---------------------------------+------------------------------------------------------------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	5
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; RES-50001 - Asynchronous Reset Is Not Synchronized                                                                                                                                                                                                                                                                   ;
++------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+---------------------------------+---------------------------------+------------------------------------+--------+
+; Reset Source                                                                                                                       ; Reset Source Clock                                            ; Register Clock                  ; Number of Registers Being Reset ; Sample Register Being Reset        ; Waived ;
++------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+---------------------------------+---------------------------------+------------------------------------+--------+
+; KEY[3]                                                                                                                             ; Unconstrained domain                                          ; camera|mipi_rclk|iopll_0_refclk ; 36                              ; u2|oREADY                          ;        ;
+; KEY[3]                                                                                                                             ; Unconstrained domain                                          ; pll_sdram|iopll_0_outclk0       ; 319                             ; sdram_manager|read_addr[10]        ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg          ; internal_clk   internal_clk (INVERTED)                        ; u_VEDIO_PLL|iopll_0_outclk0     ; 42                              ; u_vpg|u_vga_generator|h_count[5]   ;        ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|configresetfabric|conf_reset_src|ag.sdm_gpo_out_user_reset~internal_ctrl_clock.reg   KEY[3] ; Unconstrained domain   internal_clk   internal_clk (INVERTED) ; camera|mipi_rclk|iopll_0_refclk ; 20                              ; u_I2C_HDMI_Config|mI2C_CLK_DIV[11] ;        ;
+; u2|oREADY                                                                                                                          ; camera|mipi_rclk|iopll_0_refclk                               ; GPIO_Din[1]                     ; 46                              ; camera|ccd|u3|X_Cont[15]           ;        ;
++------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+---------------------------------+---------------------------------+------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	5
+Rule Parameters:      	max_violations = 500
++---------------------------------------------------------------------------------------------------------------------------------+
+; RES-50002 - Asynchronous Reset is Insufficiently Synchronized                                                                   ;
++--------+------------------------------------+----------------------+---------------------------+-----------------------+--------+
+; From   ; To                                 ; From Clock           ; To Clock                  ; Reason                ; Waived ;
++--------+------------------------------------+----------------------+---------------------------+-----------------------+--------+
+; KEY[3] ; uart_manager|rxnew_prev            ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
+; KEY[3] ; sdram_ctrl|state.S_INIT            ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
+; KEY[3] ; uart_manager|txdone_prev           ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
+; KEY[3] ; uart_manager|rxnew_prev~DUPLICATE  ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
+; KEY[3] ; uart_manager|txdone_prev~DUPLICATE ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
++--------+------------------------------------+----------------------+---------------------------+-----------------------+--------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	5
+Rule Parameters:      	max_violations = 500
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; RES-50003 - Asynchronous Reset with Insufficient Constraints                                                                                                                       ;
++------------------------------------+----------------------+------------------------------------+----------------------+---------------------------+-----------------------+--------+
+; Unconstrained Chain Registers      ; Leading Reset Source ; Reset Chain Head                   ; From Clock           ; To Clock                  ; Reason                ; Waived ;
++------------------------------------+----------------------+------------------------------------+----------------------+---------------------------+-----------------------+--------+
+; uart_manager|rxnew_prev            ; KEY[3]               ; uart_manager|rxnew_prev            ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
+; sdram_ctrl|state.S_INIT            ; KEY[3]               ; sdram_ctrl|state.S_INIT            ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
+; uart_manager|txdone_prev           ; KEY[3]               ; uart_manager|txdone_prev           ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
+; uart_manager|rxnew_prev~DUPLICATE  ; KEY[3]               ; uart_manager|rxnew_prev~DUPLICATE  ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
+; uart_manager|txdone_prev~DUPLICATE ; KEY[3]               ; uart_manager|txdone_prev~DUPLICATE ; Unconstrained domain ; pll_sdram|iopll_0_outclk0 ; Asynchronous transfer ;        ;
++------------------------------------+----------------------+------------------------------------+----------------------+---------------------------+-----------------------+--------+
+
+
+Status:		FAIL
+Severity:		High
+Number of violations: 	1
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------------------------------------------------------------------------+
+; CLK-30030 - PLL Setting Violation                                                                                              ;
++-----------+-----------------------------------------------------------------------------------------------------------+--------+
+; Node      ; Reason                                                                                                    ; Waived ;
++-----------+-----------------------------------------------------------------------------------------------------------+--------+
+; CLOCK1_50 ; Clock has a frequency 20.000 MHz set in SDC that may conflict with the official PLL setting of 50.000 MHz ;        ;
++-----------+-----------------------------------------------------------------------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	5
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; TMC-20025 - Ignored or Overridden Constraints                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------------------------+--------+
+; Ignored Constraint                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ; Location                       ; Reason                                                                                                ; Waived ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------------------------+--------+
+; set_false_path -to [get_keepers {*sld_synchronizer_no_reset:*|din_s1}]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ; sld_synchronizer_no_reset.v:45 ; Exception is invalid (covers no paths)                                                                ;        ;
+; set_false_path -from [remove_from_collection [get_fanouts -synch -asynch -clock [get_pins {u_VEDIO_PLL|iopll_0|tennm_ph2_iopll|out_clk[0]}]] [remove_from_collection [get_fanouts -synch -asynch -clock [get_pins {u_VEDIO_PLL|iopll_0|tennm_ph2_iopll|out_clk[0]}]] [get_registers -no_duplicates {auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|*|*}]]] -to [remove_from_collection [get_fanouts -synch -asynch -clock [get_keepers {altera_reserved_tck}]] [remove_from_collection [get_fanouts -synch -asynch -clock [get_keepers {altera_reserved_tck}]] [get_registers -no_duplicates {auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|*|*}]]] ; intel_signal_tap.sdc:251       ; Exception is invalid (covers no paths)                                                                ;        ;
+; set_false_path -from [remove_from_collection [get_fanouts -synch -asynch -clock [get_keepers {altera_reserved_tck}]] [remove_from_collection [get_fanouts -synch -asynch -clock [get_keepers {altera_reserved_tck}]] [get_registers -no_duplicates {auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|*|*}]]] -to [remove_from_collection [get_fanouts -synch -asynch -clock [get_pins {u_VEDIO_PLL|iopll_0|tennm_ph2_iopll|out_clk[0]}]] [remove_from_collection [get_fanouts -synch -asynch -clock [get_pins {u_VEDIO_PLL|iopll_0|tennm_ph2_iopll|out_clk[0]}]] [get_registers -no_duplicates {auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|*|*}]]] ; intel_signal_tap.sdc:252       ; Exception is invalid (covers no paths)                                                                ;        ;
+; set_max_delay -from [get_registers {auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|intel_stp_status_bits_cdc_u1|stp_status_bits_in_reg_acq[*]}] -to [get_registers {auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|intel_stp_status_bits_cdc_u1|stp_status_bits_out_reg_tck[*]}] 30.000                                                                                                                                                                                                                                                                                                                          ; intel_signal_tap.sdc:96        ; Exception is invalid (covers no paths)                                                                ;        ;
+; create_clock -name {CLOCK0_50} -period 50.000 -waveform { 0.000 25.000 } [get_ports {CLOCK0_50}]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; golden_top.sdc:10              ; Assignment contains errors and will not be analyzed. Verify that the assignment is entered correctly. ;        ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	1
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------------------------------------------+
+; CLK-30032 - Improper Clock Targets                                                        ;
++-------------------------+------------------------------------+-------------------+--------+
+; Assignment              ; Reason                             ; Location          ; Waived ;
++-------------------------+------------------------------------+-------------------+--------+
+; [get_ports {CLOCK0_50}] ; Target already has clock assigned. ; golden_top.sdc:10 ;        ;
++-------------------------+------------------------------------+-------------------+--------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	1
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; TMC-20201 - Paths Failing Setup Analysis with High Clock Skew                                                                                                                                                                                ;
++--------+-----------------------------+----------------------------------------------------------------------------------------------------------------+------------------+------------+-----------------------+---------------------+--------+
+; Slack  ; From Node                   ; To Node                                                                                                        ; Intrinsic Margin ; Clock Skew ; Clock-Skew-Only Slack ; Worst-Case Corner   ; Waived ;
++--------+-----------------------------+----------------------------------------------------------------------------------------------------------------+------------------+------------+-----------------------+---------------------+--------+
+; -0.325 ; sdram_manager|read_trans[7] ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[126] ; 9.174            ; -9.184     ; -0.01                 ; Slow fix6a 0C Model ;        ;
++--------+-----------------------------+----------------------------------------------------------------------------------------------------------------+------------------+------------+-----------------------+---------------------+--------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	4
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                                                                                                                                                                                                                         ;
++----------------------------+---------------------------------------------------------------------------------------+--------------------------+-------------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+; Driver                     ; Asynchronous Reset Signal                                                             ; Synchronous Reset Signal ; Clock Enable Signal           ; Number of Asynchronous Reset Signals ; Number of Synchronous Reset Signals ; Number of Clock Enable Signals ; Waived ;
++----------------------------+---------------------------------------------------------------------------------------+--------------------------+-------------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+; KEY[3]~input               ; uart_manager|control_regs_rtl_0|auto_generated|altera_syncram_impl1|ram_block2a0|CLRN ; --                       ; sdram_ctrl|sdram_ba[0]|ENA    ; 407                                  ; 0                                   ; 5                              ;        ;
+; camera|cfin|mpiv|DY|READY  ; camera|cfin|mpiv|wrd|CNT[5]|CLRN                                                      ; --                       ; camera|cfin|mpiv|wrd|A[8]|ENA ; 92                                   ; 0                                   ; 7                              ;        ;
+; camera|adl|i2c2|DY|READY   ; camera|adl|i2c2|wrd|CNT[6]|CLRN                                                       ; --                       ; camera|adl|i2c2|wrd|A[4]|ENA  ; 95                                   ; 0                                   ; 4                              ;        ;
+; camera|cfin|camiv|DY|READY ; camera|cfin|camiv|wrd|CNT[4]|CLRN                                                     ; --                       ; camera|cfin|camiv|rd|A[1]|ENA ; 102                                  ; 0                                   ; 3                              ;        ;
++----------------------------+---------------------------------------------------------------------------------------+--------------------------+-------------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------------+
+; CDC-50002 - 1-Bit Asynchronous Transfer with Insufficient Constraints ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++----------------------------------------------------------------+
+; CDC-50003 - CE-Type CDC Transfer with Insufficient Constraints ;
++----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------+
+; CDC-50004 - MUX-type CDC Transfer with Insufficient Constraints ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------------------------------+
+; CDC-50005 - CDC Bus Constructed with Multi-bit Synchronizer Chains of Different Lengths ;
++-----------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++---------------------------------------------------------------+
+; CDC-50006 - CDC Bus Constructed with Unsynchronized Registers ;
++---------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------------------------------+
+; CDC-50007 - CDC Bus Constructed with Multi-bit Synchronizer Chains with Insufficient Constraints ;
++--------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------+
+; CDC-50011 - Combinational Logic Before Synchronizer Chain ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------+
+; CDC-50012 - Multiple Clock Domains Driving a Synchronizer Chain ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------+
+; CLK-30027 - Multiple Clock Assignments Found ;
++----------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------+
+; CLK-30028 - Invalid Generated Clock ;
++-------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++---------------------------------------+
+; CLK-30029 - Invalid Clock Assignments ;
++---------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------+
+; CLK-30033 - Invalid Clock Group Assignment ;
++--------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------------------------------------+
+; CLK-30034 - Clock Pairs Missing Logically Exclusive Clock Group Assignment ;
++----------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------------+
+; CLK-30035 - Clock Pairs Missing Physically Exclusive Clock Group Assignment ;
++-----------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------+
+; CLK-30042 - Incorrect Clock Group Type ;
++----------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------------+
+; RES-50004 - Multiple Asynchronous Resets within Reset Synchronizer Chain ;
++--------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++---------------------------------+
+; TMC-20013 - Partial Input Delay ;
++---------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------+
+; TMC-20014 - Partial Output Delay ;
++----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------+
+; TMC-20015 - Inconsistent Min-Max Delay ;
++----------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------+
+; TMC-20016 - Invalid Reference Pin ;
++-----------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------+
+; TMC-20017 - Loops Detected ;
++----------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------+
+; TMC-20019 - Partial Multicycle Assignment ;
++-------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------+
+; TMC-20022 - I/O Delay Assignment Missing Parameters ;
++-----------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------+
+; TMC-20023 - Invalid Set Net Delay Assignment ;
++----------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------+
+; TMC-20027 - Collection Filter Matching Multiple Types ;
++-------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------+
+; TMC-30041 - Constraint with Invalid Clock Reference ;
++-----------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------------+
+; CDC-50103 - Unsynchronized Intra-Clock Forced Synchronizer ;
++------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------+
+; CLK-30031 - Input Delay Assigned to Clock ;
++-------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		device_ram_occupation = 80
+		low_utilization = 10
++-----------------------------------------------------------+
+; FLP-10000 - Physical RAM with Utilization Below Threshold ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------------+
+; FLP-10501 - Top-Level Ports Without Pin Location Assignment ;
++-------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------+
+; LNT-30023 - Reset Nets with Polarity Conflict ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------------------------+
+; RDC-50003 - Multiple Asynchronous Reset Synchronizers in the Same Clock Domain ;
++--------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------+
+; TMC-20018 - Unsupported Latches Detected ;
++------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++----------------------------------------------+
+; TMC-20021 - Partial Min-Max Delay Assignment ;
++----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------+
+; TMC-20024 - Synchronous Data Delay Assignment ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------+
+; TMC-20026 - Empty Collection Due To Unmatched Filter ;
++------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++-----------------------------------------------------------------------+
+; TMC-20200 - Paths Failing Setup Analysis with Impossible Requirements ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++------------------------------------------------------------------------------------------------------+
+; TMC-20206 - DSP Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis ;
++------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++----------------------------------------------------------------------------------------------------------+
+; TMC-20207 - DSP Blocks with Unregistered Inputs that are the Destination of Paths Failing Setup Analysis ;
++----------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++------------------------------------------------------------------------------------------------------+
+; TMC-20208 - RAM Blocks with Unregistered Outputs that are the Source of Paths Failing Setup Analysis ;
++------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++------------------------------------------------------------------------------------+
+; TMC-20209 - Paths Failing Setup Analysis with High Routing Delay due to Congestion ;
++------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++---------------------------------------------------------------------------------+
+; TMC-20210 - Paths Failing Setup Analysis with High Routing Delay Added for Hold ;
++---------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++---------------------------------------------------------------------------+
+; TMC-20212 - Paths Failing Setup Analysis with Global Routing in Data Path ;
++---------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++--------------------------------------------------------------------+
+; TMC-20213 - Paths Failing Setup Analysis with Locally Routed Clock ;
++--------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
+		minimum_number_of_adders = 3
++----------------------------------------------------------------------------------------------------+
+; TMC-20214 - Buses with Incoming Paths Failing Setup Analysis with Multiple Sequential Adder Chains ;
++----------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
+		minimum_number_of_soft_mult_chains = 2
++----------------------------------------------------------------------------------------------------+
+; TMC-20215 - Buses with Incoming Paths Failing Setup Analysis with Multipliers Implemented in Logic ;
++----------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++-------------------------------------------------------------------------------------+
+; TMC-20216 - Paths Failing Setup Analysis with Inferred-RAM Shift Register Endpoints ;
++-------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		maximum_setup_slack = 0
+		to_clock_filter = "*"
++-------------------------------------------------------------+
+; TMC-20217 - Paths Failing Setup Analysis with Clock-As-Data ;
++-------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++--------------------------------------------------------------------+
+; CDC-50008 - CDC Bus Constructed with Multi-bit Synchronizer Chains ;
++--------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------------+
+; CDC-50101 - Intra-Clock False Path Synchronizer ;
++-------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-----------------------------------------------------------------+
+; CDC-50102 - Synchronizer after CDC Topology with Control Signal ;
++-----------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++------------------------------------------------------------+
+; RES-50010 - Reset Synchronizer Chains with Constant Output ;
++------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 500
++-------------------------------------------------------+
+; RES-50101 - Intra-Clock False Path Reset Synchronizer ;
++-------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------+
+; TMC-20020 - Invalid Multicycle Assignment ;
++-------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------------------------------------+
+; TMC-20550 - Automatically Selected Duplication Candidate Rejected for Placement Constraint ;
++--------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		avg_dup_fanout = 1000
++-------------------------------------------------------------------------------------------+
+; TMC-20551 - Automatically Selected Duplication Candidate Likely Requires More Duplication ;
++-------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------------+
+; TMC-20552 - User Selected Duplication Candidate was Rejected ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		minimum_tension = 100000
+		minimum_sinks = 2
++-----------------------------------------------------------+
+; TMC-20601 - Registers with High Immediate Fan-Out Tension ;
++-----------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		minimum_tension = 100000
+		ignore_high_fanout_tension = False
+		minimum_sinks = 2
++--------------------------------------------------------------+
+; TMC-20602 - Registers with High Timing Path Endpoint Tension ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		minimum_span = 250
+		minimum_sinks = 2
++--------------------------------------------------------+
+; TMC-20603 - Registers with High Immediate Fan-Out Span ;
++--------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		minimum_span = 250
+		ignore_high_fanout_span = False
+		minimum_sinks = 2
++-----------------------------------------------------------+
+; TMC-20604 - Registers with High Timing Path Endpoint Span ;
++-----------------------------------------------------------+
+
+

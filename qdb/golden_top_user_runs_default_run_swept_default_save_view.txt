@@ -1,0 +1,53 @@
+# File saved with Nlview 7.9.1 2025-07-03 36fdeb9b55 VDI=45 GEI=38 GUI=QT:6.8.3
+#  -curmodule
+# non-default properties - (restore without -noprops)
+property -colorscheme classic
+property attrcolor #525252
+property autobundle 129
+property backgroundcolor #ffffff
+property boxcolor0 #000000
+property boxcolor1 #515a3d
+property boxcolor2 #005b85
+property boxcolor7 #653171
+property boxhierpins 3
+property boxinstcolor #005b85
+property boxpincolor #525252
+property boxpinfontsize 8
+property buscolor #000000
+property buswidthlimit 0
+property createnetattrdsp 1024
+property createvconn 65
+property decorate 1
+property elidetext 1
+property fillcolor1 #b1d272
+property fillcolor2 #00c7fd
+property fillcolor3 #b4f0ff
+property fillcolor5 #c0c0c0
+property fillcolor6 #5b69ff
+property fillcolor7 #cc94da
+property fillcolor8 #86b3ca
+property fillcolor9 #98a1ff
+property fillcolor10 #548fad
+property fillcolor11 #aeaeae
+property instattrmax -1
+property netcolor #000000
+property nohiernegpins 0
+property overlaycolor #000000
+property pbuscolor #525252
+property pbusnamecolor #005b85
+property pinattrmax -1
+property portcolor #525252
+property portnamecolor #005b85
+property ripattrmax -1
+property rippercolor #000000
+property rubberbandcolor #00aaff
+property selectionappearance 6
+property selectioncolor #aa1027
+property sheetheight 34
+property sheetwidth 44
+property showmarks 9
+property showpagenumbers 1
+property showripindex 1
+property showvconn 1
+#
+module new golden_top {}

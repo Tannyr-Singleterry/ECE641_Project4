@@ -1,0 +1,1504 @@
+Synthesis Analysis & Elaboration Stage Report for golden_top
+Tue Apr 28 13:15:23 2026
+Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Source Assignments for User Entity VEDIO_PLL_altera_iopll_2100_thv5c7q Instance: u_VEDIO_PLL|iopll_0
+  3. Source Assignments for User Entity AUDIO_PLL_altera_iopll_2100_ex2cjxi Instance: u_AUDIO_PLL|iopll_0
+  4. Source Assignments for User Entity sdram_pll_altera_iopll_2100_cv5i6vy Instance: pll_sdram|iopll_0
+  5. Source Assignments for User Entity MIPI_CAMERA_CONFIG Instance: camera|cfin|camiv
+  6. Source Assignments for User Entity MIPI_BRIDGE_CONFIG Instance: camera|cfin|mpiv
+  7. Source Assignments for User Entity pll_test_altera_iopll_2100_rnpikyi Instance: camera|mipi_rclk|iopll_0
+  8. Source Assignments for User Entity VCM_I2C Instance: camera|adl|i2c2
+  9. Source Assignments for User Entity dcfifo Instance: sdram_manager|rd_data_fifo|fifo_0|dcfifo_component
+ 10. Parameter Settings for User Entity I2C_HDMI_Config Instance: u_I2C_HDMI_Config
+ 11. Parameter Settings for User Entity AUDIO_DAC Instance: u_AUDIO_DAC
+ 12. Parameter Settings for User Entity clk_div Instance: tx_div
+ 13. Parameter Settings for User Entity rs232_rx Instance: rcvr
+ 14. Parameter Settings for User Entity rs232_tx Instance: transmitter
+ 15. Parameter Settings for User Entity uart_mgr Instance: uart_manager
+ 16. Parameter Settings for User Entity sdram_mgr Instance: sdram_manager
+ 17. Parameter Settings for User Entity sdram_controller_32bit Instance: sdram_ctrl
+ 18. Parameter Settings for User Entity VGA_Controller_trig Instance: camera|u1
+ 19. Parameter Settings for User Entity FpsMonitor Instance: camera|uFps2
+ 20. Parameter Settings for User Entity MIPI_CAMERA_CONFIG Instance: camera|cfin|camiv
+ 21. Parameter Settings for User Entity MIPI_BRIDGE_CONFIG Instance: camera|cfin|mpiv
+ 22. Parameter Settings for User Entity D8M_WRITE_COUNTER Instance: camera|ccd|u3
+ 23. Parameter Settings for User Entity RAW2RGB_L Instance: camera|ccd|u4
+ 24. Parameter Settings for User Entity LCD_COUNTER Instance: camera|adl|cv1
+ 25. Parameter Settings for User Entity VCM_I2C Instance: camera|adl|i2c2
+ 26. Parameter Settings for User Entity F_VCM Instance: camera|adl|pp|f
+ 27. Parameter Settings for User Entity dcfifo Instance: sdram_manager|rd_data_fifo|fifo_0|dcfifo_component
+ 28. Parameter Settings for User Entity scfifo Instance: sdram_manager|rd_addr_fifo|fifo_0|scfifo_component
+ 29. Parameter Settings for User Entity altera_syncram Instance: camera|ccd|u4|u0|d3|ram_2port_0|altera_syncram_component
+ 30. Preserve for Debug Assignments
+ 31. System Level Debug Agent Report
+ 32. Top Causes of Logic Optimized Away During Sweep
+ 33. Analysis & Elaboration Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for User Entity VEDIO_PLL_altera_iopll_2100_thv5c7q Instance: u_VEDIO_PLL|iopll_0               ;
++-----------------------------------+-----------+------+-----------------+-------------------------------------------+
+; Assignment                        ; Value     ; From ; To              ; Source Location                           ;
++-----------------------------------+-----------+------+-----------------+-------------------------------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF       ; -    ; gnd             ; VEDIO_PLL_altera_iopll_2100_thv5c7q.v:74  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF       ; -    ; gnd             ; VEDIO_PLL_altera_iopll_2100_thv5c7q.v:74  ;
+; DESIGN_ASSISTANT_EXCLUDE          ; RES-50002 ; -    ; tennm_ph2_iopll ; VEDIO_PLL_altera_iopll_2100_thv5c7q.v:175 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON        ; -    ; gnd             ; VEDIO_PLL_altera_iopll_2100_thv5c7q.v:74  ;
++-----------------------------------+-----------+------+-----------------+-------------------------------------------+
+All Instances:
+u_VEDIO_PLL|iopll_0
+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for User Entity AUDIO_PLL_altera_iopll_2100_ex2cjxi Instance: u_AUDIO_PLL|iopll_0               ;
++-----------------------------------+-----------+------+-----------------+-------------------------------------------+
+; Assignment                        ; Value     ; From ; To              ; Source Location                           ;
++-----------------------------------+-----------+------+-----------------+-------------------------------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF       ; -    ; gnd             ; AUDIO_PLL_altera_iopll_2100_ex2cjxi.v:74  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF       ; -    ; gnd             ; AUDIO_PLL_altera_iopll_2100_ex2cjxi.v:74  ;
+; DESIGN_ASSISTANT_EXCLUDE          ; RES-50002 ; -    ; tennm_ph2_iopll ; AUDIO_PLL_altera_iopll_2100_ex2cjxi.v:175 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON        ; -    ; gnd             ; AUDIO_PLL_altera_iopll_2100_ex2cjxi.v:74  ;
++-----------------------------------+-----------+------+-----------------+-------------------------------------------+
+All Instances:
+u_AUDIO_PLL|iopll_0
+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for User Entity sdram_pll_altera_iopll_2100_cv5i6vy Instance: pll_sdram|iopll_0                 ;
++-----------------------------------+-----------+------+-----------------+-------------------------------------------+
+; Assignment                        ; Value     ; From ; To              ; Source Location                           ;
++-----------------------------------+-----------+------+-----------------+-------------------------------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF       ; -    ; gnd             ; sdram_pll_altera_iopll_2100_cv5i6vy.v:77  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF       ; -    ; gnd             ; sdram_pll_altera_iopll_2100_cv5i6vy.v:77  ;
+; DESIGN_ASSISTANT_EXCLUDE          ; RES-50002 ; -    ; tennm_ph2_iopll ; sdram_pll_altera_iopll_2100_cv5i6vy.v:178 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON        ; -    ; gnd             ; sdram_pll_altera_iopll_2100_cv5i6vy.v:77  ;
++-----------------------------------+-----------+------+-----------------+-------------------------------------------+
+All Instances:
+pll_sdram|iopll_0
+
+
+
++----------------------------------------------------------------------------------------------+
+; Source Assignments for User Entity MIPI_CAMERA_CONFIG Instance: camera|cfin|camiv            ;
++-----------------------------------+-------+------+----------------+--------------------------+
+; Assignment                        ; Value ; From ; To             ; Source Location          ;
++-----------------------------------+-------+------+----------------+--------------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF   ; -    ; const_zero_sig ; MIPI_CAMERA_CONFIG.v:216 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF   ; -    ; const_zero_sig ; MIPI_CAMERA_CONFIG.v:216 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON    ; -    ; const_zero_sig ; MIPI_CAMERA_CONFIG.v:215 ;
++-----------------------------------+-------+------+----------------+--------------------------+
+All Instances:
+camera|cfin|camiv
+
+
+
++----------------------------------------------------------------------------------------------+
+; Source Assignments for User Entity MIPI_BRIDGE_CONFIG Instance: camera|cfin|mpiv             ;
++-----------------------------------+-------+------+----------------+--------------------------+
+; Assignment                        ; Value ; From ; To             ; Source Location          ;
++-----------------------------------+-------+------+----------------+--------------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF   ; -    ; const_zero_sig ; MIPI_BRIDGE_CONFIG.v:275 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF   ; -    ; const_zero_sig ; MIPI_BRIDGE_CONFIG.v:275 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON    ; -    ; const_zero_sig ; MIPI_BRIDGE_CONFIG.v:274 ;
++-----------------------------------+-------+------+----------------+--------------------------+
+All Instances:
+camera|cfin|mpiv
+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source Assignments for User Entity pll_test_altera_iopll_2100_rnpikyi Instance: camera|mipi_rclk|iopll_0          ;
++-----------------------------------+-----------+------+-----------------+------------------------------------------+
+; Assignment                        ; Value     ; From ; To              ; Source Location                          ;
++-----------------------------------+-----------+------+-----------------+------------------------------------------+
+; IGNORE_LCELL_BUFFERS              ; OFF       ; -    ; gnd             ; pll_test_altera_iopll_2100_rnpikyi.v:77  ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF       ; -    ; gnd             ; pll_test_altera_iopll_2100_rnpikyi.v:77  ;
+; DESIGN_ASSISTANT_EXCLUDE          ; RES-50002 ; -    ; tennm_ph2_iopll ; pll_test_altera_iopll_2100_rnpikyi.v:178 ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON        ; -    ; gnd             ; pll_test_altera_iopll_2100_rnpikyi.v:77  ;
++-----------------------------------+-----------+------+-----------------+------------------------------------------+
+All Instances:
+camera|mipi_rclk|iopll_0
+
+
+
++-------------------------------------------------------------------------------------+
+; Source Assignments for User Entity VCM_I2C Instance: camera|adl|i2c2                ;
++-----------------------------------+-------+------+----------------+-----------------+
+; Assignment                        ; Value ; From ; To             ; Source Location ;
++-----------------------------------+-------+------+----------------+-----------------+
+; IGNORE_LCELL_BUFFERS              ; OFF   ; -    ; const_zero_sig ; VCM_I2C.v:203   ;
+; REMOVE_REDUNDANT_LOGIC_CELLS      ; OFF   ; -    ; const_zero_sig ; VCM_I2C.v:203   ;
+; IMPLEMENT_AS_OUTPUT_OF_LOGIC_CELL ; ON    ; -    ; const_zero_sig ; VCM_I2C.v:202   ;
++-----------------------------------+-------+------+----------------+-----------------+
+All Instances:
+camera|adl|i2c2
+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Source Assignments for User Entity dcfifo Instance: sdram_manager|rd_data_fifo|fifo_0|dcfifo_component ;
++---------------------------------+-------+------+----+--------------------------------------------------+
+; Assignment                      ; Value ; From ; To ; Source Location                                  ;
++---------------------------------+-------+------+----+--------------------------------------------------+
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -  ; dcfifo.tdf:0                                     ;
++---------------------------------+-------+------+----+--------------------------------------------------+
+All Instances:
+sdram_manager|wr_data_fifo|fifo_0|dcfifo_component
+sdram_manager|rd_data_fifo|fifo_0|dcfifo_component
+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity I2C_HDMI_Config Instance: u_I2C_HDMI_Config ;
++----------------+----------+----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                               ;
++----------------+----------+----------------------------------------------------+
+; CLK_Freq       ; 50000000 ; Signed Integer                                     ;
+; I2C_Freq       ; 20000    ; Signed Integer                                     ;
+; LUT_SIZE       ; 33       ; Signed Integer                                     ;
++----------------+----------+----------------------------------------------------+
+All Instances:
+u_I2C_HDMI_Config
+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity AUDIO_DAC Instance: u_AUDIO_DAC ;
++------------------+----------+--------------------------------------+
+; Parameter Name   ; Value    ; Type                                 ;
++------------------+----------+--------------------------------------+
+; CHANNEL_NUM      ; 2        ; Signed Integer                       ;
+; DATA_WIDTH       ; 16       ; Signed Integer                       ;
+; FLASH_ADDR_WIDTH ; 20       ; Signed Integer                       ;
+; FLASH_DATA       ; 1        ; Signed Integer                       ;
+; FLASH_DATA_NUM   ; 1048576  ; Signed Integer                       ;
+; FLASH_DATA_WIDTH ; 8        ; Signed Integer                       ;
+; REF_CLK          ; 12288136 ; Signed Integer                       ;
+; SAMPLE_RATE      ; 48000    ; Signed Integer                       ;
+; SDRAM_ADDR_WIDTH ; 22       ; Signed Integer                       ;
+; SDRAM_DATA       ; 2        ; Signed Integer                       ;
+; SDRAM_DATA_NUM   ; 4194304  ; Signed Integer                       ;
+; SDRAM_DATA_WIDTH ; 16       ; Signed Integer                       ;
+; SIN_SAMPLE_DATA  ; 48       ; Signed Integer                       ;
+; SIN_SANPLE       ; 0        ; Signed Integer                       ;
+; SRAM_ADDR_WIDTH  ; 18       ; Signed Integer                       ;
+; SRAM_DATA        ; 3        ; Signed Integer                       ;
+; SRAM_DATA_NUM    ; 262144   ; Signed Integer                       ;
+; SRAM_DATA_WIDTH  ; 16       ; Signed Integer                       ;
++------------------+----------+--------------------------------------+
+All Instances:
+u_AUDIO_DAC
+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity clk_div Instance: tx_div ;
++----------------+-----------+--------------------------------+
+; Parameter Name ; Value     ; Type                           ;
++----------------+-----------+--------------------------------+
+; limit          ; 110110010 ; Unsigned Binary                ;
+; n              ; 9         ; Signed Integer                 ;
++----------------+-----------+--------------------------------+
+All Instances:
+rx_div
+tx_div
+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity rs232_rx Instance: rcvr ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; D0             ; 0010  ; Unsigned Binary                   ;
+; D1             ; 0011  ; Unsigned Binary                   ;
+; D2             ; 0100  ; Unsigned Binary                   ;
+; D3             ; 0101  ; Unsigned Binary                   ;
+; D4             ; 0110  ; Unsigned Binary                   ;
+; D5             ; 0111  ; Unsigned Binary                   ;
+; D6             ; 1000  ; Unsigned Binary                   ;
+; D7             ; 1001  ; Unsigned Binary                   ;
+; Idle           ; 0000  ; Unsigned Binary                   ;
+; Parity         ; 1010  ; Unsigned Binary                   ;
+; StA            ; 0     ; Unsigned Bit Literal              ;
+; StB            ; 1     ; Unsigned Bit Literal              ;
+; Start          ; 0001  ; Unsigned Binary                   ;
+; Stop           ; 1011  ; Unsigned Binary                   ;
++----------------+-------+-----------------------------------+
+All Instances:
+rcvr
+
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity rs232_tx Instance: transmitter ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; Finish         ; 11    ; Unsigned Binary                          ;
+; Idle           ; 00    ; Unsigned Binary                          ;
+; Load_Sr        ; 01    ; Unsigned Binary                          ;
+; Shift          ; 10    ; Unsigned Binary                          ;
++----------------+-------+------------------------------------------+
+All Instances:
+transmitter
+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity uart_mgr Instance: uart_manager ;
++--------------------+-------+---------------------------------------+
+; Parameter Name     ; Value ; Type                                  ;
++--------------------+-------+---------------------------------------+
+; Address_Mem        ; 00100 ; Unsigned Binary                       ;
+; Address_Write      ; 10011 ; Unsigned Binary                       ;
+; BL                 ; 512   ; Signed Integer                        ;
+; CAS                ; 3     ; Signed Integer                        ;
+; CR_RorW            ; 01110 ; Unsigned Binary                       ;
+; Command_Type       ; 00001 ; Unsigned Binary                       ;
+; Continue_WriteMem  ; 01011 ; Unsigned Binary                       ;
+; Control_Reg        ; 00101 ; Unsigned Binary                       ;
+; End_WriteMem       ; 10010 ; Unsigned Binary                       ;
+; Get_MemAddr        ; 01100 ; Unsigned Binary                       ;
+; Get_MemWord        ; 10100 ; Unsigned Binary                       ;
+; Get_MemWord_Wait   ; 10101 ; Unsigned Binary                       ;
+; Idle               ; 00000 ; Unsigned Binary                       ;
+; Read_Mem           ; 00010 ; Unsigned Binary                       ;
+; Reg_Num            ; 01101 ; Unsigned Binary                       ;
+; Rx_CR_Byte         ; 10001 ; Unsigned Binary                       ;
+; Start_WriteDataMem ; 01010 ; Unsigned Binary                       ;
+; Tx_CR_Byte         ; 01111 ; Unsigned Binary                       ;
+; Tx_MemByte         ; 00111 ; Unsigned Binary                       ;
+; Wait_Mem           ; 00110 ; Unsigned Binary                       ;
+; Wait_TxMem         ; 01000 ; Unsigned Binary                       ;
+; Wait_Tx_CR         ; 10000 ; Unsigned Binary                       ;
+; Write_Mem          ; 00011 ; Unsigned Binary                       ;
++--------------------+-------+---------------------------------------+
+All Instances:
+uart_manager
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity sdram_mgr Instance: sdram_manager ;
++-------------------+------------+-------------------------------------+
+; Parameter Name    ; Value      ; Type                                ;
++-------------------+------------+-------------------------------------+
+; Continue_Read     ; 1000       ; Unsigned Binary                     ;
+; Continue_Write    ; 0100       ; Unsigned Binary                     ;
+; End_Write         ; 0101       ; Unsigned Binary                     ;
+; Get_First_Word    ; 0010       ; Unsigned Binary                     ;
+; Idle              ; 0000       ; Unsigned Binary                     ;
+; READ_LEN          ; 512        ; Signed Integer                      ;
+; READ_TRANSACTIONS ; 600.000000 ; Signed Float                        ;
+; Read_AddrWrite    ; 001        ; Unsigned Binary                     ;
+; Read_First        ; 100        ; Unsigned Binary                     ;
+; Read_Idle         ; 000        ; Unsigned Binary                     ;
+; Read_Wait         ; 010        ; Unsigned Binary                     ;
+; Read_Wait2        ; 011        ; Unsigned Binary                     ;
+; Start_Read        ; 0110       ; Unsigned Binary                     ;
+; Start_Write       ; 0001       ; Unsigned Binary                     ;
+; Wait_Read         ; 0111       ; Unsigned Binary                     ;
+; Wait_Write        ; 0011       ; Unsigned Binary                     ;
++-------------------+------------+-------------------------------------+
+All Instances:
+sdram_manager
+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity sdram_controller_32bit Instance: sdram_ctrl ;
++----------------+----------+----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                               ;
++----------------+----------+----------------------------------------------------+
+; CAS_LATENCY    ; 3        ; Signed Integer                                     ;
+; CLK_PERIOD     ; 6.670000 ; Signed Float                                       ;
++----------------+----------+----------------------------------------------------+
+All Instances:
+sdram_ctrl
+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity VGA_Controller_trig Instance: camera|u1 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; H_BLANK        ; 160   ; Signed Integer                                    ;
+; H_SYNC_ACT     ; 640   ; Signed Integer                                    ;
+; H_SYNC_BACK    ; 63    ; Signed Integer                                    ;
+; H_SYNC_CYC     ; 96    ; Signed Integer                                    ;
+; H_SYNC_FRONT   ; 1     ; Signed Integer                                    ;
+; H_SYNC_TOTAL   ; 800   ; Signed Integer                                    ;
+; V_BLANK        ; 45    ; Signed Integer                                    ;
+; V_MARK         ; 9     ; Signed Integer                                    ;
+; V_SYNC_ACT     ; 480   ; Signed Integer                                    ;
+; V_SYNC_BACK    ; 31    ; Signed Integer                                    ;
+; V_SYNC_CYC     ; 2     ; Signed Integer                                    ;
+; V_SYNC_FRONT   ; 12    ; Signed Integer                                    ;
+; V_SYNC_TOTAL   ; 525   ; Signed Integer                                    ;
+; X_START        ; 159   ; Signed Integer                                    ;
+; Y_START        ; 33    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+All Instances:
+camera|u1
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity FpsMonitor Instance: camera|uFps2 ;
++----------------+----------------------------------+------------------+
+; Parameter Name ; Value                            ; Type             ;
++----------------+----------------------------------+------------------+
+; ONE_SEC        ; 00000010111110101111000010000000 ; Unsigned Binary  ;
++----------------+----------------------------------+------------------+
+All Instances:
+camera|uFps2
+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity MIPI_CAMERA_CONFIG Instance: camera|cfin|camiv ;
++----------------+------------------+-----------------------------------------------+
+; Parameter Name ; Value            ; Type                                          ;
++----------------+------------------+-----------------------------------------------+
+; DELAY_TYPE     ; 10101010         ; Unsigned Binary                               ;
+; MIPI_I2C_ADDR  ; 01101100         ; Unsigned Binary                               ;
+; P_ID1          ; 0011000000001011 ; Unsigned Binary                               ;
+; P_ID2          ; 0011000000001100 ; Unsigned Binary                               ;
+; TIME_LONG      ; 100              ; Signed Integer                                ;
+; WORD_NUM_MAX   ; 294              ; Signed Integer                                ;
++----------------+------------------+-----------------------------------------------+
+All Instances:
+camera|cfin|camiv
+
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity MIPI_BRIDGE_CONFIG Instance: camera|cfin|mpiv ;
++----------------------+------------------+----------------------------------------+
+; Parameter Name       ; Value            ; Type                                   ;
++----------------------+------------------+----------------------------------------+
+; DATA_FORMAT          ; 0000000000010000 ; Unsigned Binary                        ;
+; FIFO_LEVEL           ; 0000000000001000 ; Unsigned Binary                        ;
+; MCLKREFDIV           ; 2                ; Signed Integer                         ;
+; MCLK_HL              ; 1                ; Signed Integer                         ;
+; MIPI_BRIDGE_I2C_ADDR ; 00011100         ; Unsigned Binary                        ;
+; PLL_FBD              ; 39               ; Signed Integer                         ;
+; PLL_FRS              ; 1                ; Signed Integer                         ;
+; PLL_PRD              ; 1                ; Signed Integer                         ;
+; PPICLKDIV            ; 2                ; Signed Integer                         ;
+; P_ID                 ; 0000000000000000 ; Unsigned Binary                        ;
+; SCLKDIV              ; 0                ; Signed Integer                         ;
+; TIME_LONG            ; 100              ; Signed Integer                         ;
+; WORDCOUNT            ; 800              ; Signed Integer                         ;
+; WORD_NUM_MAX         ; 13               ; Signed Integer                         ;
++----------------------+------------------+----------------------------------------+
+All Instances:
+camera|cfin|mpiv
+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity D8M_WRITE_COUNTER Instance: camera|ccd|u3 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; D8M_LINE_CNT   ; 792   ; Signed Integer                                      ;
+; FREE_RUN       ; 44    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+All Instances:
+camera|ccd|u3
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity RAW2RGB_L Instance: camera|ccd|u4 ;
++------------------+-------+-------------------------------------------+
+; Parameter Name   ; Value ; Type                                      ;
++------------------+-------+-------------------------------------------+
+; D8M_VAL_LINE_MAX ; 620   ; Signed Integer                            ;
+; D8M_VAL_LINE_MIN ; 2     ; Signed Integer                            ;
++------------------+-------+-------------------------------------------+
+All Instances:
+camera|ccd|u4
+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity LCD_COUNTER Instance: camera|adl|cv1 ;
++----------------+--------------+-----------------------------------------+
+; Parameter Name ; Value        ; Type                                    ;
++----------------+--------------+-----------------------------------------+
+; H_OFF          ; 000011001000 ; Unsigned Binary                         ;
+; V_OFF          ; 000011001000 ; Unsigned Binary                         ;
++----------------+--------------+-----------------------------------------+
+All Instances:
+camera|adl|cv1
+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity VCM_I2C Instance: camera|adl|i2c2 ;
++----------------+----------------------------------+------------------+
+; Parameter Name ; Value                            ; Type             ;
++----------------+----------------------------------+------------------+
+; P_STATUS       ; 00000000                         ; Unsigned Binary  ;
+; SLAVE_ADDR1    ; 00011000                         ; Unsigned Binary  ;
+; TIME           ; 00000000000000000000001111101000 ; Unsigned Binary  ;
+; TIME_LONG      ; 250000000                        ; Signed Integer   ;
++----------------+----------------------------------+------------------+
+All Instances:
+camera|adl|i2c2
+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity F_VCM Instance: camera|adl|pp|f ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; SCAL           ; 3     ; Signed Integer                            ;
+; SCAL_f         ; 1     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+All Instances:
+camera|adl|pp|f
+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity dcfifo Instance: sdram_manager|rd_data_fifo|fifo_0|dcfifo_component      ;
++-------------------------------------------+------------------------------------------------+----------------+
+; Parameter Name                            ; Value                                          ; Type           ;
++-------------------------------------------+------------------------------------------------+----------------+
+; ADD_RAM_OUTPUT_REGISTER                   ; OFF                                            ; Untyped        ;
+; ADD_USEDW_MSB_BIT                         ; ON                                             ; String         ;
+; AUTO_CARRY_CHAINS                         ; ON                                             ; Untyped        ;
+; AUTO_CASCADE_CHAINS                       ; ON                                             ; Untyped        ;
+; CBXI_PARAMETER                            ; dcfifo_eis91                                   ; Untyped        ;
+; CLOCKS_ARE_SYNCHRONIZED                   ; FALSE                                          ; Untyped        ;
+; DELAY_RDUSEDW                             ; 1                                              ; Untyped        ;
+; DELAY_WRUSEDW                             ; 1                                              ; Untyped        ;
+; DISABLE_DCFIFO_EMBEDDED_TIMING_CONSTRAINT ; TRUE                                           ; Untyped        ;
+; ENABLE_ECC                                ; FALSE                                          ; String         ;
+; IGNORE_CARRY_BUFFERS                      ; OFF                                            ; Untyped        ;
+; IGNORE_CASCADE_BUFFERS                    ; OFF                                            ; Untyped        ;
+; LPM_NUMWORDS                              ; 1024                                           ; Signed Integer ;
+; LPM_SHOWAHEAD                             ; OFF                                            ; String         ;
+; LPM_WIDTH                                 ; 32                                             ; Signed Integer ;
+; LPM_WIDTHU                                ; 11                                             ; Signed Integer ;
+; MAXIMIZE_SPEED                            ; 5                                              ; Untyped        ;
+; OVERFLOW_CHECKING                         ; ON                                             ; String         ;
+; RDSYNC_DELAYPIPE                          ; 4                                              ; Signed Integer ;
+; READ_ACLR_SYNCH                           ; OFF                                            ; String         ;
+; UNDERFLOW_CHECKING                        ; ON                                             ; String         ;
+; USE_EAB                                   ; ON                                             ; String         ;
+; WIDTH_BYTEENA                             ; 1                                              ; Untyped        ;
+; WRITE_ACLR_SYNCH                          ; OFF                                            ; String         ;
+; WRSYNC_DELAYPIPE                          ; 4                                              ; Signed Integer ;
+; intended_device_family                    ; Agilex 3                                       ; String         ;
+; lpm_hint                                  ; DISABLE_DCFIFO_EMBEDDED_TIMING_CONSTRAINT=TRUE ; String         ;
+; lpm_type                                  ; dcfifo                                         ; String         ;
++-------------------------------------------+------------------------------------------------+----------------+
+All Instances:
+sdram_manager|wr_data_fifo|fifo_0|dcfifo_component
+sdram_manager|rd_data_fifo|fifo_0|dcfifo_component
+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity scfifo Instance: sdram_manager|rd_addr_fifo|fifo_0|scfifo_component ;
++-------------------------+--------------+---------------------------------------------------------------+
+; Parameter Name          ; Value        ; Type                                                          ;
++-------------------------+--------------+---------------------------------------------------------------+
+; ADD_RAM_OUTPUT_REGISTER ; OFF          ; String                                                        ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF          ; Untyped                                                       ;
+; ALMOST_EMPTY_VALUE      ; 0            ; Untyped                                                       ;
+; ALMOST_FULL_VALUE       ; 0            ; Untyped                                                       ;
+; AUTO_CARRY_CHAINS       ; ON           ; Untyped                                                       ;
+; AUTO_CASCADE_CHAINS     ; ON           ; Untyped                                                       ;
+; CBXI_PARAMETER          ; scfifo_m6nh1 ; Untyped                                                       ;
+; ENABLE_ECC              ; FALSE        ; String                                                        ;
+; IGNORE_CARRY_BUFFERS    ; OFF          ; Untyped                                                       ;
+; IGNORE_CASCADE_BUFFERS  ; OFF          ; Untyped                                                       ;
+; LPM_NUMWORDS            ; 8            ; Signed Integer                                                ;
+; LPM_SHOWAHEAD           ; OFF          ; String                                                        ;
+; LPM_WIDTHU              ; 3            ; Signed Integer                                                ;
+; MAXIMIZE_SPEED          ; 5            ; Untyped                                                       ;
+; OVERFLOW_CHECKING       ; ON           ; String                                                        ;
+; UNDERFLOW_CHECKING      ; ON           ; String                                                        ;
+; USE_EAB                 ; ON           ; String                                                        ;
+; intended_device_family  ; Agilex 3     ; String                                                        ;
+; lpm_hint                ;              ; String                                                        ;
+; lpm_type                ; scfifo       ; String                                                        ;
+; lpm_width               ; 24           ; Signed Integer                                                ;
++-------------------------+--------------+---------------------------------------------------------------+
+All Instances:
+sdram_manager|wr_addr_fifo|fifo_0|scfifo_component
+sdram_manager|rd_addr_fifo|fifo_0|scfifo_component
+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity altera_syncram Instance: camera|ccd|u4|u0|d3|ram_2port_0|altera_syncram_component ;
++------------------------------------------------------------+----------------------+----------------------------------+
+; Parameter Name                                             ; Value                ; Type                             ;
++------------------------------------------------------------+----------------------+----------------------------------+
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_PAUSED_READ_CAPABILITIES ; DONT CARE            ; Untyped                          ;
+; ACF_BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS      ; AUTO                 ; Untyped                          ;
+; ACF_DISABLE_MLAB_RAM_USE                                   ; FALSE                ; Untyped                          ;
+; ACF_IMPLEMENT_MLAB_IN_16_BIT_DEEP_MODE                     ; FALSE                ; Untyped                          ;
+; ADDRESS_ACLR_A                                             ; UNUSED               ; Untyped                          ;
+; ADDRESS_ACLR_B                                             ; NONE                 ; String                           ;
+; ADDRESS_REG_B                                              ; CLOCK1               ; String                           ;
+; BYTEENA_REG_B                                              ; CLOCK1               ; Untyped                          ;
+; BYTE_SIZE                                                  ; 8                    ; Untyped                          ;
+; CBXI_PARAMETER                                             ; altera_syncram_p84d1 ; Untyped                          ;
+; CLKEN_POWER_OPTIMIZATION                                   ; OFF                  ; Untyped                          ;
+; CLOCK_DUTY_CYCLE_DEPENDENCE                                ; AUTO                 ; Untyped                          ;
+; CLOCK_ENABLE_CORE_A                                        ; USE_INPUT_CLKEN      ; Untyped                          ;
+; CLOCK_ENABLE_CORE_B                                        ; USE_INPUT_CLKEN      ; Untyped                          ;
+; CLOCK_ENABLE_INPUT_A                                       ; BYPASS               ; String                           ;
+; CLOCK_ENABLE_INPUT_B                                       ; BYPASS               ; String                           ;
+; CLOCK_ENABLE_OUTPUT_A                                      ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_B                                      ; BYPASS               ; String                           ;
+; ECC_PIPELINE_STAGE_ENABLED                                 ; FALSE                ; Untyped                          ;
+; ENABLE_COHERENT_READ                                       ; FALSE                ; Untyped                          ;
+; ENABLE_ECC                                                 ; FALSE                ; Untyped                          ;
+; ENABLE_ECC_ENCODER_BYPASS                                  ; FALSE                ; Untyped                          ;
+; ENABLE_FORCE_TO_ZERO                                       ; FALSE                ; String                           ;
+; ENABLE_RUNTIME_MOD                                         ; NO                   ; Untyped                          ;
+; IMPLEMENT_IN_LES                                           ; OFF                  ; Untyped                          ;
+; INDATA_REG_B                                               ; CLOCK1               ; Untyped                          ;
+; INIT_FILE                                                  ; UNUSED               ; Untyped                          ;
+; INIT_FILE_LAYOUT                                           ; PORT_A               ; Untyped                          ;
+; INSTANCE_NAME                                              ; UNUSED               ; Untyped                          ;
+; LOW_POWER_MODE                                             ; AUTO                 ; Untyped                          ;
+; MAXIMUM_DEPTH                                              ; 0                    ; Untyped                          ;
+; NUMWORDS_A                                                 ; 4096                 ; Signed Integer                   ;
+; NUMWORDS_B                                                 ; 4096                 ; Signed Integer                   ;
+; OPERATION_MODE                                             ; DUAL_PORT            ; String                           ;
+; OPTIMIZATION_OPTION                                        ; AUTO                 ; Untyped                          ;
+; OUTDATA_ACLR_A                                             ; NONE                 ; Untyped                          ;
+; OUTDATA_ACLR_B                                             ; NONE                 ; String                           ;
+; OUTDATA_REG_A                                              ; UNREGISTERED         ; Untyped                          ;
+; OUTDATA_REG_B                                              ; CLOCK1               ; String                           ;
+; OUTDATA_SCLR_A                                             ; NONE                 ; Untyped                          ;
+; OUTDATA_SCLR_B                                             ; NONE                 ; String                           ;
+; POWER_UP_UNINITIALIZED                                     ; FALSE                ; String                           ;
+; RAM_BLOCK_TYPE                                             ; AUTO                 ; Untyped                          ;
+; RDCONTROL_REG_B                                            ; CLOCK1               ; Untyped                          ;
+; RDEN_POWER_OPTIMIZATION                                    ; OFF                  ; Untyped                          ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS                         ; DONT_CARE            ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_A                              ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_B                              ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
+; WIDTHAD2_A                                                 ; 1                    ; Untyped                          ;
+; WIDTHAD2_B                                                 ; 1                    ; Untyped                          ;
+; WIDTHAD_A                                                  ; 12                   ; Signed Integer                   ;
+; WIDTHAD_B                                                  ; 12                   ; Signed Integer                   ;
+; WIDTH_A                                                    ; 10                   ; Signed Integer                   ;
+; WIDTH_B                                                    ; 10                   ; Signed Integer                   ;
+; WIDTH_BYTEENA_A                                            ; 1                    ; Signed Integer                   ;
+; WIDTH_BYTEENA_B                                            ; 1                    ; Untyped                          ;
+; WIDTH_ECCENCPARITY                                         ; 8                    ; Untyped                          ;
+; WIDTH_ECCSTATUS                                            ; 3                    ; Untyped                          ;
+; WREN_POWER_OPTIMIZATION                                    ; OFF                  ; Untyped                          ;
+; init_file_restructured                                     ; UNUSED               ; Untyped                          ;
+; intended_device_family                                     ; Agilex 3             ; String                           ;
+; lpm_type                                                   ; altera_syncram       ; String                           ;
++------------------------------------------------------------+----------------------+----------------------------------+
+All Instances:
+camera|ccd|u4|u0|d1|ram_2port_0|altera_syncram_component
+camera|ccd|u4|u0|d2|ram_2port_0|altera_syncram_component
+camera|ccd|u4|u0|d3|ram_2port_0|altera_syncram_component
+
+
+
++--------------------------------+
+; Preserve for Debug Assignments ;
++------+-------------------------+
+; Name ; Status                  ;
++------+-------------------------+
+Notes: Table created because there is an active PRESERVE_FOR_DEBUG_ENABLE in the project, even though there are no tagged names within the partition.
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; System Level Debug Agent Report                                                                                                ;
++-----------------------------------------------------------------------------+----------------+-----------+---------------------+
+; Agent Hierarchy Path                                                        ; Instance Index ; Host Name ; Host Hierarchy Path ;
++-----------------------------------------------------------------------------+----------------+-----------+---------------------+
+; ResetRelease_inst|intel_user_rst_clkgate_0|config_reset_release_endpoint|ep ;                ;           ;                     ;
++-----------------------------------------------------------------------------+----------------+-----------+---------------------+
+
+
+Top root causes of logic optimization that have been identified during sweep. For more details and filtering options, ensure that you have compiled with the "Enable RTL Analysis Debug Mode " setting turned on under Assignments->Settings->Compiler Settings, then go to the " Root Causes Tab " in the " Sweep Hints Viewer " tool in the " RTL Analyzer ".
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Top Causes of Logic Optimized Away During Sweep                                                                                                                                                                                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------------------+---------------------+
+; Root Object Path                                                                                                                                                                                                                            ; Root Object Type ; Root Reason              ; Swept Objects Count ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------------------+---------------------+
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|ela_control|basic_multi_level_mbpm_trigger_gen.multi_level_mbpm|trigger_condition_deserialize|load ; INPUT_INST_PORT  ; stuck at 0 (unconnected) ; 445                 ;
+; u_AUDIO_DAC|oSDRAM_ADDR[21]                                                                                                                                                                                                                 ; OUTPUT_INST_PORT ; lost_fanout              ; 65                  ;
+; camera|adl|i2c2|TEST_MODE                                                                                                                                                                                                                   ; INPUT_INST_PORT  ; stuck at 1               ; 60                  ;
+; u_AUDIO_DAC|oFLASH_ADDR[19]                                                                                                                                                                                                                 ; OUTPUT_INST_PORT ; lost_fanout              ; 59                  ;
+; u_AUDIO_DAC|oSRAM_ADDR[17]                                                                                                                                                                                                                  ; OUTPUT_INST_PORT ; lost_fanout              ; 57                  ;
+; u_AUDIO_DAC|oAUD_DATA                                                                                                                                                                                                                       ; OUTPUT_INST_PORT ; lost_fanout              ; 48                  ;
+; sdram_manager|rd_data_fifo|wrusedw[9]                                                                                                                                                                                                       ; OUTPUT_INST_PORT ; lost_fanout              ; 44                  ;
+; sdram_manager|wr_data_fifo|rdusedw[9]                                                                                                                                                                                                       ; OUTPUT_INST_PORT ; lost_fanout              ; 43                  ;
+; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdusedw_sub_result[10]                                                                                                                                                    ; COMB (AND)       ; lost fanout              ; 43                  ;
+; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|wrusedw_sub_result[10]                                                                                                                                                    ; COMB (AND)       ; lost fanout              ; 43                  ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+--------------------------+---------------------+
+Table limited at 10 items. To change the number of top root causes reported, set the "Number of Top Root Causes Reported in Synthesis Report " option under Assignments->Settings->Compiler Settings->Advanced Settings (Synthesis)
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Synthesis
+    Info: Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+    Info: Processing started: Tue Apr 28 13:14:42 2026
+    Info: System process ID: 19944
+Info: Command: quartus_syn --read_settings_files=on --write_settings_files=off golden_top -c golden_top
+Info: qis_default_flow_script.tcl version: #2
+Info: Initializing Synthesis...
+Info: Project = "golden_top"
+Info: Revision = "golden_top"
+Info (21958): Initialized Quartus Message Database
+Info (16303): High Placement Routability Effort optimization mode selected -- routing utilization will be prioritized at the potential cost of increased compilation time
+Info: Analyzing source files
+Info (16884): Verilog HDL info at VGA_Controller_trig.v(27): analyzing included file V_D8M/VGA_Param.h File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/VGA_Controller_trig.v Line: 27
+Info (19624): Verilog HDL info at VGA_Controller_trig.v(27): back to file 'V_D8M/VGA_Controller_trig.v' File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/VGA_Controller_trig.v Line: 27
+Warning (16746): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(304): RESET_N_1 is already implicitly declared on line 230. All attributes, including initial values will be ignored. File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 304
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(68): identifier W_POINTER_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 68
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(69): identifier R_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 69
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(81): identifier W_POINTER_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 81
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(82): identifier R_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 82
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(94): identifier W_POINTER_END is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 94
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(99): identifier W_POINTER_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 99
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(104): identifier W_POINTER_END is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 104
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(109): identifier R_END is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 109
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(114): identifier R_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 114
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(124): identifier R_END is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 124
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(136): identifier W_POINTER_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 136
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(137): identifier R_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 137
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(153): identifier SLV8_REG16_DATA8 is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 153
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(155): identifier SLV8_REG16_DATA8 is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 155
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(197): identifier SLV8_REG16_DATA8 is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 197
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(221): identifier W_WORD_SCL is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 221
+Warning (16749): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(222): identifier W_POINTER_SDAO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 222
+Warning (16746): Verilog HDL warning at MIPI_BRIDGE_CONFIG.v(365): RESET_N_1 is already implicitly declared on line 290. All attributes, including initial values will be ignored. File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 365
+Warning (16749): Verilog HDL warning at MIPI_BRIDGE_CONFIG.v(159): identifier REG16_DATA16 is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 159
+Warning (16749): Verilog HDL warning at MIPI_BRIDGE_CONFIG.v(161): identifier REG16_DATA16 is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 161
+Warning (16749): Verilog HDL warning at MIPI_BRIDGE_CONFIG.v(201): identifier REG16_DATA16 is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 201
+Warning (16749): Verilog HDL warning at MIPI_BRIDGE_CONFIG.v(280): identifier W_WORD_SCL is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 280
+Warning (16749): Verilog HDL warning at MIPI_BRIDGE_CONFIG.v(281): identifier W_POINTER_SDAO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 281
+Warning (16746): Verilog HDL warning at MIPI_BRIDGE_CAMERA_Config.v(52): CLK_400K is already implicitly declared on line 43. All attributes, including initial values will be ignored. File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CAMERA_Config.v Line: 52
+Warning (16749): Verilog HDL warning at MIPI_BRIDGE_CAMERA_Config.v(35): identifier CAMERA_I2C_SCL_ is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CAMERA_Config.v Line: 35
+Warning (16749): Verilog HDL warning at D8M_LUT.v(37): identifier LUT is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/D8M_LUT.v Line: 37
+Warning (16749): Verilog HDL warning at VCM_I2C.v(61): identifier W_POINTER_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 61
+Warning (16749): Verilog HDL warning at VCM_I2C.v(62): identifier R_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 62
+Warning (16749): Verilog HDL warning at VCM_I2C.v(75): identifier W_POINTER_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 75
+Warning (16749): Verilog HDL warning at VCM_I2C.v(76): identifier R_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 76
+Warning (16749): Verilog HDL warning at VCM_I2C.v(88): identifier W_POINTER_END is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 88
+Warning (16749): Verilog HDL warning at VCM_I2C.v(93): identifier W_POINTER_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 93
+Warning (16749): Verilog HDL warning at VCM_I2C.v(98): identifier W_POINTER_END is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 98
+Warning (16749): Verilog HDL warning at VCM_I2C.v(103): identifier R_END is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 103
+Warning (16749): Verilog HDL warning at VCM_I2C.v(108): identifier R_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 108
+Warning (16749): Verilog HDL warning at VCM_I2C.v(118): identifier R_END is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 118
+Warning (16749): Verilog HDL warning at VCM_I2C.v(133): identifier W_POINTER_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 133
+Warning (16749): Verilog HDL warning at VCM_I2C.v(134): identifier R_GO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 134
+Warning (16749): Verilog HDL warning at VCM_I2C.v(208): identifier W_WORD_SCL is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 208
+Warning (16749): Verilog HDL warning at VCM_I2C.v(209): identifier W_POINTER_SDAO is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 209
+Warning (16749): Verilog HDL warning at VCM_CTRL_P.v(60): identifier rGO_F is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_CTRL_P.v Line: 60
+Warning (16749): Verilog HDL warning at VCM_CTRL_P.v(65): identifier rGO_F is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_CTRL_P.v Line: 65
+Warning (16749): Verilog HDL warning at VCM_CTRL_P.v(66): identifier STEP_UP is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_CTRL_P.v Line: 66
+Warning (13468): Verilog HDL Expression warning at golden_top_v2.sv(101): literal value "'h7" truncated literal to match 2 bits File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 101
+Warning (16746): Verilog HDL warning at golden_top_v2.sv(431): rd_data_fifo_rdreq is already implicitly declared on line 269. All attributes, including initial values will be ignored. File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 431
+Warning (16749): Verilog HDL warning at golden_top_v2.sv(185): identifier ninit_done is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 185
+Warning (16749): Verilog HDL warning at golden_top_v2.sv(236): identifier h_act is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 236
+Warning (16749): Verilog HDL warning at golden_top_v2.sv(244): identifier rd_data_fifo_dataout is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 244
+Warning (16749): Verilog HDL warning at golden_top_v2.sv(407): identifier tx_out is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 407
+Warning (16749): Verilog HDL warning at uart_mgr_v3.sv(78): identifier tx_reg is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 78
+Warning (16749): Verilog HDL warning at uart_mgr_v3.sv(79): identifier tx_reg is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 79
+Warning (16749): Verilog HDL warning at uart_mgr_v3.sv(86): identifier tx_reg is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 86
+Warning (13468): Verilog HDL Expression warning at serial_tx.v(17): literal value "'hfff" truncated literal to match 10 bits File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/serial_tx.v Line: 17
+Warning (16749): Verilog HDL warning at serial_tx.v(22): identifier ld is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/serial_tx.v Line: 22
+Warning (16749): Verilog HDL warning at serial_tx.v(24): identifier sh is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/serial_tx.v Line: 24
+Warning (16746): Verilog HDL warning at sdram_mgr_v2.v(158): rd_addr_fifo_wrreq is already implicitly declared on line 145. All attributes, including initial values will be ignored. File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_mgr_v2.v Line: 158
+Warning (16746): Verilog HDL warning at sdram_mgr_v2.v(159): read_addr is already implicitly declared on line 144. All attributes, including initial values will be ignored. File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_mgr_v2.v Line: 159
+Warning (16752): Verilog HDL warning at I2C_HDMI_Config.v(194): potential always loop found File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/I2C_HDMI_Config.v Line: 194
+Warning (16749): Verilog HDL warning at I2C_Controller.v(77): identifier I2C_SCLK_ is used before its declaration File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/I2C_Controller.v Line: 77
+Warning (16752): Verilog HDL warning at I2C_AV_Config.v(163): potential always loop found File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/I2C_AV_Config.v Line: 163
+Info: Elaborating from top-level entity "golden_top"
+Info (18235): Library search order is as follows: "altera_iopll_2100; pll_test; ram_2port_2060; int_line; VEDIO_PLL; intel_user_rst_clkgate_101; ResetRelease; AUDIO_PLL; sdram_pll; fifo_1941; address_fifo; data_fifo". Quartus will look for undefined design units in your libraries in that order. To modify the ordering, please specify a semi-colon separated library list using the assignment LIBRARY_SEARCH_ORDER.
+Info (19337): VHDL info at altera_agilex_config_reset_release_endpoint.vhd(122): executing entity "altera_agilex_config_reset_release_endpoint" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/altera_agilex_config_reset_release_endpoint.vhd Line: 122
+Info (19337): VHDL info at altera_fabric_endpoint.vhd(126): executing entity "altera_fabric_endpoint(send_width=0,receive_width=1,settings="{fabric agilex_config_reset_release dir agent psig 142e1a3c}")(1,60)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/altera_fabric_endpoint.vhd Line: 126
+Warning (24541): Verilog HDL warning at golden_top_v2.sv(199): actual bit length 32 differs from formal bit length 1 for port "RESET_n" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 199
+Warning (24541): Verilog HDL warning at golden_top_v2.sv(200): actual bit length 32 differs from formal bit length 1 for port "RESET_n" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 200
+Warning (24541): Verilog HDL warning at golden_top_v2.sv(201): actual bit length 32 differs from formal bit length 1 for port "RESET_n" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 201
+Warning (24541): Verilog HDL warning at golden_top_v2.sv(202): actual bit length 32 differs from formal bit length 1 for port "RESET_n" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/golden_top_v2.sv Line: 202
+Warning (13469): Verilog HDL assignment warning at I2C_HDMI_Config.v(48): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/I2C_HDMI_Config.v Line: 48
+Warning (13469): Verilog HDL assignment warning at I2C_Controller.v(79): truncated value with size 32 to match size of target (1) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/I2C_Controller.v Line: 79
+Warning (13469): Verilog HDL assignment warning at I2C_Controller.v(92): truncated value with size 7 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/I2C_Controller.v Line: 92
+Warning (13469): Verilog HDL assignment warning at I2C_HDMI_Config.v(98): truncated value with size 7 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/I2C_HDMI_Config.v Line: 98
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(101): truncated value with size 5 to match size of target (4) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 101
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(126): truncated value with size 10 to match size of target (9) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 126
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(134): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 134
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(142): truncated value with size 8 to match size of target (7) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 142
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(166): truncated value with size 8 to match size of target (7) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 166
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(193): truncated value with size 7 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 193
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(207): truncated value with size 21 to match size of target (20) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 207
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(245): truncated value with size 23 to match size of target (22) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 245
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(276): truncated value with size 19 to match size of target (18) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 276
+Warning (13469): Verilog HDL assignment warning at AUDIO_DAC.v(305): truncated value with size 5 to match size of target (4) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_HDMI/AUDIO_DAC.v Line: 305
+Warning (13469): Verilog HDL assignment warning at MIPI_CAMERA_CONFIG.v(126): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 126
+Warning (13469): Verilog HDL assignment warning at MIPI_CAMERA_CONFIG.v(172): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 172
+Warning (13469): Verilog HDL assignment warning at MIPI_CAMERA_CONFIG.v(199): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 199
+Warning (13469): Verilog HDL assignment warning at I2C_CAM_WRITE_WDATA.v(72): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_CAM_WRITE_WDATA.v Line: 72
+Warning (13469): Verilog HDL assignment warning at I2C_CAM_WRITE_WDATA.v(143): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_CAM_WRITE_WDATA.v Line: 143
+Warning (13469): Verilog HDL assignment warning at I2C_CAM_WRITE_WDATA.v(153): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_CAM_WRITE_WDATA.v Line: 153
+Warning (24541): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(247): actual bit length 32 differs from formal bit length 8 for port "BYTE_NUM" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 247
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_PTR.v(61): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_WRITE_PTR.v Line: 61
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_PTR.v(125): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_WRITE_PTR.v Line: 125
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_PTR.v(135): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_WRITE_PTR.v Line: 135
+Warning (13469): Verilog HDL assignment warning at I2C_WRITE_PTR.v(160): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_WRITE_PTR.v Line: 160
+Warning (24541): Verilog HDL warning at MIPI_CAMERA_CONFIG.v(271): actual bit length 32 differs from formal bit length 8 for port "BYTE_END" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_CAMERA_CONFIG.v Line: 271
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(67): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_READ_DATA.v Line: 67
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(90): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_READ_DATA.v Line: 90
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(93): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_READ_DATA.v Line: 93
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(104): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_READ_DATA.v Line: 104
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(168): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_READ_DATA.v Line: 168
+Warning (13469): Verilog HDL assignment warning at I2C_READ_DATA.v(178): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/I2C_READ_DATA.v Line: 178
+Warning (13469): Verilog HDL assignment warning at MIPI_BRIDGE_CONFIG.v(131): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 131
+Warning (13469): Verilog HDL assignment warning at MIPI_BRIDGE_CONFIG.v(178): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 178
+Warning (13469): Verilog HDL assignment warning at MIPI_BRIDGE_CONFIG.v(203): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 203
+Warning (24541): Verilog HDL warning at MIPI_BRIDGE_CONFIG.v(307): actual bit length 32 differs from formal bit length 8 for port "BYTE_NUM" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 307
+Warning (24541): Verilog HDL warning at MIPI_BRIDGE_CONFIG.v(332): actual bit length 32 differs from formal bit length 8 for port "BYTE_END" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/MIPI_BRIDGE_CONFIG.v Line: 332
+Warning (13469): Verilog HDL assignment warning at D8M_WRITE_COUNTER.v(41): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/D8M_WRITE_COUNTER.v Line: 41
+Warning (13469): Verilog HDL assignment warning at D8M_WRITE_COUNTER.v(49): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/D8M_WRITE_COUNTER.v Line: 49
+Warning (13469): Verilog HDL assignment warning at D8M_WRITE_COUNTER.v(54): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/D8M_WRITE_COUNTER.v Line: 54
+Warning (13469): Verilog HDL assignment warning at D8M_WRITE_COUNTER.v(58): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/D8M_WRITE_COUNTER.v Line: 58
+Warning (13469): Verilog HDL assignment warning at VGA_READ_COUNTER.v(15): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/VGA_READ_COUNTER.v Line: 15
+Warning (13469): Verilog HDL assignment warning at Line_Buffer_J.v(28): truncated value with size 3 to match size of target (2) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/Line_Buffer_J.v Line: 28
+Warning (24541): Verilog HDL warning at Line_Buffer_J.v(56): actual bit length 16 differs from formal bit length 12 for port "wraddress" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/Line_Buffer_J.v Line: 56
+Warning (24541): Verilog HDL warning at Line_Buffer_J.v(59): actual bit length 13 differs from formal bit length 12 for port "rdaddress" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/Line_Buffer_J.v Line: 59
+Warning (24541): Verilog HDL warning at Line_Buffer_J.v(67): actual bit length 16 differs from formal bit length 12 for port "wraddress" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/Line_Buffer_J.v Line: 67
+Warning (24541): Verilog HDL warning at Line_Buffer_J.v(70): actual bit length 13 differs from formal bit length 12 for port "rdaddress" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/Line_Buffer_J.v Line: 70
+Warning (24541): Verilog HDL warning at Line_Buffer_J.v(78): actual bit length 16 differs from formal bit length 12 for port "wraddress" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/Line_Buffer_J.v Line: 78
+Warning (24541): Verilog HDL warning at Line_Buffer_J.v(81): actual bit length 13 differs from formal bit length 12 for port "rdaddress" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/Line_Buffer_J.v Line: 81
+Warning (24541): Verilog HDL warning at D8M_SET.v(72): actual bit length 16 differs from formal bit length 13 for port "READ_Cont" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/D8M_SET.v Line: 72
+Warning (24541): Verilog HDL warning at D8M_SET.v(73): actual bit length 16 differs from formal bit length 13 for port "V_Cont" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/D8M_SET.v Line: 73
+Warning (13469): Verilog HDL assignment warning at MODIFY_SYNC.v(19): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/MODIFY_SYNC.v Line: 19
+Warning (13469): Verilog HDL assignment warning at LCD_COUNTER.v(31): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/LCD_COUNTER.v Line: 31
+Warning (13469): Verilog HDL assignment warning at LCD_COUNTER.v(36): truncated value with size 17 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/LCD_COUNTER.v Line: 36
+Warning (24541): Verilog HDL warning at FOCUS_ADJ.v(60): actual bit length 1 differs from formal bit length 16 for port "V_CNT" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/FOCUS_ADJ.v Line: 60
+Warning (24541): Verilog HDL warning at FOCUS_ADJ.v(61): actual bit length 1 differs from formal bit length 16 for port "H_CNT" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/FOCUS_ADJ.v Line: 61
+Warning (13469): Verilog HDL assignment warning at F_VCM.v(39): truncated value with size 12 to match size of target (11) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/F_VCM.v Line: 39
+Warning (13469): Verilog HDL assignment warning at F_VCM.v(48): truncated value with size 32 to match size of target (11) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/F_VCM.v Line: 48
+Warning (13469): Verilog HDL assignment warning at F_VCM.v(56): truncated value with size 12 to match size of target (11) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/F_VCM.v Line: 56
+Warning (24541): Verilog HDL warning at VCM_CTRL_P.v(89): actual bit length 10 differs from formal bit length 11 for port "STEP" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_CTRL_P.v Line: 89
+Warning (13469): Verilog HDL assignment warning at VCM_I2C.v(120): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 120
+Warning (13469): Verilog HDL assignment warning at VCM_I2C.v(173): truncated value with size 9 to match size of target (8) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 173
+Warning (24541): Verilog HDL warning at VCM_I2C.v(263): actual bit length 32 differs from formal bit length 8 for port "BYTE_END" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 263
+Warning (24541): Verilog HDL warning at VCM_I2C.v(290): actual bit length 32 differs from formal bit length 8 for port "END_BYTE" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/VCM_I2C.v Line: 290
+Warning (24541): Verilog HDL warning at FOCUS_ADJ.v(110): actual bit length 32 differs from formal bit length 1 for port "TEST_MODE" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_Auto/FOCUS_ADJ.v Line: 110
+Warning (13469): Verilog HDL assignment warning at clk_div.v(24): truncated value with size 10 to match size of target (9) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/clk_div.v Line: 24
+Warning (13469): Verilog HDL assignment warning at serial_tx.v(81): truncated value with size 5 to match size of target (4) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/serial_tx.v Line: 81
+Warning (13469): Verilog HDL assignment warning at uart_mgr_v3.sv(147): truncated value with size 32 to match size of target (4) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 147
+Warning (13469): Verilog HDL assignment warning at uart_mgr_v3.sv(221): truncated value with size 11 to match size of target (10) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 221
+Warning (13469): Verilog HDL assignment warning at uart_mgr_v3.sv(267): truncated value with size 5 to match size of target (4) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 267
+Warning (13469): Verilog HDL assignment warning at uart_mgr_v3.sv(304): truncated value with size 5 to match size of target (4) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 304
+Warning (13469): Verilog HDL assignment warning at uart_mgr_v3.sv(308): truncated value with size 11 to match size of target (10) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 308
+Warning (13469): Verilog HDL assignment warning at uart_mgr_v3.sv(339): truncated value with size 5 to match size of target (4) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 339
+Warning (13469): Verilog HDL assignment warning at uart_mgr_v3.sv(399): truncated value with size 5 to match size of target (4) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 399
+Warning (13469): Verilog HDL assignment warning at uart_mgr_v3.sv(419): truncated value with size 5 to match size of target (4) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/uart_mgr_v3.sv Line: 419
+Warning (13469): Verilog HDL assignment warning at sdram_mgr_v2.v(232): truncated value with size 25 to match size of target (24) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_mgr_v2.v Line: 232
+Warning (13469): Verilog HDL assignment warning at sdram_mgr_v2.v(233): truncated value with size 13 to match size of target (12) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_mgr_v2.v Line: 233
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(260): truncated value with size 32 to match size of target (16) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 260
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(275): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 275
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(292): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 292
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(309): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 309
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(340): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 340
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(393): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 393
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(404): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 404
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(417): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 417
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(419): truncated value with size 11 to match size of target (10) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 419
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(458): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 458
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(474): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 474
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(502): truncated value with size 11 to match size of target (10) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 502
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(543): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 543
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(560): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 560
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(571): truncated value with size 32 to match size of target (14) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 571
+Warning (13469): Verilog HDL assignment warning at sdram_ctrl_v3.v(589): truncated value with size 32 to match size of target (6) File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/verilog/sdram_ctrl_v3.v Line: 589
+Info: Found 88 design entities
+Warning (21610): Output port "MIPI_MCLK" in instance "camera" of entity "CAMERA_D8M" does not have a driver. Connecting to the default value "gnd". File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/CAMERA_D8M.v Line: 28
+Warning (21610): Output port "oDVAL" in instance "camera|ccd|u4" of entity "RAW2RGB_L" does not have a driver. Connecting to the default value "gnd". File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/RAW2RGB_L.v Line: 20
+Info: There are 164 partitions after elaboration.
+Info: Running rule checking for Agilex5 protocol IPs...
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab_0.
+Info (11172): ***************************************************************
+Info (11172): Quartus is a registered trademark of Intel Corporation in the
+Info (11172): US and other countries.  Portions of the Quartus Prime software
+Info (11172): Code, and other portions of the code included in this download
+Info (11172): Or on this DVD, are licensed to Intel Corporation and are the
+Info (11172): Copyrighted property of third parties. For license details,
+Info (11172): Refer to the End User License Agreement at
+Info (11172): Http://fpgasoftware.intel.com/eula.
+Info (11172): ***************************************************************
+Info (11172): Add_instance auto_signaltap_auto_signaltap_0 altera_signaltap_agent
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 PREFER_HOST {}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 TYPE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_BLOCK_TYPE {AUTO}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_DATA_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_NODE_INFO {805334528}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_POWER_UP_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK {000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK_LENGTH {471}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SEGMENT_SIZE {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ATTRIBUTE_MEM_MODE {OFF}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_FLOW_USE_GENERATED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_BITS {11}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_BUFFER_FULL_STOP {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_CURRENT_RESOURCE_WIDTH {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INCREMENTAL_ROUTING {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SAMPLE_DEPTH {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_IN_ENABLED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_COUNTER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ADVANCED_TRIGGER_ENTITY {basic,1,}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL_PIPELINE {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ENABLE_ADVANCED_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SECTION_ID {auto_signaltap_0}
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Send_message info {SLD fabric agents which did not specify prefer_host were connected to JTAG}
+Info (11172): Add_instance jtagpins altera_jtag_wys_atom
+Info (11172): Add_instance sldfabric altera_sld_jtag_hub
+Info (11172): Set_instance_parameter_value sldfabric COUNT 1
+Info (11172): Set_instance_parameter_value sldfabric SETTINGS {{mfr_code 110 type_code 0 version 6 instance 0 ir_width 10 bridge_agent 0 prefer_host {} type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value sldfabric CONN_INDEX 0
+Info (11172): Set_instance_parameter_value sldfabric ENABLE_SOFT_CORE_CONTROLLER 0
+Info (11172): Set_instance_parameter_value sldfabric BRIDGE_HOST 0
+Info (11172): Set_instance_parameter_value sldfabric USE_TCK_ENA 0
+Info (11172): Set_instance_parameter_value sldfabric NEGEDGE_TDO_LATCH 0
+Info (11172): Add_instance ident altera_connection_identification_hub
+Info (11172): Set_instance_parameter_value ident DESIGN_HASH 1c9b7767dba9928332ca
+Info (11172): Set_instance_parameter_value ident COUNT 1
+Info (11172): Set_instance_parameter_value ident SETTINGS {{width 4 latency 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance configresetfabric intel_configuration_debug_reset_release_hub
+Info (11172): Set_instance_parameter_value configresetfabric COUNT 2
+Info (11172): Set_instance_parameter_value configresetfabric SETTINGS {{is_source 0 type_name 0 instance_name 0} {is_source 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection jtagpins.clock sldfabric.clock clock
+Info (11172): Add_connection jtagpins.node sldfabric.node conduit
+Info (11172): Add_connection sldfabric.clock_0 auto_signaltap_auto_signaltap_0.clock clock
+Info (11172): Add_connection sldfabric.node_0 auto_signaltap_auto_signaltap_0.node conduit
+Info (11172): Add_connection sldfabric.ident ident.ident_0 conduit
+Info (11172): Add_connection configresetfabric.conf_reset_out_0 auto_signaltap_auto_signaltap_0.conf_reset_out reset
+Info (11172): Add_connection configresetfabric.conf_reset_out_1 sldfabric.conf_reset_out reset
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance auto_signaltap_auto_signaltap_0 altera_signaltap_agent
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 PREFER_HOST {}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 TYPE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_BLOCK_TYPE {AUTO}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_DATA_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_NODE_INFO {805334528}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_POWER_UP_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK {000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK_LENGTH {471}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SEGMENT_SIZE {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ATTRIBUTE_MEM_MODE {OFF}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_FLOW_USE_GENERATED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_BITS {11}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_BUFFER_FULL_STOP {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_CURRENT_RESOURCE_WIDTH {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INCREMENTAL_ROUTING {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SAMPLE_DEPTH {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_IN_ENABLED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_COUNTER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ADVANCED_TRIGGER_ENTITY {basic,1,}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL_PIPELINE {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ENABLE_ADVANCED_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SECTION_ID {auto_signaltap_0}
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Send_message info {SLD fabric agents which did not specify prefer_host were connected to JTAG}
+Info (11172): Add_instance jtagpins altera_jtag_wys_atom
+Info (11172): Add_instance sldfabric altera_sld_jtag_hub
+Info (11172): Set_instance_parameter_value sldfabric COUNT 1
+Info (11172): Set_instance_parameter_value sldfabric SETTINGS {{mfr_code 110 type_code 0 version 6 instance 0 ir_width 10 bridge_agent 0 prefer_host {} type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value sldfabric CONN_INDEX 0
+Info (11172): Set_instance_parameter_value sldfabric ENABLE_SOFT_CORE_CONTROLLER 0
+Info (11172): Set_instance_parameter_value sldfabric BRIDGE_HOST 0
+Info (11172): Set_instance_parameter_value sldfabric USE_TCK_ENA 0
+Info (11172): Set_instance_parameter_value sldfabric NEGEDGE_TDO_LATCH 0
+Info (11172): Add_instance ident altera_connection_identification_hub
+Info (11172): Set_instance_parameter_value ident DESIGN_HASH 1c9b7767dba9928332ca
+Info (11172): Set_instance_parameter_value ident COUNT 1
+Info (11172): Set_instance_parameter_value ident SETTINGS {{width 4 latency 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance configresetfabric intel_configuration_debug_reset_release_hub
+Info (11172): Set_instance_parameter_value configresetfabric COUNT 2
+Info (11172): Set_instance_parameter_value configresetfabric SETTINGS {{is_source 0 type_name 0 instance_name 0} {is_source 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection jtagpins.clock sldfabric.clock clock
+Info (11172): Add_connection jtagpins.node sldfabric.node conduit
+Info (11172): Add_connection sldfabric.clock_0 auto_signaltap_auto_signaltap_0.clock clock
+Info (11172): Add_connection sldfabric.node_0 auto_signaltap_auto_signaltap_0.node conduit
+Info (11172): Add_connection sldfabric.ident ident.ident_0 conduit
+Info (11172): Add_connection configresetfabric.conf_reset_out_0 auto_signaltap_auto_signaltap_0.conf_reset_out reset
+Info (11172): Add_connection configresetfabric.conf_reset_out_1 sldfabric.conf_reset_out reset
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance auto_signaltap_auto_signaltap_0 altera_signaltap_agent
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 PREFER_HOST {}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 TYPE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_BLOCK_TYPE {AUTO}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_DATA_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_NODE_INFO {805334528}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_POWER_UP_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK {000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK_LENGTH {471}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SEGMENT_SIZE {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ATTRIBUTE_MEM_MODE {OFF}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_FLOW_USE_GENERATED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_BITS {11}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_BUFFER_FULL_STOP {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_CURRENT_RESOURCE_WIDTH {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INCREMENTAL_ROUTING {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SAMPLE_DEPTH {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_IN_ENABLED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_COUNTER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ADVANCED_TRIGGER_ENTITY {basic,1,}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL_PIPELINE {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ENABLE_ADVANCED_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SECTION_ID {auto_signaltap_0}
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Send_message info {SLD fabric agents which did not specify prefer_host were connected to JTAG}
+Info (11172): Add_instance jtagpins altera_jtag_wys_atom
+Info (11172): Add_instance sldfabric altera_sld_jtag_hub
+Info (11172): Set_instance_parameter_value sldfabric COUNT 1
+Info (11172): Set_instance_parameter_value sldfabric SETTINGS {{mfr_code 110 type_code 0 version 6 instance 0 ir_width 10 bridge_agent 0 prefer_host {} type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value sldfabric CONN_INDEX 0
+Info (11172): Set_instance_parameter_value sldfabric ENABLE_SOFT_CORE_CONTROLLER 0
+Info (11172): Set_instance_parameter_value sldfabric BRIDGE_HOST 0
+Info (11172): Set_instance_parameter_value sldfabric USE_TCK_ENA 0
+Info (11172): Set_instance_parameter_value sldfabric NEGEDGE_TDO_LATCH 0
+Info (11172): Add_instance ident altera_connection_identification_hub
+Info (11172): Set_instance_parameter_value ident DESIGN_HASH 1c9b7767dba9928332ca
+Info (11172): Set_instance_parameter_value ident COUNT 1
+Info (11172): Set_instance_parameter_value ident SETTINGS {{width 4 latency 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance configresetfabric intel_configuration_debug_reset_release_hub
+Info (11172): Set_instance_parameter_value configresetfabric COUNT 2
+Info (11172): Set_instance_parameter_value configresetfabric SETTINGS {{is_source 0 type_name 0 instance_name 0} {is_source 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection jtagpins.clock sldfabric.clock clock
+Info (11172): Add_connection jtagpins.node sldfabric.node conduit
+Info (11172): Add_connection sldfabric.clock_0 auto_signaltap_auto_signaltap_0.clock clock
+Info (11172): Add_connection sldfabric.node_0 auto_signaltap_auto_signaltap_0.node conduit
+Info (11172): Add_connection sldfabric.ident ident.ident_0 conduit
+Info (11172): Add_connection configresetfabric.conf_reset_out_0 auto_signaltap_auto_signaltap_0.conf_reset_out reset
+Info (11172): Add_connection configresetfabric.conf_reset_out_1 sldfabric.conf_reset_out reset
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Alt_sld_fab_0.alt_sld_fab_0.alt_sld_fab_0: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Deploying alt_sld_fab_0 to C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\dni\sandboxes\ENGG-ECE1174_19944_0\sld\ipgen\alt_sld_fab_0.ip
+Info (11172): ***************************************************************
+Info (11172): Quartus is a registered trademark of Intel Corporation in the
+Info (11172): US and other countries.  Portions of the Quartus Prime software
+Info (11172): Code, and other portions of the code included in this download
+Info (11172): Or on this DVD, are licensed to Intel Corporation and are the
+Info (11172): Copyrighted property of third parties. For license details,
+Info (11172): Refer to the End User License Agreement at
+Info (11172): Http://fpgasoftware.intel.com/eula.
+Info (11172): ***************************************************************
+Info (11172): Add_instance auto_signaltap_auto_signaltap_0 altera_signaltap_agent
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 PREFER_HOST {}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 TYPE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_BLOCK_TYPE {AUTO}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_DATA_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_NODE_INFO {805334528}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_POWER_UP_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK {000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK_LENGTH {471}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SEGMENT_SIZE {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ATTRIBUTE_MEM_MODE {OFF}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_FLOW_USE_GENERATED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_BITS {11}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_BUFFER_FULL_STOP {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_CURRENT_RESOURCE_WIDTH {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INCREMENTAL_ROUTING {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SAMPLE_DEPTH {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_IN_ENABLED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_COUNTER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ADVANCED_TRIGGER_ENTITY {basic,1,}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL_PIPELINE {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ENABLE_ADVANCED_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SECTION_ID {auto_signaltap_0}
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Send_message info {SLD fabric agents which did not specify prefer_host were connected to JTAG}
+Info (11172): Add_instance jtagpins altera_jtag_wys_atom
+Info (11172): Add_instance sldfabric altera_sld_jtag_hub
+Info (11172): Set_instance_parameter_value sldfabric COUNT 1
+Info (11172): Set_instance_parameter_value sldfabric SETTINGS {{mfr_code 110 type_code 0 version 6 instance 0 ir_width 10 bridge_agent 0 prefer_host {} type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value sldfabric CONN_INDEX 0
+Info (11172): Set_instance_parameter_value sldfabric ENABLE_SOFT_CORE_CONTROLLER 0
+Info (11172): Set_instance_parameter_value sldfabric BRIDGE_HOST 0
+Info (11172): Set_instance_parameter_value sldfabric USE_TCK_ENA 0
+Info (11172): Set_instance_parameter_value sldfabric NEGEDGE_TDO_LATCH 0
+Info (11172): Add_instance ident altera_connection_identification_hub
+Info (11172): Set_instance_parameter_value ident DESIGN_HASH 1c9b7767dba9928332ca
+Info (11172): Set_instance_parameter_value ident COUNT 1
+Info (11172): Set_instance_parameter_value ident SETTINGS {{width 4 latency 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance configresetfabric intel_configuration_debug_reset_release_hub
+Info (11172): Set_instance_parameter_value configresetfabric COUNT 2
+Info (11172): Set_instance_parameter_value configresetfabric SETTINGS {{is_source 0 type_name 0 instance_name 0} {is_source 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection jtagpins.clock sldfabric.clock clock
+Info (11172): Add_connection jtagpins.node sldfabric.node conduit
+Info (11172): Add_connection sldfabric.clock_0 auto_signaltap_auto_signaltap_0.clock clock
+Info (11172): Add_connection sldfabric.node_0 auto_signaltap_auto_signaltap_0.node conduit
+Info (11172): Add_connection sldfabric.ident ident.ident_0 conduit
+Info (11172): Add_connection configresetfabric.conf_reset_out_0 auto_signaltap_auto_signaltap_0.conf_reset_out reset
+Info (11172): Add_connection configresetfabric.conf_reset_out_1 sldfabric.conf_reset_out reset
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance auto_signaltap_auto_signaltap_0 altera_signaltap_agent
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 PREFER_HOST {}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 TYPE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_BLOCK_TYPE {AUTO}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_DATA_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_NODE_INFO {805334528}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_POWER_UP_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK {000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK_LENGTH {471}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SEGMENT_SIZE {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ATTRIBUTE_MEM_MODE {OFF}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_FLOW_USE_GENERATED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_BITS {11}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_BUFFER_FULL_STOP {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_CURRENT_RESOURCE_WIDTH {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INCREMENTAL_ROUTING {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SAMPLE_DEPTH {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_IN_ENABLED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_COUNTER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ADVANCED_TRIGGER_ENTITY {basic,1,}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL_PIPELINE {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ENABLE_ADVANCED_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SECTION_ID {auto_signaltap_0}
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Send_message info {SLD fabric agents which did not specify prefer_host were connected to JTAG}
+Info (11172): Add_instance jtagpins altera_jtag_wys_atom
+Info (11172): Add_instance sldfabric altera_sld_jtag_hub
+Info (11172): Set_instance_parameter_value sldfabric COUNT 1
+Info (11172): Set_instance_parameter_value sldfabric SETTINGS {{mfr_code 110 type_code 0 version 6 instance 0 ir_width 10 bridge_agent 0 prefer_host {} type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value sldfabric CONN_INDEX 0
+Info (11172): Set_instance_parameter_value sldfabric ENABLE_SOFT_CORE_CONTROLLER 0
+Info (11172): Set_instance_parameter_value sldfabric BRIDGE_HOST 0
+Info (11172): Set_instance_parameter_value sldfabric USE_TCK_ENA 0
+Info (11172): Set_instance_parameter_value sldfabric NEGEDGE_TDO_LATCH 0
+Info (11172): Add_instance ident altera_connection_identification_hub
+Info (11172): Set_instance_parameter_value ident DESIGN_HASH 1c9b7767dba9928332ca
+Info (11172): Set_instance_parameter_value ident COUNT 1
+Info (11172): Set_instance_parameter_value ident SETTINGS {{width 4 latency 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance configresetfabric intel_configuration_debug_reset_release_hub
+Info (11172): Set_instance_parameter_value configresetfabric COUNT 2
+Info (11172): Set_instance_parameter_value configresetfabric SETTINGS {{is_source 0 type_name 0 instance_name 0} {is_source 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection jtagpins.clock sldfabric.clock clock
+Info (11172): Add_connection jtagpins.node sldfabric.node conduit
+Info (11172): Add_connection sldfabric.clock_0 auto_signaltap_auto_signaltap_0.clock clock
+Info (11172): Add_connection sldfabric.node_0 auto_signaltap_auto_signaltap_0.node conduit
+Info (11172): Add_connection sldfabric.ident ident.ident_0 conduit
+Info (11172): Add_connection configresetfabric.conf_reset_out_0 auto_signaltap_auto_signaltap_0.conf_reset_out reset
+Info (11172): Add_connection configresetfabric.conf_reset_out_1 sldfabric.conf_reset_out reset
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance auto_signaltap_auto_signaltap_0 altera_signaltap_agent
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 PREFER_HOST {}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 TYPE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_BLOCK_TYPE {AUTO}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_DATA_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_NODE_INFO {805334528}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_POWER_UP_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK {000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK_LENGTH {471}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SEGMENT_SIZE {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ATTRIBUTE_MEM_MODE {OFF}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_FLOW_USE_GENERATED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_BITS {11}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_BUFFER_FULL_STOP {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_CURRENT_RESOURCE_WIDTH {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INCREMENTAL_ROUTING {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SAMPLE_DEPTH {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_IN_ENABLED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_COUNTER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ADVANCED_TRIGGER_ENTITY {basic,1,}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL_PIPELINE {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ENABLE_ADVANCED_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SECTION_ID {auto_signaltap_0}
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Send_message info {SLD fabric agents which did not specify prefer_host were connected to JTAG}
+Info (11172): Add_instance jtagpins altera_jtag_wys_atom
+Info (11172): Add_instance sldfabric altera_sld_jtag_hub
+Info (11172): Set_instance_parameter_value sldfabric COUNT 1
+Info (11172): Set_instance_parameter_value sldfabric SETTINGS {{mfr_code 110 type_code 0 version 6 instance 0 ir_width 10 bridge_agent 0 prefer_host {} type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value sldfabric CONN_INDEX 0
+Info (11172): Set_instance_parameter_value sldfabric ENABLE_SOFT_CORE_CONTROLLER 0
+Info (11172): Set_instance_parameter_value sldfabric BRIDGE_HOST 0
+Info (11172): Set_instance_parameter_value sldfabric USE_TCK_ENA 0
+Info (11172): Set_instance_parameter_value sldfabric NEGEDGE_TDO_LATCH 0
+Info (11172): Add_instance ident altera_connection_identification_hub
+Info (11172): Set_instance_parameter_value ident DESIGN_HASH 1c9b7767dba9928332ca
+Info (11172): Set_instance_parameter_value ident COUNT 1
+Info (11172): Set_instance_parameter_value ident SETTINGS {{width 4 latency 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance configresetfabric intel_configuration_debug_reset_release_hub
+Info (11172): Set_instance_parameter_value configresetfabric COUNT 2
+Info (11172): Set_instance_parameter_value configresetfabric SETTINGS {{is_source 0 type_name 0 instance_name 0} {is_source 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection jtagpins.clock sldfabric.clock clock
+Info (11172): Add_connection jtagpins.node sldfabric.node conduit
+Info (11172): Add_connection sldfabric.clock_0 auto_signaltap_auto_signaltap_0.clock clock
+Info (11172): Add_connection sldfabric.node_0 auto_signaltap_auto_signaltap_0.node conduit
+Info (11172): Add_connection sldfabric.ident ident.ident_0 conduit
+Info (11172): Add_connection configresetfabric.conf_reset_out_0 auto_signaltap_auto_signaltap_0.conf_reset_out reset
+Info (11172): Add_connection configresetfabric.conf_reset_out_1 sldfabric.conf_reset_out reset
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Saving generation log to C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/dni/sandboxes/ENGG-ECE1174_19944_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0_generation.rpt
+Info (11172): Generated by version: 25.3 build 109
+Info (11172): Starting: Create HDL design files for synthesis
+Info (11172): Qsys-generate C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\dni\sandboxes\ENGG-ECE1174_19944_0\sld\ipgen\alt_sld_fab_0.ip --synthesis=VERILOG --output-directory=C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\dni\sandboxes\ENGG-ECE1174_19944_0\sld\ipgen\alt_sld_fab_0 --family="Agilex 3" --part=A3CZ135BB18AE7S
+Info (11172): Add_instance auto_signaltap_auto_signaltap_0 altera_signaltap_agent
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 PREFER_HOST {}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 TYPE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_BLOCK_TYPE {AUTO}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_DATA_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_NODE_INFO {805334528}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_POWER_UP_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK {000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK_LENGTH {471}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SEGMENT_SIZE {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ATTRIBUTE_MEM_MODE {OFF}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_FLOW_USE_GENERATED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_BITS {11}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_BUFFER_FULL_STOP {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_CURRENT_RESOURCE_WIDTH {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INCREMENTAL_ROUTING {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SAMPLE_DEPTH {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_IN_ENABLED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_COUNTER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ADVANCED_TRIGGER_ENTITY {basic,1,}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL_PIPELINE {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ENABLE_ADVANCED_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SECTION_ID {auto_signaltap_0}
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Send_message info {SLD fabric agents which did not specify prefer_host were connected to JTAG}
+Info (11172): Add_instance jtagpins altera_jtag_wys_atom
+Info (11172): Add_instance sldfabric altera_sld_jtag_hub
+Info (11172): Set_instance_parameter_value sldfabric COUNT 1
+Info (11172): Set_instance_parameter_value sldfabric SETTINGS {{mfr_code 110 type_code 0 version 6 instance 0 ir_width 10 bridge_agent 0 prefer_host {} type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value sldfabric CONN_INDEX 0
+Info (11172): Set_instance_parameter_value sldfabric ENABLE_SOFT_CORE_CONTROLLER 0
+Info (11172): Set_instance_parameter_value sldfabric BRIDGE_HOST 0
+Info (11172): Set_instance_parameter_value sldfabric USE_TCK_ENA 0
+Info (11172): Set_instance_parameter_value sldfabric NEGEDGE_TDO_LATCH 0
+Info (11172): Add_instance ident altera_connection_identification_hub
+Info (11172): Set_instance_parameter_value ident DESIGN_HASH 1c9b7767dba9928332ca
+Info (11172): Set_instance_parameter_value ident COUNT 1
+Info (11172): Set_instance_parameter_value ident SETTINGS {{width 4 latency 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance configresetfabric intel_configuration_debug_reset_release_hub
+Info (11172): Set_instance_parameter_value configresetfabric COUNT 2
+Info (11172): Set_instance_parameter_value configresetfabric SETTINGS {{is_source 0 type_name 0 instance_name 0} {is_source 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection jtagpins.clock sldfabric.clock clock
+Info (11172): Add_connection jtagpins.node sldfabric.node conduit
+Info (11172): Add_connection sldfabric.clock_0 auto_signaltap_auto_signaltap_0.clock clock
+Info (11172): Add_connection sldfabric.node_0 auto_signaltap_auto_signaltap_0.node conduit
+Info (11172): Add_connection sldfabric.ident ident.ident_0 conduit
+Info (11172): Add_connection configresetfabric.conf_reset_out_0 auto_signaltap_auto_signaltap_0.conf_reset_out reset
+Info (11172): Add_connection configresetfabric.conf_reset_out_1 sldfabric.conf_reset_out reset
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance auto_signaltap_auto_signaltap_0 altera_signaltap_agent
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 PREFER_HOST {}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 TYPE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_BLOCK_TYPE {AUTO}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_DATA_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_NODE_INFO {805334528}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_POWER_UP_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK {000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK_LENGTH {471}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SEGMENT_SIZE {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ATTRIBUTE_MEM_MODE {OFF}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_FLOW_USE_GENERATED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_BITS {11}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_BUFFER_FULL_STOP {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_CURRENT_RESOURCE_WIDTH {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INCREMENTAL_ROUTING {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SAMPLE_DEPTH {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_IN_ENABLED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_COUNTER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ADVANCED_TRIGGER_ENTITY {basic,1,}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL_PIPELINE {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ENABLE_ADVANCED_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SECTION_ID {auto_signaltap_0}
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Send_message info {SLD fabric agents which did not specify prefer_host were connected to JTAG}
+Info (11172): Add_instance jtagpins altera_jtag_wys_atom
+Info (11172): Add_instance sldfabric altera_sld_jtag_hub
+Info (11172): Set_instance_parameter_value sldfabric COUNT 1
+Info (11172): Set_instance_parameter_value sldfabric SETTINGS {{mfr_code 110 type_code 0 version 6 instance 0 ir_width 10 bridge_agent 0 prefer_host {} type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value sldfabric CONN_INDEX 0
+Info (11172): Set_instance_parameter_value sldfabric ENABLE_SOFT_CORE_CONTROLLER 0
+Info (11172): Set_instance_parameter_value sldfabric BRIDGE_HOST 0
+Info (11172): Set_instance_parameter_value sldfabric USE_TCK_ENA 0
+Info (11172): Set_instance_parameter_value sldfabric NEGEDGE_TDO_LATCH 0
+Info (11172): Add_instance ident altera_connection_identification_hub
+Info (11172): Set_instance_parameter_value ident DESIGN_HASH 1c9b7767dba9928332ca
+Info (11172): Set_instance_parameter_value ident COUNT 1
+Info (11172): Set_instance_parameter_value ident SETTINGS {{width 4 latency 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance configresetfabric intel_configuration_debug_reset_release_hub
+Info (11172): Set_instance_parameter_value configresetfabric COUNT 2
+Info (11172): Set_instance_parameter_value configresetfabric SETTINGS {{is_source 0 type_name 0 instance_name 0} {is_source 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection jtagpins.clock sldfabric.clock clock
+Info (11172): Add_connection jtagpins.node sldfabric.node conduit
+Info (11172): Add_connection sldfabric.clock_0 auto_signaltap_auto_signaltap_0.clock clock
+Info (11172): Add_connection sldfabric.node_0 auto_signaltap_auto_signaltap_0.node conduit
+Info (11172): Add_connection sldfabric.ident ident.ident_0 conduit
+Info (11172): Add_connection configresetfabric.conf_reset_out_0 auto_signaltap_auto_signaltap_0.conf_reset_out reset
+Info (11172): Add_connection configresetfabric.conf_reset_out_1 sldfabric.conf_reset_out reset
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Add_instance auto_signaltap_auto_signaltap_0 altera_signaltap_agent
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 PREFER_HOST {}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 TYPE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 INSTANCE_NAME {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_BLOCK_TYPE {AUTO}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_DATA_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_BITS {148}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_NODE_INFO {805334528}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_POWER_UP_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK {000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INVERSION_MASK_LENGTH {471}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SEGMENT_SIZE {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ATTRIBUTE_MEM_MODE {OFF}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_FLOW_USE_GENERATED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_STATE_BITS {11}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_BUFFER_FULL_STOP {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_CURRENT_RESOURCE_WIDTH {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_INCREMENTAL_ROUTING {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SAMPLE_DEPTH {8192}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_IN_ENABLED {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_RAM_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_COUNTER_PIPELINE {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ADVANCED_TRIGGER_ENTITY {basic,1,}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_TRIGGER_LEVEL_PIPELINE {1}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_ENABLE_ADVANCED_TRIGGER {0}
+Info (11172): Set_instance_parameter_value auto_signaltap_auto_signaltap_0 SLD_SECTION_ID {auto_signaltap_0}
+Info (11172): Add_instance splitter altera_sld_splitter
+Info (11172): Set_instance_parameter_value splitter ADD_INTERFACE_ASGN 1
+Info (11172): Send_message info {SLD fabric agents which did not specify prefer_host were connected to JTAG}
+Info (11172): Add_instance jtagpins altera_jtag_wys_atom
+Info (11172): Add_instance sldfabric altera_sld_jtag_hub
+Info (11172): Set_instance_parameter_value sldfabric COUNT 1
+Info (11172): Set_instance_parameter_value sldfabric SETTINGS {{mfr_code 110 type_code 0 version 6 instance 0 ir_width 10 bridge_agent 0 prefer_host {} type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value sldfabric CONN_INDEX 0
+Info (11172): Set_instance_parameter_value sldfabric ENABLE_SOFT_CORE_CONTROLLER 0
+Info (11172): Set_instance_parameter_value sldfabric BRIDGE_HOST 0
+Info (11172): Set_instance_parameter_value sldfabric USE_TCK_ENA 0
+Info (11172): Set_instance_parameter_value sldfabric NEGEDGE_TDO_LATCH 0
+Info (11172): Add_instance ident altera_connection_identification_hub
+Info (11172): Set_instance_parameter_value ident DESIGN_HASH 1c9b7767dba9928332ca
+Info (11172): Set_instance_parameter_value ident COUNT 1
+Info (11172): Set_instance_parameter_value ident SETTINGS {{width 4 latency 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance configresetfabric intel_configuration_debug_reset_release_hub
+Info (11172): Set_instance_parameter_value configresetfabric COUNT 2
+Info (11172): Set_instance_parameter_value configresetfabric SETTINGS {{is_source 0 type_name 0 instance_name 0} {is_source 0 type_name 0 instance_name 0} }
+Info (11172): Add_instance agilexconfigreset intel_agilex_reset_release_from_sdm
+Info (11172): Set_instance_parameter_value agilexconfigreset SETTINGS {{type_name 0 instance_name 0} }
+Info (11172): Set_instance_parameter_value agilexconfigreset COUNT 1
+Info (11172): Set_instance_parameter_value splitter FRAGMENTS {{{name conf_reset type reset dir end ports { {conf_reset reset in 1 0} } properties { {synchronousEdges {None} } } } } }
+Info (11172): Add_connection jtagpins.clock sldfabric.clock clock
+Info (11172): Add_connection jtagpins.node sldfabric.node conduit
+Info (11172): Add_connection sldfabric.clock_0 auto_signaltap_auto_signaltap_0.clock clock
+Info (11172): Add_connection sldfabric.node_0 auto_signaltap_auto_signaltap_0.node conduit
+Info (11172): Add_connection sldfabric.ident ident.ident_0 conduit
+Info (11172): Add_connection configresetfabric.conf_reset_out_0 auto_signaltap_auto_signaltap_0.conf_reset_out reset
+Info (11172): Add_connection configresetfabric.conf_reset_out_1 sldfabric.conf_reset_out reset
+Info (11172): Add_connection agilexconfigreset.conf_reset_0 splitter.conf_reset_0 reset
+Info (11172): Set_parameter_value COMPOSED_SETTINGS {{fabric agilex_config_reset_release dir agent type_name 0 instance_name 0} }
+Info (11172): Alt_sld_fab_0.alt_sld_fab_0.alt_sld_fab_0: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab_0: "Transforming system: alt_sld_fab_0"
+Info (11172): Alt_sld_fab_0: "Naming system components in system: alt_sld_fab_0"
+Info (11172): Alt_sld_fab_0: "Processing generation queue"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_alt_sld_fab_0_10_fkimwiy"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_alt_sld_fab_1920_enw5m2a"
+Info (11172): Alt_sld_fab_0: "Generating: altera_signaltap_agent_wrapper"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_altera_sld_splitter_1920_tbvre7y"
+Info (11172): Alt_sld_fab_0: "Generating: altera_jtag_wys_atom"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_altera_sld_jtag_hub_1920_a3fscoi"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_altera_connection_identification_hub_1920_6j4bfby"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_intel_configuration_debug_reset_release_hub_203_wuwp3pa"
+Info (11172): Conf_reset_src: "Generating: conf_reset_src"
+Info (11172): Grounded_conf_reset_src: "Generating: grounded_conf_reset_src"
+Info (11172): Alt_sld_fab_0: "Generating: alt_sld_fab_0_intel_agilex_reset_release_from_sdm_203_poqcpxq"
+Info (11172): Alt_sld_fab_0: "Generating: conf_reset_src"
+Info (11172): Alt_sld_fab_0: "Generating: grounded_conf_reset_src"
+Info (11172): Alt_sld_fab_0: "Generating: intel_configuration_reset_release_for_debug"
+Info (11172): Alt_sld_fab_0: "Generating: intel_configuration_reset_release_to_debug_logic"
+Info (11172): Alt_sld_fab_0: Done "alt_sld_fab_0" with 14 modules, 16 files
+Info (11172): Finished: Create HDL design files for synthesis
+Info (11172): Generation of C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/dni/sandboxes/ENGG-ECE1174_19944_0/sld/ipgen/alt_sld_fab_0.ip (alt_sld_fab_0) took 1145 ms
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab_0.
+Info (19337): VHDL info at sld_signaltap.vhd(39): executing entity "sld_signaltap(sld_node_info=805334528,sld_section_id="auto_signaltap_0",sld_data_bits=148,sld_trigger_bits=148,sld_node_crc_hiword=12345,sld_node_crc_loword=19899,sld_incremental_routing=1,sld_sample_depth=8192,sld_segment_size=8192,sld_trigger_level=1,sld_advanced_trigger_entity="basic,1,",sld_inversion_mask_length=471,sld_inversion_mask="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",sld_current_resource_width=1,sld_create_monitor_interface=1,sld_use_jtag_signal_adapter=0)(1,13)(1,16)(1,4)(1,8)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(0,470)(1,25)(1,3)(1,3)(1,5)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_signaltap.vhd Line: 39
+Info (19337): VHDL info at sld_signaltap_impl.vhd(167): executing entity "sld_signaltap_impl(sld_data_bits=148,sld_trigger_bits=148,sld_node_crc_hiword=12345,sld_node_crc_loword=19899,sld_incremental_routing=1,sld_sample_depth=8192,sld_segment_size=8192,sld_state_bits=11,sld_trigger_level=1,sld_advanced_trigger_entity="basic,1,",sld_inversion_mask_length=471,sld_inversion_mask="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",sld_current_resource_width=1,sld_trigger_pipeline=0,sld_ram_pipeline=0,sld_counter_pipeline=0)(1,13)(1,4)(1,8)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(0,470)(1,25)(1,3)(1,3)(1,5)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_signaltap_impl.vhd Line: 167
+Info (19337): VHDL info at sld_signaltap_impl.vhd(522): executing entity "sld_signaltap_jtag(sld_data_bits=148,sld_trigger_bits=148,sld_node_crc_hiword=12345,sld_node_crc_loword=19899,sld_incremental_routing=1,sld_sample_depth=8192,sld_segment_size=8192,sld_state_bits=11,sld_buffer_full_stop=1,sld_trigger_in_enabled=0,sld_advanced_trigger_entity="basic,1,",sld_inversion_mask_length=471,sld_inversion_mask="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",sld_state_flow_mgr_entity="state_flow_mgr_entity.vhd",sld_current_resource_width=1)(1,4)(1,8)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(0,470)(1,25)(1,3)(1,3)(1,5)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_signaltap_impl.vhd Line: 522
+Info (19337): VHDL info at sld_stp_acq_core.vhd(117): executing entity "sld_stp_acq_core(sld_data_bits=148,sld_trigger_bits=148,sld_node_crc_hiword=12345,sld_node_crc_loword=19899,sld_incremental_routing=1,sld_sample_depth=8192,sld_segment_size=8192,sld_state_bits=11,sld_buffer_full_stop=1,sld_trigger_in_enabled=0,sld_advanced_trigger_entity="basic,1,",sld_inversion_mask_length=471,sld_inversion_mask="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",sld_state_flow_mgr_entity="state_flow_mgr_entity.vhd",sld_current_resource_width=1)(12,0)(12,0)(12,0)(26,0)(0,0)(16,0)(1,4)(1,8)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(0,470)(1,25)(1,3)(1,3)(1,5)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_stp_acq_core.vhd Line: 117
+Info (19337): VHDL info at sld_ela_control.vhd(72): executing entity "sld_ela_control(ip_major_version=6,trigger_input_width=148,advanced_trigger_entity="basic,1,",mem_address_bits=13,sample_depth=8192,state_bits=11,segment_size_bits=13,state_flow_mgr_entity="state_flow_mgr_entity.vhd",storage_qualifier_inversion_mask_length=0,storage_qualifier_advanced_condition_entity="basic")(1,8)(470,470)(1,25)(1,3)(1,5)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_ela_control.vhd Line: 72
+Info (19337): VHDL info at sld_ela_control.vhd(1174): executing entity "sld_ela_basic_multi_level_trigger(ip_major_version=6,data_bits=148)(0,0)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_ela_control.vhd Line: 1174
+Info (19337): VHDL info at sld_mbpmg.vhd(37): executing entity "sld_mbpmg(ip_major_version=6,data_bits=148)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_mbpmg.vhd Line: 37
+Info (19337): VHDL info at sld_mbpmg.vhd(257): executing entity "sld_sbpmg(ip_major_version=6)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_mbpmg.vhd Line: 257
+Info (19337): VHDL info at sld_ela_trigger_flow_mgr.vhd(10): executing entity "sld_ela_trigger_flow_mgr(ip_major_version=6,trigger_level=1,segment_size_bits=13)(0,0)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd Line: 10
+Info (19337): VHDL info at sld_buffer_manager.vhd(47): executing entity "sld_buffer_manager(ip_major_version=6,address_bits=13,segment_size_bits=13,num_segments_bits=1)(1,3)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_buffer_manager.vhd Line: 47
+Info (19337): VHDL info at sld_stp_comm_acq_domain_xing.vhd(21): executing entity "sld_stp_comm_acq_domain_xing(sld_data_bits=148,sld_trigger_bits=148,sld_node_crc_hiword=12345,sld_node_crc_loword=19899,sld_incremental_routing=1,sld_sample_depth=8192,sld_segment_size=8192,sld_state_bits=11,sld_buffer_full_stop=1,sld_trigger_in_enabled=0,sld_advanced_trigger_entity="basic,1,",sld_inversion_mask_length=471,sld_inversion_mask="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",sld_state_flow_mgr_entity="state_flow_mgr_entity.vhd",sld_current_resource_width=1)(12,0)(26,0)(0,0)(16,0)(12,0)(12,0)(12,0)(12,0)(12,0)(26,0)(0,0)(16,0)(1,4)(1,8)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(0,470)(1,25)(1,3)(1,3)(1,5)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_stp_comm_acq_domain_xing.vhd Line: 21
+Info (19337): VHDL info at intel_stp_status_bits_cdc.vhd(26): executing entity "intel_stp_status_bits_cdc(stp_status_bits_width=17)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/intel_stp_status_bits_cdc.vhd Line: 26
+Info (19337): VHDL info at sld_stp_comm_jtag.vhd(16): executing entity "sld_stp_comm_jtag(sld_data_bits=148,sld_trigger_bits=148,sld_node_crc_hiword=12345,sld_node_crc_loword=19899,sld_incremental_routing=1,sld_sample_depth=8192,sld_segment_size=8192,sld_state_bits=11,sld_buffer_full_stop=1,sld_trigger_in_enabled=0,sld_advanced_trigger_entity="basic,1,",sld_inversion_mask_length=471,sld_inversion_mask="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",sld_state_flow_mgr_entity="state_flow_mgr_entity.vhd",sld_current_resource_width=1)(12,0)(12,0)(12,0)(26,0)(0,0)(16,0)(1,4)(1,8)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(1,4)(0,470)(1,25)(1,3)(1,3)(1,5)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_stp_comm_jtag.vhd Line: 16
+Info (19337): VHDL info at sld_buffer_manager.vhd(563): executing entity "sld_offload_buffer_mgr(ip_major_version=6,buffer_depth=8192,segment_count=1,mem_address_bits=13,data_bits=148,status_bits=27,data_bit_cntr_bits=8,status_bit_cntr_bits=5,ela_status_bits=4)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_buffer_manager.vhd Line: 563
+Info (19337): VHDL info at sld_rom_sr.vhd(5): executing entity "sld_rom_sr" with architecture "INFO_REG" File: c:/altera_pro/quartus/libraries/megafunctions/sld_rom_sr.vhd Line: 5
+Info (19337): VHDL info at sld_stp_comm_jtag.vhd(849): executing entity "serial_crc_16" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_stp_comm_jtag.vhd Line: 849
+Info (19337): VHDL info at alt_sld_fab_0_altera_sld_jtag_hub_1920_a3fscoi.vhd(13): executing entity "alt_sld_fab_0_altera_sld_jtag_hub_1920_a3fscoi(device_family="Agilex 3",count=1,n_sel_bits=1,n_node_ir_bits=10,node_info="00110000000000000110111000000000",compilation_mode=0,broadcast_feature=0,force_pre_1_4_feature=0,negedge_tdo_latch=0,bridge_start_index=2)(1,8)(1,0)(1,32)" with architecture "rtl" File: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/dni/sandboxes/ENGG-ECE1174_19944_0/sld/ipgen/alt_sld_fab_0/altera_sld_jtag_hub_1920/synth/alt_sld_fab_0_altera_sld_jtag_hub_1920_a3fscoi.vhd Line: 13
+Info (19337): VHDL info at sld_jtag_hub.vhd(89): executing entity "sld_jtag_hub(device_family="Agilex 3",n_nodes=1,n_sel_bits=1,n_node_ir_bits=10,node_info="00110000000000000110111000000000",broadcast_feature=0,force_pre_1_4_feature=0,negedge_tdo_latch=0,bridge_start_index=2)(1,8)(31,0)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_jtag_hub.vhd Line: 89
+Info (19337): VHDL info at sld_hub.vhd(1554): executing entity "sld_shadow_jsm(ip_major_version=1,ip_minor_version=5)" with architecture "rtl" File: c:/altera_pro/quartus/libraries/megafunctions/sld_hub.vhd Line: 1554
+Info (19337): VHDL info at sld_rom_sr.vhd(5): executing entity "sld_rom_sr(n_bits=64)" with architecture "INFO_REG" File: c:/altera_pro/quartus/libraries/megafunctions/sld_rom_sr.vhd Line: 5
+Info: DA report generation in native DNI mode
+Info (21615): Running Design Assistant Rules for snapshot 'partitioned'
+Info: No waiver waived any violations
+Info (22360): Design Assistant Results: 27 of 29 enabled rules passed, and 1 rules was disabled, in snapshot 'partitioned'
+Info (21660): Design Assistant Results: 0 of 19 Critical severity rules issued violations in snapshot 'partitioned'
+Info (21661): Design Assistant Results: 0 of 1 High severity rules issued violations in snapshot 'partitioned'
+Info (21621): Design Assistant Results: 0 of 1 Medium severity rules issued violations in snapshot 'partitioned'
+Info (21622): Design Assistant Results: 2 of 8 Low severity rules issued violations in snapshot 'partitioned'. Please refer to DRC report 'C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/output_files/golden_top.drc.partitioned.rpt' for more information
+
+

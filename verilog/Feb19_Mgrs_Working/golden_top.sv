@@ -1,0 +1,266 @@
+// ============================================================================
+// Copyright (c) 2025 by Terasic Technologies Inc.
+// ============================================================================
+//
+// Permission:
+//
+//   Terasic grants permission to use and modify this code for use
+//   in synthesis for all Terasic Development Boards and Altera Development
+//   Kits made by Terasic.  Other use of this code, including the selling
+//   ,duplication, or modification of any portion is strictly prohibited.
+//
+// Disclaimer:
+//
+//   This VHDL/Verilog or C/C++ source code is intended as a design reference
+//   which illustrates how these types of functions can be implemented.
+//   It is the user's responsibility to verify their design for
+//   consistency and functionality through the use of formal
+//   verification methods.  Terasic provides no warranty regarding the use
+//   or functionality of this code.
+//
+// ============================================================================
+//
+//  Terasic Technologies Inc
+//  No.80, Fenggong Rd., Hukou Township, Hsinchu County 303035. Taiwan
+//
+//
+//                     web: http://www.terasic.com/
+//                     email: support@terasic.com
+//
+// ============================================================================
+//Date:  Mon Jun  2 00:32:49 2025
+// ============================================================================
+
+
+module golden_top(
+
+      ///////// CLOCK /////////
+      input              CLOCK0_50,
+      input              CLOCK1_50,
+
+      ///////// KEY /////////
+      input    [ 3: 0]   KEY, //BUTTON is Low-Active
+
+      ///////// SW /////////
+      input    [ 9: 0]   SW,
+
+      ///////// LED /////////
+      output   [ 9: 0]   LEDR, //LED is Low-Active
+
+      ///////// Seg7 /////////
+      output   [ 6: 0]   HEX0,
+      output   [ 6: 0]   HEX1,
+      output   [ 6: 0]   HEX2,
+      output   [ 6: 0]   HEX3,
+      output   [ 6: 0]   HEX4,
+      output   [ 6: 0]   HEX5,
+
+      ///////// SDRAM /////////
+      output             DRAM_CLK,
+      output             DRAM_CKE,
+      output   [12: 0]   DRAM_ADDR,
+      output   [ 1: 0]   DRAM_BA,
+      inout    [31: 0]   DRAM_DQ,
+      output             DRAM_CS_n,
+      output             DRAM_WE_n,
+      output             DRAM_CAS_n,
+      output             DRAM_RAS_n,
+      output   [ 3: 0]   DRAM_DQM,
+
+      ///////// HDMI /////////
+      inout              HDMI_LRCLK,
+      inout              HDMI_MCLK,
+      inout              HDMI_SCLK,
+      output             HDMI_TX_CLK,
+      output             HDMI_TX_HS,
+      output             HDMI_TX_VS,
+      output   [23: 0]   HDMI_TX_D,
+      output             HDMI_TX_DE,
+      input              HDMI_TX_INT,
+      inout              HDMI_I2S0,
+
+
+
+      ///////// I2C for HDMI and ADC /////////
+      inout              FPGA_I2C_SCL,
+      inout              FPGA_I2C_SDA,
+
+      ///////// UART /////////
+      output             FPGA_UART_TX,
+      input              FPGA_UART_RX,
+
+      ///////// GPIO /////////
+      inout    [35: 0]   GPIO_D
+
+);
+
+
+//=======================================================
+//  Structural coding
+//=======================================================
+//---HEX OFF
+//assign HEX0 =7'h7f; 
+//assign HEX1 =7'h7f; 
+//assign HEX2 =7'h7f; 
+//assign HEX3 =7'h7f; 
+//assign HEX4 =7'h7f; 
+//assign HEX5 =7'h7f; 
+
+//----LED OFF
+assign   LEDR [9: 3] =7'hFF ; 
+
+
+//--SDRAM no use
+/*
+assign DRAM_CS_n =1'b1;//
+assign DRAM_WE_n =1'b1;//
+assign DRAM_CAS_n=1'b1;//
+assign DRAM_RAS_n=1'b1;//
+assign DRAM_DQM  =4'hf ; 
+assign DRAM_DQ   =32'hzzzz_zzzz;
+*/
+
+//--UART tx loopback to rx 
+assign   FPGA_UART_TX =  FPGA_UART_RX & tx_out; 
+
+//--led display
+assign   LEDR[1:0]= {~KEY[0], ~FPGA_UART_TX };
+
+// Revised by DG below
+
+
+    wire   ar_clkdiv, din, data_clk, tx_clk, tx_start, ar, new_rx, tx_out;
+	 wire [7:0] dout, tx_word;
+	 wire tx_done;
+	 
+	 // Signal declarations for SDRAM controller interface to UART Mgr
+	wire mem_wr_req;
+	wire mem_rd_req;
+	wire [23:0] mem_addr;
+	wire [31:0] mem_wr_data;
+	wire [31:0]	mem_rd_data;
+	wire	mem_rd_valid;
+	wire 	mem_busy;
+	wire	mem_wr_next;
+	 
+	 wire [31:0] control_regs [3:0];  // 32-bit Control Registers [3:0]
+
+	wire 	wr_data_fifo_wrreq;
+	wire	wr_data_fifo_full;
+	wire  [31:0]	wr_data_fifo_datain;
+
+	wire	rd_data_fifo_rdreq;
+	wire	rd_data_fifo_full;
+	wire  [31:0]	rd_data_fifo_dataout;
+
+	wire	wr_addr_fifo_wrreq;
+	wire	wr_addr_fifo_full;
+	wire [23:0]	wr_addr_fifo_datain;
+
+	wire	rd_addr_fifo_wrreq;
+	wire	rd_addr_fifo_full;
+	wire [23:0]	rd_addr_fifo_datain;
+	
+	wire [1:0] reg_idx;
+	
+	
+	wire sdram_ctrl_clk;  // PLL Output 
+
+	assign reg_idx = SW[1:0];	// Use lower 2 dip switches to choose which control reg to display
+	
+	
+    assign ar = KEY[0];
+	assign clk = sdram_ctrl_clk;
+    assign din = FPGA_UART_RX;
+
+/* // dividers for 50 MHz input clock
+    clk_div #(8, 217) rx_div (.ar(ar_clkdiv), .clk_in(clk), .clk_out(data_clk));
+    clk_div #(8, 217) tx_div (.ar(ar), .clk_in(clk), .clk_out(tx_clk));
+*/
+	// dividers for 100 MHz input clock
+    clk_div #(9, 434) rx_div (.ar(ar_clkdiv), .clk_in(clk), .clk_out(data_clk));
+    clk_div #(9, 434) tx_div (.ar(ar), .clk_in(clk), .clk_out(tx_clk));
+
+    rs232_rx rcvr(.ar(ar), .clk(data_clk), .clk_fast(clk), 
+       .din(din), .show_prev(1'b0), .dout(dout), 
+		.ar_clkdiv(ar_clkdiv), .new_rx(new_rx));
+
+	rs232_tx transmitter(.ar(ar), .clk(tx_clk), .tx_start(tx_start), .tx_done(tx_done), 
+		.tx_word(tx_word), .tx_out(tx_out) );
+
+/* // First version of uart_mgr		
+	uart_mgr manager(.ar(ar), .clk(clk), .new_rx(new_rx), .tx_done(tx_done), 
+		.tx_start(tx_start), .rx_word(dout), .tx_word(tx_word), .control_regs(control_regs),
+		.mem_wr_req(mem_wr_req), .mem_rd_req(mem_rd_req), .mem_addr(mem_addr), 
+		.mem_wr_data(mem_wr_data), .mem_rd_data(mem_rd_data), .mem_rd_valid(mem_rd_valid), 
+		.mem_busy(mem_busy), .wr_next(wr_next));
+*/
+
+	// Second version of uart_mgr to work with sdram_mgr
+	uart_mgr uart_manager(.ar(ar), .clk(clk), .new_rx(new_rx), .tx_done(tx_done), 
+		.tx_start(tx_start), .rx_word(dout), .tx_word(tx_word), .control_regs(control_regs),
+		.wr_data_fifo_wrreq(wr_data_fifo_wrreq), .wr_data_fifo_full(wr_data_fifo_full),
+		.wr_data_fifo_datain(wr_data_fifo_datain), .rd_data_fifo_rdreq(rd_data_fifo_rdreq),
+		.rd_data_fifo_full(rd_data_fifo_full), .rd_data_fifo_empty(rd_data_fifo_empty), .rd_data_fifo_dataout(rd_data_fifo_dataout),
+		.wr_addr_fifo_wrreq(wr_addr_fifo_wrreq), .wr_addr_fifo_full(wr_addr_fifo_full),
+		.wr_addr_fifo_datain(wr_addr_fifo_datain), .rd_addr_fifo_wrreq(rd_addr_fifo_wrreq),
+		.rd_addr_fifo_full(rd_addr_fifo_full), .rd_addr_fifo_datain(rd_addr_fifo_datain));
+
+
+	sevseg_dec dec0(.x_in(control_regs[reg_idx][3:0]), .segs(HEX0));
+	sevseg_dec dec1(.x_in(control_regs[reg_idx][7:4]), .segs(HEX1));
+	sevseg_dec dec2(.x_in(control_regs[reg_idx][11:8]), .segs(HEX2));
+	sevseg_dec dec3(.x_in(control_regs[reg_idx][15:12]), .segs(HEX3));
+	sevseg_dec dec4(.x_in(control_regs[reg_idx][19:16]), .segs(HEX4));
+	sevseg_dec dec5(.x_in(control_regs[reg_idx][23:20]), .segs(HEX5));
+	
+sdram_mgr sdram_manager(.ar(ar), .clk(clk), .wr_data_fifo_wrreq(wr_data_fifo_wrreq),
+		.wr_data_fifo_full(wr_data_fifo_full), .wr_data_fifo_datain(wr_data_fifo_datain),
+		.rd_data_fifo_rdreq(rd_data_fifo_rdreq), .rd_data_fifo_full(rd_data_fifo_full),
+		.rd_data_fifo_dataout(rd_data_fifo_dataout), .wr_addr_fifo_wrreq(wr_addr_fifo_wrreq),
+		.wr_addr_fifo_full(wr_addr_fifo_full), .wr_addr_fifo_datain(wr_addr_fifo_datain),
+		.rd_addr_fifo_wrreq(rd_addr_fifo_wrreq), .rd_addr_fifo_full(rd_addr_fifo_full),
+		.rd_addr_fifo_datain(rd_addr_fifo_datain), .rd_data_fifo_empty(rd_data_fifo_empty),
+		.mem_wr_req(mem_wr_req), .mem_rd_req(mem_rd_req), .mem_addr(mem_addr), 
+		.mem_wr_data(mem_wr_data), .mem_rd_data(mem_rd_data), .mem_rd_valid(mem_rd_valid), 
+		.mem_busy(mem_busy), .mem_wr_next(mem_wr_next));
+
+	
+sdram_pll pll_sdram(
+		.refclk(CLOCK0_50),   //  refclk.clk,    The reference clock source that drives the I/O PLL.
+		.locked(LEDR[2]),   //  locked.export, The IOPLL IP core drives this port high when the PLL acquires lock. The port remains high as long as the I/O PLL is locked. The I/O PLL asserts the locked port when the phases and frequencies of the reference clock and feedback clock are the same or within the lock circuit tolerance. When the difference between the two clock signals exceeds the lock circuit tolerance, the I/O PLL loses lock.
+		.rst(1'b0),      //   reset.reset,  The asynchronous reset port for the output clocks. Drive this port high to reset all output clocks to the value of 0.
+		.outclk_0(sdram_ctrl_clk), // outclk0.clk,    Output clock Channel 0 from I/O PLL.
+		.outclk_1(DRAM_CLK)  // outclk1.clk,    Output clock Channel 1 from I/O PLL.
+	);
+	
+sdram_controller_32bit sdram_ctrl
+(
+    .clk(sdram_ctrl_clk),                // typically 100–133 MHz
+    .rst_n(ar),
+
+    // User interface (simple handshake - single transaction)
+    .wr_req(mem_wr_req),
+    .rd_req(mem_rd_req),
+    .addr(mem_addr),               // 24-bit addr → 64MB
+    .wr_data(mem_wr_data),
+    .rd_data(mem_rd_data),
+    .rd_valid(mem_rd_valid),
+    .busy(mem_busy),
+	.wr_next(mem_wr_next),
+
+    // SDRAM Pins
+    .sdram_a(DRAM_ADDR),
+    .sdram_ba(DRAM_BA),
+    .sdram_dq(DRAM_DQ),
+    .sdram_dqm(DRAM_DQM),          // usually 2'b00 for full 32-bit
+    .sdram_cke(DRAM_CKE),
+    .sdram_cs_n(DRAM_CS_n),
+    .sdram_ras_n(DRAM_RAS_n),
+    .sdram_cas_n(DRAM_CAS_n),
+    .sdram_we_n(DRAM_WE_n)
+);	
+
+         
+
+endmodule

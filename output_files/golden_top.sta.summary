@@ -1,0 +1,272 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'u_VEDIO_PLL|iopll_0_outclk0'
+Slack : -2.356
+TNS   : -103.076
+Corner: Slow fix6a 0C Model
+
+Type  : Setup 'pll_sdram|iopll_0_outclk0'
+Slack : 3.658
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Setup 'camera|mipi_rclk|iopll_0_refclk'
+Slack : 3.713
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+Type  : Setup 'GPIO_Din[1]'
+Slack : 5.813
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Setup 'u_AUDIO_PLL|iopll_0_outclk0'
+Slack : 200.684
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Hold 'pll_sdram|iopll_0_outclk0'
+Slack : -5.706
+TNS   : -348.476
+Corner: Slow fix6a 0C Model
+
+Type  : Hold 'GPIO_Din[1]'
+Slack : 0.001
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Hold 'u_VEDIO_PLL|iopll_0_outclk0'
+Slack : 0.058
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Hold 'u_AUDIO_PLL|iopll_0_outclk0'
+Slack : 0.060
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Hold 'camera|mipi_rclk|iopll_0_refclk'
+Slack : 0.076
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Recovery 'GPIO_Din[1]'
+Slack : 6.548
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Recovery 'pll_sdram|iopll_0_outclk0'
+Slack : 9.028
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Recovery 'camera|mipi_rclk|iopll_0_refclk'
+Slack : 16.132
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Recovery 'u_VEDIO_PLL|iopll_0_outclk0'
+Slack : 38.235
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Removal 'GPIO_Din[1]'
+Slack : 0.020
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Removal 'pll_sdram|iopll_0_outclk0'
+Slack : 0.205
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Removal 'u_VEDIO_PLL|iopll_0_outclk0'
+Slack : 0.220
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Removal 'camera|mipi_rclk|iopll_0_refclk'
+Slack : 0.507
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Minimum Pulse Width 'internal_clk'
+Slack : 2.398
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+Type  : Minimum Pulse Width 'pll_sdram|iopll_0_outclk1'
+Slack : 3.878
+TNS   : 0.000
+Corner: Slow fix6 100C Model
+
+Type  : Minimum Pulse Width 'pll_sdram|iopll_0_outclk0'
+Slack : 4.387
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+Type  : Minimum Pulse Width 'u_VEDIO_PLL|iopll_0|tennm_ph2_iopll|ref_clk0'
+Slack : 8.127
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+Type  : Minimum Pulse Width 'camera|mipi_rclk|iopll_0|tennm_ph2_iopll|ref_clk0'
+Slack : 8.905
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+Type  : Minimum Pulse Width 'pll_sdram|iopll_0|tennm_ph2_iopll|ref_clk0'
+Slack : 8.910
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'camera|mipi_rclk|iopll_0_refclk'
+Slack : 9.421
+TNS   : 0.000
+Corner: Slow fix6a 0C Model
+
+Type  : Minimum Pulse Width 'camera|mipi_rclk|iopll_0_m_cnt_clk'
+Slack : 9.830
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'pll_sdram|iopll_0_m_cnt_clk'
+Slack : 9.830
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'u_VEDIO_PLL|iopll_0_m_cnt_clk'
+Slack : 9.830
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'camera|mipi_rclk|iopll_0_n_cnt_clk'
+Slack : 9.911
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'pll_sdram|iopll_0_n_cnt_clk'
+Slack : 9.911
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'u_VEDIO_PLL|iopll_0_n_cnt_clk'
+Slack : 9.911
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'u_VEDIO_PLL|iopll_0_outclk0'
+Slack : 19.083
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'GPIO_Din[1]'
+Slack : 23.411
+TNS   : 0.000
+Corner: Slow fix6 100C Model
+
+Type  : Minimum Pulse Width 'u_AUDIO_PLL|iopll_0|tennm_ph2_iopll|ref_clk0'
+Slack : 23.683
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Minimum Pulse Width 'camera|mipi_rclk|iopll_0_outclk0'
+Slack : 23.765
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'CLOCK1_50'
+Slack : 24.255
+TNS   : 0.000
+Corner: Fast fix6 0C Model
+
+Type  : Minimum Pulse Width 'u_AUDIO_PLL|iopll_0_n_cnt_clk'
+Slack : 49.596
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'u_AUDIO_PLL|iopll_0_m_cnt_clk'
+Slack : 49.834
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Minimum Pulse Width 'u_AUDIO_PLL|iopll_0_outclk0'
+Slack : 100.511
+TNS   : 0.000
+Corner: Slow fix6 0C Model
+
+Type  : Slow fix6 100C Model Max Skew 'set_max_skew'
+Slack : 7.211
+
+Type  : Slow fix6 100C Model Max Skew 'set_max_skew'
+Slack : 7.377
+
+Type  : Slow fix6 100C Model Max Skew 'set_max_skew'
+Slack : 7.446
+
+Type  : Slow fix6 100C Model Max Skew 'set_max_skew'
+Slack : 7.498
+
+Type  : Slow fix6 0C Model Max Skew 'set_max_skew'
+Slack : 7.075
+
+Type  : Slow fix6 0C Model Max Skew 'set_max_skew'
+Slack : 7.330
+
+Type  : Slow fix6 0C Model Max Skew 'set_max_skew'
+Slack : 7.373
+
+Type  : Slow fix6 0C Model Max Skew 'set_max_skew'
+Slack : 7.418
+
+Type  : Slow fix6a 0C Model Max Skew 'set_max_skew'
+Slack : 7.071
+
+Type  : Slow fix6a 0C Model Max Skew 'set_max_skew'
+Slack : 7.328
+
+Type  : Slow fix6a 0C Model Max Skew 'set_max_skew'
+Slack : 7.369
+
+Type  : Slow fix6a 0C Model Max Skew 'set_max_skew'
+Slack : 7.417
+
+Type  : Fast fix6 0C Model Max Skew 'set_max_skew'
+Slack : 7.542
+
+Type  : Fast fix6 0C Model Max Skew 'set_max_skew'
+Slack : 7.629
+
+Type  : Fast fix6 0C Model Max Skew 'set_max_skew'
+Slack : 7.655
+
+Type  : Fast fix6 0C Model Max Skew 'set_max_skew'
+Slack : 7.688
+
+Type  : Net Delay 'set_net_delay'
+Slack : 6.837
+
+Type  : Net Delay 'set_net_delay'
+Slack : 6.848
+
+Type  : Net Delay 'set_net_delay'
+Slack : 6.990
+
+Type  : Net Delay 'set_net_delay'
+Slack : 7.005
+
+Type  : Net Delay 'set_net_delay'
+Slack : 7.145
+
+Type  : Net Delay 'set_net_delay'
+Slack : 7.192
+
+Type  : Net Delay 'set_net_delay'
+Slack : 31.037
+
+Type  : Net Delay 'set_net_delay'
+Slack : 31.151
+
+------------------------------------------------------------

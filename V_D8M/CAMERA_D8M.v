@@ -1,0 +1,269 @@
+
+module CAMERA_D8M(
+
+	  input RESET_N,	// active low
+  
+      ///////// CLOCK /////////
+      input              CLOCK0_50,
+
+	  /////// Auto Focus ////
+	  input		Focus_Area,    // 0-whole area, 1-middle area
+	  input		Start_Focus,
+	  
+      ///////// Seg7 /////////
+      output   [ 6: 0]   HEX0,  // HEX[1:0] used to display video output frame rate in Hz
+      output   [ 6: 0]   HEX1,
+  
+	 // I2C interfaces
+	  inout MIPI_I2C_SCL, 
+	  inout MIPI_I2C_SDA, 
+	  inout CAMERA_I2C_SCL,
+	  inout CAMERA_I2C_SDA,
+	  
+	  // MIPI Bridge
+	  input [9:0] MIPI_PIXEL_D,
+	  input MIPI_PIXEL_CLK,
+	  input MIPI_PIXEL_HS,
+	  input MIPI_PIXEL_VS,
+	  output MIPI_MCLK,
+	  output MIPI_REFCLK,
+	  output MIPI_RESET_n,
+	  output MIPI_CS_n,
+   
+      ///////// Video /////////
+      output             VGA_CLK,
+      output             VGA_HS,
+      output             VGA_VS,
+      output   [7: 0]    VGA_R,
+      output   [7: 0]    VGA_G,
+      output   [7: 0]    VGA_B,
+      output             VGA_DE,
+      output [15:0] H_Cont,  
+      output [15:0] V_Cont  
+
+);
+
+/*
+// GPIO Inputs
+assign MIPI_PIXEL_D = GPIO_D[12:3];
+assign MIPI_PIXEL_CLK = GPIO_D[1];
+assign MIPI_PIXEL_HS = GPIO_D[22];
+assign MIPI_PIXEL_VS = GPIO_D[20];
+
+// GPIO Outputs
+assign GPIO_D[25] = CAMERA_PWDN_n;
+assign GPIO_D[23] = MIPI_CS_n;
+assign GPIO_D[28] = MIPI_MCLK;
+assign GPIO_D[18] = MIPI_REFCLK;
+assign GPIO_D[24] = MIPI_RESET_n;
+*/
+
+// GPIO InOuts
+//assign GPIO_D[26] = CAMERA_I2C_SCL;
+//assign GPIO_D[27] = CAMERA_I2C_SDA;
+//assign GPIO_D[30] = MIPI_I2C_SCL;
+//assign GPIO_D[31] = MIPI_I2C_SDA;
+
+
+//=============================================================================
+// REG/WIRE declarations
+//=============================================================================
+  wire        AUTO_FOC ;
+  wire        READ_Request ;
+  wire		  READY;
+  
+  wire 	[7:0]VGA_B_A;
+  wire 	[7:0]VGA_G_A;
+  wire 	[7:0]VGA_R_A;
+  wire		VGA_BLANK_N;
+  
+  //wire        VGA_CLK_25M ;
+  
+  wire  [7:0]sCCD_R;
+  wire  [7:0]sCCD_G;
+  wire  [7:0]sCCD_B; 
+   wire        I2C_RELEASE ;  
+  wire        CAMERA_I2C_SCL_MIPI ; 
+  wire        CAMERA_I2C_SCL_AF ;
+   wire        CAMERA_I2C_SDA_MIPI ; 
+   wire		  CAMERA_I2C_SDAO_MIPI ;
+   //wire        CAMERA_I2C_SDAI_AF ;
+   wire        CAMERA_I2C_SDAO_AF ;
+
+  wire 		  CAMERA_I2C_SDAO;
+  
+ 
+  wire        CAMERA_MIPI_RELAESE ;
+  wire        MIPI_BRIDGE_RELEASE ;
+  wire        D8M_CK_HZ  ; 
+  wire        D8M_CK_HZ2 ; 
+  wire        D8M_CK_HZ3 ; 
+  wire        RESET_KEY ; 
+  wire   [9:0]MIPI_PIXEL_D_ ;
+  wire        MIPI_PIXEL_VS_; 
+  wire        MIPI_PIXEL_HS_;  
+  
+wire        LUT_MIPI_PIXEL_HS;
+wire        LUT_MIPI_PIXEL_VS;
+wire [9:0]  LUT_MIPI_PIXEL_D  ;
+wire        MIPI_PIXEL_CLK_; 
+//=======================================================
+// Structural coding
+//=======================================================
+
+assign  MIPI_PIXEL_CLK_ = MIPI_PIXEL_CLK;
+
+
+assign LUT_MIPI_PIXEL_HS=MIPI_PIXEL_HS;
+assign LUT_MIPI_PIXEL_VS=MIPI_PIXEL_VS;
+assign LUT_MIPI_PIXEL_D =MIPI_PIXEL_D ;
+
+
+assign MIPI_RESET_n   = RESET_N;
+//assign CAMERA_PWDN_n  = RESET_KEY; 
+assign MIPI_CS_n      = 0; 
+
+//------ CAMERA I2C COM BUS --------------------
+assign I2C_RELEASE    = CAMERA_MIPI_RELAESE & MIPI_BRIDGE_RELEASE; 
+assign CAMERA_I2C_SCL = ( I2C_RELEASE  )? CAMERA_I2C_SCL_AF  : CAMERA_I2C_SCL_MIPI ;   
+assign CAMERA_I2C_SDAO = ( I2C_RELEASE  )? CAMERA_I2C_SDAO_AF  : CAMERA_I2C_SDAO_MIPI ;   
+assign CAMERA_I2C_SDA   = (  CAMERA_I2C_SDAO  )?1'bz :1'b0;
+
+
+// GPIO InOuts
+/*
+assign GPIO_D[26] = CAMERA_I2C_SCL;
+assign GPIO_D[27] = CAMERA_I2C_SDA;
+assign GPIO_D[30] = MIPI_I2C_SCL;
+assign GPIO_D[31] = MIPI_I2C_SDA;*/
+
+//------ MIPI BRIDGE  I2C SETTING--------------- 
+MIPI_BRIDGE_CAMERA_Config    cfin(
+   .RESET_N           ( RESET_N  ), 
+   .CLK_50            ( CLOCK0_50), 
+   .MIPI_I2C_SCL      ( MIPI_I2C_SCL), 
+   .MIPI_I2C_SDA      ( MIPI_I2C_SDA ),    
+    .MIPI_I2C_RELEASE  ( MIPI_BRIDGE_RELEASE ),  
+   .CAMERA_I2C_SCL    ( CAMERA_I2C_SCL_MIPI ), 
+   
+   .CAMERA_I2C_SDAI    ( CAMERA_I2C_SDA ), // DG 
+   .CAMERA_I2C_SDAO    ( CAMERA_I2C_SDAO_MIPI ), // DG added
+ 
+ .CAMERA_I2C_RELAESE( CAMERA_MIPI_RELAESE )
+);
+ 
+ 
+//-- Video PLL --- 
+
+pll_test mipi_rclk(
+		.refclk   ( CLOCK0_50  ),   
+		.rst      ( 1'b0 ),     
+		.outclk_0 ( MIPI_REFCLK )//20m
+		//20M
+
+	);
+
+/*
+vga_pll pllv25M(
+		.refclk   (CLOCK0_50),   
+		.rst      ( 1'b0 ),     
+		.outclk_0( VGA_CLK_25M ) //25M
+  
+	);
+*/
+
+
+//--- D8M RAWDATA to RGB ---
+D8M_SET   ccd (
+	.RESET_SYS_N  ( RESET_N ),
+   .CLOCK_50     ( CLOCK0_50      ),
+	.CCD_DATA     ( LUT_MIPI_PIXEL_D [9:0]) ,
+	.CCD_FVAL     ( LUT_MIPI_PIXEL_VS ), //60HZ
+	.CCD_LVAL	  ( LUT_MIPI_PIXEL_HS ), // 
+	.CCD_PIXCLK   ( MIPI_PIXEL_CLK_), //25MHZ
+	.READ_EN      (READ_Request) , 	
+   .VGA_CLK      ( VGA_CLK),
+   .VGA_HS       ( VGA_HS ),
+   .VGA_VS       ( VGA_VS ),	
+	.X_Cont       ( H_Cont),  
+   .Y_Cont       ( V_Cont),   
+   .sCCD_R       ( sCCD_R ),
+   .sCCD_G       ( sCCD_G ),
+   .sCCD_B       ( sCCD_B )
+);
+
+
+//--- By Trigged VGA Controller --  
+
+
+VGA_Controller_trig	u1	(	
+	  .iCLK       (  MIPI_PIXEL_CLK_ ), 
+     .H_Cont(H_Cont),  
+     .V_Cont(V_Cont),  
+	  .READ_Request(READ_Request)	 , 	  
+     .iRed       ( sCCD_R[7:0]   ),
+	  .iGreen     ( sCCD_G[7:0]   ),
+	  .iBlue      ( sCCD_B[7:0]   ),
+	  	
+		
+	  .oVGA_R     ( VGA_R_A ),
+	  .oVGA_G     ( VGA_G_A ),
+	  .oVGA_B     ( VGA_B_A ),
+     .oVGA_H_SYNC( VGA_HS ),
+     .oVGA_V_SYNC( VGA_VS ),	  
+	  .oVGA_SYNC  ( VGA_SYNC_N  ),
+	  .oVGA_BLANK ( VGA_BLANK_N ),
+	  .oVGA_CLOCK ( VGA_CLK     ),
+	  .iRST_N     ( RESET_N )		
+
+);
+
+
+//------AOTO FOCUS ENABLE  --
+AUTO_FOCUS_ON  adj( 
+                      .CLK_50      ( CLOCK0_50 ), 
+                      .I2C_RELEASE ( I2C_RELEASE ), 
+                      .AUTO_FOC    ( AUTO_FOC )
+               ) ;
+//------Auto focus ------- 
+FOCUS_ADJ adl(
+     .CLK_50        ( CLOCK0_50   ), 
+     .RESET_N       ( I2C_RELEASE ), 
+     .RESET_SUB_N   ( I2C_RELEASE ), 
+     .AUTO_FOC      ( Start_Focus & AUTO_FOC ),   
+     .SW_FUC_LINE   ( Focus_Area ),   
+     .SW_FUC_ALL_CEN( Focus_Area ),
+     .VIDEO_HS      ( VGA_HS),
+     .VIDEO_VS      ( VGA_VS),
+     .VIDEO_CLK     ( VGA_CLK),
+     .VIDEO_DE      (READ_Request) ,
+     .iR            ( VGA_R_A), 
+     .iG            ( VGA_G_A), 
+     .iB            ( VGA_B_A), 
+     
+     .oR            ( VGA_R), 
+     .oG            ( VGA_G), 
+     .oB            ( VGA_B), 
+     
+     .READY         (  READY),
+     .SCL           ( CAMERA_I2C_SCL_AF ), 
+     //.SDA           ( CAMERA_I2C_SDA_AF   ),  // Commented by DG
+	 .SDAI ( CAMERA_I2C_SDA ),  // Added by DG
+	 .SDAO ( CAMERA_I2C_SDAO_AF )  // Added by DG
+);							
+
+
+
+
+//--Frame Counter -- 
+ FpsMonitor uFps2(
+	  .clk50    ( CLOCK0_50 ),
+	  .vs       ( VGA_VS    ),//LUT_MIPI_PIXEL_VS ), //60HZ
+	  .fps      (  ),
+	  .hex_fps_h( HEX1 ),
+	  .hex_fps_l( HEX0 )
+);
+
+
+
+endmodule

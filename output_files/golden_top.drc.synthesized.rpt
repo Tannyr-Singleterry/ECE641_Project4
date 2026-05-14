@@ -1,0 +1,1502 @@
+Design Assistant report for golden_top
+Tue Apr 28 13:15:32 2026
+Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant (Synthesized) Results - 5 of 13 Rules Failed
+  3. RES-30134 - Registers Not Reachable from Reset Release IP
+  4. TMC-20052 - Paths with Post Synthesis Inferred Latches
+  5. RES-30132 - Registers May Not Be Properly Reset
+  6. LNT-30010 - Nets Driving both Reset and Clock Enable Signals
+  7. FLP-10500 - Non Driving Top Level Inputs Found
+  8. LNT-30011 - Design Contains Combinational Loops
+  9. LNT-30017 - Register Output Driving Its Own Asynchronous Control Signal Directly or Through Combinational Logic
+ 10. LNT-30023 - Reset Nets with Polarity Conflict
+ 11. RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Modified Before the FPGA Enters User Mode
+ 12. LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch
+ 13. TMC-20053 - DSP Inputs Driven by High Fan-Out Net
+ 14. TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible
+ 15. TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant (Synthesized) Results - 5 of 13 Rules Failed                                                                                                                          ;
++---------------------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; Rule                                                                                                                ; Severity ; Violations ; Waived ; Tags                            ;
++---------------------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP                                                           ; Medium   ; 1,271      ; 0      ; reset-usage, reset-reachability ;
+; TMC-20052 - Paths with Post Synthesis Inferred Latches                                                              ; Medium   ; 14         ; 0      ; nonstandard-timing, latch       ;
+; RES-30132 - Registers May Not Be Properly Reset                                                                     ; Medium   ; 2          ; 0      ; reset-usage, reset-reachability ;
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                                        ; Low      ; 4          ; 0      ; reset-usage                     ;
+; FLP-10500 - Non Driving Top Level Inputs Found                                                                      ; Low      ; 3          ; 0      ; system                          ;
+; LNT-30011 - Design Contains Combinational Loops                                                                     ; High     ; 0          ; 0      ; nonstandard-timing              ;
+; LNT-30017 - Register Output Driving Its Own Asynchronous Control Signal Directly or Through Combinational Logic     ; Medium   ; 0          ; 0      ; nonstandard-timing              ;
+; LNT-30023 - Reset Nets with Polarity Conflict                                                                       ; Medium   ; 0          ; 0      ; reset-usage                     ;
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Modified Before the FPGA Enters User Mode ; Medium   ; 0          ; 0      ; ram, reset-usage                ;
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch                                                        ; Low      ; 0          ; 0      ; dsp, reset-usage                ;
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net                                                                   ; Low      ; 0          ; 0      ; dsp                             ;
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible                                               ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested                                              ; Low      ; 0          ; 0      ; register-duplication, synthesis ;
++---------------------------------------------------------------------------------------------------------------------+----------+------------+--------+---------------------------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	1,271
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------+
+; RES-30134 - Registers Not Reachable from Reset Release IP ;
++---------------------------------------------+-------------+
+; Register Node                               ; Waived      ;
++---------------------------------------------+-------------+
+; u2|Cont[23]                                 ;             ;
+; u2|Cont[12]                                 ;             ;
+; camera|adl|RE|vs|CNT[7]                     ;             ;
+; camera|cfin|camiv|rd|ST[1]                  ;             ;
+; camera|cfin|camiv|rd|ST[3]                  ;             ;
+; camera|cfin|camiv|rd|DELY[0]                ;             ;
+; camera|cfin|camiv|rd|DELY[1]                ;             ;
+; camera|cfin|camiv|rd|ST[2]                  ;             ;
+; camera|cfin|camiv|rd|DATA16[0]              ;             ;
+; camera|cfin|camiv|rd|DATA16[1]              ;             ;
+; camera|cfin|camiv|rd|DATA16[2]              ;             ;
+; camera|cfin|camiv|rd|DATA16[3]              ;             ;
+; camera|cfin|camiv|rd|DATA16[4]              ;             ;
+; camera|adl|RE|vs|CNT[8]                     ;             ;
+; camera|cfin|camiv|rd|DATA16[5]              ;             ;
+; camera|cfin|camiv|ID1[5]                    ;             ;
+; camera|cfin|camiv|CNT[7]                    ;             ;
+; camera|cfin|camiv|CNT[6]                    ;             ;
+; camera|cfin|camiv|CNT[2]                    ;             ;
+; camera|cfin|camiv|CNT[1]                    ;             ;
+; camera|cfin|camiv|CNT[0]                    ;             ;
+; camera|cfin|camiv|CNT[3]                    ;             ;
+; camera|cfin|camiv|CNT[4]                    ;             ;
+; camera|cfin|camiv|CNT[5]                    ;             ;
+; camera|adl|RE|vs|CNT[9]                     ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[7]       ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[6]       ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[5]       ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[4]       ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[1]       ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[0]       ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[3]       ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[2]       ;             ;
+; camera|cfin|camiv|WCNT[10]                  ;             ;
+; camera|cfin|camiv|WCNT[11]                  ;             ;
+; camera|adl|RE|vs|CNT[10]                    ;             ;
+; camera|cfin|camiv|WCNT[12]                  ;             ;
+; camera|cfin|camiv|WCNT[13]                  ;             ;
+; camera|cfin|camiv|WCNT[14]                  ;             ;
+; camera|cfin|camiv|WCNT[15]                  ;             ;
+; camera|cfin|camiv|WCNT[9]                   ;             ;
+; camera|cfin|camiv|WCNT[6]                   ;             ;
+; camera|cfin|camiv|WCNT[5]                   ;             ;
+; camera|cfin|camiv|WCNT[4]                   ;             ;
+; camera|cfin|camiv|WCNT[3]                   ;             ;
+; camera|cfin|camiv|WCNT[2]                   ;             ;
+; camera|adl|RE|vs|CNT[11]                    ;             ;
+; camera|cfin|camiv|WCNT[0]                   ;             ;
+; camera|cfin|camiv|WCNT[1]                   ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[26]      ;             ;
+; camera|cfin|camiv|W_POINTER_GO              ;             ;
+; camera|cfin|camiv|wpt|DELY[2]~0             ;             ;
+; camera|cfin|camiv|wpt|DELY[3]               ;             ;
+; camera|cfin|camiv|wpt|DELY[4]               ;             ;
+; camera|cfin|camiv|wpt|DELY[5]               ;             ;
+; camera|cfin|camiv|wpt|DELY[6]               ;             ;
+; camera|cfin|camiv|wpt|DELY[7]               ;             ;
+; camera|adl|RE|vs|CNT[12]                    ;             ;
+; camera|cfin|camiv|wpt|CNT[7]                ;             ;
+; camera|cfin|camiv|wpt|CNT[5]                ;             ;
+; camera|cfin|camiv|wpt|CNT[6]                ;             ;
+; camera|cfin|camiv|wpt|CNT[2]                ;             ;
+; camera|cfin|camiv|wpt|CNT[1]                ;             ;
+; camera|cfin|camiv|wpt|BYTE[1]               ;             ;
+; camera|cfin|camiv|wpt|BYTE[0]               ;             ;
+; camera|cfin|camiv|wpt|CNT[0]                ;             ;
+; camera|cfin|camiv|wpt|DELY[0]               ;             ;
+; camera|cfin|camiv|wpt|DELY[1]               ;             ;
+; camera|adl|RE|vs|CNT[13]                    ;             ;
+; camera|cfin|camiv|wpt|ST[2]                 ;             ;
+; camera|cfin|camiv|wpt|ST[1]                 ;             ;
+; camera|cfin|camiv|wpt|CNT[3]                ;             ;
+; camera|cfin|camiv|wpt|CNT[4]                ;             ;
+; camera|cfin|camiv|wpt|ST[4]                 ;             ;
+; camera|cfin|camiv|wpt|ST[3]                 ;             ;
+; camera|cfin|camiv|wpt|ST[0]                 ;             ;
+; camera|cfin|camiv|wpt|END_OK                ;             ;
+; camera|cfin|camiv|DELY[30]                  ;             ;
+; camera|cfin|camiv|DELY[31]                  ;             ;
+; camera|adl|RE|vs|CNT[14]                    ;             ;
+; camera|cfin|camiv|DELY[27]                  ;             ;
+; camera|cfin|camiv|DELY[28]                  ;             ;
+; camera|cfin|camiv|DELY[29]                  ;             ;
+; camera|cfin|camiv|DELY[18]                  ;             ;
+; camera|cfin|camiv|DELY[19]                  ;             ;
+; camera|cfin|camiv|DELY[20]                  ;             ;
+; camera|cfin|camiv|DELY[21]                  ;             ;
+; camera|cfin|camiv|DELY[22]                  ;             ;
+; camera|cfin|camiv|DELY[23]                  ;             ;
+; camera|cfin|camiv|DELY[24]                  ;             ;
+; camera|adl|RE|vs|CNT[15]                    ;             ;
+; camera|cfin|camiv|DELY[25]                  ;             ;
+; camera|cfin|camiv|DELY[26]                  ;             ;
+; camera|cfin|camiv|DELY[8]                   ;             ;
+; camera|cfin|camiv|DELY[9]                   ;             ;
+; camera|cfin|camiv|DELY[10]                  ;             ;
+; camera|cfin|camiv|DELY[11]                  ;             ;
+; camera|cfin|camiv|DELY[12]                  ;             ;
+; camera|cfin|camiv|DELY[13]                  ;             ;
+; camera|cfin|camiv|DELY[14]                  ;             ;
+; camera|cfin|camiv|DELY[15]                  ;             ;
+; camera|adl|RE|hs|CNT[0]                     ;             ;
+; camera|cfin|camiv|DELY[16]                  ;             ;
+; camera|cfin|camiv|DELY[17]                  ;             ;
+; camera|cfin|camiv|DELY[7]                   ;             ;
+; camera|cfin|camiv|DELY[6]                   ;             ;
+; camera|cfin|camiv|DELY[5]                   ;             ;
+; camera|cfin|camiv|DELY[1]                   ;             ;
+; camera|cfin|camiv|DELY[2]                   ;             ;
+; camera|cfin|camiv|DELY[0]                   ;             ;
+; camera|cfin|camiv|DELY[3]                   ;             ;
+; camera|cfin|camiv|DELY[4]                   ;             ;
+; u2|Cont[13]                                 ;             ;
+; camera|adl|RE|hs|CNT[1]                     ;             ;
+; camera|cfin|camiv|WCNT[7]                   ;             ;
+; camera|cfin|camiv|WCNT[8]                   ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[25]      ;             ;
+; camera|cfin|camiv|wrd|END_OK                ;             ;
+; camera|cfin|camiv|ST[5]                     ;             ;
+; camera|cfin|camiv|ST[2]                     ;             ;
+; camera|cfin|camiv|ST[3]                     ;             ;
+; camera|cfin|camiv|ST[4]                     ;             ;
+; camera|cfin|camiv|ST[1]                     ;             ;
+; camera|cfin|camiv|R_GO                      ;             ;
+; camera|adl|RE|hs|CNT[2]                     ;             ;
+; camera|cfin|camiv|rd|ST[0]                  ;             ;
+; camera|cfin|camiv|rd|ST[4]                  ;             ;
+; camera|cfin|camiv|rd|ST[5]                  ;             ;
+; camera|cfin|camiv|rd|END_OK                 ;             ;
+; camera|cfin|camiv|ST[0]                     ;             ;
+; camera|cfin|camiv|W_WORD_GO                 ;             ;
+; camera|cfin|camiv|wrd|DELY[5]               ;             ;
+; camera|cfin|camiv|wrd|DELY[0]               ;             ;
+; camera|cfin|camiv|wrd|DELY[1]               ;             ;
+; camera|cfin|camiv|wrd|DELY[2]               ;             ;
+; camera|adl|RE|hs|CNT[3]                     ;             ;
+; camera|cfin|camiv|wrd|CNT[7]                ;             ;
+; camera|cfin|camiv|wrd|CNT[5]                ;             ;
+; camera|cfin|camiv|wrd|CNT[6]                ;             ;
+; camera|cfin|camiv|wrd|CNT[0]                ;             ;
+; camera|cfin|camiv|wrd|CNT[1]                ;             ;
+; camera|cfin|camiv|wrd|CNT[4]                ;             ;
+; camera|cfin|camiv|wrd|BYTE[1]               ;             ;
+; camera|cfin|camiv|wrd|BYTE[0]               ;             ;
+; camera|cfin|camiv|wrd|CNT[2]                ;             ;
+; camera|cfin|camiv|wrd|CNT[3]                ;             ;
+; camera|adl|RE|hs|CNT[4]                     ;             ;
+; camera|cfin|camiv|wrd|DELY[3]               ;             ;
+; camera|cfin|camiv|wrd|DELY[4]               ;             ;
+; camera|cfin|camiv|wrd|ST[1]                 ;             ;
+; camera|cfin|camiv|wrd|ST[3]                 ;             ;
+; camera|cfin|camiv|wrd|ST[4]                 ;             ;
+; camera|cfin|camiv|wrd|ST[5]                 ;             ;
+; camera|cfin|camiv|wrd|ST[2]                 ;             ;
+; camera|cfin|camiv|wrd|DELY[6]               ;             ;
+; camera|cfin|camiv|wrd|DELY[7]               ;             ;
+; camera|cfin|camiv|wrd|ST[0]                 ;             ;
+; camera|adl|RE|hs|CNT[5]                     ;             ;
+; camera|cfin|camiv|wrd|A[8]~0                ;             ;
+; camera|cfin|camiv|wrd|SDAO                  ;             ;
+; rcvr|cs1                                    ;             ;
+; rx_div|count[5]                             ;             ;
+; rx_div|count[0]                             ;             ;
+; rx_div|count[1]                             ;             ;
+; rx_div|count[2]                             ;             ;
+; rx_div|count[3]                             ;             ;
+; rx_div|count[4]                             ;             ;
+; rx_div|count[8]                             ;             ;
+; camera|adl|RE|hs|CNT[6]                     ;             ;
+; rx_div|count[6]                             ;             ;
+; rx_div|count[7]                             ;             ;
+; camera|cfin|camiv|wpt|SCLO                  ;             ;
+; camera|cfin|camiv|rd|SCLO                   ;             ;
+; camera|adl|i2c2|wpt|SCLO                    ;             ;
+; camera|adl|i2c2|rd|SCLO                     ;             ;
+; camera|cfin|mpiv|wpt|SCLO                   ;             ;
+; camera|cfin|mpiv|rd|SCLO                    ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[29]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[28]          ;             ;
+; camera|adl|RE|hs|CNT[7]                     ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[27]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[26]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[7]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[8]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[9]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[10]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[11]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[12]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[13]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[14]          ;             ;
+; camera|adl|RE|hs|CNT[8]                     ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[15]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[16]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[17]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[18]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[19]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[20]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[21]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[22]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[23]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[24]          ;             ;
+; camera|adl|RE|hs|CNT[9]                     ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[25]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[0]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[1]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[2]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[3]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[4]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[5]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[6]           ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[30]          ;             ;
+; camera|cfin|camiv|c1|CLK_DELAY[31]          ;             ;
+; camera|adl|RE|hs|CNT[10]                    ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[29]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[26]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[27]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[28]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[0]            ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[1]            ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[2]            ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[3]            ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[4]            ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[5]            ;             ;
+; u2|Cont[14]                                 ;             ;
+; camera|adl|RE|hs|CNT[11]                    ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[6]            ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[7]            ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[8]            ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[9]            ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[10]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[11]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[12]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[13]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[14]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[15]           ;             ;
+; camera|adl|RE|hs|CNT[12]                    ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[16]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[17]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[18]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[19]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[20]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[21]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[22]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[23]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[24]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[25]           ;             ;
+; camera|adl|RE|hs|CNT[13]                    ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[30]           ;             ;
+; camera|cfin|mpiv|c1|CLK_DELAY[31]           ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[26]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[27]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[28]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[29]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[30]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[31]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[25]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[23]            ;             ;
+; camera|adl|RE|hs|CNT[14]                    ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[24]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[10]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[11]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[9]             ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[15]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[16]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[17]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[18]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[19]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[20]            ;             ;
+; camera|adl|RE|hs|CNT[15]                    ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[21]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[22]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[6]             ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[7]             ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[8]             ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[3]             ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[4]             ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[5]             ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[0]             ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[1]             ;             ;
+; camera|adl|cv1|V_CNT[0]                     ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[2]             ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[14]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[12]            ;             ;
+; camera|adl|i2c2|c1|CLK_DELAY[13]            ;             ;
+; ckK2|CK_1HZ                                 ;             ;
+; camera|uFps2|rfps_l[0]                      ;             ;
+; camera|uFps2|rfps_l[2]                      ;             ;
+; camera|uFps2|rfps_l[1]                      ;             ;
+; camera|uFps2|rfps_l[3]                      ;             ;
+; camera|uFps2|rfps_h[0]                      ;             ;
+; camera|adl|cv1|V_CNT[1]                     ;             ;
+; camera|uFps2|rfps_h[1]                      ;             ;
+; camera|uFps2|rfps_h[2]                      ;             ;
+; camera|uFps2|rfps_h[3]                      ;             ;
+; sdram_ctrl|sdram_cke                        ;             ;
+; camera|cfin|camiv|wrd|SCLO                  ;             ;
+; camera|adl|i2c2|wrd|SCLO                    ;             ;
+; camera|cfin|mpiv|wrd|SCLO                   ;             ;
+; tx_div|clk_out                              ;             ;
+; rx_div|clk_out                              ;             ;
+; camera|cfin|camiv|c1|CK_1HZ                 ;             ;
+; camera|adl|cv1|V_CNT[2]                     ;             ;
+; camera|cfin|mpiv|c1|CK_1HZ                  ;             ;
+; camera|adl|i2c2|c1|CK_1HZ                   ;             ;
+; camera|adl|cv1|V_CNT[3]                     ;             ;
+; camera|adl|cv1|V_CNT[4]                     ;             ;
+; u2|Cont[15]                                 ;             ;
+; camera|adl|cv1|V_CNT[5]                     ;             ;
+; camera|adl|cv1|V_CNT[6]                     ;             ;
+; camera|adl|cv1|V_CNT[7]                     ;             ;
+; camera|adl|cv1|V_CNT[8]                     ;             ;
+; camera|adl|cv1|V_CNT[9]                     ;             ;
+; camera|adl|cv1|V_CNT[10]                    ;             ;
+; camera|adl|cv1|V_CNT[11]                    ;             ;
+; camera|adl|cv1|V_CNT[12]                    ;             ;
+; camera|adl|cv1|V_CNT[13]                    ;             ;
+; camera|adl|cv1|V_CNT[14]                    ;             ;
+; u2|Cont[16]                                 ;             ;
+; camera|adl|cv1|V_CNT[15]                    ;             ;
+; camera|adl|cv1|H_CNT[0]                     ;             ;
+; camera|adl|cv1|H_CNT[1]                     ;             ;
+; camera|adl|cv1|H_CNT[2]                     ;             ;
+; camera|adl|cv1|H_CNT[3]                     ;             ;
+; camera|adl|cv1|H_CNT[4]                     ;             ;
+; camera|adl|cv1|H_CNT[5]                     ;             ;
+; camera|adl|cv1|H_CNT[6]                     ;             ;
+; camera|adl|cv1|H_CNT[7]                     ;             ;
+; camera|adl|cv1|H_CNT[8]                     ;             ;
+; u2|Cont[17]                                 ;             ;
+; camera|adl|cv1|H_CNT[9]                     ;             ;
+; camera|adl|cv1|H_CNT[10]                    ;             ;
+; camera|adl|cv1|H_CNT[11]                    ;             ;
+; camera|adl|cv1|H_CNT[12]                    ;             ;
+; camera|adl|cv1|H_CNT[13]                    ;             ;
+; camera|adl|cv1|H_CNT[14]                    ;             ;
+; camera|adl|cv1|H_CNT[15]                    ;             ;
+; rcvr|cs.Start                               ;             ;
+; rcvr|cs.D0                                  ;             ;
+; rcvr|cs.D1                                  ;             ;
+; u2|Cont[18]                                 ;             ;
+; rcvr|cs.D2                                  ;             ;
+; rcvr|cs.D3                                  ;             ;
+; rcvr|cs.D4                                  ;             ;
+; rcvr|cs.D5                                  ;             ;
+; rcvr|cs.D6                                  ;             ;
+; rcvr|cs.Stop                                ;             ;
+; rcvr|cs.Idle                                ;             ;
+; rcvr|new_rx                                 ;             ;
+; sdram_ctrl|init_timer[15]                   ;             ;
+; sdram_ctrl|init_timer[12]                   ;             ;
+; u2|Cont[19]                                 ;             ;
+; sdram_ctrl|init_timer[13]                   ;             ;
+; sdram_ctrl|init_timer[14]                   ;             ;
+; sdram_ctrl|init_timer[11]                   ;             ;
+; sdram_ctrl|init_timer[10]                   ;             ;
+; sdram_ctrl|init_timer[6]                    ;             ;
+; sdram_ctrl|init_timer[9]                    ;             ;
+; sdram_ctrl|init_timer[2]                    ;             ;
+; sdram_ctrl|init_timer[3]                    ;             ;
+; sdram_ctrl|init_timer[4]                    ;             ;
+; sdram_ctrl|init_timer[5]                    ;             ;
+; u2|Cont[20]                                 ;             ;
+; sdram_ctrl|init_timer[0]                    ;             ;
+; sdram_ctrl|init_timer[1]                    ;             ;
+; sdram_ctrl|init_timer[8]                    ;             ;
+; sdram_ctrl|init_timer[7]                    ;             ;
+; sdram_ctrl|state.S_INIT_WAIT_200US          ;             ;
+; ckK2|CLK_DELAY[28]                          ;             ;
+; ckK2|CLK_DELAY[29]                          ;             ;
+; ckK2|CLK_DELAY[30]                          ;             ;
+; ckK2|CLK_DELAY[31]                          ;             ;
+; ckK2|CLK_DELAY[25]                          ;             ;
+; u2|Cont[0]                                  ;             ;
+; ckK2|CLK_DELAY[26]                          ;             ;
+; ckK2|CLK_DELAY[27]                          ;             ;
+; ckK2|CLK_DELAY[18]                          ;             ;
+; ckK2|CLK_DELAY[19]                          ;             ;
+; ckK2|CLK_DELAY[20]                          ;             ;
+; ckK2|CLK_DELAY[21]                          ;             ;
+; ckK2|CLK_DELAY[22]                          ;             ;
+; ckK2|CLK_DELAY[0]                           ;             ;
+; ckK2|CLK_DELAY[1]                           ;             ;
+; ckK2|CLK_DELAY[2]                           ;             ;
+; u2|Cont[22]                                 ;             ;
+; u2|Cont[1]                                  ;             ;
+; ckK2|CLK_DELAY[3]                           ;             ;
+; ckK2|CLK_DELAY[4]                           ;             ;
+; ckK2|CLK_DELAY[5]                           ;             ;
+; ckK2|CLK_DELAY[6]                           ;             ;
+; ckK2|CLK_DELAY[7]                           ;             ;
+; ckK2|CLK_DELAY[8]                           ;             ;
+; ckK2|CLK_DELAY[9]                           ;             ;
+; ckK2|CLK_DELAY[10]                          ;             ;
+; ckK2|CLK_DELAY[11]                          ;             ;
+; ckK2|CLK_DELAY[12]                          ;             ;
+; u2|Cont[2]                                  ;             ;
+; ckK2|CLK_DELAY[13]                          ;             ;
+; ckK2|CLK_DELAY[14]                          ;             ;
+; ckK2|CLK_DELAY[15]                          ;             ;
+; ckK2|CLK_DELAY[16]                          ;             ;
+; ckK2|CLK_DELAY[17]                          ;             ;
+; ckK2|CLK_DELAY[23]                          ;             ;
+; ckK2|CLK_DELAY[24]                          ;             ;
+; camera|uFps2|sec_cnt[0]                     ;             ;
+; camera|uFps2|sec_cnt[1]                     ;             ;
+; camera|uFps2|sec_cnt[2]                     ;             ;
+; u2|Cont[3]                                  ;             ;
+; camera|uFps2|sec_cnt[3]                     ;             ;
+; camera|uFps2|sec_cnt[4]                     ;             ;
+; camera|uFps2|sec_cnt[5]                     ;             ;
+; camera|uFps2|sec_cnt[6]                     ;             ;
+; camera|uFps2|sec_cnt[7]                     ;             ;
+; camera|uFps2|sec_cnt[8]                     ;             ;
+; camera|uFps2|sec_cnt[9]                     ;             ;
+; camera|uFps2|sec_cnt[10]                    ;             ;
+; camera|uFps2|sec_cnt[11]                    ;             ;
+; camera|uFps2|sec_cnt[12]                    ;             ;
+; u2|Cont[4]                                  ;             ;
+; camera|uFps2|sec_cnt[13]                    ;             ;
+; camera|uFps2|sec_cnt[14]                    ;             ;
+; camera|uFps2|sec_cnt[15]                    ;             ;
+; camera|uFps2|sec_cnt[16]                    ;             ;
+; camera|uFps2|sec_cnt[17]                    ;             ;
+; camera|uFps2|sec_cnt[18]                    ;             ;
+; camera|uFps2|sec_cnt[19]                    ;             ;
+; camera|uFps2|sec_cnt[20]                    ;             ;
+; camera|uFps2|sec_cnt[21]                    ;             ;
+; camera|uFps2|sec_cnt[22]                    ;             ;
+; u2|Cont[5]                                  ;             ;
+; camera|uFps2|sec_cnt[23]                    ;             ;
+; camera|uFps2|sec_cnt[24]                    ;             ;
+; camera|uFps2|sec_cnt[25]                    ;             ;
+; camera|uFps2|sec_cnt[26]                    ;             ;
+; tx_div|count[0]                             ;             ;
+; tx_div|count[1]                             ;             ;
+; tx_div|count[2]                             ;             ;
+; tx_div|count[3]                             ;             ;
+; tx_div|count[4]                             ;             ;
+; tx_div|count[5]                             ;             ;
+; u2|Cont[31]                                 ;             ;
+; tx_div|count[6]                             ;             ;
+; tx_div|count[7]                             ;             ;
+; tx_div|count[8]                             ;             ;
+; camera|cfin|mpiv|DY|DELAY[0]                ;             ;
+; camera|cfin|mpiv|DY|DELAY[1]                ;             ;
+; camera|cfin|mpiv|DY|DELAY[2]                ;             ;
+; camera|cfin|mpiv|DY|DELAY[3]                ;             ;
+; camera|cfin|mpiv|DY|DELAY[4]                ;             ;
+; camera|cfin|mpiv|DY|DELAY[5]                ;             ;
+; camera|cfin|mpiv|DY|DELAY[31]               ;             ;
+; u2|Cont[30]                                 ;             ;
+; camera|cfin|mpiv|DY|DELAY[30]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[29]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[28]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[27]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[20]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[21]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[22]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[23]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[24]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[25]               ;             ;
+; u2|Cont[29]                                 ;             ;
+; camera|cfin|mpiv|DY|DELAY[26]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[14]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[15]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[16]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[17]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[18]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[19]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[8]                ;             ;
+; camera|cfin|mpiv|DY|DELAY[9]                ;             ;
+; camera|cfin|mpiv|DY|DELAY[10]               ;             ;
+; u2|Cont[28]                                 ;             ;
+; camera|cfin|mpiv|DY|DELAY[11]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[12]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[13]               ;             ;
+; camera|cfin|mpiv|DY|DELAY[6]                ;             ;
+; camera|cfin|mpiv|DY|DELAY[7]                ;             ;
+; camera|cfin|mpiv|DY|READY                   ;             ;
+; camera|cfin|mpiv|rd|A[0]                    ;             ;
+; camera|cfin|mpiv|rd|A[1]                    ;             ;
+; camera|cfin|mpiv|rd|A[2]                    ;             ;
+; camera|cfin|mpiv|rd|A[3]                    ;             ;
+; u2|Cont[27]                                 ;             ;
+; camera|cfin|mpiv|rd|A[4]                    ;             ;
+; camera|cfin|mpiv|rd|A[5]                    ;             ;
+; camera|cfin|mpiv|rd|A[6]                    ;             ;
+; camera|cfin|mpiv|rd|A[7]                    ;             ;
+; camera|cfin|mpiv|rd|A[8]                    ;             ;
+; camera|cfin|mpiv|rd|BYTE[7]                 ;             ;
+; camera|cfin|mpiv|rd|BYTE[5]                 ;             ;
+; camera|cfin|mpiv|rd|BYTE[2]                 ;             ;
+; camera|cfin|mpiv|rd|BYTE[1]                 ;             ;
+; camera|cfin|mpiv|rd|BYTE[0]                 ;             ;
+; u2|Cont[21]                                 ;             ;
+; u2|Cont[26]                                 ;             ;
+; camera|cfin|mpiv|rd|BYTE[3]                 ;             ;
+; camera|cfin|mpiv|rd|BYTE[4]                 ;             ;
+; camera|cfin|mpiv|rd|BYTE[6]                 ;             ;
+; camera|cfin|mpiv|rd|DELY[6]                 ;             ;
+; camera|cfin|mpiv|rd|DELY[7]                 ;             ;
+; camera|cfin|mpiv|rd|DELY[2]                 ;             ;
+; camera|cfin|mpiv|rd|DELY[3]                 ;             ;
+; camera|cfin|mpiv|rd|DELY[4]                 ;             ;
+; camera|cfin|mpiv|rd|DELY[5]                 ;             ;
+; camera|cfin|mpiv|rd|CNT[6]                  ;             ;
+; u2|Cont[24]                                 ;             ;
+; camera|cfin|mpiv|rd|CNT[3]                  ;             ;
+; camera|cfin|mpiv|rd|CNT[2]                  ;             ;
+; camera|cfin|mpiv|rd|CNT[1]                  ;             ;
+; camera|cfin|mpiv|rd|CNT[4]                  ;             ;
+; camera|cfin|mpiv|rd|CNT[5]                  ;             ;
+; camera|cfin|mpiv|rd|CNT[7]                  ;             ;
+; camera|cfin|mpiv|rd|CNT[0]                  ;             ;
+; camera|cfin|mpiv|rd|DELY[0]                 ;             ;
+; camera|cfin|mpiv|rd|DELY[1]                 ;             ;
+; camera|cfin|mpiv|rd|ST[2]                   ;             ;
+; u2|Cont[25]                                 ;             ;
+; camera|cfin|mpiv|rd|ST[1]                   ;             ;
+; camera|cfin|mpiv|R_GO                       ;             ;
+; camera|cfin|mpiv|rd|ST[0]                   ;             ;
+; camera|cfin|mpiv|rd|ST[3]                   ;             ;
+; camera|cfin|mpiv|rd|SDAO                    ;             ;
+; camera|cfin|mpiv|wpt|A[0]                   ;             ;
+; camera|cfin|mpiv|wpt|A[1]                   ;             ;
+; camera|cfin|mpiv|wpt|A[2]                   ;             ;
+; camera|cfin|mpiv|wpt|A[3]                   ;             ;
+; camera|cfin|mpiv|wpt|A[4]                   ;             ;
+; u2|oREADY                                   ;             ;
+; camera|cfin|mpiv|wpt|A[5]                   ;             ;
+; camera|cfin|mpiv|wpt|A[6]                   ;             ;
+; camera|cfin|mpiv|wpt|A[7]                   ;             ;
+; camera|cfin|mpiv|wpt|A[8]                   ;             ;
+; camera|cfin|mpiv|wpt|DELY[7]                ;             ;
+; camera|cfin|mpiv|wpt|DELY[6]                ;             ;
+; camera|cfin|mpiv|wpt|DELY[5]                ;             ;
+; camera|cfin|mpiv|wpt|DELY[2]                ;             ;
+; camera|cfin|mpiv|wpt|DELY[3]                ;             ;
+; camera|cfin|mpiv|wpt|DELY[4]                ;             ;
+; camera|ccd|u3|Y_Cont[15]                    ;             ;
+; camera|cfin|mpiv|wpt|CNT[0]                 ;             ;
+; camera|cfin|mpiv|wpt|CNT[5]                 ;             ;
+; camera|cfin|mpiv|wpt|CNT[6]                 ;             ;
+; camera|cfin|mpiv|wpt|CNT[7]                 ;             ;
+; camera|cfin|mpiv|wpt|CNT[3]                 ;             ;
+; camera|cfin|mpiv|wpt|CNT[4]                 ;             ;
+; camera|cfin|mpiv|wpt|BYTE[1]                ;             ;
+; camera|cfin|mpiv|wpt|BYTE[0]                ;             ;
+; camera|cfin|mpiv|wpt|CNT[1]                 ;             ;
+; camera|cfin|mpiv|wpt|CNT[2]                 ;             ;
+; camera|ccd|u3|Y_Cont[14]                    ;             ;
+; camera|cfin|mpiv|wpt|DELY[0]                ;             ;
+; camera|cfin|mpiv|wpt|DELY[1]                ;             ;
+; camera|cfin|mpiv|wpt|ST[2]                  ;             ;
+; camera|cfin|mpiv|wpt|ST[1]                  ;             ;
+; camera|cfin|mpiv|wpt|ST[0]                  ;             ;
+; camera|cfin|mpiv|wpt|END_OK                 ;             ;
+; camera|cfin|mpiv|W_POINTER_GO               ;             ;
+; camera|cfin|mpiv|wpt|ST[3]                  ;             ;
+; camera|cfin|mpiv|wpt|ST[4]                  ;             ;
+; camera|cfin|mpiv|wpt|SDAO                   ;             ;
+; camera|ccd|u3|Y_Cont[10]                    ;             ;
+; camera|cfin|mpiv|REG16_DATA16[15]           ;             ;
+; camera|cfin|mpiv|WORD_DATA[15]              ;             ;
+; camera|cfin|mpiv|POINTER[4]                 ;             ;
+; camera|cfin|mpiv|REG16_DATA16[12]           ;             ;
+; camera|cfin|mpiv|WORD_DATA[12]              ;             ;
+; camera|cfin|mpiv|REG16_DATA16[4]            ;             ;
+; camera|cfin|mpiv|WORD_DATA[4]               ;             ;
+; camera|cfin|mpiv|POINTER[2]                 ;             ;
+; camera|cfin|mpiv|REG16_DATA16[2]            ;             ;
+; camera|cfin|mpiv|WORD_DATA[2]               ;             ;
+; camera|ccd|u3|Y_Cont[11]                    ;             ;
+; camera|cfin|mpiv|POINTER[1]                 ;             ;
+; camera|cfin|mpiv|REG16_DATA16[10]           ;             ;
+; camera|cfin|mpiv|WORD_DATA[10]              ;             ;
+; camera|cfin|mpiv|REG16_DATA16[1]            ;             ;
+; camera|cfin|mpiv|WORD_DATA[1]               ;             ;
+; camera|cfin|mpiv|REG16_DATA16[0]            ;             ;
+; camera|cfin|mpiv|WORD_DATA[0]               ;             ;
+; camera|cfin|mpiv|REG16_DATA16[8]            ;             ;
+; camera|cfin|mpiv|WORD_DATA[8]               ;             ;
+; camera|cfin|mpiv|wrd|A[0]                   ;             ;
+; camera|ccd|u3|Y_Cont[12]                    ;             ;
+; camera|cfin|mpiv|wrd|A[1]                   ;             ;
+; camera|cfin|mpiv|wrd|A[2]                   ;             ;
+; camera|cfin|mpiv|wrd|A[3]                   ;             ;
+; camera|cfin|mpiv|REG16_DATA16[3]            ;             ;
+; camera|cfin|mpiv|WORD_DATA[3]               ;             ;
+; camera|cfin|mpiv|POINTER[3]                 ;             ;
+; camera|cfin|mpiv|wrd|A[4]                   ;             ;
+; camera|cfin|mpiv|wrd|A[5]                   ;             ;
+; camera|cfin|mpiv|REG16_DATA16[5]            ;             ;
+; camera|cfin|mpiv|WORD_DATA[5]               ;             ;
+; camera|ccd|u3|Y_Cont[13]                    ;             ;
+; camera|cfin|mpiv|POINTER[5]                 ;             ;
+; camera|cfin|mpiv|wrd|A[6]                   ;             ;
+; camera|cfin|mpiv|REG16_DATA16[19]           ;             ;
+; camera|cfin|mpiv|REG16_DATA16[18]           ;             ;
+; camera|cfin|mpiv|REG16_DATA16[17]           ;             ;
+; camera|cfin|mpiv|REG16_DATA16[21]           ;             ;
+; camera|cfin|mpiv|REG16_DATA16[6]            ;             ;
+; camera|cfin|mpiv|WORD_DATA[6]               ;             ;
+; camera|cfin|mpiv|REG16_DATA16[22]           ;             ;
+; camera|cfin|mpiv|POINTER[6]                 ;             ;
+; u2|Cont[6]                                  ;             ;
+; camera|ccd|u3|X_Cont[13]                    ;             ;
+; camera|cfin|mpiv|CNT[7]                     ;             ;
+; camera|cfin|mpiv|CNT[3]                     ;             ;
+; camera|cfin|mpiv|CNT[4]                     ;             ;
+; camera|cfin|mpiv|CNT[5]                     ;             ;
+; camera|cfin|mpiv|CNT[6]                     ;             ;
+; camera|cfin|mpiv|CNT[1]                     ;             ;
+; camera|cfin|mpiv|CNT[2]                     ;             ;
+; camera|cfin|mpiv|CNT[0]                     ;             ;
+; camera|cfin|mpiv|REG16_DATA16[16]           ;             ;
+; camera|cfin|mpiv|POINTER[0]                 ;             ;
+; camera|ccd|u3|X_Cont[12]                    ;             ;
+; camera|cfin|mpiv|wrd|A[7]                   ;             ;
+; camera|cfin|mpiv|wrd|A[8]                   ;             ;
+; camera|cfin|mpiv|wrd|SDAO                   ;             ;
+; camera|cfin|mpiv|rd|ST[4]                   ;             ;
+; camera|cfin|mpiv|rd|ST[5]                   ;             ;
+; camera|cfin|mpiv|rd|END_OK                  ;             ;
+; camera|cfin|mpiv|DELY[3]                    ;             ;
+; camera|cfin|mpiv|DELY[4]                    ;             ;
+; camera|cfin|mpiv|DELY[5]                    ;             ;
+; camera|cfin|mpiv|DELY[6]                    ;             ;
+; camera|ccd|u3|X_Cont[10]                    ;             ;
+; camera|cfin|mpiv|DELY[9]                    ;             ;
+; camera|cfin|mpiv|DELY[10]                   ;             ;
+; camera|cfin|mpiv|DELY[11]                   ;             ;
+; camera|cfin|mpiv|DELY[12]                   ;             ;
+; camera|cfin|mpiv|DELY[13]                   ;             ;
+; camera|cfin|mpiv|DELY[14]                   ;             ;
+; camera|cfin|mpiv|DELY[15]                   ;             ;
+; camera|cfin|mpiv|DELY[16]                   ;             ;
+; camera|cfin|mpiv|DELY[17]                   ;             ;
+; camera|cfin|mpiv|DELY[18]                   ;             ;
+; camera|ccd|u3|X_Cont[11]                    ;             ;
+; camera|cfin|mpiv|DELY[19]                   ;             ;
+; camera|cfin|mpiv|DELY[20]                   ;             ;
+; camera|cfin|mpiv|DELY[21]                   ;             ;
+; camera|cfin|mpiv|DELY[22]                   ;             ;
+; camera|cfin|mpiv|DELY[23]                   ;             ;
+; camera|cfin|mpiv|DELY[24]                   ;             ;
+; camera|cfin|mpiv|DELY[25]                   ;             ;
+; camera|cfin|mpiv|DELY[26]                   ;             ;
+; camera|cfin|mpiv|DELY[27]                   ;             ;
+; camera|cfin|mpiv|DELY[28]                   ;             ;
+; camera|ccd|u3|Y_Cont[6]                     ;             ;
+; camera|cfin|mpiv|DELY[29]                   ;             ;
+; camera|cfin|mpiv|DELY[30]                   ;             ;
+; camera|cfin|mpiv|DELY[31]                   ;             ;
+; camera|cfin|mpiv|DELY[1]                    ;             ;
+; camera|cfin|mpiv|DELY[2]                    ;             ;
+; camera|cfin|mpiv|WCNT[5]                    ;             ;
+; camera|cfin|mpiv|WCNT[6]                    ;             ;
+; camera|cfin|mpiv|WCNT[7]                    ;             ;
+; camera|cfin|mpiv|WCNT[4]                    ;             ;
+; camera|cfin|mpiv|WCNT[1]                    ;             ;
+; camera|ccd|u3|Y_Cont[7]                     ;             ;
+; camera|cfin|mpiv|WCNT[0]                    ;             ;
+; camera|cfin|mpiv|DELY[0]                    ;             ;
+; camera|cfin|mpiv|DELY[7]                    ;             ;
+; camera|cfin|mpiv|DELY[8]                    ;             ;
+; camera|cfin|mpiv|WCNT[2]                    ;             ;
+; camera|cfin|mpiv|WCNT[3]                    ;             ;
+; camera|cfin|mpiv|REG16_DATA16[20]           ;             ;
+; camera|cfin|mpiv|ST[5]                      ;             ;
+; camera|cfin|mpiv|ST[1]                      ;             ;
+; camera|cfin|mpiv|W_WORD_GO                  ;             ;
+; camera|ccd|u3|Y_Cont[8]                     ;             ;
+; camera|cfin|mpiv|wrd|DELY[7]                ;             ;
+; camera|cfin|mpiv|wrd|DELY[6]                ;             ;
+; camera|cfin|mpiv|wrd|DELY[5]                ;             ;
+; camera|cfin|mpiv|wrd|DELY[0]                ;             ;
+; camera|cfin|mpiv|wrd|DELY[1]                ;             ;
+; camera|cfin|mpiv|wrd|DELY[2]                ;             ;
+; camera|cfin|mpiv|wrd|CNT[0]                 ;             ;
+; camera|cfin|mpiv|wrd|CNT[1]                 ;             ;
+; camera|cfin|mpiv|wrd|CNT[2]                 ;             ;
+; camera|cfin|mpiv|wrd|CNT[6]                 ;             ;
+; camera|ccd|u3|Y_Cont[9]                     ;             ;
+; camera|cfin|mpiv|wrd|CNT[7]                 ;             ;
+; camera|cfin|mpiv|wrd|CNT[5]                 ;             ;
+; camera|cfin|mpiv|wrd|CNT[3]                 ;             ;
+; camera|cfin|mpiv|wrd|CNT[4]                 ;             ;
+; camera|cfin|mpiv|wrd|ST[1]                  ;             ;
+; camera|cfin|mpiv|wrd|DELY[3]                ;             ;
+; camera|cfin|mpiv|wrd|DELY[4]                ;             ;
+; camera|cfin|mpiv|wrd|ST[0]                  ;             ;
+; camera|cfin|mpiv|wrd|ST[5]                  ;             ;
+; camera|cfin|mpiv|wrd|BYTE[1]                ;             ;
+; camera|ccd|u3|X_Cont[8]                     ;             ;
+; camera|cfin|mpiv|wrd|BYTE[2]                ;             ;
+; camera|cfin|mpiv|wrd|BYTE[0]                ;             ;
+; camera|cfin|mpiv|wrd|ST[2]                  ;             ;
+; camera|cfin|mpiv|wrd|ST[4]                  ;             ;
+; camera|cfin|mpiv|wrd|ST[3]                  ;             ;
+; camera|cfin|mpiv|wrd|END_OK                 ;             ;
+; camera|cfin|mpiv|ST[4]                      ;             ;
+; camera|cfin|mpiv|ST[3]                      ;             ;
+; camera|cfin|mpiv|ST[0]                      ;             ;
+; camera|cfin|mpiv|ST[2]                      ;             ;
+; camera|ccd|u3|X_Cont[9]                     ;             ;
+; camera|cfin|mpiv|MIPI_BRIDGE_CONFIG_RELEASE ;             ;
+; camera|cfin|camiv|DY|DELAY[0]               ;             ;
+; camera|cfin|camiv|DY|DELAY[1]               ;             ;
+; camera|cfin|camiv|DY|DELAY[2]               ;             ;
+; camera|cfin|camiv|DY|DELAY[3]               ;             ;
+; camera|cfin|camiv|DY|DELAY[4]               ;             ;
+; camera|cfin|camiv|DY|DELAY[5]               ;             ;
+; camera|cfin|camiv|DY|DELAY[31]              ;             ;
+; camera|cfin|camiv|DY|DELAY[30]              ;             ;
+; camera|cfin|camiv|DY|DELAY[29]              ;             ;
+; u2|Cont[7]                                  ;             ;
+; camera|ccd|u3|X_Cont[7]                     ;             ;
+; camera|cfin|camiv|DY|DELAY[28]              ;             ;
+; camera|cfin|camiv|DY|DELAY[27]              ;             ;
+; camera|cfin|camiv|DY|DELAY[20]              ;             ;
+; camera|cfin|camiv|DY|DELAY[21]              ;             ;
+; camera|cfin|camiv|DY|DELAY[22]              ;             ;
+; camera|cfin|camiv|DY|DELAY[23]              ;             ;
+; camera|cfin|camiv|DY|DELAY[24]              ;             ;
+; camera|cfin|camiv|DY|DELAY[25]              ;             ;
+; camera|cfin|camiv|DY|DELAY[26]              ;             ;
+; camera|cfin|camiv|DY|DELAY[14]              ;             ;
+; camera|ccd|u3|X_Cont[3]                     ;             ;
+; camera|cfin|camiv|DY|DELAY[15]              ;             ;
+; camera|cfin|camiv|DY|DELAY[16]              ;             ;
+; camera|cfin|camiv|DY|DELAY[17]              ;             ;
+; camera|cfin|camiv|DY|DELAY[18]              ;             ;
+; camera|cfin|camiv|DY|DELAY[19]              ;             ;
+; camera|cfin|camiv|DY|DELAY[8]               ;             ;
+; camera|cfin|camiv|DY|DELAY[9]               ;             ;
+; camera|cfin|camiv|DY|DELAY[10]              ;             ;
+; camera|cfin|camiv|DY|DELAY[11]              ;             ;
+; camera|cfin|camiv|DY|DELAY[12]              ;             ;
+; camera|ccd|u3|X_Cont[4]                     ;             ;
+; camera|cfin|camiv|DY|DELAY[13]              ;             ;
+; camera|cfin|camiv|DY|DELAY[6]               ;             ;
+; camera|cfin|camiv|DY|DELAY[7]               ;             ;
+; camera|cfin|camiv|DY|READY                  ;             ;
+; camera|adl|pp|rSUM[0]                       ;             ;
+; camera|adl|pp|rSUM[1]                       ;             ;
+; camera|adl|pp|rSUM[2]                       ;             ;
+; camera|adl|pp|rSUM[3]                       ;             ;
+; camera|adl|pp|rSUM[4]                       ;             ;
+; camera|adl|pp|rSUM[5]                       ;             ;
+; camera|ccd|u3|X_Cont[5]                     ;             ;
+; camera|adl|pp|rSUM[6]                       ;             ;
+; camera|adl|pp|rSUM[7]                       ;             ;
+; camera|adl|pp|rSUM[8]                       ;             ;
+; camera|adl|pp|rSUM[9]                       ;             ;
+; camera|adl|pp|rSUM[10]                      ;             ;
+; camera|adl|pp|rSUM[11]                      ;             ;
+; camera|adl|pp|rSUM[12]                      ;             ;
+; camera|adl|pp|rSUM[13]                      ;             ;
+; camera|adl|pp|rSUM[14]                      ;             ;
+; camera|adl|pp|rSUM[15]                      ;             ;
+; camera|ccd|u3|X_Cont[6]                     ;             ;
+; camera|adl|pp|rSUM[16]                      ;             ;
+; camera|adl|pp|rSUM[17]                      ;             ;
+; camera|adl|pp|rSUM[18]                      ;             ;
+; camera|adl|pp|rSUM[19]                      ;             ;
+; camera|adl|pp|rSUM[20]                      ;             ;
+; camera|adl|pp|rSUM[21]                      ;             ;
+; camera|adl|pp|rSUM[22]                      ;             ;
+; camera|adl|pp|rSUM[23]                      ;             ;
+; camera|adl|pp|rSUM[24]                      ;             ;
+; camera|adl|pp|rSUM[25]                      ;             ;
+; camera|ccd|u3|X_Cont[0]                     ;             ;
+; camera|adl|pp|rSUM[26]                      ;             ;
+; camera|adl|pp|rSUM[27]                      ;             ;
+; camera|adl|pp|rSUM[28]                      ;             ;
+; camera|adl|pp|rSUM[29]                      ;             ;
+; camera|adl|pp|rSUM[30]                      ;             ;
+; camera|adl|pp|rSUM[31]                      ;             ;
+; camera|cfin|camiv|rd|A[0]                   ;             ;
+; camera|cfin|camiv|rd|A[1]                   ;             ;
+; camera|cfin|camiv|rd|A[2]                   ;             ;
+; camera|cfin|camiv|rd|A[3]                   ;             ;
+; camera|ccd|u3|X_Cont[1]                     ;             ;
+; camera|cfin|camiv|rd|A[4]                   ;             ;
+; camera|cfin|camiv|rd|A[5]                   ;             ;
+; camera|cfin|camiv|rd|A[6]                   ;             ;
+; camera|cfin|camiv|rd|A[7]                   ;             ;
+; camera|cfin|camiv|rd|A[8]                   ;             ;
+; camera|cfin|camiv|rd|SDAO                   ;             ;
+; camera|adl|i2c2|rd|A[0]                     ;             ;
+; camera|adl|i2c2|rd|A[1]                     ;             ;
+; camera|adl|i2c2|rd|A[2]                     ;             ;
+; camera|adl|i2c2|rd|A[3]                     ;             ;
+; camera|ccd|u3|X_Cont[2]                     ;             ;
+; camera|adl|i2c2|rd|A[4]                     ;             ;
+; camera|adl|i2c2|rd|A[5]                     ;             ;
+; camera|adl|i2c2|rd|A[6]                     ;             ;
+; camera|adl|i2c2|rd|A[7]                     ;             ;
+; camera|adl|i2c2|rd|A[8]                     ;             ;
+; camera|adl|i2c2|rd|SDAO                     ;             ;
+; camera|adl|i2c2|wpt|A[0]                    ;             ;
+; camera|adl|i2c2|wpt|A[1]                    ;             ;
+; camera|adl|i2c2|wpt|A[2]                    ;             ;
+; camera|adl|i2c2|wpt|A[3]                    ;             ;
+; camera|ccd|u3|Y_Cont[0]                     ;             ;
+; camera|adl|i2c2|wpt|A[4]                    ;             ;
+; camera|adl|i2c2|wpt|A[5]                    ;             ;
+; camera|adl|i2c2|wpt|A[6]                    ;             ;
+; camera|adl|i2c2|wpt|A[7]                    ;             ;
+; camera|adl|i2c2|wpt|A[8]                    ;             ;
+; camera|adl|i2c2|wpt|SDAO                    ;             ;
+; camera|adl|i2c2|POINTER[3]                  ;             ;
+; camera|adl|i2c2|wrd|A[0]                    ;             ;
+; camera|adl|i2c2|POINTER[0]                  ;             ;
+; camera|adl|i2c2|wrd|A[1]                    ;             ;
+; camera|ccd|u3|Y_Cont[1]                     ;             ;
+; camera|adl|i2c2|POINTER[1]                  ;             ;
+; camera|adl|i2c2|wrd|A[2]                    ;             ;
+; camera|adl|i2c2|POINTER[2]                  ;             ;
+; camera|adl|i2c2|wrd|A[3]                    ;             ;
+; camera|adl|i2c2|wrd|A[4]                    ;             ;
+; camera|adl|i2c2|POINTER[4]                  ;             ;
+; camera|adl|i2c2|WORD_DATA[4]                ;             ;
+; camera|adl|i2c2|wrd|A[5]                    ;             ;
+; camera|adl|i2c2|POINTER[5]                  ;             ;
+; camera|adl|i2c2|WORD_DATA[5]                ;             ;
+; u2|Cont[8]                                  ;             ;
+; camera|ccd|u3|Y_Cont[2]                     ;             ;
+; camera|adl|i2c2|wrd|A[6]                    ;             ;
+; camera|adl|i2c2|WORD_DATA[6]                ;             ;
+; camera|adl|i2c2|wrd|A[7]                    ;             ;
+; camera|adl|i2c2|CNT[7]                      ;             ;
+; camera|adl|i2c2|CNT[6]                      ;             ;
+; camera|adl|i2c2|CNT[1]                      ;             ;
+; camera|adl|i2c2|CNT[2]                      ;             ;
+; camera|adl|i2c2|CNT[3]                      ;             ;
+; camera|adl|i2c2|CNT[4]                      ;             ;
+; camera|adl|i2c2|CNT[5]                      ;             ;
+; camera|ccd|u3|Y_Cont[3]                     ;             ;
+; camera|adl|i2c2|rd|BYTE[7]                  ;             ;
+; camera|adl|i2c2|rd|BYTE[5]                  ;             ;
+; camera|adl|i2c2|rd|BYTE[2]                  ;             ;
+; camera|adl|i2c2|rd|BYTE[1]                  ;             ;
+; camera|adl|i2c2|rd|BYTE[0]                  ;             ;
+; camera|adl|i2c2|rd|BYTE[3]                  ;             ;
+; camera|adl|i2c2|rd|BYTE[4]                  ;             ;
+; camera|adl|i2c2|rd|BYTE[6]                  ;             ;
+; camera|adl|i2c2|rd|DELY[2]                  ;             ;
+; camera|adl|i2c2|rd|DELY[3]                  ;             ;
+; camera|ccd|u3|Y_Cont[4]                     ;             ;
+; camera|adl|i2c2|rd|DELY[4]                  ;             ;
+; camera|adl|i2c2|rd|DELY[5]                  ;             ;
+; camera|adl|i2c2|rd|DELY[6]                  ;             ;
+; camera|adl|i2c2|rd|DELY[7]                  ;             ;
+; camera|adl|i2c2|rd|CNT[6]                   ;             ;
+; camera|adl|i2c2|rd|CNT[3]                   ;             ;
+; camera|adl|i2c2|rd|CNT[2]                   ;             ;
+; camera|adl|i2c2|rd|CNT[1]                   ;             ;
+; camera|adl|i2c2|rd|CNT[4]                   ;             ;
+; camera|adl|i2c2|rd|CNT[5]                   ;             ;
+; camera|ccd|u3|Y_Cont[5]                     ;             ;
+; camera|adl|i2c2|rd|CNT[7]                   ;             ;
+; camera|adl|i2c2|rd|CNT[0]                   ;             ;
+; camera|adl|i2c2|rd|ST[3]                    ;             ;
+; camera|adl|i2c2|rd|DELY[0]                  ;             ;
+; camera|adl|i2c2|rd|DELY[1]                  ;             ;
+; camera|adl|i2c2|rd|ST[2]                    ;             ;
+; camera|adl|i2c2|rd|ST[1]                    ;             ;
+; camera|adl|i2c2|W_POINTER_GO                ;             ;
+; camera|adl|i2c2|wpt|DELY[5]                 ;             ;
+; camera|adl|i2c2|wpt|DELY[6]                 ;             ;
+; camera|ccd|u3|X_Cont[14]                    ;             ;
+; camera|adl|i2c2|wpt|DELY[7]                 ;             ;
+; camera|adl|i2c2|wpt|DELY[3]                 ;             ;
+; camera|adl|i2c2|wpt|DELY[4]                 ;             ;
+; camera|adl|i2c2|wpt|DELY[2]                 ;             ;
+; camera|adl|i2c2|wpt|CNT[5]                  ;             ;
+; camera|adl|i2c2|wpt|CNT[0]                  ;             ;
+; camera|adl|i2c2|wpt|CNT[1]                  ;             ;
+; camera|adl|i2c2|wpt|CNT[2]                  ;             ;
+; camera|adl|i2c2|wpt|CNT[3]                  ;             ;
+; camera|adl|i2c2|wpt|CNT[4]                  ;             ;
+; camera|ccd|u3|X_Cont[15]                    ;             ;
+; camera|adl|i2c2|wpt|BYTE[0]                 ;             ;
+; camera|adl|i2c2|wpt|CNT[6]                  ;             ;
+; camera|adl|i2c2|wpt|CNT[7]                  ;             ;
+; camera|adl|i2c2|wpt|DELY[0]                 ;             ;
+; camera|adl|i2c2|wpt|DELY[1]                 ;             ;
+; camera|adl|i2c2|wpt|ST[2]                   ;             ;
+; camera|adl|i2c2|wpt|ST[0]                   ;             ;
+; camera|adl|i2c2|wpt|ST[1]                   ;             ;
+; camera|adl|i2c2|wpt|ST[4]                   ;             ;
+; camera|adl|i2c2|wpt|ST[3]                   ;             ;
+; camera|ccd|u4|u0|WR[0]                      ;             ;
+; camera|adl|i2c2|wpt|END_OK                  ;             ;
+; camera|adl|i2c2|DELY[30]                    ;             ;
+; camera|adl|i2c2|DELY[31]                    ;             ;
+; camera|adl|i2c2|DELY[24]                    ;             ;
+; camera|adl|i2c2|DELY[25]                    ;             ;
+; camera|adl|i2c2|DELY[26]                    ;             ;
+; camera|adl|i2c2|DELY[27]                    ;             ;
+; camera|adl|i2c2|DELY[28]                    ;             ;
+; camera|adl|i2c2|DELY[29]                    ;             ;
+; camera|adl|i2c2|DELY[3]                     ;             ;
+; camera|ccd|u4|u0|WR[1]                      ;             ;
+; camera|adl|i2c2|DELY[4]                     ;             ;
+; camera|adl|i2c2|DELY[5]                     ;             ;
+; camera|adl|i2c2|DELY[6]                     ;             ;
+; camera|adl|i2c2|DELY[7]                     ;             ;
+; camera|adl|i2c2|DELY[8]                     ;             ;
+; camera|adl|i2c2|DELY[9]                     ;             ;
+; camera|adl|i2c2|DELY[10]                    ;             ;
+; camera|adl|i2c2|DELY[11]                    ;             ;
+; camera|adl|i2c2|DELY[12]                    ;             ;
+; camera|adl|i2c2|DELY[13]                    ;             ;
+; camera|ccd|u3|X_WR_CNT[0]                   ;             ;
+; camera|adl|i2c2|DELY[14]                    ;             ;
+; camera|adl|i2c2|DELY[15]                    ;             ;
+; camera|adl|i2c2|DELY[16]                    ;             ;
+; camera|adl|i2c2|DELY[17]                    ;             ;
+; camera|adl|i2c2|DELY[18]                    ;             ;
+; camera|adl|i2c2|DELY[19]                    ;             ;
+; camera|adl|i2c2|DELY[20]                    ;             ;
+; camera|adl|i2c2|DELY[21]                    ;             ;
+; camera|adl|i2c2|DELY[22]                    ;             ;
+; camera|adl|i2c2|DELY[23]                    ;             ;
+; camera|ccd|u3|X_WR_CNT[1]                   ;             ;
+; camera|adl|i2c2|WCNT[5]                     ;             ;
+; camera|adl|i2c2|WCNT[6]                     ;             ;
+; camera|adl|i2c2|WCNT[7]                     ;             ;
+; camera|adl|i2c2|WCNT[1]                     ;             ;
+; camera|adl|i2c2|WCNT[2]                     ;             ;
+; camera|adl|i2c2|WCNT[3]                     ;             ;
+; camera|adl|i2c2|WCNT[4]                     ;             ;
+; camera|adl|i2c2|DELY[1]                     ;             ;
+; camera|adl|i2c2|DELY[2]                     ;             ;
+; camera|adl|i2c2|DELY[0]                     ;             ;
+; u2|Cont[9]                                  ;             ;
+; camera|ccd|u3|X_WR_CNT[2]                   ;             ;
+; camera|adl|i2c2|R_GO                        ;             ;
+; camera|adl|i2c2|rd|ST[0]                    ;             ;
+; camera|adl|i2c2|rd|ST[4]                    ;             ;
+; camera|adl|i2c2|rd|ST[5]                    ;             ;
+; camera|adl|i2c2|rd|END_OK                   ;             ;
+; camera|adl|i2c2|CNT[0]                      ;             ;
+; camera|adl|i2c2|ST[3]                       ;             ;
+; camera|adl|i2c2|ST[2]                       ;             ;
+; camera|adl|i2c2|ST[5]                       ;             ;
+; camera|adl|i2c2|W_WORD_GO                   ;             ;
+; camera|ccd|u3|X_WR_CNT[3]                   ;             ;
+; camera|adl|i2c2|wrd|DELY[0]                 ;             ;
+; camera|adl|i2c2|wrd|DELY[1]                 ;             ;
+; camera|adl|i2c2|wrd|DELY[2]                 ;             ;
+; camera|adl|i2c2|wrd|DELY[3]                 ;             ;
+; camera|adl|i2c2|wrd|DELY[4]                 ;             ;
+; camera|adl|i2c2|wrd|DELY[5]                 ;             ;
+; camera|adl|i2c2|wrd|CNT[7]                  ;             ;
+; camera|adl|i2c2|wrd|CNT[1]                  ;             ;
+; camera|adl|i2c2|wrd|CNT[0]                  ;             ;
+; camera|adl|i2c2|wrd|CNT[4]                  ;             ;
+; camera|ccd|u3|X_WR_CNT[4]                   ;             ;
+; camera|adl|i2c2|wrd|CNT[5]                  ;             ;
+; camera|adl|i2c2|wrd|CNT[6]                  ;             ;
+; camera|adl|i2c2|wrd|CNT[2]                  ;             ;
+; camera|adl|i2c2|wrd|CNT[3]                  ;             ;
+; camera|adl|i2c2|DY|DELAY[0]                 ;             ;
+; camera|adl|i2c2|DY|DELAY[1]                 ;             ;
+; camera|adl|i2c2|DY|DELAY[2]                 ;             ;
+; camera|adl|i2c2|DY|DELAY[3]                 ;             ;
+; camera|adl|i2c2|DY|DELAY[4]                 ;             ;
+; camera|adl|i2c2|DY|DELAY[5]                 ;             ;
+; camera|ccd|u3|X_WR_CNT[5]                   ;             ;
+; camera|adl|i2c2|DY|DELAY[31]                ;             ;
+; camera|adl|i2c2|DY|DELAY[30]                ;             ;
+; camera|adl|i2c2|DY|DELAY[29]                ;             ;
+; camera|adl|i2c2|DY|DELAY[28]                ;             ;
+; camera|adl|i2c2|DY|DELAY[27]                ;             ;
+; camera|adl|i2c2|DY|DELAY[20]                ;             ;
+; camera|adl|i2c2|DY|DELAY[21]                ;             ;
+; camera|adl|i2c2|DY|DELAY[22]                ;             ;
+; camera|adl|i2c2|DY|DELAY[23]                ;             ;
+; camera|adl|i2c2|DY|DELAY[24]                ;             ;
+; camera|ccd|u3|X_WR_CNT[6]                   ;             ;
+; camera|adl|i2c2|DY|DELAY[25]                ;             ;
+; camera|adl|i2c2|DY|DELAY[26]                ;             ;
+; camera|adl|i2c2|DY|DELAY[14]                ;             ;
+; camera|adl|i2c2|DY|DELAY[15]                ;             ;
+; camera|adl|i2c2|DY|DELAY[16]                ;             ;
+; camera|adl|i2c2|DY|DELAY[17]                ;             ;
+; camera|adl|i2c2|DY|DELAY[18]                ;             ;
+; camera|adl|i2c2|DY|DELAY[19]                ;             ;
+; camera|adl|i2c2|DY|DELAY[8]                 ;             ;
+; camera|adl|i2c2|DY|DELAY[9]                 ;             ;
+; camera|ccd|u3|X_WR_CNT[7]                   ;             ;
+; camera|adl|i2c2|DY|DELAY[10]                ;             ;
+; camera|adl|i2c2|DY|DELAY[11]                ;             ;
+; camera|adl|i2c2|DY|DELAY[12]                ;             ;
+; camera|adl|i2c2|DY|DELAY[13]                ;             ;
+; camera|adl|i2c2|DY|DELAY[6]                 ;             ;
+; camera|adl|i2c2|DY|DELAY[7]                 ;             ;
+; camera|adl|i2c2|DY|READY                    ;             ;
+; camera|adl|i2c2|wrd|ST[1]                   ;             ;
+; camera|adl|i2c2|wrd|DELY[6]                 ;             ;
+; camera|adl|i2c2|wrd|DELY[7]                 ;             ;
+; camera|ccd|u3|X_WR_CNT[8]                   ;             ;
+; camera|adl|i2c2|wrd|ST[0]                   ;             ;
+; camera|adl|i2c2|wrd|ST[3]                   ;             ;
+; camera|adl|i2c2|wrd|BYTE[2]                 ;             ;
+; camera|adl|i2c2|wrd|BYTE[0]                 ;             ;
+; camera|adl|i2c2|wrd|BYTE[1]                 ;             ;
+; camera|adl|i2c2|wrd|ST[2]                   ;             ;
+; camera|adl|i2c2|wrd|ST[4]                   ;             ;
+; camera|adl|i2c2|wrd|ST[5]                   ;             ;
+; camera|adl|i2c2|wrd|END_OK                  ;             ;
+; camera|adl|i2c2|WCNT[0]                     ;             ;
+; camera|ccd|u3|X_WR_CNT[9]                   ;             ;
+; camera|adl|i2c2|ST[4]                       ;             ;
+; camera|adl|i2c2|ST[0]                       ;             ;
+; camera|adl|i2c2|rTR_IN~_emulated            ;             ;
+; camera|adl|i2c2|ST[1]                       ;             ;
+; camera|adl|i2c|DELAY[0]                     ;             ;
+; camera|adl|i2c|DELAY[1]                     ;             ;
+; camera|adl|i2c|DELAY[2]                     ;             ;
+; camera|adl|i2c|DELAY[3]                     ;             ;
+; camera|adl|i2c|DELAY[4]                     ;             ;
+; camera|adl|i2c|DELAY[5]                     ;             ;
+; camera|ccd|u3|X_WR_CNT[10]                  ;             ;
+; camera|adl|i2c|DELAY[31]                    ;             ;
+; camera|adl|i2c|DELAY[30]                    ;             ;
+; camera|adl|i2c|DELAY[29]                    ;             ;
+; camera|adl|i2c|DELAY[28]                    ;             ;
+; camera|adl|i2c|DELAY[27]                    ;             ;
+; camera|adl|i2c|DELAY[20]                    ;             ;
+; camera|adl|i2c|DELAY[21]                    ;             ;
+; camera|adl|i2c|DELAY[22]                    ;             ;
+; camera|adl|i2c|DELAY[23]                    ;             ;
+; camera|adl|i2c|DELAY[24]                    ;             ;
+; camera|ccd|u3|X_WR_CNT[11]                  ;             ;
+; camera|adl|i2c|DELAY[25]                    ;             ;
+; camera|adl|i2c|DELAY[26]                    ;             ;
+; camera|adl|i2c|DELAY[14]                    ;             ;
+; camera|adl|i2c|DELAY[15]                    ;             ;
+; camera|adl|i2c|DELAY[16]                    ;             ;
+; camera|adl|i2c|DELAY[17]                    ;             ;
+; camera|adl|i2c|DELAY[18]                    ;             ;
+; camera|adl|i2c|DELAY[19]                    ;             ;
+; camera|adl|i2c|DELAY[8]                     ;             ;
+; camera|adl|i2c|DELAY[9]                     ;             ;
+; u2|Cont[10]                                 ;             ;
+; camera|ccd|cnt|CNT_[0]                      ;             ;
+; camera|adl|i2c|DELAY[10]                    ;             ;
+; camera|adl|i2c|DELAY[11]                    ;             ;
+; camera|adl|i2c|DELAY[12]                    ;             ;
+; camera|adl|i2c|DELAY[13]                    ;             ;
+; camera|adl|i2c|DELAY[6]                     ;             ;
+; camera|adl|i2c|DELAY[7]                     ;             ;
+; camera|adl|i2c|READY                        ;             ;
+; camera|adl|pp|peakSUM[0]                    ;             ;
+; camera|adl|pp|peakSUM[1]                    ;             ;
+; camera|adl|pp|peakSUM[2]                    ;             ;
+; camera|ccd|cnt|CNT_[1]                      ;             ;
+; camera|adl|pp|peakSUM[3]                    ;             ;
+; camera|adl|pp|peakSUM[4]                    ;             ;
+; camera|adl|pp|peakSUM[5]                    ;             ;
+; camera|adl|pp|peakSUM[6]                    ;             ;
+; camera|adl|pp|peakSUM[7]                    ;             ;
+; camera|adl|pp|peakSUM[8]                    ;             ;
+; camera|adl|pp|peakSUM[9]                    ;             ;
+; camera|adl|pp|peakSUM[10]                   ;             ;
+; camera|adl|pp|peakSUM[11]                   ;             ;
+; camera|adl|pp|peakSUM[12]                   ;             ;
+; camera|ccd|cnt|CNT_[2]                      ;             ;
+; camera|adl|pp|peakSUM[13]                   ;             ;
+; camera|adl|pp|peakSUM[14]                   ;             ;
+; camera|adl|pp|peakSUM[15]                   ;             ;
+; camera|adl|pp|peakSUM[16]                   ;             ;
+; camera|adl|pp|peakSUM[17]                   ;             ;
+; camera|adl|pp|peakSUM[18]                   ;             ;
+; camera|adl|pp|peakSUM[19]                   ;             ;
+; camera|adl|pp|peakSUM[20]                   ;             ;
+; camera|adl|pp|peakSUM[21]                   ;             ;
+; camera|adl|pp|peakSUM[22]                   ;             ;
+; camera|ccd|cnt|CNT_[3]                      ;             ;
+; camera|adl|pp|peakSUM[23]                   ;             ;
+; camera|adl|pp|peakSUM[24]                   ;             ;
+; camera|adl|pp|peakSUM[25]                   ;             ;
+; camera|adl|pp|peakSUM[26]                   ;             ;
+; camera|adl|pp|peakSUM[27]                   ;             ;
+; camera|adl|pp|peakSUM[28]                   ;             ;
+; camera|adl|pp|peakSUM[29]                   ;             ;
+; camera|adl|pp|peakSUM[30]                   ;             ;
+; camera|adl|pp|peakSUM[31]                   ;             ;
+; camera|adl|pp|f|GO_F                        ;             ;
+; camera|ccd|cnt|CNT_[4]                      ;             ;
+; camera|adl|pp|rGO_F                         ;             ;
+; camera|adl|pp|f|STEP_f[10]~_emulated        ;             ;
+; camera|adl|pp|STEP_UP[0]                    ;             ;
+; camera|adl|pp|f|STEP_f[0]~_emulated         ;             ;
+; camera|adl|pp|f|STEP_f[1]~_emulated         ;             ;
+; camera|adl|pp|STEP_UP[1]                    ;             ;
+; camera|adl|pp|STEP_UP[4]                    ;             ;
+; camera|adl|pp|f|STEP_f[4]~_emulated         ;             ;
+; camera|adl|pp|f|STEP_f[5]~_emulated         ;             ;
+; camera|adl|pp|STEP_UP[5]                    ;             ;
+; camera|ccd|cnt|CNT_[5]                      ;             ;
+; camera|adl|pp|STEP_UP[6]                    ;             ;
+; camera|adl|pp|f|STEP_f[6]~_emulated         ;             ;
+; camera|adl|pp|f|STEP_f[7]~_emulated         ;             ;
+; camera|adl|pp|STEP_UP[7]                    ;             ;
+; camera|adl|pp|STEP_UP[8]                    ;             ;
+; camera|adl|pp|f|STEP_f[8]~_emulated         ;             ;
+; camera|adl|pp|f|STEP_f[9]~_emulated         ;             ;
+; camera|adl|pp|STEP_UP[9]                    ;             ;
+; camera|adl|pp|f|VCM_END                     ;             ;
+; camera|adl|pp|STEP_UP[2]                    ;             ;
+; camera|ccd|cnt|CNT_[6]                      ;             ;
+; camera|adl|pp|f|STEP_f[2]~_emulated         ;             ;
+; camera|adl|pp|f|STEP_f[3]~_emulated         ;             ;
+; camera|adl|pp|f|STEP_i[8]                   ;             ;
+; camera|adl|pp|f|STEP_i[7]                   ;             ;
+; camera|adl|pp|f|STEP_i[6]                   ;             ;
+; camera|adl|pp|f|STEP_i[5]                   ;             ;
+; camera|adl|pp|f|STEP_i[0]                   ;             ;
+; camera|adl|pp|f|STEP_i[1]                   ;             ;
+; camera|adj|PULSE[31]                        ;             ;
+; camera|adj|PULSE[30]                        ;             ;
+; camera|ccd|cnt|CNT_[7]                      ;             ;
+; camera|adj|PULSE[29]                        ;             ;
+; camera|adj|PULSE[28]                        ;             ;
+; camera|adj|PULSE[27]                        ;             ;
+; camera|adj|PULSE[24]                        ;             ;
+; camera|adj|PULSE[23]                        ;             ;
+; camera|adj|PULSE[22]                        ;             ;
+; camera|adj|PULSE[21]                        ;             ;
+; camera|adj|PULSE[20]                        ;             ;
+; camera|adj|PULSE[0]                         ;             ;
+; camera|adj|PULSE[1]                         ;             ;
+; camera|ccd|cnt|CNT_[8]                      ;             ;
+; camera|adj|PULSE[2]                         ;             ;
+; camera|adj|PULSE[3]                         ;             ;
+; camera|adj|PULSE[4]                         ;             ;
+; camera|adj|PULSE[5]                         ;             ;
+; camera|adj|PULSE[6]                         ;             ;
+; camera|adj|PULSE[7]                         ;             ;
+; camera|adj|PULSE[8]                         ;             ;
+; camera|adj|PULSE[9]                         ;             ;
+; camera|adj|PULSE[10]                        ;             ;
+; camera|adj|PULSE[11]                        ;             ;
+; camera|ccd|cnt|CNT_[9]                      ;             ;
+; camera|adj|PULSE[12]                        ;             ;
+; camera|adj|PULSE[13]                        ;             ;
+; camera|adj|PULSE[14]                        ;             ;
+; camera|adj|PULSE[15]                        ;             ;
+; camera|adj|PULSE[16]                        ;             ;
+; camera|adj|PULSE[17]                        ;             ;
+; camera|adj|PULSE[18]                        ;             ;
+; camera|adj|PULSE[19]                        ;             ;
+; camera|cfin|camiv|MIPI_CAMERA_RELAESE       ;             ;
+; camera|adj|PULSE[25]                        ;             ;
+; u2|Cont[11]                                 ;             ;
+; camera|ccd|cnt|CNT_[10]                     ;             ;
+; camera|adj|PULSE[26]                        ;             ;
+; camera|adl|pp|f|STEP_i[2]                   ;             ;
+; camera|adl|pp|f|STEP_i[4]                   ;             ;
+; camera|adl|pp|f|STEP_i[3]                   ;             ;
+; camera|adl|pp|f|STEP_i[9]                   ;             ;
+; camera|adl|pp|f|STEP_i[10]                  ;             ;
+; camera|adl|pp|f|V_C                         ;             ;
+; camera|adl|pp|STEP_UP[3]                    ;             ;
+; camera|adl|i2c2|WORD_DATA[7]                ;             ;
+; camera|adl|i2c2|wrd|A[8]                    ;             ;
+; camera|ccd|cnt|CNT_[11]                     ;             ;
+; camera|adl|i2c2|wrd|SDAO                    ;             ;
+; camera|cfin|camiv|wpt|A[0]                  ;             ;
+; camera|cfin|camiv|wpt|A[1]                  ;             ;
+; camera|cfin|camiv|wpt|A[2]                  ;             ;
+; camera|cfin|camiv|wpt|A[3]                  ;             ;
+; camera|cfin|camiv|wpt|A[4]                  ;             ;
+; camera|cfin|camiv|wpt|A[5]                  ;             ;
+; camera|cfin|camiv|wpt|A[6]                  ;             ;
+; camera|cfin|camiv|wpt|A[7]                  ;             ;
+; camera|cfin|camiv|wpt|A[8]                  ;             ;
+; camera|ccd|cnt|CNT_[12]                     ;             ;
+; camera|cfin|camiv|wpt|SDAO                  ;             ;
+; camera|cfin|camiv|WORD_DATA[6]              ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[14]      ;             ;
+; camera|cfin|camiv|POINTER[6]                ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[22]      ;             ;
+; camera|cfin|camiv|POINTER[14]               ;             ;
+; camera|cfin|camiv|WORD_DATA[2]              ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[10]      ;             ;
+; camera|cfin|camiv|POINTER[2]                ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[18]      ;             ;
+; camera|adl|RE|vs|CNT[0]                     ;             ;
+; camera|cfin|camiv|POINTER[10]               ;             ;
+; camera|cfin|camiv|WORD_DATA[1]              ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[9]       ;             ;
+; camera|cfin|camiv|POINTER[1]                ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[17]      ;             ;
+; camera|cfin|camiv|POINTER[9]                ;             ;
+; camera|cfin|camiv|wrd|A[0]                  ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[16]      ;             ;
+; camera|cfin|camiv|POINTER[8]                ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[8]       ;             ;
+; camera|adl|RE|vs|CNT[1]                     ;             ;
+; camera|cfin|camiv|POINTER[0]                ;             ;
+; camera|cfin|camiv|WORD_DATA[0]              ;             ;
+; camera|cfin|camiv|wrd|A[1]                  ;             ;
+; camera|cfin|camiv|SLAVE_ADDR[1]             ;             ;
+; camera|cfin|camiv|wrd|A[2]                  ;             ;
+; camera|cfin|camiv|SLAVE_ADDR[2]             ;             ;
+; camera|cfin|camiv|wrd|A[3]                  ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[19]      ;             ;
+; camera|cfin|camiv|POINTER[11]               ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[11]      ;             ;
+; camera|adl|RE|vs|CNT[2]                     ;             ;
+; camera|cfin|camiv|POINTER[3]                ;             ;
+; camera|cfin|camiv|WORD_DATA[3]              ;             ;
+; camera|cfin|camiv|wrd|A[4]                  ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[20]      ;             ;
+; camera|cfin|camiv|POINTER[12]               ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[12]      ;             ;
+; camera|cfin|camiv|POINTER[4]                ;             ;
+; camera|cfin|camiv|WORD_DATA[4]              ;             ;
+; camera|cfin|camiv|wrd|A[5]                  ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[21]      ;             ;
+; camera|adl|RE|vs|CNT[3]                     ;             ;
+; camera|cfin|camiv|POINTER[13]               ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[13]      ;             ;
+; camera|cfin|camiv|POINTER[5]                ;             ;
+; camera|cfin|camiv|WORD_DATA[5]              ;             ;
+; camera|cfin|camiv|wrd|A[6]                  ;             ;
+; camera|cfin|camiv|wrd|A[7]                  ;             ;
+; camera|cfin|camiv|SLV8_REG16_DATA8[15]      ;             ;
+; camera|cfin|camiv|POINTER[7]                ;             ;
+; camera|cfin|camiv|WORD_DATA[7]              ;             ;
+; camera|cfin|camiv|ID1[4]                    ;             ;
+; camera|adl|RE|vs|CNT[4]                     ;             ;
+; camera|cfin|camiv|ID1[3]                    ;             ;
+; camera|cfin|camiv|ID1[2]                    ;             ;
+; camera|cfin|camiv|ID1[1]                    ;             ;
+; camera|cfin|camiv|ID1[0]                    ;             ;
+; camera|cfin|camiv|rd|DATA16[7]              ;             ;
+; camera|cfin|camiv|ID1[7]                    ;             ;
+; camera|cfin|camiv|rd|DATA16[6]              ;             ;
+; camera|cfin|camiv|ID1[6]                    ;             ;
+; camera|cfin|camiv|rd|BYTE[7]                ;             ;
+; camera|cfin|camiv|rd|BYTE[6]                ;             ;
+; camera|adl|RE|vs|CNT[5]                     ;             ;
+; camera|cfin|camiv|rd|BYTE[2]                ;             ;
+; camera|cfin|camiv|rd|BYTE[1]                ;             ;
+; camera|cfin|camiv|rd|BYTE[0]                ;             ;
+; camera|cfin|camiv|rd|BYTE[3]                ;             ;
+; camera|cfin|camiv|rd|BYTE[4]                ;             ;
+; camera|cfin|camiv|rd|BYTE[5]                ;             ;
+; camera|cfin|camiv|rd|DELY[6]                ;             ;
+; camera|cfin|camiv|rd|DELY[7]                ;             ;
+; camera|cfin|camiv|rd|DELY[5]                ;             ;
+; camera|cfin|camiv|rd|DELY[4]                ;             ;
+; camera|adl|RE|vs|CNT[6]                     ;             ;
+; camera|cfin|camiv|rd|CNT[6]                 ;             ;
+; camera|cfin|camiv|rd|CNT[3]                 ;             ;
+; camera|cfin|camiv|rd|CNT[2]                 ;             ;
+; camera|cfin|camiv|rd|CNT[1]                 ;             ;
+; camera|cfin|camiv|rd|CNT[4]                 ;             ;
+; camera|cfin|camiv|rd|CNT[5]                 ;             ;
+; camera|cfin|camiv|rd|CNT[7]                 ;             ;
+; camera|cfin|camiv|rd|CNT[0]                 ;             ;
+; camera|cfin|camiv|rd|DELY[2]                ;             ;
+; camera|cfin|camiv|rd|DELY[3]                ;             ;
++---------------------------------------------+-------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	14
+Rule Parameters:      	max_violations = 5000
++--------------------------------------------------------+
+; TMC-20052 - Paths with Post Synthesis Inferred Latches ;
++-------------------------------+------------------------+
+; Path                          ; Waived                 ;
++-------------------------------+------------------------+
+; camera|adl|i2c2|rTR_IN~1      ;                        ;
+; camera|adl|pp|f|STEP_f[0]~17  ;                        ;
+; camera|adl|pp|f|STEP_f[10]~25 ;                        ;
+; camera|adl|pp|f|STEP_f[1]~9   ;                        ;
+; camera|adl|pp|f|STEP_f[2]~5   ;                        ;
+; camera|adl|pp|f|STEP_f[3]~1   ;                        ;
+; camera|adl|pp|f|STEP_f[4]~37  ;                        ;
+; camera|adl|pp|f|STEP_f[5]~41  ;                        ;
+; camera|adl|pp|f|STEP_f[6]~33  ;                        ;
+; camera|adl|pp|f|STEP_f[7]~29  ;                        ;
+; camera|adl|pp|f|STEP_f[8]~21  ;                        ;
+; camera|adl|pp|f|STEP_f[9]~13  ;                        ;
+; camera|ccd|u3|Pre_FVAL~1      ;                        ;
+; camera|ccd|u3|Pre_LVAL~1      ;                        ;
++-------------------------------+------------------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	2
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------+
+; RES-30132 - Registers May Not Be Properly Reset ;
++------------------------+------------------------+
+; Register Node          ; Waived                 ;
++------------------------+------------------------+
+; camera|ccd|u4|u0|WR[0] ;                        ;
+; camera|ccd|u4|u0|WR[1] ;                        ;
++------------------------+------------------------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	4
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; LNT-30010 - Nets Driving both Reset and Clock Enable Signals                                                                                                                                                                                    ;
++----------------------------+----------------------------------+--------------------------+-------------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+; Driver                     ; Asynchronous Reset Signal        ; Synchronous Reset Signal ; Clock Enable Signal           ; Number of Asynchronous Reset Signals ; Number of Synchronous Reset Signals ; Number of Clock Enable Signals ; Waived ;
++----------------------------+----------------------------------+--------------------------+-------------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+; KEY[3]                     ; sdram_manager|vsynch_sr[2]|CLRN  ; --                       ; sdram_ctrl|sdram_ba[0]|ENA    ; 344                                  ; 0                                   ; 5                              ;        ;
+; camera|cfin|mpiv|DY|READY  ; camera|cfin|mpiv|wrd|ST[0]|CLRN  ; --                       ; camera|cfin|mpiv|wrd|A[8]|ENA ; 63                                   ; 0                                   ; 5                              ;        ;
+; camera|adl|i2c2|DY|READY   ; camera|adl|i2c2|wrd|ST[0]|CLRN   ; --                       ; camera|adl|i2c2|wrd|A[4]|ENA  ; 62                                   ; 0                                   ; 4                              ;        ;
+; camera|cfin|camiv|DY|READY ; camera|cfin|camiv|wrd|ST[0]|CLRN ; --                       ; camera|cfin|camiv|rd|A[1]|ENA ; 70                                   ; 0                                   ; 3                              ;        ;
++----------------------------+----------------------------------+--------------------------+-------------------------------+--------------------------------------+-------------------------------------+--------------------------------+--------+
+
+
+Status:		FAIL
+Severity:		Low
+Number of violations: 	3
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------+
+; FLP-10500 - Non Driving Top Level Inputs Found ;
++-----------------+------------------------------+
+; Input Name      ; Waived                       ;
++-----------------+------------------------------+
+; GPIO_Din[0]     ;                              ;
+; KEY[0..1]       ;                              ;
+; SW[2,4..6,8..9] ;                              ;
++-----------------+------------------------------+
+
+
+Status:		PASS
+Severity:		High
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-------------------------------------------------+
+; LNT-30011 - Design Contains Combinational Loops ;
++-------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------------------------------------------------+
+; LNT-30017 - Register Output Driving Its Own Asynchronous Control Signal Directly or Through Combinational Logic ;
++-----------------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------+
+; LNT-30023 - Reset Nets with Polarity Conflict ;
++-----------------------------------------------+
+
+
+Status:		PASS
+Severity:		Medium
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		exclude_ram_blocks_without_mif = True
++---------------------------------------------------------------------------------------------------------------------+
+; RES-30133 - Embedded Memory Blocks with Initialized Content That Might be Modified Before the FPGA Enters User Mode ;
++---------------------------------------------------------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		DSP_Chain_Threshold = 2
+		DSP_Check_User_WYSIWYGs = True
++--------------------------------------------------------------+
+; LNT-50006 - DSP Control Signal Registers Reset Mode Mismatch ;
++--------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	
+		max_violations = 5000
+		DSP_High_Fanout_Net_Threshold = 500
+		DSP_Chain_Threshold = 2
+		DSP_Check_User_WYSIWYGs = True
++---------------------------------------------------+
+; TMC-20053 - DSP Inputs Driven by High Fan-Out Net ;
++---------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++-----------------------------------------------------------------------+
+; TMC-20500 - Hierarchical Tree Duplication was Shallower than Possible ;
++-----------------------------------------------------------------------+
+
+
+Status:		PASS
+Severity:		Low
+Number of violations: 	0
+Rule Parameters:      	max_violations = 5000
++------------------------------------------------------------------------+
+; TMC-20501 - Hierarchical Tree Duplication was Shallower than Requested ;
++------------------------------------------------------------------------+
+
+

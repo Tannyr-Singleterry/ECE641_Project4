@@ -1,0 +1,41 @@
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+State Machine - sdram_ctrl|state
+
+Name,state.S_REFRESH_WAIT,state.S_WRITE_WAIT_TWR,state.S_WRITE_BURST_TERM,state.S_WRITE_BURST,state.S_PRECHARGE,state.S_READ_BURST_TERM,state.S_READ_BURST,state.S_READ_CMD,state.S_WRITE_CMD,state.S_WAIT_tRCD,state.S_ACTIVATE,state.S_IDLE,state.S_INIT_WAIT_MRD,state.S_INIT_LOAD_MODE,state.S_INIT_REF_WAIT2,state.S_INIT_REF2,state.S_INIT_REF_WAIT1,state.S_INIT_REF1,state.S_INIT_WAIT_tRP,state.S_INIT_PRE_ALL,state.S_INIT_WAIT_200US,state.S_AUTO_REFRESH,state.S_INIT
+state.S_INIT,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+state.S_AUTO_REFRESH,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
+state.S_INIT_WAIT_200US,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1
+state.S_INIT_PRE_ALL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+state.S_INIT_WAIT_tRP,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+state.S_INIT_REF1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1
+state.S_INIT_REF_WAIT1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1
+state.S_INIT_REF2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1
+state.S_INIT_REF_WAIT2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1
+state.S_INIT_LOAD_MODE,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1
+state.S_INIT_WAIT_MRD,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1
+state.S_IDLE,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1
+state.S_ACTIVATE,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_WAIT_tRCD,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_WRITE_CMD,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_READ_CMD,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_READ_BURST,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_READ_BURST_TERM,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_PRECHARGE,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_WRITE_BURST,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_WRITE_BURST_TERM,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_WRITE_WAIT_TWR,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+state.S_REFRESH_WAIT,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
