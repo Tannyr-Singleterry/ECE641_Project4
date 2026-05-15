@@ -2365,6 +2365,14 @@
             <value>false</value>
           </parameter>
           <parameter>
+            <name>gui_use_slvs_refclk</name>
+            <value>false</value>
+          </parameter>
+          <parameter>
+            <name>gui_use_slvs_refclk1</name>
+            <value>false</value>
+          </parameter>
+          <parameter>
             <name>gui_user_base_address</name>
             <value>0</value>
           </parameter>
@@ -3333,7 +3341,7 @@
         <className>altera_iopll</className>
         <version>21.0.0</version>
         <name>iopll_0</name>
-        <uniqueName>VEDIO_PLL_altera_iopll_2100_thv5c7q</uniqueName>
+        <uniqueName>VEDIO_PLL_altera_iopll_2100_fil3jea</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>VEDIO_PLL.iopll_0</path>

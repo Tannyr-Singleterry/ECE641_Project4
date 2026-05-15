@@ -6,7 +6,7 @@ set_global_assignment -name FAMILY "Agilex 3"
 set_global_assignment -name DEVICE A3CZ135BB18AE7S
 set_global_assignment -name TOP_LEVEL_ENTITY golden_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "25.1.0 Pro Edition"
-set_global_assignment -name LAST_QUARTUS_VERSION "25.3.0 SP0.27 Pro Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "25.3.1 SP1.02 Pro Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "Mon Jun  2 00:32:49 2025"
 set_global_assignment -name DEVICE_FILTER_PACKAGE VPBGA
 #============================================================
@@ -459,6 +459,9 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 #============================================================
 set_global_assignment -name PROJECT_IP_REGENERATION_POLICY ALWAYS_REGENERATE_IP
 set_global_assignment -name POWER_APPLY_THERMAL_MARGIN ADDITIONAL
+set_global_assignment -name VERILOG_FILE verilog/fifo_32.v
+set_global_assignment -name VERILOG_FILE verilog/fifo_24.v
+set_global_assignment -name VERILOG_FILE verilog/cam_capture.v
 set_global_assignment -name IP_FILE V_D8M/pll_test/pll_test.ip
 set_global_assignment -name VERILOG_FILE V_D8M/VGA_READ_COUNTER.v
 set_global_assignment -name VERILOG_FILE V_D8M/vga_pll.v

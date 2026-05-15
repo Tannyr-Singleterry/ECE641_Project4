@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2026.04.28.13:14:32"
- outputDirectory="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/ResetRelease/">
+ date="2026.05.14.22:59:11"
+ outputDirectory="D:/altera/ECE641/ECE641_Project4/V/ResetRelease/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -55,21 +55,20 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\ResetRelease\synth\ResetRelease.v"
+       path="D:\altera\ECE641\ECE641_Project4\V\ResetRelease\synth\ResetRelease.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\ResetRelease\synth\ResetRelease.v"
+       path="D:\altera\ECE641\ECE641_Project4\V\ResetRelease\synth\ResetRelease.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file
-       path="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/ResetRelease.ip" />
+   <file path="D:/altera/ECE641/ECE641_Project4/V/ResetRelease.ip" />
   </sourceFiles>
   <childSourceFiles>
    <file
-       path="C:/altera_pro/ip/altera/pgm/intel_user_rst_clkgate/intel_user_rst_clkgate_hw.tcl" />
+       path="D:/altera/ip/altera/pgm/intel_user_rst_clkgate/intel_user_rst_clkgate_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="ResetRelease">"Generating: ResetRelease"</message>
@@ -85,23 +84,23 @@
   <parameter name="outputType" value="Conduit Interface" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\ResetRelease\intel_user_rst_clkgate_101\synth\intel_user_rst_clkgate.sv"
+       path="D:\altera\ECE641\ECE641_Project4\V\ResetRelease\intel_user_rst_clkgate_101\synth\intel_user_rst_clkgate.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\ResetRelease\intel_user_rst_clkgate_101\synth\intel_user_rst_clkgate_agilex.sdc"
+       path="D:\altera\ECE641\ECE641_Project4\V\ResetRelease\intel_user_rst_clkgate_101\synth\intel_user_rst_clkgate_agilex.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\ResetRelease\intel_user_rst_clkgate_101\synth\intel_user_rst_clkgate.sv"
+       path="D:\altera\ECE641\ECE641_Project4\V\ResetRelease\intel_user_rst_clkgate_101\synth\intel_user_rst_clkgate.sv"
        attributes="TOP_LEVEL_FILE" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\ResetRelease\intel_user_rst_clkgate_101\synth\intel_user_rst_clkgate_agilex.sdc"
+       path="D:\altera\ECE641\ECE641_Project4\V\ResetRelease\intel_user_rst_clkgate_101\synth\intel_user_rst_clkgate_agilex.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </childGeneratedFiles>
   <sourceFiles>
    <file
-       path="C:/altera_pro/ip/altera/pgm/intel_user_rst_clkgate/intel_user_rst_clkgate_hw.tcl" />
+       path="D:/altera/ip/altera/pgm/intel_user_rst_clkgate/intel_user_rst_clkgate_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="ResetRelease" as="intel_user_rst_clkgate_0" />

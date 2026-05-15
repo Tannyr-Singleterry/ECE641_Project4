@@ -193,10 +193,6 @@
             <value>altera_syncram</value>
           </parameter>
           <parameter>
-            <name>GUI_MULTIPORT_MODE</name>
-            <value>1W/3R</value>
-          </parameter>
-          <parameter>
             <name>GUI_NBE_A</name>
             <value>true</value>
           </parameter>
@@ -317,7 +313,7 @@
         <className>ram_2port</className>
         <version>20.6.0</version>
         <name>ram_2port_0</name>
-        <uniqueName>int_line_ram_2port_2060_r46qrgq</uniqueName>
+        <uniqueName>int_line_ram_2port_2060_tqemrnq</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>int_line.ram_2port_0</path>

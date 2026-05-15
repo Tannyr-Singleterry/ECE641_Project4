@@ -1,6 +1,6 @@
 Fitter Retime Stage Report for golden_top
-Tue Apr 28 13:18:35 2026
-Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+Thu May 14 23:05:00 2026
+Quartus Prime Version 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
 
 
 ---------------------
@@ -10,14 +10,14 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
   2. Hyper-Retimer Settings
   3. Reset Sequence Requirement
   4. Retiming Limit Summary
-  5. Critical Chain Summary for Transfer from pll_sdram|iopll_0_outclk0 to u_VEDIO_PLL|iopll_0_outclk0
-  6. Critical Chain Summary for Transfer from GPIO_Din[1] to u_VEDIO_PLL|iopll_0_outclk0
-  7. Clock Domain pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
+  5. Transfer from GPIO_Din[1] to u_VEDIO_PLL|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
+  6. Transfer from GPIO_Din[1] to pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
+  7. Transfer from camera|mipi_rclk|iopll_0_refclk to pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
   8. Transfer from GPIO_Din[1] to camera|mipi_rclk|iopll_0_refclk (Meets timing requirements: No further analysis performed.)
-  9. Transfer from GPIO_Din[1] to pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
- 10. Transfer from camera|mipi_rclk|iopll_0_refclk to GPIO_Din[1] (Meets timing requirements: No further analysis performed.)
- 11. Transfer from u_VEDIO_PLL|iopll_0_outclk0 to pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
- 12. Clock Domain altera_reserved_tck (Meets timing requirements: No further analysis performed.)
+  9. Clock Domain pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
+ 10. Clock Domain altera_reserved_tck (Meets timing requirements: No further analysis performed.)
+ 11. Transfer from camera|mipi_rclk|iopll_0_refclk to GPIO_Din[1] (Meets timing requirements: No further analysis performed.)
+ 12. Transfer from u_VEDIO_PLL|iopll_0_outclk0 to pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
  13. Clock Domain camera|mipi_rclk|iopll_0_refclk (Meets timing requirements: No further analysis performed.)
  14. Clock Domain u_VEDIO_PLL|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
  15. Clock Domain GPIO_Din[1] (Meets timing requirements: No further analysis performed.)
@@ -86,115 +86,35 @@ on the Quartus Prime software download page.
 Note: Due to retiming optimizations, a clock domain may require a longer reset sequence to ensure correct functionality.  The table above indicates the minimum number of additional reset sequence cycles needed for each clock domain.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Retiming Limit Summary                                                                                                                                                                                                    ;
-+------------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------+
-; Clock Transfer                                                         ; Limiting Reason                                           ; Recommendation                                                                       ;
-+------------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------+
-; Transfer from pll_sdram|iopll_0_outclk0 to u_VEDIO_PLL|iopll_0_outclk0 ; Path Limit                                                ; None. Retiming has used all available register locations in the critical chain path. ;
-;                                                                        ;                                                           ;    Performance cannot be increased through retiming/Fast Forward analysis alone.     ;
-;                                                                        ;                                                           ;    Increased clock speed may be possible through other optimization techniques.      ;
-; Transfer from GPIO_Din[1] to u_VEDIO_PLL|iopll_0_outclk0               ; Path Limit                                                ; None. Retiming has used all available register locations in the critical chain path. ;
-;                                                                        ;                                                           ;    Performance cannot be increased through retiming/Fast Forward analysis alone.     ;
-;                                                                        ;                                                           ;    Increased clock speed may be possible through other optimization techniques.      ;
-; Clock Domain pll_sdram|iopll_0_outclk0                                 ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-; Transfer from GPIO_Din[1] to camera|mipi_rclk|iopll_0_refclk           ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-; Transfer from GPIO_Din[1] to pll_sdram|iopll_0_outclk0                 ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-; Transfer from camera|mipi_rclk|iopll_0_refclk to GPIO_Din[1]           ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-; Transfer from u_VEDIO_PLL|iopll_0_outclk0 to pll_sdram|iopll_0_outclk0 ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-; Clock Domain altera_reserved_tck                                       ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-; Clock Domain camera|mipi_rclk|iopll_0_refclk                           ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-; Clock Domain u_VEDIO_PLL|iopll_0_outclk0                               ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-; Clock Domain GPIO_Din[1]                                               ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-; Clock Domain u_AUDIO_PLL|iopll_0_outclk0                               ; Meets timing requirements: No further analysis performed. ; None                                                                                 ;
-+------------------------------------------------------------------------+-----------------------------------------------------------+--------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Retiming Limit Summary                                                                                                                                  ;
++----------------------------------------------------------------------------+-----------------------------------------------------------+----------------+
+; Clock Transfer                                                             ; Limiting Reason                                           ; Recommendation ;
++----------------------------------------------------------------------------+-----------------------------------------------------------+----------------+
+; Transfer from GPIO_Din[1] to u_VEDIO_PLL|iopll_0_outclk0                   ; Meets timing requirements: No further analysis performed. ; None           ;
+; Transfer from GPIO_Din[1] to pll_sdram|iopll_0_outclk0                     ; Meets timing requirements: No further analysis performed. ; None           ;
+; Transfer from camera|mipi_rclk|iopll_0_refclk to pll_sdram|iopll_0_outclk0 ; Meets timing requirements: No further analysis performed. ; None           ;
+; Transfer from GPIO_Din[1] to camera|mipi_rclk|iopll_0_refclk               ; Meets timing requirements: No further analysis performed. ; None           ;
+; Clock Domain pll_sdram|iopll_0_outclk0                                     ; Meets timing requirements: No further analysis performed. ; None           ;
+; Clock Domain altera_reserved_tck                                           ; Meets timing requirements: No further analysis performed. ; None           ;
+; Transfer from camera|mipi_rclk|iopll_0_refclk to GPIO_Din[1]               ; Meets timing requirements: No further analysis performed. ; None           ;
+; Transfer from u_VEDIO_PLL|iopll_0_outclk0 to pll_sdram|iopll_0_outclk0     ; Meets timing requirements: No further analysis performed. ; None           ;
+; Clock Domain camera|mipi_rclk|iopll_0_refclk                               ; Meets timing requirements: No further analysis performed. ; None           ;
+; Clock Domain u_VEDIO_PLL|iopll_0_outclk0                                   ; Meets timing requirements: No further analysis performed. ; None           ;
+; Clock Domain GPIO_Din[1]                                                   ; Meets timing requirements: No further analysis performed. ; None           ;
+; Clock Domain u_AUDIO_PLL|iopll_0_outclk0                                   ; Meets timing requirements: No further analysis performed. ; None           ;
++----------------------------------------------------------------------------+-----------------------------------------------------------+----------------+
 
 
-Critical Chain Summary for Transfer from pll_sdram|iopll_0_outclk0 to u_VEDIO_PLL|iopll_0_outclk0
+Transfer from GPIO_Din[1] to u_VEDIO_PLL|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
 ===============================================================================
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Recommendations for Critical Chain                                                                                                                                                                                                                                 ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Recommendation                                                                                                                                                                                                                                                     ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; The critical chain is limited by: Path Limit                                                                                                                                                                                                                       ;
-;                                                                                                                                                                                                                                                                    ;
-; The source or destination register is involved in a cross-partition transfer                                                                                                                                                                                       ;
-;    and so Hyper-Registers on the routing path cannot be used and are not displayed                                                                                                                                                                                 ;
-;    on the critical chain. Consider duplicating the register to isolate the critical                                                                                                                                                                                ;
-;    path from the cross-partition transfer.                                                                                                                                                                                                                         ;
-;                                                                                                                                                                                                                                                                    ;
-; Retiming Restriction: Not fully registered RAM                                                                                                                                                                                                                     ;
-;   sdram_manager|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a16                                                                                                                                              ;
-;     Insert more pipeline stages after the RAM block to allow better register packing.                                                                                                                                                                              ;
-;     Review Fitter Report: RAM Summary                                                                                                                                                                                                                              ;
-;    Refer to <a href='https://www.intel.com/content/www/us/en/docs/programmable/683353/current/hyper-pipelining-add-pipeline-registers.html'>Hyper-Pipelining</a> in the <i>Intel Hyperflex Architecture High-Performance Design Handbook</i> for more information. ;
-;                                                                                                                                                                                                                                                                    ;
-; Retiming Restriction: Boundary Port Restriction                                                                                                                                                                                                                    ;
-;  Unable to retime across boundary ports:                                                                                                                                                                                                                           ;
-;    auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_auto_signaltap_auto_signaltap_0_sld_signaltap_inst_acq_trigger_in[27]                                                                                                                                        ;
-;                                                                                                                                                                                                                                                                    ;
-; Retiming Restriction: Cross Partition Transfer Restriction                                                                                                                                                                                                         ;
-;  Unable to retime across nodes involved in cross-partition transfers:                                                                                                                                                                                              ;
-;    sdram_manager|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a16                                                                                                                                             ;
-;    auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[27]                                                                                                                                                ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Critical Chain Details                                                                                                                                                                  ;
-+----------------------+--------------+-------------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Path Info            ; Register     ; Register ID ; Element                                                                                                                             ;
-+----------------------+--------------+-------------+-------------------------------------------------------------------------------------------------------------------------------------+
-; Long Path (Critical) ; REG (RAM)    ; #1          ; sdram_manager|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a16~reg1            ;
-; Long Path (Critical) ;              ;             ; sdram_manager|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a16|portbdataout[0] ;
-; Long Path (Critical) ;              ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_auto_signaltap_auto_signaltap_0_sld_signaltap_inst_acq_trigger_in[27]|input      ;
-; Long Path (Critical) ;              ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_auto_signaltap_auto_signaltap_0_sld_signaltap_inst_acq_trigger_in[27]            ;
-; Long Path (Critical) ;              ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[27]|d                  ;
-; Long Path (Critical) ; ALM Register ; #2          ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[27]                    ;
-+----------------------+--------------+-------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 
-
-Critical Chain Summary for Transfer from GPIO_Din[1] to u_VEDIO_PLL|iopll_0_outclk0
+Transfer from GPIO_Din[1] to pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
 ===============================================================================
-+-------------------------------------------------------------------------------------------------------------------------+
-; Recommendations for Critical Chain                                                                                      ;
-+-------------------------------------------------------------------------------------------------------------------------+
-; Recommendation                                                                                                          ;
-+-------------------------------------------------------------------------------------------------------------------------+
-; The critical chain is limited by: Path Limit                                                                            ;
-;                                                                                                                         ;
-; The source or destination register is involved in a cross-partition transfer                                            ;
-;    and so Hyper-Registers on the routing path cannot be used and are not displayed                                      ;
-;    on the critical chain. Consider duplicating the register to isolate the critical                                     ;
-;    path from the cross-partition transfer.                                                                              ;
-;                                                                                                                         ;
-; Retiming Restriction: Boundary Port Restriction                                                                         ;
-;  Unable to retime across boundary ports:                                                                                ;
-;    auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_auto_signaltap_auto_signaltap_0_sld_signaltap_inst_acq_data_in[7] ;
-;                                                                                                                         ;
-; Retiming Restriction: Cross Partition Transfer Restriction                                                              ;
-;  Unable to retime across nodes involved in cross-partition transfers:                                                   ;
-;    camera|adl|oB[5]                                                                                                     ;
-;    auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[7]         ;
-+-------------------------------------------------------------------------------------------------------------------------+
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Critical Chain Details                                                                                                                                                                         ;
-+----------------------+------------------------------+-------------+----------------------------------------------------------------------------------------------------------------------------+
-; Path Info            ; Register                     ; Register ID ; Element                                                                                                                    ;
-+----------------------+------------------------------+-------------+----------------------------------------------------------------------------------------------------------------------------+
-; Long Path (Critical) ; REG (Metastability required) ; #1          ; camera|adl|oB[5]                                                                                                           ;
-; Long Path (Critical) ;                              ;             ; camera|adl|oB[5]|q                                                                                                         ;
-; Long Path (Critical) ;                              ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_auto_signaltap_auto_signaltap_0_sld_signaltap_inst_acq_data_in[7]|input ;
-; Long Path (Critical) ;                              ;             ; auto_fab_0|auto_export_alt_sld_fab_0_alt_sld_fab_0_auto_signaltap_auto_signaltap_0_sld_signaltap_inst_acq_data_in[7]       ;
-; Long Path (Critical) ;                              ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[7]|d             ;
-; Long Path (Critical) ; REG (Metastability required) ; #2          ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[7]               ;
-+----------------------+------------------------------+-------------+----------------------------------------------------------------------------------------------------------------------------+
 
 
-
-Clock Domain pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
+Transfer from camera|mipi_rclk|iopll_0_refclk to pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
 ===============================================================================
 
 
@@ -202,7 +122,11 @@ Transfer from GPIO_Din[1] to camera|mipi_rclk|iopll_0_refclk (Meets timing requi
 ===============================================================================
 
 
-Transfer from GPIO_Din[1] to pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
+Clock Domain pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
+===============================================================================
+
+
+Clock Domain altera_reserved_tck (Meets timing requirements: No further analysis performed.)
 ===============================================================================
 
 
@@ -211,10 +135,6 @@ Transfer from camera|mipi_rclk|iopll_0_refclk to GPIO_Din[1] (Meets timing requi
 
 
 Transfer from u_VEDIO_PLL|iopll_0_outclk0 to pll_sdram|iopll_0_outclk0 (Meets timing requirements: No further analysis performed.)
-===============================================================================
-
-
-Clock Domain altera_reserved_tck (Meets timing requirements: No further analysis performed.)
 ===============================================================================
 
 
@@ -237,12 +157,12 @@ Clock Domain u_AUDIO_PLL|iopll_0_outclk0 (Meets timing requirements: No further 
 +-----------------+
 ; Retime Messages ;
 +-----------------+
-Info (20030): Parallel compilation is enabled and will use 24 of the 24 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info: *******************************************************************
 Info: Running Quartus Prime Fitter
-    Info: Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
-    Info: Processing started: Tue Apr 28 13:15:34 2026
-    Info: System process ID: 23484
+    Info: Version 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
+    Info: Processing started: Thu May 14 23:00:27 2026
+    Info: System process ID: 6404
 Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off golden_top -c golden_top
 Info: qfit2_default_script.tcl version: #1
 Info: Project  = golden_top

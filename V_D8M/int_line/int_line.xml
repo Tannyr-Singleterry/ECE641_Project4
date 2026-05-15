@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2026.04.28.13:14:34"
- outputDirectory="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/int_line/">
+ date="2026.05.14.22:59:15"
+ outputDirectory="D:/altera/ECE641/ECE641_Project4/V_D8M/int_line/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -133,31 +133,29 @@
   <parameter name="AUTO_WRCLOCK_CLOCK_RATE" value="-1" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\int_line\synth\int_line.v"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\int_line\synth\int_line.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\int_line\synth\int_line.v"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\int_line\synth\int_line.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file
-       path="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/int_line.ip" />
+   <file path="D:/altera/ECE641/ECE641_Project4/V_D8M/int_line.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file
-       path="C:/altera_pro/ip/altera/megafunctions/ram_2port/ram_2_port_hw.tcl" />
+   <file path="D:/altera/ip/altera/megafunctions/ram_2port/ram_2_port_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="int_line">"Generating: int_line"</message>
-   <message level="Info" culprit="int_line">"Generating: int_line_ram_2port_2060_r46qrgq"</message>
+   <message level="Info" culprit="int_line">"Generating: int_line_ram_2port_2060_tqemrnq"</message>
   </messages>
  </entity>
  <entity
    kind="ram_2port"
    version="20.6.0"
-   name="int_line_ram_2port_2060_r46qrgq">
+   name="int_line_ram_2port_2060_tqemrnq">
   <parameter name="GUI_CLKEN_ADDRESS_STALL_A" value="false" />
   <parameter name="GUI_RDEN_DOUBLE" value="false" />
   <parameter name="GUI_NBE_A" value="true" />
@@ -224,7 +222,6 @@
   <parameter name="GUI_WRADDRESS_WIDTH" value="12" />
   <parameter name="GUI_CLKEN_RDADDRESSSTALL" value="false" />
   <parameter name="GUI_MAX_DEPTH" value="Auto" />
-  <parameter name="GUI_MULTIPORT_MODE" value="1W/3R" />
   <parameter name="BASE_DEVICE" value="SM4REVB" />
   <parameter name="GUI_ACLR_READ_OUTPUT_QA" value="false" />
   <parameter name="GUI_ACLR_READ_OUTPUT_QB" value="false" />
@@ -234,22 +231,21 @@
   <parameter name="GUI_WIDTH_ECCENCPARITY" value="8" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\int_line\ram_2port_2060\synth\int_line_ram_2port_2060_r46qrgq.v"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\int_line\ram_2port_2060\synth\int_line_ram_2port_2060_tqemrnq.v"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\int_line\ram_2port_2060\synth\int_line_ram_2port_2060_r46qrgq.v"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\int_line\ram_2port_2060\synth\int_line_ram_2port_2060_tqemrnq.v"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file
-       path="C:/altera_pro/ip/altera/megafunctions/ram_2port/ram_2_port_hw.tcl" />
+   <file path="D:/altera/ip/altera/megafunctions/ram_2port/ram_2_port_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="int_line" as="ram_2port_0" />
   <messages>
-   <message level="Info" culprit="int_line">"Generating: int_line_ram_2port_2060_r46qrgq"</message>
+   <message level="Info" culprit="int_line">"Generating: int_line_ram_2port_2060_tqemrnq"</message>
   </messages>
  </entity>
 </deploy>

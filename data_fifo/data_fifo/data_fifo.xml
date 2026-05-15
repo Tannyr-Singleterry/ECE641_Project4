@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2026.04.28.13:14:32"
- outputDirectory="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/data_fifo/data_fifo/">
+ date="2026.05.14.22:59:12"
+ outputDirectory="D:/altera/ECE641/ECE641_Project4/data_fifo/data_fifo/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -70,20 +70,19 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\data_fifo\data_fifo\synth\data_fifo.v"
+       path="D:\altera\ECE641\ECE641_Project4\data_fifo\data_fifo\synth\data_fifo.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\data_fifo\data_fifo\synth\data_fifo.v"
+       path="D:\altera\ECE641\ECE641_Project4\data_fifo\data_fifo\synth\data_fifo.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file
-       path="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/data_fifo/data_fifo.ip" />
+   <file path="D:/altera/ECE641/ECE641_Project4/data_fifo/data_fifo.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file path="C:/altera_pro/ip/altera/megafunctions/fifo/fifo_hw.tcl" />
+   <file path="D:/altera/ip/altera/megafunctions/fifo/fifo_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="data_fifo">"Generating: data_fifo"</message>
@@ -137,22 +136,22 @@
   <parameter name="GUI_Width" value="32" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\data_fifo\data_fifo\fifo_1941\synth\data_fifo_fifo_1941_bdme6qi.v"
+       path="D:\altera\ECE641\ECE641_Project4\data_fifo\data_fifo\fifo_1941\synth\data_fifo_fifo_1941_bdme6qi.v"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\data_fifo\data_fifo\fifo_1941\synth\data_fifo_fifo_1941_bdme6qi.sdc"
+       path="D:\altera\ECE641\ECE641_Project4\data_fifo\data_fifo\fifo_1941\synth\data_fifo_fifo_1941_bdme6qi.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\data_fifo\data_fifo\fifo_1941\synth\data_fifo_fifo_1941_bdme6qi.v"
+       path="D:\altera\ECE641\ECE641_Project4\data_fifo\data_fifo\fifo_1941\synth\data_fifo_fifo_1941_bdme6qi.v"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\data_fifo\data_fifo\fifo_1941\synth\data_fifo_fifo_1941_bdme6qi.sdc"
+       path="D:\altera\ECE641\ECE641_Project4\data_fifo\data_fifo\fifo_1941\synth\data_fifo_fifo_1941_bdme6qi.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="C:/altera_pro/ip/altera/megafunctions/fifo/fifo_hw.tcl" />
+   <file path="D:/altera/ip/altera/megafunctions/fifo/fifo_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="data_fifo" as="fifo_0" />

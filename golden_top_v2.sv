@@ -97,8 +97,7 @@ module golden_top(
 );
 
 
-//----LED off device
-assign LEDR[9:8] = 2'h7; 
+          // lights when KEY[1] NOT pressed, off when pressed // confirms cam_capture is issuing writes    // confirms cam_capture is issuing writes
 
 //----HEX off device
 /*
@@ -177,6 +176,53 @@ wire HDMI_I2C_SCLK ;
 	wire		          		MIPI_RESET_n;
 	
 	
+	
+	wire [1:0] bank_sel;
+assign bank_sel = SW[9:8];
+
+wire record_req;
+assign record_req = ~KEY[1];
+
+wire cam_wr_addr_valid;
+wire [23:0] cam_wr_addr;
+wire cam_wr_data_valid;
+wire [31:0] cam_wr_data;
+
+
+wire uart_wr_addr_valid;
+wire [23:0] uart_wr_addr;
+wire uart_wr_data_valid;
+wire [31:0] uart_wr_data;
+wire uart_rd_addr_valid;
+wire [23:0] uart_rd_addr;
+wire uart_rd_data_valid;
+wire [31:0] uart_rd_data;
+
+wire [7:0] hdmi_pixel_r;
+wire [7:0] hdmi_pixel_g;
+wire [7:0] hdmi_pixel_b;
+wire hdmi_pixel_valid;
+wire image_loaded;
+assign image_loaded = 1'b1;
+
+wire sdram_busy;
+wire sdram_rd_req;
+wire sdram_wr_req;
+wire [23:0] sdram_addr;
+wire [31:0] sdram_wr_data;
+wire [31:0] sdram_rd_data;
+wire sdram_rd_valid;
+wire sdram_wr_next;
+wire vpg_pclk;
+
+VEDIO_PLL u_VEDIO_PLL(
+    .refclk   (CLOCK0_50),
+    .outclk_0 (vpg_pclk),
+    .locked   (V_locked),
+    .rst      (~reset_n)
+);
+
+
 
 //=======================================================
 //  Structural coding
@@ -188,9 +234,32 @@ wire ninit_done;
 	ResetRelease ResetRelease_inst (
 		.ninit_done (ninit_done)  
 	);
+	
+reg [7:0] cam_reset_cnt;
+reg cam_ar;
+
+always @(posedge CLOCK0_50)
+begin
+    if(!ninit_done)
+    begin
+        cam_reset_cnt <= 8'd0;
+        cam_ar        <= 1'b0;
+    end
+    else if(cam_reset_cnt < 8'hFF)
+    begin
+        cam_reset_cnt <= cam_reset_cnt + 1;
+        cam_ar        <= 1'b0;
+    end
+    else
+        cam_ar <= 1'b1;
+end
+	 //----LED off device
+assign LEDR[9] = ~mem_busy;
+assign LEDR[6] = ~cam_wr_addr_valid;  // lights when capture is writing
+assign LEDR[8] = record_req;    
 //-- PLL LOCK
 assign LEDR[5] = ~V_locked	;
-assign LEDR[6] = ~A_locked	;
+//assign LEDR[6] = ~A_locked	;
 
 //-- HDMI SET READY	
 assign LEDR[4] = ~HDMI_READY	 ;
@@ -202,13 +271,6 @@ CLOCKMEM  ckK2( .RESET_n(1), .CLK(SYSTEM_50MHZ   ) ,.CLK_FREQ (  50_000_000 )  ,
 CLOCKMEM  ckK3( .RESET_n(1), .CLK(AUD_CTRL_CLK   ) ,.CLK_FREQ (  12_280_000 )  ,.CK_1HZ  (LEDR[3] ) ) ;
 
 //---AV PLL 
-
-VEDIO_PLL u_VEDIO_PLL(
-    .refclk       (CLOCK0_50     ),
-    .outclk_0     (vpg_pclk      ),//25MHZ
-    .locked       (V_locked      ),
-	 .rst          (~reset_n      )
-);
 
 
 AUDIO_PLL u_AUDIO_PLL(
@@ -230,9 +292,9 @@ wire	HDMI_TX_VS_sdram;
 
 assign SYSTEM_50MHZ = CLOCK0_50;//
  
-assign HDMI_TX_D[23:16]	=	hdmi_sel ?  vpg_r : VGA_R;
-assign HDMI_TX_D[15:8] 	=	hdmi_sel ?  vpg_g : VGA_G;
-assign HDMI_TX_D[7:0]  	=	hdmi_sel ?  vpg_b : VGA_B;
+assign HDMI_TX_D[23:16] = hdmi_sel ? vpg_r : VGA_R;
+assign HDMI_TX_D[15:8]  = hdmi_sel ? vpg_g : VGA_G;
+assign HDMI_TX_D[7:0]   = hdmi_sel ? vpg_b : VGA_B;
 assign HDMI_TX_DE = hdmi_sel ? HDMI_TX_DE_sdram : (h_act & v_act);
 assign HDMI_TX_HS = hdmi_sel ?  HDMI_TX_HS_sdram : VGA_HS;
 assign HDMI_TX_VS = hdmi_sel ? HDMI_TX_VS_sdram : VGA_VS;
@@ -241,7 +303,10 @@ assign HDMI_TX_CLK = HDMI_TX_CLK_sdram;
 
 
 wire [23:0] pixel_data;
-assign pixel_data = rd_data_fifo_dataout[31:8];
+assign pixel_data = {hdmi_pixel_r, hdmi_pixel_g, hdmi_pixel_b};
+
+// Gate fifo_rdreq with hdmi_pixel_valid from sdram_mgr
+// vpg drives rd_data_fifo_rdreq but we override it with hdmi_pixel_valid
 
 wire vpg_clk;
 
@@ -266,8 +331,8 @@ vpg	u_vpg (
 	.vpg_r       (vpg_r),
 	.vpg_g       (vpg_g),
 	.vpg_b       (vpg_b),
-	 .fifo_rdreq(rd_data_fifo_rdreq),			// added for sdram fifo
-	.pixel_fifo(pixel_data)
+	.fifo_rdreq(),
+	.pixel_fifo({hdmi_pixel_r, hdmi_pixel_g, hdmi_pixel_b})
 
 	);
 								
@@ -430,6 +495,7 @@ assign   FPGA_UART_TX =  FPGA_UART_RX & tx_out;
 
 	wire	rd_data_fifo_rdreq;
 	wire	rd_data_fifo_full;
+	wire	rd_data_fifo_empty;
 	wire  [31:0]	rd_data_fifo_dataout;
 
 	wire	wr_addr_fifo_wrreq;
@@ -492,20 +558,84 @@ assign   FPGA_UART_TX =  FPGA_UART_RX & tx_out;
 	sevseg_dec dec4(.x_in(control_regs[reg_idx][19:16]), .segs(HEX4));
 	sevseg_dec dec5(.x_in(control_regs[reg_idx][23:20]), .segs(HEX5));
 	
-sdram_mgr sdram_manager(.ar(ar), .clk(clk),	
-		.clk_hdmi(vpg_pclk), .vsynch(HDMI_TX_VS), // new signals for HDMI
-		.wr_data_fifo_wrreq(wr_data_fifo_wrreq),
-		.wr_data_fifo_full(wr_data_fifo_full), .wr_data_fifo_datain(wr_data_fifo_datain),
-		.rd_data_fifo_rdreq(rd_data_fifo_rdreq), .rd_data_fifo_full(rd_data_fifo_full),
-		.rd_data_fifo_dataout(rd_data_fifo_dataout), .wr_addr_fifo_wrreq(wr_addr_fifo_wrreq),
-		.wr_addr_fifo_full(wr_addr_fifo_full), .wr_addr_fifo_datain(wr_addr_fifo_datain),
-		//.rd_addr_fifo_wrreq(rd_addr_fifo_wrreq), // Not used in HDMI version
-		.rd_addr_fifo_full(rd_addr_fifo_full),
-		.rd_addr_fifo_datain(rd_addr_fifo_datain), .rd_data_fifo_empty(rd_data_fifo_empty),
-		.mem_wr_req(mem_wr_req), .mem_rd_req(mem_rd_req), .mem_addr(mem_addr), 
-		.mem_wr_data(mem_wr_data), .mem_rd_data(mem_rd_data), .mem_rd_valid(mem_rd_valid), 
-		.mem_busy(mem_busy), .mem_wr_next(mem_wr_next));
+sdram_controller_32bit sdram_ctrl (
+    .clk          (sdram_ctrl_clk),
+    .rst_n        (ar),
+    .start_refresh(~HDMI_TX_HS),
+    .num_words    (10'd512),
+    .wr_req       (mem_wr_req),
+    .rd_req       (mem_rd_req),
+    .addr         (mem_addr),
+    .wr_data      (mem_wr_data),
+    .rd_data      (mem_rd_data),
+    .rd_valid     (mem_rd_valid),
+    .busy         (mem_busy),
+    .wr_next      (mem_wr_next),
+    .sdram_a      (DRAM_ADDR),
+    .sdram_ba     (DRAM_BA),
+    .sdram_dq     (DRAM_DQ),
+    .sdram_dqm    (DRAM_DQM),
+    .sdram_cke    (DRAM_CKE),
+    .sdram_cs_n   (DRAM_CS_n),
+    .sdram_ras_n  (DRAM_RAS_n),
+    .sdram_cas_n  (DRAM_CAS_n),
+    .sdram_we_n   (DRAM_WE_n)
+);
 
+
+cam_capture cam_capture_inst (
+    .ar              (cam_ar),
+    .clk             (CLOCK0_50),
+    .record_req      (record_req),
+    .bank_sel        (bank_sel),
+    .VGA_CLK         (VGA_CLK),
+    .VGA_HS          (VGA_HS),
+    .VGA_VS          (VGA_VS),
+    .VGA_DE          (VGA_DE),
+    .VGA_R           (VGA_R),
+    .VGA_G           (VGA_G),
+    .VGA_B           (VGA_B),
+    .cam_wr_addr_valid(cam_wr_addr_valid),
+    .cam_wr_addr      (cam_wr_addr),
+    .cam_wr_data_valid(cam_wr_data_valid),
+    .cam_wr_data      (cam_wr_data)
+);
+
+sdram_mgr sdram_mgr_inst (
+    .ar                  (ar),
+    .clk                 (sdram_ctrl_clk),
+    .clk_hdmi            (sdram_ctrl_clk),
+    // UART write interface
+    .wr_data_fifo_wrreq  (wr_data_fifo_wrreq),
+    .wr_data_fifo_full   (wr_data_fifo_full),
+    .wr_data_fifo_datain (wr_data_fifo_datain),
+    .rd_data_fifo_rdreq  (rd_data_fifo_rdreq),
+    .rd_data_fifo_full   (rd_data_fifo_full),
+    .rd_data_fifo_empty  (rd_data_fifo_empty),
+    .rd_data_fifo_dataout(rd_data_fifo_dataout),
+    .wr_addr_fifo_wrreq  (wr_addr_fifo_wrreq),
+    .wr_addr_fifo_full   (wr_addr_fifo_full),
+    .wr_addr_fifo_datain (wr_addr_fifo_datain),
+    .rd_addr_fifo_full   (rd_addr_fifo_full),
+    .rd_addr_fifo_datain (rd_addr_fifo_datain),
+    .vsynch              (HDMI_TX_VS_sdram),
+    // PR4: Camera write interface
+    .cam_wr_addr_valid   (cam_wr_addr_valid),
+    .cam_wr_addr         (cam_wr_addr),
+    .cam_wr_data_valid   (cam_wr_data_valid),
+    .cam_wr_data         (cam_wr_data),
+    // PR4: Bank select
+    .bank_sel            (bank_sel),
+    // SDRAM controller interface
+    .mem_wr_req          (mem_wr_req),
+    .mem_rd_req          (mem_rd_req),
+    .mem_addr            (mem_addr),
+    .mem_wr_data         (mem_wr_data),
+    .mem_rd_data         (mem_rd_data),
+    .mem_rd_valid        (mem_rd_valid),
+    .mem_busy            (mem_busy),
+    .mem_wr_next         (mem_wr_next)
+);
 	
 sdram_pll pll_sdram(
 		.refclk(CLOCK0_50),   //  refclk.clk,    The reference clock source that drives the I/O PLL.
@@ -515,34 +645,6 @@ sdram_pll pll_sdram(
 		.outclk_1(DRAM_CLK)  // outclk1.clk,    Output clock Channel 1 from I/O PLL.
 	);
 	
-sdram_controller_32bit sdram_ctrl
-(
-    .clk(sdram_ctrl_clk),                // typically 100–133 MHz
-    .rst_n(ar),
-	
-    // User interface (simple handshake - single transaction)
-	.start_refresh(~HDMI_TX_HS), // video h(v)synch (min period of 64 ms)
-    .wr_req(mem_wr_req),
-    .rd_req(mem_rd_req),
-    .addr(mem_addr),               // 24-bit addr → 64MB
-	.num_words(10'd512),
-    .wr_data(mem_wr_data),
-    .rd_data(mem_rd_data),
-    .rd_valid(mem_rd_valid),
-    .busy(mem_busy),
-	.wr_next(mem_wr_next),
-
-    // SDRAM Pins
-    .sdram_a(DRAM_ADDR),
-    .sdram_ba(DRAM_BA),
-    .sdram_dq(DRAM_DQ),
-    .sdram_dqm(DRAM_DQM),          // usually 2'b00 for full 32-bit
-    .sdram_cke(DRAM_CKE),
-    .sdram_cs_n(DRAM_CS_n),
-    .sdram_ras_n(DRAM_RAS_n),
-    .sdram_cas_n(DRAM_CAS_n),
-    .sdram_we_n(DRAM_WE_n)
-);	
 
 
 endmodule

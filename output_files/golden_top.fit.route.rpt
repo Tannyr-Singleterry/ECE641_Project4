@@ -1,6 +1,6 @@
 Fitter Route Stage Report for golden_top
-Tue Apr 28 13:18:15 2026
-Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+Thu May 14 23:04:33 2026
+Quartus Prime Version 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
 
 
 ---------------------
@@ -13,11 +13,11 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
   5. Route Messages
   6. Estimated Delay Added for Hold Timing Summary
   7. Estimated Delay Added for Hold Timing Details
-  8. Global Router Congestion Hotspot Summary
-  9. Global Router Wire Utilization Map
- 10. Peak Wire Demand Summary
- 11. Peak Wire Demand Details
- 12. Peak Total Grid Crossings
+  8. Global Router Wire Utilization Map
+  9. Peak Wire Demand Summary
+ 10. Peak Wire Demand Details
+ 11. Peak Total Grid Crossings
+ 12. Global Router Congestion Hotspot Summary
 
 
 
@@ -46,16 +46,13 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------+
 ; Net                                                                                                                                                                                                                                                       ; Number of Wires Used ; Fanout ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------+
-; KEY[3]~input                                                                                                                                                                                                                                              ; 150                  ; 188    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|offload_shift_ena                                      ; 133                  ; 594    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[1]                                                                                  ; 117                  ; 593    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[4] ; 112                  ; 594    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[4]                                                                                  ; 111                  ; 593    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[5] ; 109                  ; 594    ;
+; ~GND                                                                                                                                                                                                                                                      ; 254                  ; 1271   ;
+; KEY[3]~input                                                                                                                                                                                                                                              ; 146                  ; 183    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[6]                                                                                  ; 131                  ; 593    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[6] ; 127                  ; 594    ;
 ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[5]                                                                                  ; 109                  ; 593    ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rdfull_reg|dffe3a[0]                                                                                                                                                                    ; 106                  ; 15     ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[10]                                                                                 ; 106                  ; 593    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[6] ; 104                  ; 594    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[7] ; 108                  ; 594    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[3] ; 103                  ; 594    ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------+
 
 
@@ -65,13 +62,10 @@ on the Quartus Prime software download page.
 ; Name          ; Pin Type ; Input Delay Chain 0 ; Output Delay Chain ; OE Delay Chain ; IO_12_LANE Input Data Delay Chain ; IO_12_LANE Input Strobe Delay Chain ;
 +---------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
 ; KEY[0]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
-; KEY[1]        ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
 ; SW[2]         ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
 ; SW[4]         ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
 ; SW[5]         ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
 ; SW[6]         ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
-; SW[8]         ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
-; SW[9]         ; Input    ; --                  ; --                 ; --             ; --                                ; --                                  ;
 ; LEDR[0]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
 ; LEDR[1]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
 ; LEDR[2]       ; Output   ; --                  ; 0                  ; --             ; --                                ; --                                  ;
@@ -251,16 +245,19 @@ on the Quartus Prime software download page.
 ; GPIO_D[28]    ; Bidir    ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
 ; GPIO_D[30]    ; Bidir    ; --                  ; 0                  ; 0              ; --                                ; --                                  ;
 ; GPIO_D[31]    ; Bidir    ; 0                   ; 0                  ; 0              ; --                                ; --                                  ;
+; KEY[1]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; SW[0]         ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; SW[1]         ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; SW[7]         ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; FPGA_UART_RX  ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; CLOCK0_50     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; KEY[3]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
-; CLOCK1_50     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; GPIO_Din[1]   ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; SW[3]         ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; CLOCK1_50     ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; HDMI_TX_INT   ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; SW[8]         ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
+; SW[9]         ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 ; KEY[2]        ; Input    ; 0                   ; --                 ; --             ; --                                ; --                                  ;
 +---------------+----------+---------------------+--------------------+----------------+-----------------------------------+-------------------------------------+
 
@@ -270,15 +267,15 @@ on the Quartus Prime software download page.
 +--------------------------------------+---------------------------+
 ; Routing Resource Type                ; Usage                     ;
 +--------------------------------------+---------------------------+
-; Block Input Mux Wrapbacks            ; 14 / 43,616 ( < 1 % )     ;
-; Block Input Muxes                    ; 25,187 / 500,456 ( 5 % )  ;
-; Block interconnects                  ; 18,461 / 526,400 ( 4 % )  ;
-; C1 interconnects                     ; 6,710 / 234,240 ( 3 % )   ;
-; C4 interconnects                     ; 2,061 / 229,360 ( < 1 % ) ;
-; C8 interconnects                     ; 259 / 22,936 ( 1 % )      ;
+; Block Input Mux Wrapbacks            ; 16 / 43,616 ( < 1 % )     ;
+; Block Input Muxes                    ; 24,980 / 500,456 ( 5 % )  ;
+; Block interconnects                  ; 18,485 / 526,400 ( 4 % )  ;
+; C1 interconnects                     ; 6,225 / 234,240 ( 3 % )   ;
+; C4 interconnects                     ; 1,647 / 229,360 ( < 1 % ) ;
+; C8 interconnects                     ; 160 / 22,936 ( < 1 % )    ;
 ; DCM_muxes                            ; 8 / 216 ( 4 % )           ;
 ; DELAY_CHAINs                         ; 0 / 1,262 ( 0 % )         ;
-; Direct links                         ; 4,674 / 526,400 ( < 1 % ) ;
+; Direct links                         ; 4,881 / 526,400 ( < 1 % ) ;
 ; HIO Buffers                          ; 52 / 10,528 ( < 1 % )     ;
 ; IO75XDDRFMXCKTREE_CLKDRV_BIG_VCO_REs ; 0 / 8 ( 0 % )             ;
 ; IO75XDDRFMXCKTREE_CLKDRV_GM0_REs     ; 0 / 8 ( 0 % )             ;
@@ -291,18 +288,18 @@ on the Quartus Prime software download page.
 ; IOFBRADAPT_P2C_BUF_INPUTs            ; 0 / 142 ( 0 % )           ;
 ; IOFBRADAPT_P2C_BUF_OUTPUTs           ; 0 / 142 ( 0 % )           ;
 ; Programmable Invert Buffers          ; 0 / 208 ( 0 % )           ;
-; Programmable Invert Inputs           ; 1,015 / 57,078 ( 2 % )    ;
-; Programmable Inverts                 ; 1,015 / 57,078 ( 2 % )    ;
-; R0 interconnects                     ; 8,804 / 401,380 ( 2 % )   ;
-; R1 interconnects                     ; 6,027 / 229,360 ( 3 % )   ;
-; R12 interconnects                    ; 403 / 34,404 ( 1 % )      ;
-; R2 interconnects                     ; 1,624 / 115,620 ( 1 % )   ;
-; R4 interconnects                     ; 1,064 / 117,500 ( < 1 % ) ;
-; R6 interconnects                     ; 871 / 118,440 ( < 1 % )   ;
+; Programmable Invert Inputs           ; 963 / 57,078 ( 2 % )      ;
+; Programmable Inverts                 ; 963 / 57,078 ( 2 % )      ;
+; R0 interconnects                     ; 8,718 / 401,380 ( 2 % )   ;
+; R1 interconnects                     ; 5,700 / 229,360 ( 2 % )   ;
+; R12 interconnects                    ; 142 / 34,404 ( < 1 % )    ;
+; R2 interconnects                     ; 1,316 / 115,620 ( 1 % )   ;
+; R4 interconnects                     ; 614 / 117,500 ( < 1 % )   ;
+; R6 interconnects                     ; 347 / 118,440 ( < 1 % )   ;
 ; Redundancy Muxes                     ; 206 / 20,728 ( < 1 % )    ;
-; Row Clock Tap-Offs                   ; 581 / 34,404 ( 2 % )      ;
+; Row Clock Tap-Offs                   ; 529 / 34,404 ( 2 % )      ;
 ; Switchbox_clock_muxes                ; 32 / 1,920 ( 2 % )        ;
-; VIO Buffers                          ; 10 / 8,320 ( < 1 % )      ;
+; VIO Buffers                          ; 12 / 8,320 ( < 1 % )      ;
 ; Vertical_seam_tap_muxes              ; 26 / 576 ( 5 % )          ;
 +--------------------------------------+---------------------------+
 
@@ -310,30 +307,30 @@ on the Quartus Prime software download page.
 +----------------+
 ; Route Messages ;
 +----------------+
-Info (20030): Parallel compilation is enabled and will use 24 of the 24 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info: *******************************************************************
 Info: Running Quartus Prime Fitter
-    Info: Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
-    Info: Processing started: Tue Apr 28 13:15:34 2026
-    Info: System process ID: 23484
+    Info: Version 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
+    Info: Processing started: Thu May 14 23:00:27 2026
+    Info: System process ID: 6404
 Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off golden_top -c golden_top
 Info: qfit2_default_script.tcl version: #1
 Info: Project  = golden_top
 Info: Revision = golden_top
 Info (22300): Design uses Placement Effort Multiplier = 1.0.
 Info (170193): Fitter routing operations beginning
-Info (20215): Router estimated peak short interconnect demand : 12% of right directional wire in region X108_Y40 to X119_Y47
-    Info (20265): Estimated peak short right directional wire demand : 12% in region X108_Y40 to X119_Y47
-    Info (20265): Estimated peak short left directional wire demand : 4% in region X120_Y40 to X122_Y47
-    Info (20265): Estimated peak short up directional wire demand : 0% in region X96_Y40 to X107_Y47
-    Info (20265): Estimated peak short down directional wire demand : 0% in region X96_Y40 to X107_Y47
-Info (20215): Router estimated peak long high speed interconnect demand : 133% of right directional wire in region X108_Y0 to X119_Y7
-    Info (20265): Estimated peak long high speed right directional wire demand : 133% in region X108_Y0 to X119_Y7
-    Info (20265): Estimated peak long high speed left directional wire demand : 100% in region X120_Y48 to X122_Y54
-    Info (20265): Estimated peak long high speed up directional wire demand : 50% in region X120_Y40 to X122_Y47
-    Info (20265): Estimated peak long high speed down directional wire demand : 53% in region X120_Y16 to X122_Y23
+Info (20215): Router estimated peak short interconnect demand : 14% of right directional wire in region X108_Y8 to X119_Y15
+    Info (20265): Estimated peak short right directional wire demand : 14% in region X108_Y8 to X119_Y15
+    Info (20265): Estimated peak short left directional wire demand : 0% in region X108_Y48 to X119_Y54
+    Info (20265): Estimated peak short up directional wire demand : 0% in region X0_Y0 to X11_Y7
+    Info (20265): Estimated peak short down directional wire demand : 5% in region X120_Y8 to X122_Y15
+Info (20215): Router estimated peak long high speed interconnect demand : 100% of right directional wire in region X108_Y0 to X119_Y7
+    Info (20265): Estimated peak long high speed right directional wire demand : 100% in region X108_Y0 to X119_Y7
+    Info (20265): Estimated peak long high speed left directional wire demand : 95% in region X120_Y8 to X122_Y15
+    Info (20265): Estimated peak long high speed up directional wire demand : 64% in region X120_Y8 to X122_Y15
+    Info (20265): Estimated peak long high speed down directional wire demand : 55% in region X84_Y32 to X95_Y39
     Info (20315): Note that the router may use short wires to implement long connections at higher delay
-Info (170239): Router is attempting to preserve 0.15 percent of routes from an earlier compilation, a user specified Routing Constraints File, or internal routing requirements.
+Info (170239): Router is attempting to preserve 0.14 percent of routes from an earlier compilation, a user specified Routing Constraints File, or internal routing requirements.
 Info (21076): High junction temperature operating condition is not set. Assuming a default value of '100'.
 Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
 Info (22793): The Timing Analyzer is analyzing 14 combinational loops as latches. To see the list of latches that were not entered as explicit comb loops in design files, view the "User-Specified and Inferred Latches" table in the Synthesis report.
@@ -345,7 +342,7 @@ Info: DEBUG: paths detected for *tck_clk* = 1
 Info: Constraints on the CDC paths between acquisition clock and communication clock are created in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0
 Info: The clock period of 'altera_reserved_tck' used in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0 is not defined, setting max delay to 30ns (default 33MHz tck)
 Info: Adding default timing constraints to JTAG signals.  This will help to achieve basic functionality since no such constraints were provided by the user.
-Info (11888): Total time spent on timing analysis during Routing is 1.68 seconds.
+Info (11888): Total time spent on timing analysis during Routing is 2.41 seconds.
 Info (22793): The Timing Analyzer is analyzing 14 combinational loops as latches. To see the list of latches that were not entered as explicit comb loops in design files, view the "User-Specified and Inferred Latches" table in the Synthesis report.
 Info: DEBUG: Top targeted path = auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|intel_stp_status_bits_cdc_u1
 Info: DEBUG: paths detected for *stp_status_bits_in_reg_acq* = 4
@@ -355,140 +352,118 @@ Info: DEBUG: paths detected for *tck_clk* = 1
 Info: Constraints on the CDC paths between acquisition clock and communication clock are created in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0
 Info: The clock period of 'altera_reserved_tck' used in the Signal Tap instance, auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0 is not defined, setting max delay to 30ns (default 33MHz tck)
 Info: Adding default timing constraints to JTAG signals.  This will help to achieve basic functionality since no such constraints were provided by the user.
-Info (16607): Fitter routing operations ending: elapsed time is 00:00:38
+Info (16607): Fitter routing operations ending: elapsed time is 00:00:52
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                                                                                     ;
-+-------------------------------------------------------+-------------------------------------------------------+-------------------+
-; Source Clock(s)                                       ; Destination Clock(s)                                  ; Delay Added in ns ;
-+-------------------------------------------------------+-------------------------------------------------------+-------------------+
-; u_VEDIO_PLL|iopll_0_outclk0                           ; pll_sdram|iopll_0_outclk0                             ; 223.8             ;
-; u_VEDIO_PLL|iopll_0_outclk0                           ; u_VEDIO_PLL|iopll_0_outclk0,pll_sdram|iopll_0_outclk0 ; 70.1              ;
-; camera|mipi_rclk|iopll_0_refclk                       ; GPIO_Din[1]                                           ; 22.4              ;
-; u_VEDIO_PLL|iopll_0_outclk0,pll_sdram|iopll_0_outclk0 ; pll_sdram|iopll_0_outclk0                             ; 15.0              ;
-; GPIO_Din[1]                                           ; GPIO_Din[1]                                           ; 14.4              ;
-; camera|mipi_rclk|iopll_0_refclk,GPIO_Din[1],I/O       ; GPIO_Din[1]                                           ; 13.6              ;
-; pll_sdram|iopll_0_outclk0                             ; pll_sdram|iopll_0_outclk0                             ; 9.5               ;
-+-------------------------------------------------------+-------------------------------------------------------+-------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                                                 ;
++---------------------------------------------------------------+-------------------------------------------+-------------------+
+; Source Clock(s)                                               ; Destination Clock(s)                      ; Delay Added in ns ;
++---------------------------------------------------------------+-------------------------------------------+-------------------+
+; camera|mipi_rclk|iopll_0_refclk                               ; GPIO_Din[1]                               ; 59.3              ;
+; camera|mipi_rclk|iopll_0_refclk                               ; pll_sdram|iopll_0_outclk0                 ; 39.1              ;
+; camera|mipi_rclk|iopll_0_refclk,pll_sdram|iopll_0_outclk0     ; pll_sdram|iopll_0_outclk0                 ; 38.3              ;
+; pll_sdram|iopll_0_outclk0                                     ; pll_sdram|iopll_0_outclk0                 ; 13.5              ;
+; u_VEDIO_PLL|iopll_0_outclk0                                   ; pll_sdram|iopll_0_outclk0                 ; 13.1              ;
+; camera|mipi_rclk|iopll_0_refclk,GPIO_Din[1],I/O               ; GPIO_Din[1]                               ; 12.9              ;
+; GPIO_Din[1]                                                   ; GPIO_Din[1]                               ; 11.8              ;
+; GPIO_Din[1]                                                   ; GPIO_Din[1],pll_sdram|iopll_0_outclk0,I/O ; 10.1              ;
+; camera|mipi_rclk|iopll_0_refclk,pll_sdram|iopll_0_outclk0,I/O ; pll_sdram|iopll_0_outclk0                 ; 4.4               ;
+; camera|mipi_rclk|iopll_0_refclk                               ; camera|mipi_rclk|iopll_0_refclk           ; 4.2               ;
++---------------------------------------------------------------+-------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                       ;
-+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+-------------------+
-; Source Register                                                                              ; Destination Register                                                                                             ; Delay Added in ns ;
-+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+-------------------+
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[9]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[91]    ; 2.021             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[9]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[91]    ; 2.008             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[8]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[90]    ; 1.946             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[7]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[90]    ; 1.935             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[5]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[88] ; 1.933             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[1]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[86] ; 1.931             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[3]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[86] ; 1.930             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[3]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[86] ; 1.917             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[2]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[86] ; 1.909             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[8]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[90]    ; 1.904             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[6]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[88] ; 1.896             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[5]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[88] ; 1.893             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[7]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_data_in_reg[90]    ; 1.888             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[0]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[81] ; 1.854             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[4]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[86] ; 1.851             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[4]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[86] ; 1.849             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[1]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[86] ; 1.833             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[0]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[81] ; 1.831             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_brp|dffe4a[2]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[86] ; 1.819             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[6]           ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|acq_trigger_in_reg[88] ; 1.790             ;
-; camera|adl|pp|rY2[6]                                                                         ; camera|adl|pp|SS[6]                                                                                              ; 0.485             ;
-; camera|adl|pp|rY2[7]                                                                         ; camera|adl|pp|SS[7]                                                                                              ; 0.452             ;
-; camera|adl|pp|rY2[5]                                                                         ; camera|adl|pp|SS[7]                                                                                              ; 0.452             ;
-; camera|adl|pp|rY2[3]                                                                         ; camera|adl|pp|SS[7]                                                                                              ; 0.452             ;
-; camera|ccd|u4|bin|R[5]                                                                       ; camera|adl|oB[3]                                                                                                 ; 0.442             ;
-; camera|ccd|u4|bin|R[7]                                                                       ; camera|adl|oB[5]                                                                                                 ; 0.425             ;
-; camera|adl|pp|rY2[2]                                                                         ; camera|adl|pp|SS[4]                                                                                              ; 0.402             ;
-; camera|adl|pp|rY2[4]                                                                         ; camera|adl|pp|SS[4]                                                                                              ; 0.402             ;
-; camera|adl|pp|rY2[1]                                                                         ; camera|adl|pp|SS[1]                                                                                              ; 0.392             ;
-; camera|ccd|u4|bin|R[4]                                                                       ; camera|adl|oB[2]                                                                                                 ; 0.376             ;
-; camera|ccd|u4|bin|R[8]                                                                       ; camera|adl|oB[6]                                                                                                 ; 0.370             ;
-; camera|ccd|u4|bin|R[6]                                                                       ; camera|adl|oB[4]                                                                                                 ; 0.350             ;
-; camera|ccd|u4|bin|G[3]                                                                       ; camera|adl|oG[1]                                                                                                 ; 0.241             ;
-; camera|ccd|u4|bin|G[5]                                                                       ; camera|adl|oG[3]                                                                                                 ; 0.215             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe7a[1] ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[0]                               ; 0.198             ;
-; camera|ccd|u4|bin|G[7]                                                                       ; camera|adl|oG[5]                                                                                                 ; 0.196             ;
-; camera|ccd|u4|bin|G[6]                                                                       ; camera|adl|oG[4]                                                                                                 ; 0.183             ;
-; camera|ccd|u4|bin|G[9]                                                                       ; camera|adl|oG[7]                                                                                                 ; 0.173             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe7a[4] ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_brp|dffe4a[4]                               ; 0.172             ;
-; camera|ccd|u4|bin|R[9]                                                                       ; camera|adl|oB[7]                                                                                                 ; 0.170             ;
-; camera|ccd|u4|bin|G[8]                                                                       ; camera|adl|oG[6]                                                                                                 ; 0.159             ;
-; camera|ccd|u4|bin|B[9]                                                                       ; camera|adl|oR[7]                                                                                                 ; 0.157             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[5]                 ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[5]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[8]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[8]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[5]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[5]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[0]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[0]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[0]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[0]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[9]                 ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[9]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[0]                 ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[0]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[7]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[7]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[2]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[2]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[6]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[6]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[4]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[4]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[0]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[0]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[6]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[6]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[8]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[8]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[3]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[3]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[7]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[7]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[7]                 ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[7]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[2]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[2]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[3]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[3]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[9]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[9]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[1]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[1]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[6]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[6]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[8]                 ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[8]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[4]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[4]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[10]        ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[10]                    ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[3]                 ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[3]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[1]                 ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[1]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[9]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[9]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[3]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[3]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[10]                ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[10]                    ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[1]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[1]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[4]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[4]                     ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[8]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[8]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[10]        ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[10]                    ; 0.150             ;
-; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[7]         ; sdram_manager|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[7]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[5]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[5]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[1]                 ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[1]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[5]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[5]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[2]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[2]                     ; 0.150             ;
-; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[9]         ; sdram_manager|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[9]                     ; 0.150             ;
-; camera|ccd|u4|bin|G[4]                                                                       ; camera|adl|oG[2]                                                                                                 ; 0.148             ;
-; sdram_ctrl|sdram_we_n                                                                        ; sdram_ctrl|sdram_we_n                                                                                            ; 0.129             ;
-; camera|ccd|u4|bin|B[8]                                                                       ; camera|adl|oR[6]                                                                                                 ; 0.117             ;
-; camera|ccd|u4|bin|B[6]                                                                       ; camera|adl|oR[4]                                                                                                 ; 0.105             ;
-; camera|adl|cv1|H_CEN[3]                                                                      ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[13]                                                                     ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[15]                                                                     ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[4]                                                                      ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[6]                                                                      ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[12]                                                                     ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[10]                                                                     ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[7]                                                                      ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[9]                                                                      ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[5]                                                                      ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|adl|cv1|H_CEN[14]                                                                     ; camera|adl|cv1|LINE                                                                                              ; 0.079             ;
-; camera|ccd|u4|bin|B[5]                                                                       ; camera|adl|oR[3]                                                                                                 ; 0.075             ;
-; sdram_manager|vsynch_sr[3]                                                                   ; sdram_manager|read_addr[9]                                                                                       ; 0.071             ;
-; camera|ccd|u4|bin|B[4]                                                                       ; camera|adl|oR[2]                                                                                                 ; 0.059             ;
-+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
-
-
---------------------------------------------
-; Global Router Congestion Hotspot Summary ;
---------------------------------------------
-No congestion hotspots found where global router short wire usage exceeded 100%.
-If the design is hard to route, use other techniques to analyze congestion. Refer to the Estimated Delay Added for Hold Timing section in the Fitter report and routing utilization in the Chip Planner.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                                 ;
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                                                                               ; Destination Register                                                                                                      ; Delay Added in ns ;
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------+
+; cam_capture_inst|cam_wr_addr[9]                                                               ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a9~reg0  ; 3.674             ;
+; cam_capture_inst|cam_wr_addr[16]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a16~reg0 ; 3.670             ;
+; cam_capture_inst|cam_wr_addr[14]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a14~reg0 ; 3.624             ;
+; cam_capture_inst|cam_wr_addr[11]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a11~reg0 ; 3.606             ;
+; cam_capture_inst|cam_wr_addr[17]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a17~reg0 ; 3.593             ;
+; cam_capture_inst|cam_wr_addr[12]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a12~reg0 ; 3.568             ;
+; cam_capture_inst|cam_wr_addr[19]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a19~reg0 ; 3.520             ;
+; cam_capture_inst|cam_wr_addr[20]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a20~reg0 ; 3.472             ;
+; cam_capture_inst|cam_wr_addr[13]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a13~reg0 ; 3.445             ;
+; cam_capture_inst|cam_wr_addr[15]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a15~reg0 ; 3.438             ;
+; cam_capture_inst|cam_wr_addr[18]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a18~reg0 ; 3.396             ;
+; cam_capture_inst|cam_wr_addr[10]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a10~reg0 ; 3.395             ;
+; cam_capture_inst|cam_wr_addr[21]                                                              ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a21~reg0 ; 3.134             ;
+; cam_capture_inst|cap_fifo|rd_ptr_gray[9]                                                      ; cam_capture_inst|cap_fifo|rd_ptr_gray_s1[9]                                                                               ; 2.865             ;
+; uart_manager|mem_addr[19]                                                                     ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a19~reg0 ; 1.760             ;
+; uart_manager|mem_addr[20]                                                                     ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a20~reg0 ; 1.736             ;
+; uart_manager|mem_addr[18]                                                                     ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a18~reg0 ; 1.698             ;
+; uart_manager|mem_addr[21]                                                                     ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|FIFOram|altera_syncram_impl1|ram_block2a21~reg0 ; 1.567             ;
+; cam_capture_inst|cam_wr_addr_valid                                                            ; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|wr_ptr|count[2]                                 ; 1.396             ;
+; camera|ccd|u4|bin|R[5]                                                                        ; camera|adl|oB[3]                                                                                                          ; 0.472             ;
+; camera|ccd|u4|bin|R[9]                                                                        ; camera|adl|oB[7]                                                                                                          ; 0.436             ;
+; camera|ccd|u4|bin|R[4]                                                                        ; camera|adl|oB[2]                                                                                                          ; 0.400             ;
+; camera|ccd|u4|bin|R[7]                                                                        ; camera|adl|oB[5]                                                                                                          ; 0.332             ;
+; camera|ccd|u4|bin|G[8]                                                                        ; camera|adl|oG[6]                                                                                                          ; 0.290             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe7a[4] ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[4]                                       ; 0.277             ;
+; camera|ccd|u4|bin|G[3]                                                                        ; camera|adl|oG[1]                                                                                                          ; 0.272             ;
+; camera|ccd|u4|bin|R[8]                                                                        ; camera|adl|oB[6]                                                                                                          ; 0.270             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe7a[3] ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[3]                                       ; 0.158             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe7a[8] ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_bwp|dffe4a[8]                                       ; 0.155             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[4]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[4]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[7]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[7]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[4]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[4]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[0]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[0]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[9]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[9]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[6]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[6]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[0]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[0]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[10]                ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[10]                            ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[1]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[1]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[9]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[9]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[1]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[1]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[10]        ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[10]                            ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[2]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[2]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[7]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[7]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[7]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[7]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[8]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[8]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[3]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[3]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[3]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[3]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[6]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[6]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[3]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[3]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[6]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[6]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[5]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[5]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[4]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[4]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[9]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[9]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[5]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[5]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[1]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[1]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[5]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[5]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[2]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[2]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[10]        ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[10]                            ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rdptr_g[2]                 ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|ws_dgrp|dffpipe5|dffe6a[2]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[0]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[0]                             ; 0.150             ;
+; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[8]         ; sdram_mgr_inst|wr_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[8]                             ; 0.150             ;
+; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|delayed_wrptr_g[8]         ; sdram_mgr_inst|rd_data_fifo|fifo_0|dcfifo_component|auto_generated|rs_dgwp|dffpipe5|dffe6a[8]                             ; 0.150             ;
+; camera|ccd|u4|bin|R[6]                                                                        ; camera|adl|oB[4]                                                                                                          ; 0.144             ;
+; camera|ccd|u4|bin|B[7]                                                                        ; camera|adl|oR[5]                                                                                                          ; 0.142             ;
+; camera|ccd|u4|bin|B[5]                                                                        ; camera|adl|oR[3]                                                                                                          ; 0.132             ;
+; camera|ccd|u4|bin|B[6]                                                                        ; camera|adl|oR[4]                                                                                                          ; 0.128             ;
+; camera|ccd|u4|bin|B[9]                                                                        ; camera|adl|oR[7]                                                                                                          ; 0.114             ;
+; camera|adl|cv1|H_CEN[1]                                                                       ; camera|adl|cv1|LINE                                                                                                       ; 0.107             ;
+; camera|adl|cv1|H_CEN[2]                                                                       ; camera|adl|cv1|LINE                                                                                                       ; 0.107             ;
+; camera|ccd|u4|bin|B[8]                                                                        ; camera|adl|oR[6]                                                                                                          ; 0.101             ;
+; camera|ccd|u4|bin|B[4]                                                                        ; camera|adl|oR[2]                                                                                                          ; 0.101             ;
+; sdram_ctrl|BURST_LENGTH[0]                                                                    ; sdram_ctrl|dq_oe                                                                                                          ; 0.056             ;
+; camera|adl|i2c2|DY|DELAY[17]                                                                  ; camera|adl|i2c2|DY|DELAY[17]                                                                                              ; 0.043             ;
+; sdram_ctrl|init_timer[11]                                                                     ; sdram_ctrl|init_timer[14]                                                                                                 ; 0.039             ;
+; sdram_ctrl|init_timer[1]                                                                      ; sdram_ctrl|init_timer[4]                                                                                                  ; 0.031             ;
+; sdram_ctrl|init_timer[10]                                                                     ; sdram_ctrl|init_timer[14]                                                                                                 ; 0.024             ;
+; sdram_ctrl|init_timer[3]                                                                      ; sdram_ctrl|init_timer[4]                                                                                                  ; 0.021             ;
+; sdram_ctrl|init_timer[2]                                                                      ; sdram_ctrl|init_timer[4]                                                                                                  ; 0.015             ;
+; sdram_ctrl|init_timer[6]                                                                      ; sdram_ctrl|init_timer[4]                                                                                                  ; 0.013             ;
+; camera|adl|cv1|H_CEN[10]                                                                      ; camera|adl|cv1|LINE                                                                                                       ; 0.011             ;
+; camera|adl|cv1|H_CEN[11]                                                                      ; camera|adl|cv1|LINE                                                                                                       ; 0.011             ;
+; camera|adl|cv1|H_CEN[7]                                                                       ; camera|adl|cv1|LINE                                                                                                       ; 0.011             ;
++-----------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 82 path(s) that have the largest delay added for hold.
 
 
 --------------------------------------
@@ -502,157 +477,144 @@ This report is unavailable in plain text report export.
 +-----------------+-----------+-----------------------------------+-------------+
 ; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ;
 +-----------------+-----------+-----------------------------------+-------------+
-; short           ; right     ; [(108, 40), (119, 47)]            ; 12.708 %    ;
-; short           ; left      ; [(120, 40), (122, 47)]            ; 4.643 %     ;
-; short           ; up        ; [(120, 8), (122, 15)]             ; 1.667 %     ;
-; short           ; down      ; [(120, 8), (122, 15)]             ; 2.500 %     ;
+; short           ; right     ; [(108, 8), (119, 15)]             ; 14.583 %    ;
+; short           ; left      ; [(108, 48), (119, 54)]            ; 0.179 %     ;
+; short           ; down      ; [(120, 8), (122, 15)]             ; 5.000 %     ;
 ; long high speed ; right     ; [(108, 0), (119, 7)]              ; 100.000 %   ;
-; long high speed ; left      ; [(120, 48), (122, 54)]            ; 100.000 %   ;
-; long high speed ; up        ; [(120, 40), (122, 47)]            ; 50.000 %    ;
-; long high speed ; down      ; [(120, 16), (122, 23)]            ; 53.571 %    ;
+; long high speed ; left      ; [(120, 8), (122, 15)]             ; 95.833 %    ;
+; long high speed ; up        ; [(120, 8), (122, 15)]             ; 64.286 %    ;
+; long high speed ; down      ; [(84, 32), (95, 39)]              ; 55.357 %    ;
 +-----------------+-----------+-----------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Peak Wire Demand Details                                                                                             ;
-+-----------------+-----------+-----------------------------------+-------------+--------------------------------------+
-; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names                            ;
-+-----------------+-----------+-----------------------------------+-------------+--------------------------------------+
-; short           ; right     ; [(108, 40), (119, 47)]            ; 12.708 %    ;    High Routing Fan-Out              ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|LessThan_0~6xsyn ;
-;     --          ;           ;                                   ;             ; u2|oREADY                            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|ST[5]            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|ST[0]            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|ST[2]            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|ST[4]            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|reduce_nor_0     ;
-;     --          ;           ;                                   ;             ; u_I2C_HDMI_Config|u0|SDO             ;
-;     --          ;           ;                                   ;             ; u_I2C_HDMI_Config|READY              ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|Decoder_0~3      ;
-; short           ; right     ; [(108, 40), (119, 47)]            ; 12.708 %    ;    Long Distance                     ;
-;     --          ;           ;                                   ;             ; u_I2C_HDMI_Config|READY              ;
-;     --          ;           ;                                   ;             ; u_I2C_HDMI_Config|u0|SDO             ;
-;     --          ;           ;                                   ;             ; u_I2C_HDMI_Config|u0|I2C_SCLK_       ;
-;     --          ;           ;                                   ;             ; FPGA_UART_TX~0                       ;
-;     --          ;           ;                                   ;             ; HDMI_TX_HS~1xsyn                     ;
-;     --          ;           ;                                   ;             ; camera|CAMERA_I2C_SCL~2              ;
-;     --          ;           ;                                   ;             ; u2|oREADY                            ;
-;     --          ;           ;                                   ;             ; HDMI_TX_DE~0xsyn                     ;
-;     --          ;           ;                                   ;             ; HDMI_TX_D[16]~47                     ;
-;     --          ;           ;                                   ;             ; HDMI_TX_D[16]~43                     ;
-; short           ; left      ; [(120, 40), (122, 47)]            ; 4.643 %     ;    High Routing Fan-Out              ;
-;     --          ;           ;                                   ;             ; KEY[3]~input                         ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|ST[1]            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|ST[3]            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|READY            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|END_OK           ;
-;     --          ;           ;                                   ;             ; HDMI_TX_INT~input                    ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|DELAY[1]         ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|DELAY[2]         ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|DELAY[3]         ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|DELAY[4]         ;
-; short           ; left      ; [(120, 40), (122, 47)]            ; 4.643 %     ;    Long Distance                     ;
-;     --          ;           ;                                   ;             ; KEY[3]~input                         ;
-;     --          ;           ;                                   ;             ; HDMI_TX_INT~input                    ;
-;     --          ;           ;                                   ;             ; FPGA_I2C_SDA~input                   ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|READY            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|ST[3]            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|END_OK           ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|DELAY[1]         ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|DELAY[2]         ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|DELAY[3]         ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|DELAY[4]         ;
-; short           ; up        ; [(120, 8), (122, 15)]             ; 1.667 %     ;    High Routing Fan-Out              ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[16]            ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[17]            ;
-; short           ; up        ; [(120, 8), (122, 15)]             ; 1.667 %     ;    Long Distance                     ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[16]            ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[17]            ;
-; short           ; down      ; [(120, 8), (122, 15)]             ; 2.500 %     ;    High Routing Fan-Out              ;
-;     --          ;           ;                                   ;             ; dec2|segs[5]~5                       ;
-;     --          ;           ;                                   ;             ; dec2|segs[6]~6                       ;
-; short           ; down      ; [(120, 8), (122, 15)]             ; 2.500 %     ;    Long Distance                     ;
-;     --          ;           ;                                   ;             ; dec2|segs[5]~5                       ;
-;     --          ;           ;                                   ;             ; dec2|segs[6]~6                       ;
-; long high speed ; right     ; [(108, 0), (119, 7)]              ; 100.000 %   ;    High Routing Fan-Out              ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ras_n               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[10]               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[11]               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[12]               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ba[1]               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_cs_n                ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_we_n                ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[2]                ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[3]                ;
-; long high speed ; right     ; [(108, 0), (119, 7)]              ; 100.000 %   ;    Long Distance                     ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[10]               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[11]               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[12]               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ba[1]               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ras_n               ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_cs_n                ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_we_n                ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[2]                ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[3]                ;
-; long high speed ; left      ; [(120, 48), (122, 54)]            ; 100.000 %   ;    High Routing Fan-Out              ;
-;     --          ;           ;                                   ;             ; camera|ccd|u4|u0|WR[1]               ;
-;     --          ;           ;                                   ;             ; camera|ccd|u4|u0|WR[0]               ;
-;     --          ;           ;                                   ;             ; SW[7]~input                          ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|READY            ;
-;     --          ;           ;                                   ;             ; GPIO_D[27]~input                     ;
-;     --          ;           ;                                   ;             ; GPIO_D[22]~input                     ;
-;     --          ;           ;                                   ;             ; GPIO_D[5]~input                      ;
-;     --          ;           ;                                   ;             ; GPIO_D[6]~input                      ;
-;     --          ;           ;                                   ;             ; GPIO_D[7]~input                      ;
-;     --          ;           ;                                   ;             ; GPIO_D[8]~input                      ;
-; long high speed ; left      ; [(120, 48), (122, 54)]            ; 100.000 %   ;    Long Distance                     ;
-;     --          ;           ;                                   ;             ; SW[7]~input                          ;
-;     --          ;           ;                                   ;             ; GPIO_D[20]~input                     ;
-;     --          ;           ;                                   ;             ; GPIO_D[22]~input                     ;
-;     --          ;           ;                                   ;             ; GPIO_D[27]~input                     ;
-;     --          ;           ;                                   ;             ; camera|ccd|u4|u0|WR[1]               ;
-;     --          ;           ;                                   ;             ; camera|ccd|u4|u0|WR[0]               ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|READY            ;
-;     --          ;           ;                                   ;             ; GPIO_D[5]~input                      ;
-;     --          ;           ;                                   ;             ; GPIO_D[6]~input                      ;
-;     --          ;           ;                                   ;             ; GPIO_D[7]~input                      ;
-; long high speed ; up        ; [(120, 40), (122, 47)]            ; 50.000 %    ;    High Routing Fan-Out              ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|READY            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|reduce_or_2~3    ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|Select_8~1       ;
-;     --          ;           ;                                   ;             ; camera|CAMERA_I2C_SCL~2              ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|DELY[7]~0        ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|reduce_or_54~3   ;
-; long high speed ; up        ; [(120, 40), (122, 47)]            ; 50.000 %    ;    Long Distance                     ;
-;     --          ;           ;                                   ;             ; camera|CAMERA_I2C_SCL~2              ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|DY|READY            ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|DELY[7]~0        ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|reduce_or_54~3   ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|reduce_or_2~3    ;
-;     --          ;           ;                                   ;             ; camera|cfin|mpiv|rd|Select_8~1       ;
-; long high speed ; down      ; [(120, 16), (122, 23)]            ; 53.571 %    ;    High Routing Fan-Out              ;
-;     --          ;           ;                                   ;             ; KEY[3]~input                         ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[9]                ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ba[0]               ;
-;     --          ;           ;                                   ;             ; dec3|segs[0]~0                       ;
-;     --          ;           ;                                   ;             ; dec3|segs[2]~2                       ;
-;     --          ;           ;                                   ;             ; dec3|segs[3]~3                       ;
-;     --          ;           ;                                   ;             ; dec3|segs[4]~4                       ;
-;     --          ;           ;                                   ;             ; dec3|segs[5]~5                       ;
-;     --          ;           ;                                   ;             ; dec4|segs[0]~0                       ;
-;     --          ;           ;                                   ;             ; dec4|segs[4]~4                       ;
-; long high speed ; down      ; [(120, 16), (122, 23)]            ; 53.571 %    ;    Long Distance                     ;
-;     --          ;           ;                                   ;             ; KEY[3]~input                         ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[9]                ;
-;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ba[0]               ;
-;     --          ;           ;                                   ;             ; dec3|segs[0]~0                       ;
-;     --          ;           ;                                   ;             ; dec3|segs[2]~2                       ;
-;     --          ;           ;                                   ;             ; dec3|segs[3]~3                       ;
-;     --          ;           ;                                   ;             ; dec3|segs[4]~4                       ;
-;     --          ;           ;                                   ;             ; dec3|segs[5]~5                       ;
-;     --          ;           ;                                   ;             ; dec4|segs[0]~0                       ;
-;     --          ;           ;                                   ;             ; dec4|segs[4]~4                       ;
-+-----------------+-----------+-----------------------------------+-------------+--------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Peak Wire Demand Details                                                                                                                                                                                                                                                                                                                   ;
++-----------------+-----------+-----------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Wire            ; Direction ; Grid [(Xmin, Ymin), (Xmax, Ymax)] ; Peak Demand ; Net Names                                                                                                                                                                                                                                                  ;
++-----------------+-----------+-----------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; short           ; right     ; [(108, 8), (119, 15)]             ; 14.583 %    ;    High Routing Fan-Out                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; KEY[3]~input                                                                                                                                                                                                                                               ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|reduce_nor_1~xsyn                                                                                                                                                                                                                               ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|i1146~0                                                                                                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|BURST_LENGTH[1]                                                                                                                                                                                                                                 ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|state.S_IDLE                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|state.S_INIT_WAIT_200US                                                                                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|BURST_LENGTH[2]                                                                                                                                                                                                                                 ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|state.S_WAIT_tRCD                                                                                                                                                                                                                               ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|Select_90~1                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|reduce_nor_0~1                                                                                                                                                                                                                                  ;
+; short           ; right     ; [(108, 8), (119, 15)]             ; 14.583 %    ;    Long Distance                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; KEY[3]~input                                                                                                                                                                                                                                               ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|reduce_nor_1~xsyn                                                                                                                                                                                                                               ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|i1146~0                                                                                                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|BURST_LENGTH[1]                                                                                                                                                                                                                                 ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|state.S_IDLE                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|state.S_INIT_WAIT_200US                                                                                                                                                                                                                         ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|BURST_LENGTH[2]                                                                                                                                                                                                                                 ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|state.S_WAIT_tRCD                                                                                                                                                                                                                               ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|Select_90~1                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|reduce_nor_0~1                                                                                                                                                                                                                                  ;
+; short           ; left      ; [(108, 48), (119, 54)]            ; 0.179 %     ;    High Routing Fan-Out                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|busy                                                                                                                                                                                                                                            ;
+; short           ; left      ; [(108, 48), (119, 54)]            ; 0.179 %     ;    Long Distance                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|busy                                                                                                                                                                                                                                            ;
+; short           ; down      ; [(120, 8), (122, 15)]             ; 5.000 %     ;    High Routing Fan-Out                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ras_n                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_cs_n                                                                                                                                                                                                                                      ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_we_n                                                                                                                                                                                                                                      ;
+;     --          ;           ;                                   ;             ; dec3|segs[0]~0                                                                                                                                                                                                                                             ;
+; short           ; down      ; [(120, 8), (122, 15)]             ; 5.000 %     ;    Long Distance                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; dec3|segs[0]~0                                                                                                                                                                                                                                             ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ras_n                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_cs_n                                                                                                                                                                                                                                      ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_we_n                                                                                                                                                                                                                                      ;
+; long high speed ; right     ; [(108, 0), (119, 7)]              ; 100.000 %   ;    High Routing Fan-Out                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[10]                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[11]                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[12]                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ba[1]                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; dec2|segs[5]~5                                                                                                                                                                                                                                             ;
+;     --          ;           ;                                   ;             ; dec2|segs[6]~6                                                                                                                                                                                                                                             ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[0]                                                                                                                                                                                                                                      ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[2]                                                                                                                                                                                                                                      ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[3]                                                                                                                                                                                                                                      ;
+; long high speed ; right     ; [(108, 0), (119, 7)]              ; 100.000 %   ;    Long Distance                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; dec2|segs[5]~5                                                                                                                                                                                                                                             ;
+;     --          ;           ;                                   ;             ; dec2|segs[6]~6                                                                                                                                                                                                                                             ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[10]                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[11]                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[12]                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_ba[1]                                                                                                                                                                                                                                     ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[0]                                                                                                                                                                                                                                      ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[2]                                                                                                                                                                                                                                      ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|sdram_a[3]                                                                                                                                                                                                                                      ;
+; long high speed ; left      ; [(120, 8), (122, 15)]             ; 95.833 %    ;    High Routing Fan-Out                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|state.S_WRITE_BURST                                                                                                                                                                                                                             ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|init_timer[0]                                                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|init_timer[7]                                                                                                                                                                                                                                   ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|reduce_nor_0~2                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|reduce_nor_0~0                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|burst_cnt[1]                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|state.S_WRITE_WAIT_TWR                                                                                                                                                                                                                          ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|burst_cnt[0]                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|burst_cnt[2]                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|burst_cnt[3]                                                                                                                                                                                                                                    ;
+; long high speed ; left      ; [(120, 8), (122, 15)]             ; 95.833 %    ;    Long Distance                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[5]~input                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[0]~input                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[1]~input                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[2]~input                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[3]~input                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[4]~input                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[6]~input                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[7]~input                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[8]~input                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; DRAM_DQ[9]~input                                                                                                                                                                                                                                           ;
+; long high speed ; up        ; [(120, 8), (122, 15)]             ; 64.286 %    ;    High Routing Fan-Out                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_oe                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[16]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[17]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[18]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[19]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[20]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[21]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[22]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[23]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[24]                                                                                                                                                                                                                                  ;
+; long high speed ; up        ; [(120, 8), (122, 15)]             ; 64.286 %    ;    Long Distance                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_oe                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[16]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[17]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[18]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[19]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[20]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[21]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[22]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[23]                                                                                                                                                                                                                                  ;
+;     --          ;           ;                                   ;             ; sdram_ctrl|dq_out_reg[24]                                                                                                                                                                                                                                  ;
+; long high speed ; down      ; [(84, 32), (95, 39)]              ; 55.357 %    ;    High Routing Fan-Out                                                                                                                                                                                                                                    ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[10] ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[9]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[0]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[1]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[2]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[3]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[4]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[5]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[6]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[7]  ;
+; long high speed ; down      ; [(84, 32), (95, 39)]              ; 55.357 %    ;    Long Distance                                                                                                                                                                                                                                           ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[10] ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[9]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[0]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[1]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[2]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[3]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[4]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[5]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[6]  ;
+;     --          ;           ;                                   ;             ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[7]  ;
++-----------------+-----------+-----------------------------------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -660,56 +622,63 @@ This report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
 ; Net Name                                                                                                                                                                                                                                                                          ; Total Grid Crossings ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
-; KEY[3]~input                                                                                                                                                                                                                                                                      ; 15                   ;
 ; ~GND                                                                                                                                                                                                                                                                              ; 12                   ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|sldfabric|jtag_hub_gen.real_sld_jtag_hub|tdo_mux_out~5xsyn                                                                                                                                                                                 ; 8                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|address_reg_b[1]                                        ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|address_reg_b[0]                                        ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|reduce_nor_1~0                                                                 ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|adv_point_3_and_more.advance_pointer_counter|auto_generated|counter_reg_bit[7] ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|adv_point_3_and_more.advance_pointer_counter|auto_generated|counter_reg_bit[0] ; 7                    ;
-; u_I2C_HDMI_Config|READY                                                                                                                                                                                                                                                           ; 7                    ;
+; camera|adl|i2c|READY                                                                                                                                                                                                                                                              ; 11                   ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|address_reg_b[1]                                        ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|address_reg_b[0]                                        ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|decode3|rtl~3                                           ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[10]                        ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[9]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[8]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[7]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[6]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[5]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[4]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[3]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[2]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[1]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[0]                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[10]                                                                                                         ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[9]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[8]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[7]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[6]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[5]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[4]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[3]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[2]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[1]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[0]                                                                                                          ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|decode3|rtl~0                                           ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|offload_shift_ena                                                              ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|sldfabric|jtag_hub_gen.real_sld_jtag_hub|tdo_mux_out~5xsyn                                                                                                                                                                                 ; 9                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|decode3|rtl~1                                           ; 8                    ;
+; i102                                                                                                                                                                                                                                                                              ; 7                    ;
 ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|decode3|rtl~5                                           ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|decode3|rtl~3                                           ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|decode3|rtl~1                                           ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[10]                        ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[9]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[8]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[7]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[6]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[5]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[4]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[3]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[2]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[1]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|read_pointer_counter|auto_generated|counter_reg_bit[0]                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[10]                                                                                                         ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[9]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[8]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[7]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[6]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[5]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[4]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[3]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[2]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[1]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|acq_core|buffer_write_address_delayed[0]                                                                                                          ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_acq_clk_xing|stp_non_zero_ram_gen.stp_buffer_ram|auto_generated|altera_syncram_impl1|decode3|rtl~0                                           ; 7                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|offload_shift_ena                                                              ; 7                    ;
-; camera|adl|i2c|READY                                                                                                                                                                                                                                                              ; 6                    ;
-; GPIO_D[20]~input                                                                                                                                                                                                                                                                  ; 6                    ;
-; u2|oREADY                                                                                                                                                                                                                                                                         ; 6                    ;
+; KEY[3]~input                                                                                                                                                                                                                                                                      ; 7                    ;
+; u_vpg|u_vga_generator|vga_b[7]                                                                                                                                                                                                                                                    ; 6                    ;
+; sdram_ctrl|busy                                                                                                                                                                                                                                                                   ; 6                    ;
 ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|reset_all                                                                                                                               ; 5                    ;
-; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|offload_shift_ena~xsyn                                                         ; 5                    ;
 ; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|sldfabric|jtag_hub_gen.real_sld_jtag_hub|node_ena_reg[1]                                                                                                                                                                                   ; 5                    ;
-; camera|u1|i73                                                                                                                                                                                                                                                                     ; 5                    ;
-; HDMI_TX_INT~input                                                                                                                                                                                                                                                                 ; 5                    ;
-; SW[7]~input                                                                                                                                                                                                                                                                       ; 5                    ;
+; u_I2C_HDMI_Config|LessThan_0~3xsyn                                                                                                                                                                                                                                                ; 5                    ;
+; cam_capture_inst|rec_s2                                                                                                                                                                                                                                                           ; 5                    ;
 ; GPIO_D[22]~input                                                                                                                                                                                                                                                                  ; 5                    ;
-; FPGA_I2C_SDA~input                                                                                                                                                                                                                                                                ; 5                    ;
-; u_I2C_HDMI_Config|u0|SDO                                                                                                                                                                                                                                                          ; 5                    ;
-; u_I2C_HDMI_Config|u0|I2C_SCLK_                                                                                                                                                                                                                                                    ; 5                    ;
-; KEY[2]~input                                                                                                                                                                                                                                                                      ; 4                    ;
+; GPIO_D[20]~input                                                                                                                                                                                                                                                                  ; 5                    ;
+; dec2|segs[0]~0                                                                                                                                                                                                                                                                    ; 5                    ;
+; cam_capture_inst|cam_wr_addr_valid                                                                                                                                                                                                                                                ; 5                    ;
+; u2|oREADY                                                                                                                                                                                                                                                                         ; 5                    ;
+; SW[9]~input                                                                                                                                                                                                                                                                       ; 5                    ;
+; SW[8]~input                                                                                                                                                                                                                                                                       ; 5                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|reduce_nor_1~0                                                                 ; 4                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|adv_point_3_and_more.advance_pointer_counter|auto_generated|counter_reg_bit[7] ; 4                    ;
+; auto_fab_0|alt_sld_fab_0|alt_sld_fab_0|auto_signaltap_auto_signaltap_0|sld_signaltap_inst|sld_signaltap_body|sld_signaltap_body|jtag_comm|stp_non_zero_depth_offload_gen.stp_offload_buff_mgr_inst|adv_point_3_and_more.advance_pointer_counter|auto_generated|counter_reg_bit[0] ; 4                    ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+
+
+--------------------------------------------
+; Global Router Congestion Hotspot Summary ;
+--------------------------------------------
+No congestion hotspots found where global router short wire usage exceeded 100%.
+If the design is hard to route, use other techniques to analyze congestion. Refer to the Estimated Delay Added for Hold Timing section in the Fitter report and routing utilization in the Chip Planner.
 
 

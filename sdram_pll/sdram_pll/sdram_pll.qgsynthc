@@ -2365,6 +2365,14 @@
             <value>false</value>
           </parameter>
           <parameter>
+            <name>gui_use_slvs_refclk</name>
+            <value>false</value>
+          </parameter>
+          <parameter>
+            <name>gui_use_slvs_refclk1</name>
+            <value>false</value>
+          </parameter>
+          <parameter>
             <name>gui_user_base_address</name>
             <value>0</value>
           </parameter>
@@ -3333,7 +3341,7 @@
         <className>altera_iopll</className>
         <version>21.0.0</version>
         <name>iopll_0</name>
-        <uniqueName>sdram_pll_altera_iopll_2100_cv5i6vy</uniqueName>
+        <uniqueName>sdram_pll_altera_iopll_2100_sw2saga</uniqueName>
         <nonce>0</nonce>
         <incidentConnections></incidentConnections>
         <path>sdram_pll.iopll_0</path>

@@ -1,5 +1,5 @@
-Fitter Status : Successful - Tue Apr 28 13:18:50 2026
-Quartus Prime Version : 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+Fitter Status : Successful - Thu May 14 23:05:25 2026
+Quartus Prime Version : 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
 Revision Name : golden_top
 Top-level Entity Name : golden_top
 Family : Agilex 3
@@ -7,8 +7,8 @@ Device : A3CZ135BB18AE7S
 Timing Models : Final
 Power Models : Final
 Device Status : Final
-Logic utilization (in ALMs) : 3,681 / 45,800 ( 8 % )
-Total dedicated logic registers : 5314
+Logic utilization (in ALMs) : 3,692 / 45,800 ( 8 % )
+Total dedicated logic registers : 5370
 Total pins : 198 / 208 ( 95 % )
 Total block memory bits : 1,401,272 / 7,229,440 ( 19 % )
 Total RAM Blocks : 73 / 353 ( 21 % )

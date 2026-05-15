@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="int_line" kind="int_line" version="1.0" fabric="QSYS">
- <!-- Format version 25.3 109 (Future versions may contain additional information.) -->
- <!-- 2026.04.28.13:14:34 -->
+ <!-- Format version 25.3.1 100 (Future versions may contain additional information.) -->
+ <!-- 2026.05.14.22:59:15 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -138,7 +138,7 @@
    name="ram_2port_0"
    kind="ram_2port"
    version="20.6.0"
-   entity="int_line_ram_2port_2060_r46qrgq"
+   entity="int_line_ram_2port_2060_tqemrnq"
    library="ram_2port_2060"
    path="ram_2port_0"
    hpath="ram_2port_0"
@@ -290,14 +290,6 @@ the requested settings for a module instance. -->
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="GUI_MULTIPORT_MODE">
-   <type>java.lang.String</type>
-   <value>1W/3R</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
    <valid>true</valid>
   </parameter>
   <parameter name="GUI_CLOCK_TYPE">
@@ -1171,6 +1163,6 @@ parameters are a RESULT of the module parameters. -->
   <displayName>Clock Input</displayName>
   <version>25.3</version>
  </plugin>
- <reportVersion>25.3 109</reportVersion>
+ <reportVersion>25.3.1 100</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

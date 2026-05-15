@@ -1,6 +1,6 @@
 Assembler report for golden_top
-Tue Apr 28 13:19:21 2026
-Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+Thu May 14 23:06:05 2026
+Quartus Prime Version 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
 
 
 ---------------------
@@ -13,7 +13,7 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
   5. Assembler Messages
   6. Assembler Encrypted IP Cores Summary
   7. Assembler Generated Files
-  8. Assembler Device Options: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/output_files/golden_top.sof
+  8. Assembler Device Options: D:/altera/ECE641/ECE641_Project4/output_files/golden_top.sof
 
 
 
@@ -40,7 +40,7 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Apr 28 13:19:21 2026 ;
+; Assembler Status      ; Successful - Thu May 14 23:06:05 2026 ;
 ; Revision Name         ; golden_top                            ;
 ; Top-level Entity Name ; golden_top                            ;
 ; Family                ; Agilex 3                              ;
@@ -62,7 +62,6 @@ on the Quartus Prime software download page.
 ; Design Assistant include IP blocks                               ; Off                ; Off                ;
 ; High fanout net threshold for RAM inference                      ; 15                 ; 15                 ;
 ; Design Assistant limit on reported violations per rule           ; 5000               ; 5000               ;
-; Allow RAM Retiming                                               ; Off                ; Off                ;
 ; Allow DSP Retiming                                               ; Off                ; Off                ;
 ; Voltage output format                                            ; Linear format      ; Auto discovery     ;
 ; Linear format N                                                  ; -12                ; 0                  ;
@@ -149,8 +148,8 @@ on the Quartus Prime software download page.
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 24     ;
-; Maximum allowed            ; 24     ;
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 12     ;
 +----------------------------+--------+
 
 
@@ -159,20 +158,20 @@ on the Quartus Prime software download page.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
-    Info: Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
-    Info: Processing started: Tue Apr 28 13:19:07 2026
-    Info: System process ID: 44420
+    Info: Version 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
+    Info: Processing started: Thu May 14 23:05:44 2026
+    Info: System process ID: 13364
 Info: Command: quartus_asm --read_settings_files=on --write_settings_files=off golden_top -c golden_top
 Info (16677): Loading final database.
 Info (16734): Loading "final" snapshot for partition "root_partition".
 Info (16734): Loading "final" snapshot for partition "auto_fab_0".
-Info (16678): Successfully loaded final database: elapsed time is 00:00:02.
-Info (20553): Using CVP Hash 9f857c5cb0829647df5c2719a5c873d106dec135f77ac637da4f8e907b571d07
+Info (16678): Successfully loaded final database: elapsed time is 00:00:04.
+Info (20553): Using CVP Hash 5f46cebce1eee4e8fadbe552e62ac4c71387c9531205ad70ea9625ff7bcf9183
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 2795 megabytes
-    Info: Processing ended: Tue Apr 28 13:19:21 2026
-    Info: Elapsed time: 00:00:14
-    Info: System process ID: 44420
+    Info: Peak virtual memory: 2791 megabytes
+    Info: Processing ended: Thu May 14 23:06:05 2026
+    Info: Elapsed time: 00:00:21
+    Info: System process ID: 13364
 
 
 +------------------------------------------------+
@@ -185,23 +184,23 @@ Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
 +--------+------------------------+--------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                     ;
-+-----------------------------------------------------------------------------------------------+
-; File Name                                                                                     ;
-+-----------------------------------------------------------------------------------------------+
-; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/output_files/golden_top.sof ;
-+-----------------------------------------------------------------------------------------------+
++--------------------------------------------------------------+
+; Assembler Generated Files                                    ;
++--------------------------------------------------------------+
+; File Name                                                    ;
++--------------------------------------------------------------+
+; D:/altera/ECE641/ECE641_Project4/output_files/golden_top.sof ;
++--------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/output_files/golden_top.sof ;
-+----------------+--------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                ;
-+----------------+--------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0xFFFFFFFF                                                                                             ;
-; Checksum       ; 0x0610150C                                                                                             ;
-; Design hash    ; 69D5C3B662414AE42367712E6B8E7EC70F71BABDFD5D3A627EE47E5A2E41739F                                       ;
-+----------------+--------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------+
+; Assembler Device Options: D:/altera/ECE641/ECE641_Project4/output_files/golden_top.sof ;
++----------------+-----------------------------------------------------------------------+
+; Option         ; Setting                                                               ;
++----------------+-----------------------------------------------------------------------+
+; JTAG usercode  ; 0xFFFFFFFF                                                            ;
+; Checksum       ; 0x060F966F                                                            ;
+; Design hash    ; DCA9DDC5ADC1F696CCBB1B189980B1651067623487BE215C6EB60694D32AEDF9      ;
++----------------+-----------------------------------------------------------------------+
 
 

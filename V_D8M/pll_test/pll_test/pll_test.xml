@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2026.04.28.13:14:36"
- outputDirectory="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/pll_test/pll_test/">
+ date="2026.05.14.22:59:17"
+ outputDirectory="D:/altera/ECE641/ECE641_Project4/V_D8M/pll_test/pll_test/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -103,30 +103,29 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\synth\pll_test.v"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\synth\pll_test.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\synth\pll_test.v"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\synth\pll_test.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file
-       path="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/pll_test/pll_test.ip" />
+   <file path="D:/altera/ECE641/ECE641_Project4/V_D8M/pll_test/pll_test.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file path="C:/altera_pro/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
+   <file path="D:/altera/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="pll_test">"Generating: pll_test"</message>
-   <message level="Info" culprit="pll_test">"Generating: pll_test_altera_iopll_2100_rnpikyi"</message>
+   <message level="Info" culprit="pll_test">"Generating: pll_test_altera_iopll_2100_hatugkq"</message>
   </messages>
  </entity>
  <entity
    kind="altera_iopll"
    version="21.0.0"
-   name="pll_test_altera_iopll_2100_rnpikyi">
+   name="pll_test_altera_iopll_2100_hatugkq">
   <parameter name="set_phase" value="SET_PHASE_NUM_SHIFTS" />
   <parameter name="hp_actual_phase_shift_fp5" value="0.0" />
   <parameter name="hp_actual_phase_shift_fp6" value="0.0" />
@@ -347,6 +346,7 @@
   <parameter name="divide_factor4" value="1" />
   <parameter name="divide_factor1" value="1" />
   <parameter name="divide_factor2" value="1" />
+  <parameter name="gui_use_slvs_refclk" value="false" />
   <parameter name="out_clk_2_phase_shifts" value="0" />
   <parameter name="pll_m_cnt" value="1" />
   <parameter name="out_clk_4_delay" value="0" />
@@ -947,6 +947,7 @@
   <parameter name="gui_simulation_type" value="true" />
   <parameter name="hp_actual_phase_shift_fp12" value="0.0" />
   <parameter name="hp_actual_phase_shift_fp13" value="0.0" />
+  <parameter name="gui_use_slvs_refclk1" value="false" />
   <parameter name="pll_cp_current" value="pll_cp_setting14" />
   <parameter name="out_clk_0_dutycycle_den" value="2" />
   <parameter name="gui_usr_device_speed_grade" value="1" />
@@ -985,45 +986,45 @@
   <parameter name="output_clock_frequency2" value="0 ps" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi.v"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq.v"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi_all_ip_params.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq_all_ip_params.tcl"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi_parameters.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq_parameters.tcl"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi.sdc"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION READ_DURING_POST_SYN_AND_POST_FIT_TIMING_ANALYSIS" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi_pin_map.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq_pin_map.tcl"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi.v"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq.v"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi_all_ip_params.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq_all_ip_params.tcl"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi_parameters.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq_parameters.tcl"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi.sdc"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION READ_DURING_POST_SYN_AND_POST_FIT_TIMING_ANALYSIS" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_rnpikyi_pin_map.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V_D8M\pll_test\pll_test\altera_iopll_2100\synth\pll_test_altera_iopll_2100_hatugkq_pin_map.tcl"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="C:/altera_pro/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
+   <file path="D:/altera/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="pll_test" as="iopll_0" />
   <messages>
-   <message level="Info" culprit="pll_test">"Generating: pll_test_altera_iopll_2100_rnpikyi"</message>
+   <message level="Info" culprit="pll_test">"Generating: pll_test_altera_iopll_2100_hatugkq"</message>
   </messages>
  </entity>
 </deploy>

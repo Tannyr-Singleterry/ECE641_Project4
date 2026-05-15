@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="sdram_pll" kind="sdram_pll" version="1.0" fabric="QSYS">
- <!-- Format version 25.3 109 (Future versions may contain additional information.) -->
- <!-- 2026.04.28.13:14:34 -->
+ <!-- Format version 25.3.1 100 (Future versions may contain additional information.) -->
+ <!-- 2026.05.14.22:59:14 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
@@ -108,7 +108,7 @@
    name="iopll_0"
    kind="altera_iopll"
    version="21.0.0"
-   entity="sdram_pll_altera_iopll_2100_cv5i6vy"
+   entity="sdram_pll_altera_iopll_2100_sw2saga"
    library="altera_iopll_2100"
    path="iopll_0"
    hpath="iopll_0"
@@ -701,6 +701,22 @@ the requested settings for a module instance. -->
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="gui_use_slvs_refclk">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="gui_use_slvs_refclk1">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
    <valid>true</valid>
   </parameter>
   <parameter name="gui_divide_factor_n">
@@ -7138,6 +7154,6 @@ parameters are a RESULT of the module parameters. -->
   <displayName>Clock Output</displayName>
   <version>25.3</version>
  </plugin>
- <reportVersion>25.3 109</reportVersion>
+ <reportVersion>25.3.1 100</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>

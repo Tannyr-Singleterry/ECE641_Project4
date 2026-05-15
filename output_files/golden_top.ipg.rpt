@@ -1,6 +1,6 @@
 IP Generation Report
-Tue Apr 28 13:14:40 2026
-Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+Thu May 14 22:59:19 2026
+Quartus Prime Version 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
 
 
 ---------------------
@@ -43,6 +43,14 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
 ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/AUDIO_PLL.ip             ; 1.68             ;
 ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/int_line.ip          ; 0.486            ;
 ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/pll_test/pll_test.ip ; 0.909            ;
+; D:/altera/ECE641/ECE641_Project4/data_fifo/data_fifo.ip                                      ; 2.731            ;
+; D:/altera/ECE641/ECE641_Project4/sdram_pll/sdram_pll.ip                                      ; 3.444            ;
+; D:/altera/ECE641/ECE641_Project4/address_fifo.ip                                             ; 3.208            ;
+; D:/altera/ECE641/ECE641_Project4/V/ResetRelease.ip                                           ; 2.419            ;
+; D:/altera/ECE641/ECE641_Project4/V/AUDIO_PLL.ip                                              ; 2.653            ;
+; D:/altera/ECE641/ECE641_Project4/V_D8M/pll_test/pll_test.ip                                  ; 1.689            ;
+; D:/altera/ECE641/ECE641_Project4/V_D8M/int_line.ip                                           ; 0.54             ;
+; D:/altera/ECE641/ECE641_Project4/V/VEDIO_PLL.ip                                              ; 0.981            ;
 +----------------------------------------------------------------------------------------------+------------------+
 
 
@@ -52,7 +60,7 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
 ; Stage           ; Elapsed Time (s) ;
 +-----------------+------------------+
 ; Qsys Validation ; 0.0              ;
-; Qsys Generation ; 38.132           ;
+; Qsys Generation ; 43.032           ;
 +-----------------+------------------+
 
 

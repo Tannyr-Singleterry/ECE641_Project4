@@ -1,36 +1,36 @@
 Design Assistant report for golden_top
-Tue Apr 28 13:15:23 2026
-Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+Thu May 14 23:00:09 2026
+Quartus Prime Version 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Design Assistant (Elaborated) Results - 2 of 29 Rules Failed
-  3. LNT-30021 - Same Signal Source Drives More Than One Asynchronous Port of a Register
-  4. LNT-30020 - Same Signal Source Drives Synchronous and Asynchronous Ports of the Same Register
-  5. IPC-40021 - Undriven Reference Clock port of protocol IP
-  6. IPC-40022 - Reference Clock input of protocol IP not driven by top level clock ports
-  7. IPC-40023 - Reference clock frequency mismatch
-  8. IPC-40024 - Undriven System Clock port of protocol IP
-  9. IPC-40025 - System Clock ports of protocol IP not driven by System Clock IP
- 10. IPC-40026 - System clock frequency mismatch
- 11. IPC-40027 - Undriven Control Unit Clock port of protocol IP
- 12. IPC-40028 - The Control Unit Clock port of protocol IP is not driven by GTS Reset Sequencer IP
- 13. IPC-40029 - An individual bit of Control Unit clock port of Reset Sequencer IP can drive up to a cumulative 4 channels of Protocol IP.
- 14. IPC-40030 - Reset Request and Grant connectivity checks for protocol IPs
- 15. IPC-40031 - The individual Request and Grant bus bits of GTS Reset Sequencer IP to handle the same bits of request and grant ports protocol IP
- 16. IPC-40032 - The lock input of the Protocol IP needs to be driven by the lock output of the System Clock IPs
- 17. IPC-40034 - A single Reference clock port can drive up to 12 channels
- 18. IPC-40035 - Reset Sequencer needed for Transceiver IPs
- 19. IPC-40036 - Single Reset Sequencer for every IP on each shoreline
- 20. IPC-40037 - Exclusive usage of the System Clock by PCIE IP
- 21. IPC-40038 - Individual bit of Control Unit clock of Reset Sequencer IP can drive only a single instance of Ethernet or PCIE IP.
- 22. IPC-40039 - One or more input or output ports of GTS Reset Sequencer IP not connected to Protocol IPs
- 23. IPC-40041 - Transceiver IPs used in design with a device without any transceiver
- 24. RES-10204 - Reset Release Instance Count Check
- 25. RES-50005 - RAM Control Signals Driven by Flip-Flops with Asynchronous Clears
+  2. Design Assistant (Elaborated) Results - 3 of 29 Rules Failed
+  3. RES-50005 - RAM Control Signals Driven by Flip-Flops with Asynchronous Clears
+  4. LNT-30021 - Same Signal Source Drives More Than One Asynchronous Port of a Register
+  5. LNT-30020 - Same Signal Source Drives Synchronous and Asynchronous Ports of the Same Register
+  6. IPC-40021 - Undriven Reference Clock port of protocol IP
+  7. IPC-40022 - Reference Clock input of protocol IP not driven by top level clock ports
+  8. IPC-40023 - Reference clock frequency mismatch
+  9. IPC-40024 - Undriven System Clock port of protocol IP
+ 10. IPC-40025 - System Clock ports of protocol IP not driven by System Clock IP
+ 11. IPC-40026 - System clock frequency mismatch
+ 12. IPC-40027 - Undriven Control Unit Clock port of protocol IP
+ 13. IPC-40028 - The Control Unit Clock port of protocol IP is not driven by GTS Reset Sequencer IP
+ 14. IPC-40029 - An individual bit of Control Unit clock port of Reset Sequencer IP can drive up to a cumulative 4 channels of Protocol IP.
+ 15. IPC-40030 - Reset Request and Grant connectivity checks for protocol IPs
+ 16. IPC-40031 - The individual Request and Grant bus bits of GTS Reset Sequencer IP to handle the same bits of request and grant ports protocol IP
+ 17. IPC-40032 - The lock input of the Protocol IP needs to be driven by the lock output of the System Clock IPs
+ 18. IPC-40034 - A single Reference clock port can drive up to 12 channels
+ 19. IPC-40035 - Reset Sequencer needed for Transceiver IPs
+ 20. IPC-40036 - Single Reset Sequencer for every IP on each shoreline
+ 21. IPC-40037 - Exclusive usage of the System Clock by PCIE IP
+ 22. IPC-40038 - Individual bit of Control Unit clock of Reset Sequencer IP can drive only a single instance of Ethernet or PCIE IP.
+ 23. IPC-40039 - One or more input or output ports of GTS Reset Sequencer IP not connected to Protocol IPs
+ 24. IPC-40041 - Transceiver IPs used in design with a device without any transceiver
+ 25. RES-10204 - Reset Release Instance Count Check
  26. FLP-10100 - Large Multipliers are Decomposed
  27. LNT-30022 - Same Signal Source Drives Clock Port and Another Port of a Register
  28. RES-10201 - Power Up Don't Care Setting May Prevent Retiming
@@ -61,10 +61,11 @@ on the Quartus Prime software download page.
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Design Assistant (Elaborated) Results - 2 of 29 Rules Failed                                                                                                                                           ;
+; Design Assistant (Elaborated) Results - 3 of 29 Rules Failed                                                                                                                                           ;
 +------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+--------+----------------------+
 ; Rule                                                                                                                                           ; Severity ; Violations ; Waived ; Tags                 ;
 +------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+--------+----------------------+
+; RES-50005 - RAM Control Signals Driven by Flip-Flops with Asynchronous Clears                                                                  ; Medium   ; 1          ; 0      ; ram, reset-usage     ;
 ; LNT-30021 - Same Signal Source Drives More Than One Asynchronous Port of a Register                                                            ; Low      ; 14         ; 0      ; nonstandard-timing   ;
 ; LNT-30020 - Same Signal Source Drives Synchronous and Asynchronous Ports of the Same Register                                                  ; Low      ; 9          ; 0      ; nonstandard-timing   ;
 ; IPC-40021 - Undriven Reference Clock port of protocol IP                                                                                       ; Critical ; 0          ; 0      ; system               ;
@@ -87,7 +88,6 @@ on the Quartus Prime software download page.
 ; IPC-40039 - One or more input or output ports of GTS Reset Sequencer IP not connected to Protocol IPs                                          ; Critical ; 0          ; 0      ; system               ;
 ; IPC-40041 - Transceiver IPs used in design with a device without any transceiver                                                               ; Critical ; 0          ; 0      ; system               ;
 ; RES-10204 - Reset Release Instance Count Check                                                                                                 ; High     ; 0          ; 0      ; system               ;
-; RES-50005 - RAM Control Signals Driven by Flip-Flops with Asynchronous Clears                                                                  ; Medium   ; 0          ; 0      ; ram, reset-usage     ;
 ; FLP-10100 - Large Multipliers are Decomposed                                                                                                   ; Low      ; 0          ; 0      ; dsp, synthesis       ;
 ; LNT-30022 - Same Signal Source Drives Clock Port and Another Port of a Register                                                                ; Low      ; 0          ; 0      ; nonstandard-timing   ;
 ; RES-10201 - Power Up Don't Care Setting May Prevent Retiming                                                                                   ; Low      ; 0          ; 0      ; reset-usage, retime  ;
@@ -95,6 +95,19 @@ on the Quartus Prime software download page.
 ; TMC-20050 - RAM Control Signals Driven by LUTs or ALMs instead of DFFs                                                                         ; Low      ; 0          ; 0      ; ram                  ;
 ; TMC-20051 - RAM Control Signals Driven by High Fan-Out Net                                                                                     ; Low      ; 0          ; 0      ; ram                  ;
 +------------------------------------------------------------------------------------------------------------------------------------------------+----------+------------+--------+----------------------+
+
+
+Status:		FAIL
+Severity:		Medium
+Number of violations: 	1
+Rule Parameters:      	max_violations = 5000
++---------------------------------------------------------------------------------+
+; RES-50005 - RAM Control Signals Driven by Flip-Flops with Asynchronous Clears   ;
++-------------------------------------+----------------------------------+--------+
+; Pin                                 ; Signal                           ; Waived ;
++-------------------------------------+----------------------------------+--------+
+; cam_capture_inst|cap_fifo|mem|raddr ; cam_capture_inst|cap_fifo|rd_ptr ;        ;
++-------------------------------------+----------------------------------+--------+
 
 
 Status:		FAIL
@@ -127,21 +140,21 @@ Status:		FAIL
 Severity:		Low
 Number of violations: 	9
 Rule Parameters:      	max_violations = 5000
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; LNT-30020 - Same Signal Source Drives Synchronous and Asynchronous Ports of the Same Register                                                     ;
-+--------------------------------------------------------------------------------------------------------------------+---------------------+--------+
-; Register                                                                                                           ; Signal              ; Waived ;
-+--------------------------------------------------------------------------------------------------------------------+---------------------+--------+
-; camera|ccd|u3|Pre_FVAL                                                                                             ; MIPI_PIXEL_VS       ;        ;
-; camera|ccd|u3|Pre_LVAL                                                                                             ; MIPI_PIXEL_HS       ;        ;
-; camera|adl|i2c2|rTR_IN                                                                                             ; camera|adl|RE|vs|MS ;        ;
-; sdram_manager|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[2] ; KEY[3]              ;        ;
-; sdram_manager|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[2] ; KEY[3]              ;        ;
-; sdram_manager|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[1] ; KEY[3]              ;        ;
-; sdram_manager|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[1] ; KEY[3]              ;        ;
-; sdram_manager|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[0] ; KEY[3]              ;        ;
-; sdram_manager|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[0] ; KEY[3]              ;        ;
-+--------------------------------------------------------------------------------------------------------------------+---------------------+--------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; LNT-30020 - Same Signal Source Drives Synchronous and Asynchronous Ports of the Same Register                                                      ;
++---------------------------------------------------------------------------------------------------------------------+---------------------+--------+
+; Register                                                                                                            ; Signal              ; Waived ;
++---------------------------------------------------------------------------------------------------------------------+---------------------+--------+
+; camera|ccd|u3|Pre_FVAL                                                                                              ; MIPI_PIXEL_VS       ;        ;
+; camera|ccd|u3|Pre_LVAL                                                                                              ; MIPI_PIXEL_HS       ;        ;
+; camera|adl|i2c2|rTR_IN                                                                                              ; camera|adl|RE|vs|MS ;        ;
+; sdram_mgr_inst|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[2] ; KEY[3]              ;        ;
+; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[2] ; KEY[3]              ;        ;
+; sdram_mgr_inst|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[1] ; KEY[3]              ;        ;
+; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[1] ; KEY[3]              ;        ;
+; sdram_mgr_inst|rd_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[0] ; KEY[3]              ;        ;
+; sdram_mgr_inst|wr_addr_fifo|fifo_0|scfifo_component|auto_generated|dpfifo|fifo_state|count_usedw|counter_reg_bit[0] ; KEY[3]              ;        ;
++---------------------------------------------------------------------------------------------------------------------+---------------------+--------+
 
 
 Status:		PASS
@@ -322,15 +335,6 @@ Rule Parameters:      	max_violations = 5000
 +------------------------------------------------+
 ; RES-10204 - Reset Release Instance Count Check ;
 +------------------------------------------------+
-
-
-Status:		PASS
-Severity:		Medium
-Number of violations: 	0
-Rule Parameters:      	max_violations = 5000
-+-------------------------------------------------------------------------------+
-; RES-50005 - RAM Control Signals Driven by Flip-Flops with Asynchronous Clears ;
-+-------------------------------------------------------------------------------+
 
 
 Status:		PASS

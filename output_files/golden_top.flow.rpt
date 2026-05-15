@@ -1,6 +1,6 @@
 Flow report for golden_top
-Tue Apr 28 13:19:21 2026
-Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
+Thu May 14 23:06:05 2026
+Quartus Prime Version 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition
 
 
 ---------------------
@@ -19,8 +19,8 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
 +-------------------------------------------------------------------------------------------+
 ; Flow Summary                                                                              ;
 +---------------------------------+---------------------------------------------------------+
-; Flow Status                     ; Successful - Tue Apr 28 13:19:21 2026                   ;
-; Quartus Prime Version           ; 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition ;
+; Flow Status                     ; Successful - Thu May 14 23:06:05 2026                   ;
+; Quartus Prime Version           ; 25.3.1 Build 100 12/19/2025 Patches 1.02 SC Pro Edition ;
 ; Revision Name                   ; golden_top                                              ;
 ; Top-level Entity Name           ; golden_top                                              ;
 ; Family                          ; Agilex 3                                                ;
@@ -28,8 +28,8 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
 ; Timing Models                   ; Final                                                   ;
 ; Power Models                    ; Final                                                   ;
 ; Device Status                   ; Final                                                   ;
-; Logic utilization (in ALMs)     ; 3,681 / 45,800 ( 8 % )                                  ;
-; Total dedicated logic registers ; 5314                                                    ;
+; Logic utilization (in ALMs)     ; 3,692 / 45,800 ( 8 % )                                  ;
+; Total dedicated logic registers ; 5370                                                    ;
 ; Total pins                      ; 198 / 208 ( 95 % )                                      ;
 ; Total block memory bits         ; 1,401,272 / 7,229,440 ( 19 % )                          ;
 ; Total RAM Blocks                ; 73 / 353 ( 21 % )                                       ;
@@ -44,56 +44,57 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/28/2026 13:14:43 ;
+; Start date & time ; 05/14/2026 22:59:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; golden_top          ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                                                                                                                   ;
-+--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+-------------+------------+
-; Assignment Name                            ; Value                                                                                                                                               ; Default Value                        ; Entity Name ; Section Id ;
-+--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                      ; 66641254826323.177740008419944                                                                                                                      ; --                                   ; --          ; --         ;
-; ENABLE_SIGNALTAP                           ; On                                                                                                                                                  ; --                                   ; --          ; --         ;
-; FITTER_AGGRESSIVE_ROUTABILITY_OPTIMIZATION ; Always                                                                                                                                              ; Automatically                        ; --          ; --         ;
-; GLOBAL_PLACEMENT_EFFORT                    ; Optimize for Routability                                                                                                                            ; Normal                               ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/AUDIO_PLL/AUDIO_PLL.cmp                                                         ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/AUDIO_PLL.ip                                                                    ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/ResetRelease/ResetRelease.cmp                                                   ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/ResetRelease.ip                                                                 ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/VEDIO_PLL/VEDIO_PLL.cmp                                                         ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/VEDIO_PLL.ip                                                                    ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/int_line/int_line.cmp                                                       ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/int_line.ip                                                                 ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/pll_test/pll_test/pll_test.cmp                                              ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/pll_test/pll_test.ip                                                        ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/address_fifo/address_fifo.cmp                                                     ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/address_fifo.ip                                                                   ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/data_fifo/data_fifo/data_fifo.cmp                                                 ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/data_fifo/data_fifo.ip                                                            ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/dni/sandboxes/ENGG-ECE1174_19944_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.cmp      ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/dni/sandboxes/ENGG-ECE1174_19944_0/sld/ipgen/alt_sld_fab_0.ip                     ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/sdram_pll/sdram_pll/sdram_pll.cmp                                                 ; --                                   ; --          ; --         ;
-; MISC_FILE                                  ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/sdram_pll/sdram_pll.ip                                                            ; --                                   ; --          ; --         ;
-; OPTIMIZATION_MODE                          ; High Placement Routability Effort                                                                                                                   ; Balanced                             ; --          ; --         ;
-; POWER_APPLY_THERMAL_MARGIN                 ; ADDITIONAL                                                                                                                                          ; Off                                  ; --          ; --         ;
-; PRESERVE_FOR_DEBUG_ENABLE                  ; On                                                                                                                                                  ; Off                                  ; --          ; --         ;
-; PROJECT_IP_REGENERATION_POLICY             ; ALWAYS_REGENERATE_IP                                                                                                                                ; SKIP_REGENERATING_IP_IF_HDL_MODIFIED ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY                   ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/output_files                                                                      ; --                                   ; --          ; --         ;
-; SOPCINFO_FILE                              ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/AUDIO_PLL/AUDIO_PLL.sopcinfo                                                    ; --                                   ; --          ; --         ;
-; SOPCINFO_FILE                              ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/ResetRelease/ResetRelease.sopcinfo                                              ; --                                   ; --          ; --         ;
-; SOPCINFO_FILE                              ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/VEDIO_PLL/VEDIO_PLL.sopcinfo                                                    ; --                                   ; --          ; --         ;
-; SOPCINFO_FILE                              ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/int_line/int_line.sopcinfo                                                  ; --                                   ; --          ; --         ;
-; SOPCINFO_FILE                              ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V_D8M/pll_test/pll_test/pll_test.sopcinfo                                         ; --                                   ; --          ; --         ;
-; SOPCINFO_FILE                              ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/address_fifo/address_fifo.sopcinfo                                                ; --                                   ; --          ; --         ;
-; SOPCINFO_FILE                              ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/data_fifo/data_fifo/data_fifo.sopcinfo                                            ; --                                   ; --          ; --         ;
-; SOPCINFO_FILE                              ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/dni/sandboxes/ENGG-ECE1174_19944_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.sopcinfo ; --                                   ; --          ; --         ;
-; SOPCINFO_FILE                              ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/sdram_pll/sdram_pll/sdram_pll.sopcinfo                                            ; --                                   ; --          ; --         ;
-; STATE_MACHINE_PROCESSING                   ; One-Hot                                                                                                                                             ; Auto                                 ; --          ; --         ;
-; USE_SIGNALTAP_FILE                         ; C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/output_files/stp3.stp                                                             ; --                                   ; --          ; --         ;
-+--------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------+-------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                                                  ;
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------+-------------+------------+
+; Assignment Name                            ; Value                                                                                                              ; Default Value                        ; Entity Name ; Section Id ;
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------+-------------+------------+
+; COMPILER_SIGNATURE_ID                      ; 202924862095699.177881756302136                                                                                    ; --                                   ; --          ; --         ;
+; ENABLE_SIGNALTAP                           ; On                                                                                                                 ; --                                   ; --          ; --         ;
+; FITTER_AGGRESSIVE_ROUTABILITY_OPTIMIZATION ; Always                                                                                                             ; Automatically                        ; --          ; --         ;
+; GLOBAL_PLACEMENT_EFFORT                    ; Optimize for Routability                                                                                           ; Normal                               ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V/AUDIO_PLL/AUDIO_PLL.cmp                                                         ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V/AUDIO_PLL.ip                                                                    ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V/ResetRelease/ResetRelease.cmp                                                   ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V/ResetRelease.ip                                                                 ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V/VEDIO_PLL/VEDIO_PLL.cmp                                                         ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V/VEDIO_PLL.ip                                                                    ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V_D8M/int_line/int_line.cmp                                                       ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V_D8M/int_line.ip                                                                 ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V_D8M/pll_test/pll_test/pll_test.cmp                                              ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/V_D8M/pll_test/pll_test.ip                                                        ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/address_fifo/address_fifo.cmp                                                     ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/address_fifo.ip                                                                   ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/data_fifo/data_fifo/data_fifo.cmp                                                 ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/data_fifo/data_fifo.ip                                                            ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/dni/sandboxes/TannyrsLaptop_2136_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.cmp      ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/dni/sandboxes/TannyrsLaptop_2136_0/sld/ipgen/alt_sld_fab_0.ip                     ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/sdram_pll/sdram_pll/sdram_pll.cmp                                                 ; --                                   ; --          ; --         ;
+; MISC_FILE                                  ; D:/altera/ECE641/ECE641_Project4/sdram_pll/sdram_pll.ip                                                            ; --                                   ; --          ; --         ;
+; OPTIMIZATION_MODE                          ; High Placement Routability Effort                                                                                  ; Balanced                             ; --          ; --         ;
+; POST_ROUTE_PHYSICAL_SYNTHESIS              ; Off                                                                                                                ; On                                   ; --          ; --         ;
+; POWER_APPLY_THERMAL_MARGIN                 ; ADDITIONAL                                                                                                         ; Off                                  ; --          ; --         ;
+; PRESERVE_FOR_DEBUG_ENABLE                  ; On                                                                                                                 ; Off                                  ; --          ; --         ;
+; PROJECT_IP_REGENERATION_POLICY             ; ALWAYS_REGENERATE_IP                                                                                               ; SKIP_REGENERATING_IP_IF_HDL_MODIFIED ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY                   ; D:/altera/ECE641/ECE641_Project4/output_files                                                                      ; --                                   ; --          ; --         ;
+; SOPCINFO_FILE                              ; D:/altera/ECE641/ECE641_Project4/V/AUDIO_PLL/AUDIO_PLL.sopcinfo                                                    ; --                                   ; --          ; --         ;
+; SOPCINFO_FILE                              ; D:/altera/ECE641/ECE641_Project4/V/ResetRelease/ResetRelease.sopcinfo                                              ; --                                   ; --          ; --         ;
+; SOPCINFO_FILE                              ; D:/altera/ECE641/ECE641_Project4/V/VEDIO_PLL/VEDIO_PLL.sopcinfo                                                    ; --                                   ; --          ; --         ;
+; SOPCINFO_FILE                              ; D:/altera/ECE641/ECE641_Project4/V_D8M/int_line/int_line.sopcinfo                                                  ; --                                   ; --          ; --         ;
+; SOPCINFO_FILE                              ; D:/altera/ECE641/ECE641_Project4/V_D8M/pll_test/pll_test/pll_test.sopcinfo                                         ; --                                   ; --          ; --         ;
+; SOPCINFO_FILE                              ; D:/altera/ECE641/ECE641_Project4/address_fifo/address_fifo.sopcinfo                                                ; --                                   ; --          ; --         ;
+; SOPCINFO_FILE                              ; D:/altera/ECE641/ECE641_Project4/data_fifo/data_fifo/data_fifo.sopcinfo                                            ; --                                   ; --          ; --         ;
+; SOPCINFO_FILE                              ; D:/altera/ECE641/ECE641_Project4/dni/sandboxes/TannyrsLaptop_2136_0/sld/ipgen/alt_sld_fab_0/alt_sld_fab_0.sopcinfo ; --                                   ; --          ; --         ;
+; SOPCINFO_FILE                              ; D:/altera/ECE641/ECE641_Project4/sdram_pll/sdram_pll/sdram_pll.sopcinfo                                            ; --                                   ; --          ; --         ;
+; STATE_MACHINE_PROCESSING                   ; One-Hot                                                                                                            ; Auto                                 ; --          ; --         ;
+; USE_SIGNALTAP_FILE                         ; D:/altera/ECE641/ECE641_Project4/output_files/stp3.stp                                                             ; --                                   ; --          ; --         ;
++--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------------------------------+-------------+------------+
 
 
 +------------------------------------------------------+
@@ -101,11 +102,11 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
 +-----------------+--------------+---------------------+
 ; Module Name     ; Elapsed Time ; Peak Virtual Memory ;
 +-----------------+--------------+---------------------+
-; Synthesis       ; 00:00:50     ; 1253 MB             ;
-; Fitter          ; 00:03:16     ; 8188 MB             ;
-; Timing Analyzer ; 00:00:12     ; 1355 MB             ;
-; Assembler       ; 00:00:14     ; 2795 MB             ;
-; Total           ; 00:04:32     ; --                  ;
+; Synthesis       ; 00:01:03     ; 1260 MB             ;
+; Fitter          ; 00:04:58     ; 4578 MB             ;
+; Timing Analyzer ; 00:00:15     ; 1272 MB             ;
+; Assembler       ; 00:00:21     ; 2791 MB             ;
+; Total           ; 00:06:37     ; --                  ;
 +-----------------+--------------+---------------------+
 
 
@@ -114,10 +115,10 @@ Quartus Prime Version 25.3.0 Build 109 09/24/2025 Patches 0.27 SC Pro Edition
 +-----------------+------------------+------------+------------+----------------+
 ; Module Name     ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +-----------------+------------------+------------+------------+----------------+
-; Synthesis       ; ENGG-ECE1174     ; Windows 11 ; 10.0.26200 ; x86_64         ;
-; Fitter          ; ENGG-ECE1174     ; Windows 11 ; 10.0.26200 ; x86_64         ;
-; Timing Analyzer ; ENGG-ECE1174     ; Windows 11 ; 10.0.26200 ; x86_64         ;
-; Assembler       ; ENGG-ECE1174     ; Windows 11 ; 10.0.26200 ; x86_64         ;
+; Synthesis       ; TannyrsLaptop    ; Windows 11 ; 10.0.26200 ; x86_64         ;
+; Fitter          ; TannyrsLaptop    ; Windows 11 ; 10.0.26200 ; x86_64         ;
+; Timing Analyzer ; TannyrsLaptop    ; Windows 11 ; 10.0.26200 ; x86_64         ;
+; Assembler       ; TannyrsLaptop    ; Windows 11 ; 10.0.26200 ; x86_64         ;
 +-----------------+------------------+------------+------------+----------------+
 
 

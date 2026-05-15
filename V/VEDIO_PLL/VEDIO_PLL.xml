@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2026.04.28.13:14:35"
- outputDirectory="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/VEDIO_PLL/">
+ date="2026.05.14.22:59:17"
+ outputDirectory="D:/altera/ECE641/ECE641_Project4/V/VEDIO_PLL/">
  <perimeter>
   <parameter
      name="AUTO_GENERATION_ID"
@@ -95,30 +95,29 @@
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\synth\VEDIO_PLL.v"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\synth\VEDIO_PLL.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\synth\VEDIO_PLL.v"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\synth\VEDIO_PLL.v"
        attributes="CONTAINS_INLINE_CONFIGURATION" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file
-       path="C:/Quartus_Designs/DE23-Lite/Demonstrations/Camera_SDRAM_HDMI_PR4/V/VEDIO_PLL.ip" />
+   <file path="D:/altera/ECE641/ECE641_Project4/V/VEDIO_PLL.ip" />
   </sourceFiles>
   <childSourceFiles>
-   <file path="C:/altera_pro/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
+   <file path="D:/altera/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
   </childSourceFiles>
   <messages>
    <message level="Info" culprit="VEDIO_PLL">"Generating: VEDIO_PLL"</message>
-   <message level="Info" culprit="VEDIO_PLL">"Generating: VEDIO_PLL_altera_iopll_2100_thv5c7q"</message>
+   <message level="Info" culprit="VEDIO_PLL">"Generating: VEDIO_PLL_altera_iopll_2100_fil3jea"</message>
   </messages>
  </entity>
  <entity
    kind="altera_iopll"
    version="21.0.0"
-   name="VEDIO_PLL_altera_iopll_2100_thv5c7q">
+   name="VEDIO_PLL_altera_iopll_2100_fil3jea">
   <parameter name="set_phase" value="SET_PHASE_NUM_SHIFTS" />
   <parameter name="hp_actual_phase_shift_fp5" value="0.0" />
   <parameter name="hp_actual_phase_shift_fp6" value="0.0" />
@@ -339,6 +338,7 @@
   <parameter name="divide_factor4" value="1" />
   <parameter name="divide_factor1" value="1" />
   <parameter name="divide_factor2" value="1" />
+  <parameter name="gui_use_slvs_refclk" value="false" />
   <parameter name="out_clk_2_phase_shifts" value="0" />
   <parameter name="pll_m_cnt" value="1" />
   <parameter name="out_clk_4_delay" value="0" />
@@ -931,6 +931,7 @@
   <parameter name="gui_simulation_type" value="false" />
   <parameter name="hp_actual_phase_shift_fp12" value="0.0" />
   <parameter name="hp_actual_phase_shift_fp13" value="0.0" />
+  <parameter name="gui_use_slvs_refclk1" value="false" />
   <parameter name="pll_cp_current" value="pll_cp_setting14" />
   <parameter name="out_clk_0_dutycycle_den" value="2" />
   <parameter name="gui_usr_device_speed_grade" value="1" />
@@ -969,45 +970,45 @@
   <parameter name="output_clock_frequency2" value="0 ps" />
   <generatedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q.v"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea.v"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q_all_ip_params.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea_all_ip_params.tcl"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q_parameters.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea_parameters.tcl"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q.sdc"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION READ_DURING_POST_SYN_AND_POST_FIT_TIMING_ANALYSIS" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q_pin_map.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea_pin_map.tcl"
        attributes="" />
   </generatedFiles>
   <childGeneratedFiles>
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q.v"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea.v"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q_all_ip_params.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea_all_ip_params.tcl"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q_parameters.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea_parameters.tcl"
        attributes="" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q.sdc"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea.sdc"
        attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION READ_DURING_POST_SYN_AND_POST_FIT_TIMING_ANALYSIS" />
    <file
-       path="C:\Quartus_Designs\DE23-Lite\Demonstrations\Camera_SDRAM_HDMI_PR4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_thv5c7q_pin_map.tcl"
+       path="D:\altera\ECE641\ECE641_Project4\V\VEDIO_PLL\altera_iopll_2100\synth\VEDIO_PLL_altera_iopll_2100_fil3jea_pin_map.tcl"
        attributes="" />
   </childGeneratedFiles>
   <sourceFiles>
-   <file path="C:/altera_pro/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
+   <file path="D:/altera/ip/altera/altera_iopll/top/altera_iopll_hw.tcl" />
   </sourceFiles>
   <childSourceFiles/>
   <instantiator instantiator="VEDIO_PLL" as="iopll_0" />
   <messages>
-   <message level="Info" culprit="VEDIO_PLL">"Generating: VEDIO_PLL_altera_iopll_2100_thv5c7q"</message>
+   <message level="Info" culprit="VEDIO_PLL">"Generating: VEDIO_PLL_altera_iopll_2100_fil3jea"</message>
   </messages>
  </entity>
 </deploy>

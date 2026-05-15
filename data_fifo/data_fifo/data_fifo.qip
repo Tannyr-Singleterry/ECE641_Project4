@@ -1,5 +1,5 @@
 set_global_assignment -entity "data_fifo" -library "data_fifo" -name IP_TOOL_NAME "QsysPrimePro"
-set_global_assignment -entity "data_fifo" -library "data_fifo" -name IP_TOOL_VERSION "25.3"
+set_global_assignment -entity "data_fifo" -library "data_fifo" -name IP_TOOL_VERSION "25.3.1"
 set_global_assignment -entity "data_fifo" -library "data_fifo" -name IP_TOOL_ENV "QsysPrimePro"
 set_global_assignment -entity "data_fifo" -library "data_fifo" -name IP_TOOL_VENDOR_NAME "Altera Corporation"
 set_global_assignment -entity "data_fifo" -library "data_fifo" -name IP_TOP_LEVEL_COMPONENT_NAME "fifo"

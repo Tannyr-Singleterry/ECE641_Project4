@@ -1,8 +1,15 @@
 // D. Gruenbacher
 //  April 26, 2026:  Read_FSM for getting pixels updated for potential synchronization/error conditions
+//
+// ECE641 Project 4 - Camera write support added
+//   - cam_wr_addr_valid / cam_wr_addr : camera burst start address
+//   - cam_wr_data_valid / cam_wr_data : camera pixel data
+//   - bank_sel [1:0] : upper 2 bits of SDRAM address (SW[9:8])
+//   Camera writes share the wr_addr and wr_data FIFOs with UART writes.
+//   UART write has priority in the mux; camera takes over when UART is idle.
 
 module sdram_mgr(
-	 
+ 	
 	input	ar,
 	input	clk,
 	input	clk_hdmi,
@@ -27,7 +34,15 @@ module sdram_mgr(
 	
 	// input from HDMI
 	input			vsynch,
-	
+
+	// PR4: Camera write interface
+	input			cam_wr_addr_valid,
+	input  [23:0]	cam_wr_addr,
+	input			cam_wr_data_valid,
+	input  [31:0]	cam_wr_data,
+
+	// PR4: Bank select (SW[9:8])
+	input  [1:0]	bank_sel,
 
 	// Signals to SDRAM controller
 	output reg mem_wr_req,
@@ -39,13 +54,12 @@ module sdram_mgr(
 	input 	mem_busy,
 	input	mem_wr_next);
 	
-	
+
 
 	// Write_Data_FIFO Declarations
 	
-	reg	 			wr_data_fifo_rdreq;
+	reg 			wr_data_fifo_rdreq;
 	wire [31:0]		wr_data_fifo_dataout;
-	//wire [9:0]		wr_data_fifo_usedw;
 	wire [10:0]		wr_data_fifo_rdusedw;
 	wire [10:0]		wr_data_fifo_wrusedw;
 	wire			wr_data_fifo_empty;
@@ -54,103 +68,106 @@ module sdram_mgr(
 
 	// Read_Data_FIFO Declarations
 	
-	reg	 			rd_data_fifo_wrreq;
+	reg 			rd_data_fifo_wrreq;
 	wire [31:0]		rd_data_fifo_datain;
-	//wire [9:0]		rd_data_fifo_usedw;
 	wire [10:0]		rd_data_fifo_rdusedw;
 	wire [10:0]		rd_data_fifo_wrusedw;
-
-	//wire			rd_data_fifo_empty;
 	wire			rd_data_fifo_almost_full;
 	wire			rd_data_fifo_almost_empty;
 	
 	// Write_Addr_FIFO Declarations
-	reg	 			wr_addr_fifo_rdreq;
+	reg 			wr_addr_fifo_rdreq;
 	wire [23:0]		wr_addr_fifo_dataout;
 	wire			wr_addr_fifo_empty;
 	wire 			wr_data_fifo_rdrequest;
 	wire [2:0]		wr_addr_fifo_usedw;
 	
 	// Read_Addr_FIFO Declarations
-	reg	 			rd_addr_fifo_rdreq;
+	reg 			rd_addr_fifo_rdreq;
 	wire [23:0]		rd_addr_fifo_dataout;
 	wire			rd_addr_fifo_empty;
 	wire [2:0]		rd_addr_fifo_usedw;
 
-	// new data FIFOs for use with HDMI and new controller
-	/*data_fifo (
-		input  wire [31:0] data,    //  fifo_input.datain,  Data input of the memory.The data port is required for all FIFO operation.
-		input  wire        wrreq,   //            .wrreq,   wrreq input signal to request for write operation.The wrreq signal is required for all FIFO operation.
-		input  wire        rdreq,   //            .rdreq,   rdreq input signal to request for read operation.The rdreq signal is required for all FIFO operation.
-		input  wire        wrclk,   //            .wrclk,   Positive-edge-triggered clock.
-		input  wire        rdclk,   //            .rdclk,   Positive-edge-triggered clock.
-		input  wire        aclr,    //            .aclr,    It is asynchronous reset.Assert this signal to clear all the output status ports, but the effect on the q output may vary for different FIFO configurations.
-		output wire [31:0] q,       // fifo_output.dataout, Data output of the memory. This port is required for all FIFO operation.
-		output wire [9:0]  rdusedw, //            .rdusedw, Show the number of words available for reading in the FIFO.
-		output wire [9:0]  wrusedw, //            .wrusedw, Show the number of words written into the FIFO.
-		output wire        rdempty, //            .rdempty, When rddmpty signal is asserted, the FIFO IP core is considered empty. You must always refer to the rdempty port to ensure whether or not a valid read request operation can be performed,regardless of the target device.
-		output wire        wrfull   //            .wrfull,  when wrfull signal is asserted, the FIFO IP core is considered full.You must always refer to the wrfull port to ensure whether or not a valid write request operation can be performed,regardless of the target device.
-	); */
+	/* PR4: Camera write arbitration
+	// Mux camera and UART writes into the shared wr_addr and wr_data FIFOs.
+	// UART has priority; camera only pushes when UART is not writing.
+	// Apply bank_sel to upper 2 bits of all write addresses.
+	*/
+
+	wire [23:0] wr_addr_with_bank;
+	wire [23:0] cam_addr_with_bank;
+
+	assign wr_addr_with_bank  = {bank_sel, wr_addr_fifo_datain[21:0]};
+	assign cam_addr_with_bank = {bank_sel, cam_wr_addr[21:0]};
+
+	wire wr_addr_fifo_wrreq_mux;
+	wire [23:0] wr_addr_fifo_datain_mux;
+	wire wr_data_fifo_wrreq_mux;
+	wire [31:0] wr_data_fifo_datain_mux;
+
+	assign wr_addr_fifo_wrreq_mux   = wr_addr_fifo_wrreq  | cam_wr_addr_valid;
+	assign wr_addr_fifo_datain_mux  = wr_addr_fifo_wrreq  ? wr_addr_with_bank : cam_addr_with_bank;
+	assign wr_data_fifo_wrreq_mux   = wr_data_fifo_wrreq  | cam_wr_data_valid;
+	assign wr_data_fifo_datain_mux  = wr_data_fifo_wrreq  ? wr_data_fifo_datain : cam_wr_data;
+
+	// Apply bank_sel to read addresses generated internally
+	wire [23:0] read_addr_with_bank;
+	assign read_addr_with_bank = {bank_sel, read_addr[21:0]};
 
 	data_fifo wr_data_fifo (
-		.data(wr_data_fifo_datain),         //  fifo_input.datain,       Data input of the memory.The data port is required for all FIFO operation.
-		.wrreq(wr_data_fifo_wrreq),        //            .wrreq,        wrreq input signal to request for write operation.The wrreq signal is required for all FIFO operation.
-		.rdreq(wr_data_fifo_rdrequest),        //            .rdreq,        rdreq input signal to request for read operation.The rdreq signal is required for all FIFO operation.
-		.wrclk(clk),        				//            .clk,          Positive-edge-triggered clock.
-		.rdclk(clk),        				//            .clk,          Positive-edge-triggered clock.
-		.aclr(~ar),         				//            .aclr,         It is asynchronous reset.Assert this signal to clear all the output status ports, but the effect on the q output may vary for different FIFO configurations.
-		.q(wr_data_fifo_dataout),            // fifo_output.dataout,      Data output of the memory. This port is required for all FIFO operation.
-		.rdusedw(wr_data_fifo_rdusedw),        //            .rdusedw,        Show the number of words stored in the FIFO.
-		.wrusedw(wr_data_fifo_wrusedw),        //            .wrusedw,        Show the number of words stored in the FIFO.
-		.wrfull(wr_data_fifo_full),         //            .full,         When full signal is asserted, the FIFO IP core is considered full. Do not perform write request operation when the FIFO IP core is full.
-		.rdempty(wr_data_fifo_empty)        //            .empty,        When empty signal is asserted, the FIFO IP core is considered empty.Do not perform read request operation when the FIFO IP core is empty.
-		//.almost_full(wr_data_fifo_almost_full),  //            .almost_full,  almost_full is asserted when the usedw signal is greater than or equal to the almost_full_value parameter. It is used as an early indication of the full signal.
-		//.almost_empty(wr_data_fifo_almost_empty) //            .almost_empty, almost_empty signal is asserted when the usedw signal is less than the almost_empty_value parameter.It is used as an early indication of the empty signal.
+		.data(wr_data_fifo_datain_mux),
+		.wrreq(wr_data_fifo_wrreq_mux),
+		.rdreq(wr_data_fifo_rdrequest),
+		.wrclk(clk),
+		.rdclk(clk),
+		.aclr(~ar),
+		.q(wr_data_fifo_dataout),
+		.rdusedw(wr_data_fifo_rdusedw),
+		.wrusedw(wr_data_fifo_wrusedw),
+		.wrfull(wr_data_fifo_full),
+		.rdempty(wr_data_fifo_empty)
 	);
 
 	
 	data_fifo rd_data_fifo (
-		.data(mem_rd_data),         //  fifo_input.datain,       Data input of the memory.The data port is required for all FIFO operation.
-		.wrreq(mem_rd_valid),        //            .wrreq,        wrreq input signal to request for write operation.The wrreq signal is required for all FIFO operation.
-		.rdreq(rd_data_fifo_rdreq),        //            .rdreq,        rdreq input signal to request for read operation.The rdreq signal is required for all FIFO operation.
-		.rdclk(clk_hdmi),        				//            .clk,          Positive-edge-triggered clock.
-		.wrclk(clk),        				//            .clk,          Positive-edge-triggered clock.
-		.aclr(~ar),         				//            .aclr,         It is asynchronous reset.Assert this signal to clear all the output status ports, but the effect on the q output may vary for different FIFO configurations.
-		.q(rd_data_fifo_dataout),            // fifo_output.dataout,      Data output of the memory. This port is required for all FIFO operation.
-		.rdusedw(rd_data_fifo_rdusedw),        //            .usedw,        Show the number of words stored in the FIFO.
-		.wrusedw(rd_data_fifo_wrusedw),        //            .wrusedw,        Show the number of words stored in the FIFO.
-		.wrfull(rd_data_fifo_full),         //            .full,         When full signal is asserted, the FIFO IP core is considered full. Do not perform write request operation when the FIFO IP core is full.
-		.rdempty(rd_data_fifo_empty)        //            .empty,        When empty signal is asserted, the FIFO IP core is considered empty.Do not perform read request operation when the FIFO IP core is empty.
-		//.almost_full(rd_data_fifo_almost_full),  //            .almost_full,  almost_full is asserted when the usedw signal is greater than or equal to the almost_full_value parameter. It is used as an early indication of the full signal.
-		//.almost_empty(rd_data_fifo_almost_empty) //            .almost_empty, almost_empty signal is asserted when the usedw signal is less than the almost_empty_value parameter.It is used as an early indication of the empty signal.
+		.data(mem_rd_data),
+		.wrreq(mem_rd_valid),
+		.rdreq(rd_data_fifo_rdreq),
+		.rdclk(clk_hdmi),
+		.wrclk(clk),
+		.aclr(~ar),
+		.q(rd_data_fifo_dataout),
+		.rdusedw(rd_data_fifo_rdusedw),
+		.wrusedw(rd_data_fifo_wrusedw),
+		.wrfull(rd_data_fifo_full),
+		.rdempty(rd_data_fifo_empty)
 	);
 
 address_fifo wr_addr_fifo (
-		.data  (wr_addr_fifo_datain),  //   input,  width = 24,  fifo_input.datain
-		.wrreq (wr_addr_fifo_wrreq), //   input,   width = 1,            .wrreq
-		.rdreq (wr_addr_fifo_rdreq), //   input,   width = 1,            .rdreq
-		.clock (clk), //   input,   width = 1,            .clk
-		.aclr  (~ar),  //   input,   width = 1,            .aclr
-		.sclr  (~ar),  //   input,   width = 1,            .sclr
-		.q     (wr_addr_fifo_dataout),     //  output,  width = 24, fifo_output.dataout
+		.data  (wr_addr_fifo_datain_mux),
+		.wrreq (wr_addr_fifo_wrreq_mux),
+		.rdreq (wr_addr_fifo_rdreq),
+		.clock (clk),
+		.aclr  (~ar),
+		.sclr  (~ar),
+		.q     (wr_addr_fifo_dataout),
 		.usedw (wr_addr_fifo_usedw),
-		.full  (wr_addr_fifo_full),  //  output,   width = 1,            .full
-		.empty (wr_addr_fifo_empty)  //  output,   width = 1,            .empty
+		.full  (wr_addr_fifo_full),
+		.empty (wr_addr_fifo_empty)
 	);	
 	
 
 address_fifo rd_addr_fifo (
-//		.data  (rd_addr_fifo_datain),  //   input,  width = 24,  fifo_input.datain
-		.data  (read_addr),  //   input,  width = 24,  fifo_input.datain
-		.wrreq (rd_addr_fifo_wrreq), //   input,   width = 1,            .wrreq
-		.rdreq (rd_addr_fifo_rdreq), //   input,   width = 1,            .rdreq
-		.clock (clk), //   input,   width = 1,            .clk
-		.aclr  (~ar),  //   input,   width = 1,            .aclr
-		.sclr  (~ar),  //   input,   width = 1,            .sclr
-		.q     (rd_addr_fifo_dataout),     //  output,  width = 24, fifo_output.dataout
+		.data  (read_addr_with_bank),
+		.wrreq (rd_addr_fifo_wrreq),
+		.rdreq (rd_addr_fifo_rdreq),
+		.clock (clk),
+		.aclr  (~ar),
+		.sclr  (~ar),
+		.q     (rd_addr_fifo_dataout),
 		.usedw (rd_addr_fifo_usedw),
-		.full  (rd_addr_fifo_full),  //  output,   width = 1,            .full
-		.empty (rd_addr_fifo_empty)  //  output,   width = 1,            .empty
+		.full  (rd_addr_fifo_full),
+		.empty (rd_addr_fifo_empty)
 	);	
 	
 	
@@ -159,14 +176,13 @@ address_fifo rd_addr_fifo (
 	reg [23:0] read_addr;
 	reg [11:0] read_trans;   // Read transaction number
 	parameter  READ_LEN = 512;
-	// parameter  READ_TRANSACTIONS = 720*2.5;  // 720p:  1280/512=2.5
-	parameter  READ_TRANSACTIONS = 480*1.25;  // 640x480:   640/512 = 1.25
+	parameter  READ_TRANSACTIONS = 480*1.25;  // 640x480: 640/512 = 1.25
 	
 	
 	reg [2:0]  cs_read;
 	reg	[3:0]	vsynch_sr;
-	wire	vsynch_delayedge;   // Create a delayed edge of vysnch to allow autorefresh to occur first
-	reg	sdram_initdone;		// Signal indicating SDRAM initiazation is complete when =1
+	wire	vsynch_delayedge;
+	reg	sdram_initdone;
 	
 	always @(negedge ar or posedge clk )
 	if(~ar)
@@ -184,7 +200,7 @@ address_fifo rd_addr_fifo (
 		if(~mem_busy)
 			sdram_initdone = 1'b1;
 		end	
-			
+		
 	parameter [2:0] Read_Idle=3'b000, Read_AddrWrite=3'b001, Read_Wait=3'b010, Read_Wait2=3'b011, Read_First=3'b100;
 	
 	always @(negedge ar or posedge clk )
@@ -204,7 +220,7 @@ address_fifo rd_addr_fifo (
 				read_addr = 0;
 				cs_read = Read_Idle;
 				
-				if(vsynch_delayedge & sdram_initdone)	//added the sdram_initdone to esure SDRAM controller can respond to Read Req
+				if(vsynch_delayedge & sdram_initdone)
 					begin
 					rd_addr_fifo_wrreq = 1'b1;
 					read_addr = read_addr + READ_LEN;
@@ -220,12 +236,10 @@ address_fifo rd_addr_fifo (
 			end	
 			Read_First:
 				begin
-				rd_addr_fifo_wrreq = 1'b0;  //Apr7:  changed from 1'b1
-				//read_addr = read_addr + READ_LEN;
-				//read_trans = read_trans + 1;
+				rd_addr_fifo_wrreq = 1'b0;
 				cs_read = Read_Wait;
 				end
-							
+						
 			Read_AddrWrite:
 				begin
 				rd_addr_fifo_wrreq = 1'b0;
@@ -238,7 +252,7 @@ address_fifo rd_addr_fifo (
 				begin
 				rd_addr_fifo_wrreq = 1'b0;
 
-				if(vsynch_delayedge & sdram_initdone)	//New transition out of this state in case accidentally here at end of frame
+				if(vsynch_delayedge & sdram_initdone)
 					begin
 					rd_addr_fifo_wrreq = 1'b1;
 					read_addr = 24'b0;
@@ -246,18 +260,16 @@ address_fifo rd_addr_fifo (
 					cs_read = Read_First;
 					end
 
-
-				//if((rd_data_fifo_rdusedw >= 511) || ((rd_addr_fifo_usedw == 0) && (rd_data_fifo_rdusedw <= 150))) // Wait here until 512 words are in FIFO
-				if(rd_data_fifo_rdusedw >= 511) // Wait here until 512 words are in FIFO
+				if(rd_data_fifo_rdusedw >= 511)
 					if(read_trans < READ_TRANSACTIONS)
 						cs_read = Read_Wait2;
 					else	
-						cs_read = Read_Idle;		// Should be done readying one full image
+						cs_read = Read_Idle;
 				end
 				
 			Read_Wait2:
 				begin
-				if(rd_data_fifo_rdusedw < 256) // Wait here until < 512 words are in FIFO
+				if(rd_data_fifo_rdusedw < 256)
 					begin
 					cs_read = Read_AddrWrite;
 					rd_addr_fifo_wrreq = 1'b1;
@@ -273,12 +285,12 @@ address_fifo rd_addr_fifo (
 				read_trans = 11'd0;
 			end
 		endcase	
-					
+				
 	
 	
 	// Main manager FSM
 	
-	reg 	read_write_n;    // =1 indicates Read, 0 indicates write
+	reg 	read_write_n;
 	wire	read_start;
 	wire	write_start;
 	wire	rd_data_fifo_512words;
@@ -287,21 +299,13 @@ address_fifo rd_addr_fifo (
 	assign rd_data_fifo_512words = (rd_data_fifo_rdusedw >= 512) ? 1'b1 : 1'b0;
 	assign wr_data_fifo_512words = (wr_data_fifo_wrusedw >= 512) ? 1'b1 : 1'b0;
 	
-	// Start read when controller idle, rd adddress available, and at least 512 locations available in FIFO
-	assign read_start = ~mem_busy & ~rd_addr_fifo_empty & ~rd_data_fifo_512words;
-
-	// Start write when controller idle, wr adddress availabble, and at least 512 words available in FIFO
+	assign read_start  = ~mem_busy & ~rd_addr_fifo_empty & ~rd_data_fifo_512words;
 	assign write_start = ~mem_busy & ~wr_addr_fifo_empty & wr_data_fifo_512words;
 	
-	// Address mux to send the correct address to the memory controller
-	assign mem_addr = read_write_n ? rd_addr_fifo_dataout : wr_addr_fifo_dataout;
-	
+	assign mem_addr    = read_write_n ? rd_addr_fifo_dataout : wr_addr_fifo_dataout;
 	assign mem_wr_data = wr_data_fifo_dataout;
 	assign wr_data_fifo_rdrequest = mem_wr_next | wr_data_fifo_rdreq;
 	
-	// Start FSM
-	
-		
 	parameter [3:0]	Idle = 4'h0,
 					Start_Write = 4'h1,
 					Get_First_Word = 4'h2,
@@ -315,7 +319,6 @@ address_fifo rd_addr_fifo (
 					
 	reg [3:0]   cs;
 	reg [3:0] ctr;
-	// wire [3:0] mem_word_ctr;  // ctr - CAS
 	
 	
 	always @(negedge ar or posedge clk )
@@ -337,18 +340,18 @@ address_fifo rd_addr_fifo (
 				begin
 				rd_addr_fifo_rdreq = 1'b0;
 				
-				 if(write_start)  // Write has priority over read
+				 if(write_start)
 				   begin
 					read_write_n = 1'b0;
-					wr_addr_fifo_rdreq = 1'b1;  // Get address
-					wr_data_fifo_rdreq = 1'b1;	// Get first data word
+					wr_addr_fifo_rdreq = 1'b1;
+					wr_data_fifo_rdreq = 1'b1;
 					cs = Start_Write;
 				   end
 				 else
 					if(read_start)
 					   begin
 						read_write_n = 1'b1;
-						rd_addr_fifo_rdreq = 1'b1;  // Get address
+						rd_addr_fifo_rdreq = 1'b1;
 						cs = Start_Read;
 					   end
 					else
@@ -367,23 +370,20 @@ address_fifo rd_addr_fifo (
 				
 			Start_Write:
 				begin
-					wr_addr_fifo_rdreq = 1'b0;  // Stop getting new addresses
-					wr_data_fifo_rdreq = 1'b0;	// Stop getting new words
-					mem_wr_req = 1'b1;   		// Send write request to controller
-					ctr = 4'd0;					// Clear counter
+					wr_addr_fifo_rdreq = 1'b0;
+					wr_data_fifo_rdreq = 1'b0;
+					mem_wr_req = 1'b1;
+					ctr = 4'd0;
 					cs = Wait_Write;
 				end
 			
 			Wait_Write:
 				begin
-					mem_wr_req = 1'b0;   		// End write request to controller
+					mem_wr_req = 1'b0;
 
 					if(mem_wr_next)
 						begin
-						//wr_data_fifo_rdreq = 1'b0;	//  Request words (or 1?)
-						//ctr = ctr + 1;
 						cs = Continue_Write;
-
 						end
 
 				end
@@ -393,7 +393,6 @@ address_fifo rd_addr_fifo (
 				
 				if(~mem_wr_next)
 					begin
-						//wr_data_fifo_rdreq = 1'b0;	//  End request words
 						ctr = 0;
 						cs = Idle;
 					end
@@ -405,21 +404,18 @@ address_fifo rd_addr_fifo (
 
 			Start_Read:  
 				begin
-					rd_addr_fifo_rdreq = 1'b0;  // Stop getting new addresses
-					mem_rd_req = 1'b1;   		// Send read request to controller
-					ctr = 4'd0;					// Clear counter
+					rd_addr_fifo_rdreq = 1'b0;
+					mem_rd_req = 1'b1;
+					ctr = 4'd0;
 					cs = Wait_Read;
 				end
 
 			Wait_Read:
 				begin
-				mem_rd_req = 1'b0;				// Turn off read request
+				mem_rd_req = 1'b0;
 				
 				if(mem_rd_valid)
 					cs = Continue_Read;
-					
-				//if(ctr >= READ_LEN)  // Dg:  prev 8
-				//	cs = Idle;
 				end
 
 			Continue_Read:
@@ -427,20 +423,18 @@ address_fifo rd_addr_fifo (
 				
 				if(~mem_rd_valid)
 					begin
-						//wr_data_fifo_rdreq = 1'b0;	//  End request words
 						ctr = 0;
 						cs = Idle;
 					end
 					
 				end
 	
-								
-			default:
-				cs = Idle;
-			
-		endcase
+					
+		default:
+			cs = Idle;
+		
+	endcase
          
             
 	
 	endmodule
-	
